@@ -38,7 +38,11 @@ int main(int argc, char *argv[]){
     
     std::ifstream is;
     std::string s;
-    std::cin >> s;
+    if(argc == 1){
+        std::cin >> s;
+    } else{
+        s = argv[1];
+    }
     std::cout << s << "\n";
     is.open(s, std::ios::binary);
     ClassFile cf;

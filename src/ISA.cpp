@@ -700,7 +700,7 @@ uint32_t getQtdOp_lookupswitch(const uint8_t* bytecode, uint32_t ind, uint32_t s
     res += offset;
     res += 4; // Default
     res += 4; // Npairs
-    res += 8 * (int32_t)read<uint32_t>(bytecode + ind + 1 + offset + 4); // Pairs
+    res += 8 * static_cast<int32_t>(read<uint32_t>(bytecode + ind + 1 + offset + 4)); // Pairs
     return res;
 }
 
@@ -1185,14 +1185,14 @@ std::string printOp_dconst_1(ConstantPoolInfo** cp, const uint8_t* bytecode, uin
 
 std::string printOp_bipush(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t byte = (int8_t) read<uint8_t>(bytecode + ind + 1);
+    int32_t byte = static_cast<int8_t>(read<uint8_t>(bytecode + ind + 1));
     res += "bipush " + std::to_string(byte) + "\n";
     return res;
 }
 
 std::string printOp_sipush(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t byte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t byte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "sipush " + std::to_string(byte) + "\n";
     return res;
 }
@@ -2026,112 +2026,112 @@ std::string printOp_dcmpg(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32
 
 std::string printOp_ifeq(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "ifeq " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_ifne(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "ifne " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_iflt(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "iflt " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_ifge(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "ifge " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_ifgt(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "ifgt " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_ifle(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "ifle " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_if_icmpeq(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "if_icmpeq " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_if_icmpne(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "if_icmpne " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_if_icmplt(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "if_icmplt " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_if_icmpge(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "if_icmpge " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_if_icmpgt(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "if_icmpgt " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_if_icmple(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "if_icmple " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_if_acmpeq(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "if_acmpeq " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_if_acmpne(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "if_acmpne " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_goto(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "goto " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_jsr(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "jsr " + std::to_string(branchbyte) + "\n";
     return res;
 }
@@ -2146,12 +2146,12 @@ std::string printOp_ret(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t
 std::string printOp_tableswitch(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
     uint32_t offset = (4 - (ind + 1)%4)%4;
-    int32_t defaultS = (int32_t) read<uint32_t>(bytecode + ind + 1 + offset);
-    int32_t lowS = (int32_t) read<uint32_t>(bytecode + ind + 1 + offset + 4);
-    int32_t highS = (int32_t) read<uint32_t>(bytecode + ind + 1 + offset + 2*4);
+    int32_t defaultS = static_cast<int32_t>(read<uint32_t>(bytecode + ind + 1 + offset));
+    int32_t lowS = static_cast<int32_t>(read<uint32_t>(bytecode + ind + 1 + offset + 4));
+    int32_t highS = static_cast<int32_t>(read<uint32_t>(bytecode + ind + 1 + offset + 2*4));
     res += "tableswitch " + std::to_string(lowS) + " to " + std::to_string(highS) + "\n";
     for(int32_t i = lowS, j = 0; i <= highS; i++, j++){
-        res += "\t" + std::to_string(i) + ": " + std::to_string((int32_t) read<uint32_t>(bytecode + ind + 1 + offset + 3*4 + 4*j)) + "\n";
+        res += "\t" + std::to_string(i) + ": " + std::to_string(static_cast<int32_t>(read<uint32_t>(bytecode + ind + 1 + offset + 3*4 + 4*j))) + "\n";
     }
     res += "\tdefault: " + std::to_string(defaultS) + "\n";
     return res;
@@ -2160,11 +2160,11 @@ std::string printOp_tableswitch(ConstantPoolInfo** cp, const uint8_t* bytecode, 
 std::string printOp_lookupswitch(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
     uint32_t offset = (4 - (ind + 1)%4)%4;
-    int32_t defaultS = (int32_t) read<uint32_t>(bytecode + ind + 1 + offset);
-    int32_t npairsS = (int32_t) read<uint32_t>(bytecode + ind + 1 + offset + 4);
+    int32_t defaultS = static_cast<int32_t>(read<uint32_t>(bytecode + ind + 1 + offset));
+    int32_t npairsS = static_cast<int32_t>(read<uint32_t>(bytecode + ind + 1 + offset + 4));
     res += "lookupswitch " + std::to_string(npairsS) + "\n";
     for(int32_t i = 0; i < npairsS; i++){
-        res += "\t" + std::to_string((int32_t) read<uint32_t>(bytecode + ind + 1 + offset + 2*4 + 4*(i + 0))) + ": " + std::to_string((int32_t) read<uint32_t>(bytecode + ind + 1 + offset + 2*4 + 4*(i + 1))) + "\n";
+        res += "\t" + std::to_string(static_cast<int32_t>(read<uint32_t>(bytecode + ind + 1 + offset + 2*4 + 4*(i + 0)))) + ": " + std::to_string(static_cast<int32_t>(read<uint32_t>(bytecode + ind + 1 + offset + 2*4 + 4*(i + 1)))) + "\n";
     }
     res += "\tdefault: " + std::to_string(defaultS) + "\n";
     return res;
@@ -2362,28 +2362,28 @@ std::string printOp_multianewarray(ConstantPoolInfo** cp, const uint8_t* bytecod
 
 std::string printOp_ifnull(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "ifnull " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_ifnonull(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int16_t) read<uint16_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int16_t>(read<uint16_t>(bytecode + ind + 1));
     res += "ifnonull " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_goto_w(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int32_t) read<uint32_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int32_t>(read<uint32_t>(bytecode + ind + 1));
     res += "goto_w " + std::to_string(branchbyte) + "\n";
     return res;
 }
 
 std::string printOp_jsr_w(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    int32_t branchbyte = (int32_t) read<uint32_t>(bytecode + ind + 1);
+    int32_t branchbyte = static_cast<int32_t>(read<uint32_t>(bytecode + ind + 1));
     res += "jsr_w " + std::to_string(branchbyte) + "\n";
     return res;
 }

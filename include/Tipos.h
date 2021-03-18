@@ -10,18 +10,45 @@
 #include "../include/MethodInfo.h"
 #include "../include/AttributeInfo.h"
 
-
+/**
+ * @brief Função para leitura de um vetor de uint8_t
+ * 
+ * @tparam U 
+ * @param in 
+ * @return U 
+ */
 template<typename U>
 U read(const uint8_t *in){
     return {};
 }
 
+/**
+ * @brief Função que lê uma um uint8_t de um vetor de uint8_t
+ * 
+ * @tparam  
+ * @param in 
+ * @return uint8_t 
+ */
 template<>
 uint8_t read<uint8_t>(const uint8_t *in);
 
+/**
+ * @brief Função que lê um uinnt16_t de um vetor de uint8_t
+ * 
+ * @tparam  
+ * @param in 
+ * @return uint16_t 
+ */
 template<>
 uint16_t read<uint16_t>(const uint8_t *in);
 
+/**
+ * @brief Função que lê um uinnt32_t de um vetor de uint8_t
+ * 
+ * @tparam  
+ * @param in 
+ * @return uint32_t 
+ */
 template<>
 uint32_t read<uint32_t>(const uint8_t *in);
 
@@ -30,7 +57,7 @@ uint32_t read<uint32_t>(const uint8_t *in);
  * 
  * @tparam U 
  * @param ifs 
- * @return U 
+ * @param u 
  */
 template<typename U>
 void read(std::ifstream &ifs, U* u){
@@ -54,25 +81,27 @@ void print(U& u, std::ostream &os){
  * 
  * @tparam  
  * @param ifs 
- * @return uint8_t 
+ * @param u 
  */
 template<>
 void read<uint8_t>(std::ifstream &ifs, uint8_t *u);
+
 /**
  * @brief Função para leitura de um uint16_t informando um ifstream.
  * 
  * @tparam  
  * @param ifs 
- * @return uint16_t 
+ * @param u 
  */
 template<>
 void read<uint16_t>(std::ifstream &ifs, uint16_t *u);
+
 /**
  * @brief Função para leitura de um uint32_t informando um ifstream.
  * 
  * @tparam  
  * @param ifs 
- * @return uint32_t 
+ * @param u 
  */
 template<>
 void read<uint32_t>(std::ifstream &ifs, uint32_t *u);
@@ -86,14 +115,17 @@ void read<uint32_t>(std::ifstream &ifs, uint32_t *u);
  */
 template<>
 void print<uint8_t>(uint8_t& u, std::ostream &os);
+
 /**
  * @brief Função que printa o uint16_t informando um classFile e um ostream.
  * 
+ * @tparam  
  * @param u 
  * @param os 
  */
 template<>
 void print<uint16_t>(uint16_t& u, std::ostream &os);
+
 /**
  * @brief Função que printa o uint32_t informando um classFile e um ostream.
  * 
@@ -109,7 +141,7 @@ void print<uint32_t>(uint32_t& u, std::ostream &os);
  * 
  * @tparam  
  * @param ifs 
- * @return ClassFile 
+ * @param u 
  */
 template<>
 void read<ClassFile>(std::ifstream &ifs, ClassFile *u);
@@ -130,133 +162,147 @@ void print<ClassFile>(ClassFile& u, std::ostream &os);
  * 
  * @tparam  
  * @param ifs 
- * @return ConstantPoolInfo* 
+ * @param u 
  */
 template<>
 void read<ConstantPoolInfo*>(std::ifstream &ifs, ConstantPoolInfo** u);
+
 /**
  * @brief Função para leitura de um CPClass* informando um ifstream.
  * 
  * @tparam  
- * @param ifs 
- * @return CPClass* 
+ * @param ifs  
+ * @param u 
  */
 template<>
 void read<CPClass>(std::ifstream &ifs, CPClass *u);
+
 /**
  * @brief Função para leitura de um CPFieldref* informando um ifstream.
  * 
  * @tparam  
  * @param ifs 
- * @return CPFieldref* 
+ * @param u 
  */
 template<>
 void read<CPFieldref>(std::ifstream &ifs, CPFieldref *u);
+
 /**
  * @brief Função para leitura de um CPMethodref* informando um ifstream.
  * 
  * @tparam  
  * @param ifs 
- * @return CPMethodref* 
+ * @param u 
  */
 template<>
 void read<CPMethodref>(std::ifstream &ifs, CPMethodref *u);
+
 /**
  * @brief Função para leitura de um CPInterfaceMethodref* informando um ifstream.
  * 
  * @tparam  
  * @param ifs 
- * @return CPInterfaceMethodref* 
+ * @param u 
  */
 template<>
 void read<CPInterfaceMethodref>(std::ifstream &ifs, CPInterfaceMethodref *u);
+
 /**
  * @brief Função para leitura de um CPString* informando um ifstream.
  * 
  * @tparam  
  * @param ifs 
- * @return CPString* 
+ * @param u 
  */
 template<>
 void read<CPString>(std::ifstream &ifs, CPString *u);
+
 /**
  * @brief Função para leitura de um CPInteger* informando um ifstream.
  * 
  * @tparam  
  * @param ifs 
- * @return CPInteger* 
+ * @param u 
  */
 template<>
 void read<CPInteger>(std::ifstream &ifs, CPInteger *u);
+
 /**
  * @brief Função para leitura de um CPFloat* informando um ifstream.
  * 
  * @tparam  
  * @param ifs 
- * @return CPFloat* 
+ * @param u 
  */
 template<>
 void read<CPFloat>(std::ifstream &ifs, CPFloat *u);
+
 /**
  * @brief Função para leitura de um CPLong* informando um ifstream.
  * 
  * @tparam  
  * @param ifs 
- * @return CPLong* 
+ * @param u 
  */
 template<>
 void read<CPLong>(std::ifstream &ifs, CPLong *u);
+
 /**
  * @brief Função para leitura de um CPDouble* informando um ifstream.
  * 
  * @tparam  
  * @param ifs 
- * @return CPDouble* 
+ * @param u 
  */
 template<>
 void read<CPDouble>(std::ifstream &ifs, CPDouble *u);
+
 /**
  * @brief Função para leitura de um CPNameAndType* informando um ifstream.
  * 
  * @tparam  
  * @param ifs 
- * @return CPNameAndType* 
+ * @param u 
  */
 template<>
 void read<CPNameAndType>(std::ifstream &ifs, CPNameAndType *u);
+
 /**
  * @brief Função para leitura de um CPUtf8* informando um ifstream.
  * 
  * @tparam  
  * @param ifs 
- * @return CPUtf8* 
+ * @param u 
  */
 template<>
 void read<CPUtf8>(std::ifstream &ifs, CPUtf8 *u);
+
 /**
  * @brief Função para leitura de um CPMethodHandle* informando um ifstream.
  * 
  * @tparam  
  * @param ifs 
- * @return CPMethodHandle* 
+ * @param u 
  */
 template<>
 void read<CPMethodHandle>(std::ifstream &ifs, CPMethodHandle *u);
+
 /**
  * @brief Função para leitura de um CPMethodType* informando um ifstream.
  * 
  * @tparam  
  * @param ifs 
- * @return CPMethodType* 
+ * @param u 
  */
 template<>
 void read<CPMethodType>(std::ifstream &ifs, CPMethodType *u);
+
 /**
  * @brief Função para leitura de um CPInvokeDynamic* informando um ifstream.
  * 
  * @tparam  
  * @param ifs 
- * @return CPInvokeDynamic* 
+ * @param u 
  */
 template<>
 void read<CPInvokeDynamic>(std::ifstream &ifs, CPInvokeDynamic *u);
@@ -374,7 +420,7 @@ void print<CPUtf8>(CPUtf8& u, std::ostream &os);
  * 
  * @tparam  
  * @param u 
- * @param os 
+ * @param os
  */
 template<>
 void print<CPMethodHandle>(CPMethodHandle& u, std::ostream &os);
@@ -402,8 +448,8 @@ void print<CPInvokeDynamic>(CPInvokeDynamic& u, std::ostream &os);
  * @brief Função para leitura de um FieldInfo informando um ifstream.
  * 
  * @tparam  
- * @param ifs 
- * @return FieldInfo 
+ * @param ifs  
+ * @param u 
  */
 template<>
 void read<FieldInfo>(std::ifstream &ifs, FieldInfo *u);
@@ -423,8 +469,8 @@ void print<FieldInfo>(FieldInfo& u, std::ostream &os);
  * @brief Função para leitura de um MethodInfo informando um ifstream.
  * 
  * @tparam  
- * @param ifs 
- * @return MethodInfo 
+ * @param ifs  
+ * @param u 
  */
 template<>
 void read<MethodInfo>(std::ifstream &ifs, MethodInfo *u);
@@ -434,7 +480,7 @@ void read<MethodInfo>(std::ifstream &ifs, MethodInfo *u);
  * 
  * @tparam  
  * @param u 
- * @param os 
+ * @param os
  */
 template<>
 void print<MethodInfo>(MethodInfo& u, std::ostream &os);
@@ -444,7 +490,7 @@ void print<MethodInfo>(MethodInfo& u, std::ostream &os);
  * 
  * @tparam  
  * @param ifs 
- * @return AttributeInfo 
+ * @param u 
  */
 template<>
 void read<AttributeInfoBasic*>(std::ifstream &ifs, AttributeInfoBasic** u);

@@ -29,20 +29,20 @@ std::string getString(ConstantPoolInfo** cp, uint32_t ind){
 
 int32_t getInteger(ConstantPoolInfo** cp, uint32_t ind){
     CPInteger *cpInteger = (CPInteger *)cp[ind];
-    return *((int32_t*)&cpInteger->bytes);
+    return static_cast<int32_t>(cpInteger->bytes);
 }
 
 float getFloat(ConstantPoolInfo** cp, uint32_t ind){
     CPFloat *cpFloat = (CPFloat*)cp[ind];
-    return *((float*)&cpFloat->bytes);
+    return *reinterpret_cast<float*>(&cpFloat->bytes);
 }
 
 int64_t getLong(ConstantPoolInfo** cp, uint32_t ind){
     CPLong *cpLong = (CPLong*)cp[ind];
     uint64_t aux = 0;
-    aux = (aux << 32) | cpLong->highBytes;
-    aux = (aux << 32) | cpLong->lowBytes;
-    return *((int64_t*)&aux);
+    aux = (aux << 32) | static_cast<uint64_t>(cpLong->highBytes);
+    aux = (aux << 32) | static_cast<uint64_t>(cpLong->lowBytes);
+    return static_cast<int64_t>(aux);
 }
 
 double getDouble(ConstantPoolInfo** cp, uint32_t ind){
@@ -50,7 +50,7 @@ double getDouble(ConstantPoolInfo** cp, uint32_t ind){
     uint64_t aux = 0;
     aux = (aux << 32) | cpDouble->highBytes;
     aux = (aux << 32) | cpDouble->lowBytes;
-    return *((double*)&aux);
+    return *reinterpret_cast<double*>(&aux);
 }
 
 std::string getNameAndType(ConstantPoolInfo** cp, uint32_t ind){

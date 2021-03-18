@@ -32,21 +32,80 @@ struct ClassFile{
      * 
      */
     uint16_t constantPoolCount; 
+    /**
+     * @brief 
+     * 
+     */
     ConstantPoolInfo **constantPool; 
+    /**
+     * @brief 
+     * 
+     */
     uint16_t accessFlags; 
+    /**
+     * @brief 
+     * 
+     */
     uint16_t thisClass;
+    /**
+     * @brief 
+     * 
+     */
     uint16_t superClass;
+    /**
+     * @brief 
+     * 
+     */
     uint16_t interfacesCount;
+    /**
+     * @brief 
+     * 
+     */
     uint16_t *interfaces;
+    /**
+     * @brief 
+     * 
+     */
     uint16_t fieldsCount;
+    /**
+     * @brief 
+     * 
+     */
     FieldInfo *fields;
+    /**
+     * @brief 
+     * 
+     */
     uint16_t methodsCount;
+    /**
+     * @brief 
+     * 
+     */
     MethodInfo *methods;
+    /**
+     * @brief 
+     * 
+     */
     uint16_t attributesCount;
+    /**
+     * @brief 
+     * 
+     */
     AttributeInfo **attributes; 
+    /**
+     * @brief Destroy the Class File object
+     * 
+     */
     ~ClassFile();
 };
 
+/**
+ * @brief Função que converte os atributos de um ClassFile para a estruturas mais elaboradas
+ * 
+ * 
+ * @param cpi 
+ * @param cf 
+ */
 void conveterAttributeInfoInClassFile(ConstantPoolInfo **cpi, ClassFile *cf);
 
 #endif

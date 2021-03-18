@@ -4,16 +4,17 @@
 
 void conveterAttributeInfoInClassFile(ConstantPoolInfo **cpi, ClassFile *cf){
     for(uint32_t i = 0; i < cf->fieldsCount; i++){
-        conveterAttributeInfoInFieldInfo(cpi, cf->fields + i);
+        conveterAttributeInfoInFieldInfo(cpi, cf->fields + i); // Converte os atribudos do campo
     }
     for(uint32_t i = 0; i < cf->methodsCount; i++){
-        conveterAttributeInfoInMethodInfo(cpi, cf->methods + i);
+        conveterAttributeInfoInMethodInfo(cpi, cf->methods + i); // Converte os atribudos dos métodos
     }
     for(uint32_t i = 0; i < cf->attributesCount; i++){
-        conveterAttributeInfoInAttributeInfo(cpi, cf->attributes + i);
+        conveterAttributeInfoInAttributeInfo(cpi, cf->attributes + i); // Converte os atribudos do classFile
     }
 }
 
+// TODO: 
 ClassFile::~ClassFile(){
     for(uint32_t i = 1; i < constantPoolCount; i++){
         if(constantPool[i] != nullptr){

@@ -5,124 +5,125 @@
 template<>
 uint8_t read<uint8_t>(const uint8_t *in){
     uint8_t res = 0;
-    res = *in;
+    res = *in; // Lê um natural de 8 bits
     return res;
 }
 
 template<>
 uint16_t read<uint16_t>(const uint8_t *in){
     uint16_t res = 0;
-    res = (res << 8) | (uint16_t)read<uint8_t>(in + 0);
-    res = (res << 8) | (uint16_t)read<uint8_t>(in + 1);
+    res = (res << 8) | static_cast<uint16_t>(read<uint8_t>(in + 0)); // Lê os primeiros 8 bits de um natural de 16 bits
+    res = (res << 8) | static_cast<uint16_t>(read<uint8_t>(in + 1)); // Lê os segundos 8 bits de um natural de 16 bits
     return res;
 }
 
 template<>
 uint32_t read<uint32_t>(const uint8_t *in){
     uint32_t res = 0;
-    res = (res << 8) | (uint32_t)read<uint8_t>(in + 0);
-    res = (res << 8) | (uint32_t)read<uint8_t>(in + 1);
-    res = (res << 8) | (uint32_t)read<uint8_t>(in + 2);
-    res = (res << 8) | (uint32_t)read<uint8_t>(in + 3);
+    res = (res << 8) | static_cast<uint32_t>(read<uint8_t>(in + 0)); // Lê os primeiros 8 bits de um natural de 32 bits
+    res = (res << 8) | static_cast<uint32_t>(read<uint8_t>(in + 1)); // Lê os segundos 8 bits de um natural de 32 bits
+    res = (res << 8) | static_cast<uint32_t>(read<uint8_t>(in + 2)); // Lê os terceiros 8 bits de um natural de 32 bits
+    res = (res << 8) | static_cast<uint32_t>(read<uint8_t>(in + 3)); // Lê os quartos 8 bits de um natural de 32 bits
     return res;
 }
 
 template<>
 void read<uint8_t>(std::ifstream &ifs, uint8_t *u){
-    ifs.read((char*)u, 1);
+    *u = ifs.get(); // Lê um natural de 8 bits
+    // ifs.read((char*)u, 1); // Lê um natural de 8 bits
 }
 
 template<>
 void read<uint16_t>(std::ifstream &ifs, uint16_t *u){
     uint8_t aux = 0;
     *u = 0;
-    read<uint8_t>(ifs, &aux);
-    *u = (*u << 8) | ((uint16_t) aux);
-    read<uint8_t>(ifs, &aux);
-    *u = (*u << 8) | ((uint16_t) aux);
+    read<uint8_t>(ifs, &aux); // Lê um natural de 8 bits e o coloca em aux
+    *u = (*u << 8) | static_cast<uint16_t>(aux); // Estabelece que os primeiros 8 bits de um natural de 16 bits
+    read<uint8_t>(ifs, &aux); // Lê um natural de 8 bits e o coloca em aux
+    *u = (*u << 8) | static_cast<uint16_t>(aux); // Estabelece que os segundos 8 bits de um natural de 16 bits
 }
 
 template<>
 void read<uint32_t>(std::ifstream &ifs, uint32_t *u){
     uint8_t aux = 0;
-    read<uint8_t>(ifs, &aux);
-    *u = (*u << 8) | ((uint32_t) aux);
-    read<uint8_t>(ifs, &aux);
-    *u = (*u << 8) | ((uint32_t) aux);
-    read<uint8_t>(ifs, &aux);
-    *u = (*u << 8) | ((uint32_t) aux);
-    read<uint8_t>(ifs, &aux);
-    *u = (*u << 8) | ((uint32_t) aux);
+    read<uint8_t>(ifs, &aux); // Lê um natural de 8 bits e o coloca em aux
+    *u = (*u << 8) | static_cast<uint32_t>(aux);  // Estabelece que os primeiros 8 bits de um natural de 32 bits
+    read<uint8_t>(ifs, &aux); // Lê um natural de 8 bits e o coloca em aux
+    *u = (*u << 8) | static_cast<uint32_t>(aux);  // Estabelece que os segundos 8 bits de um natural de 32 bits
+    read<uint8_t>(ifs, &aux); // Lê um natural de 8 bits e o coloca em aux
+    *u = (*u << 8) | static_cast<uint32_t>(aux);  // Estabelece que os terceiros 8 bits de um natural de 32 bits
+    read<uint8_t>(ifs, &aux); // Lê um natural de 8 bits e o coloca em aux
+    *u = (*u << 8) | static_cast<uint32_t>(aux);  // Estabelece que os quartos 8 bits de um natural de 32 bits
 }
 
 template<>
 void print<uint8_t>(uint8_t& u, std::ostream &os){
-    os << std::setfill('0') << std::setw(2) << std::right << std::hex << (uint32_t)u << "\n";
+    os << std::setfill('0') << std::setw(2) << std::right << std::hex << static_cast<uint32_t>(u) << "\n";
 }
 
 template<>
 void print<uint16_t>(uint16_t& u, std::ostream &os){
-    os << std::setfill('0') << std::setw(2) << std::right << std::hex << ((((uint32_t)u) >> 8) & 0xFF) << " ";
-    os << std::setfill('0') << std::setw(2) << std::right << std::hex << ((((uint32_t)u) >> 0) & 0xFF) << "\n";
+    os << std::setfill('0') << std::setw(2) << std::right << std::hex << ((static_cast<uint32_t>(u) >> 8) & 0xFF) << " ";
+    os << std::setfill('0') << std::setw(2) << std::right << std::hex << ((static_cast<uint32_t>(u) >> 0) & 0xFF) << "\n";
 }
 
 template<>
 void print<uint32_t>(uint32_t& u, std::ostream &os){
-    os << std::setfill('0') << std::setw(2) << std::right << std::hex << ((((uint32_t)u) >> 24) & 0xFF) << " ";
-    os << std::setfill('0') << std::setw(2) << std::right << std::hex << ((((uint32_t)u) >> 16) & 0xFF) << " ";
-    os << std::setfill('0') << std::setw(2) << std::right << std::hex << ((((uint32_t)u) >> 8) & 0xFF) << " ";
-    os << std::setfill('0') << std::setw(2) << std::right << std::hex << ((((uint32_t)u) >> 0) & 0xFF) << "\n";
+    os << std::setfill('0') << std::setw(2) << std::right << std::hex << ((static_cast<uint32_t>(u) >> 24) & 0xFF) << " ";
+    os << std::setfill('0') << std::setw(2) << std::right << std::hex << ((static_cast<uint32_t>(u) >> 16) & 0xFF) << " ";
+    os << std::setfill('0') << std::setw(2) << std::right << std::hex << ((static_cast<uint32_t>(u) >> 8) & 0xFF) << " ";
+    os << std::setfill('0') << std::setw(2) << std::right << std::hex << ((static_cast<uint32_t>(u) >> 0) & 0xFF) << "\n";
 }
 
 
 template<>
 void read<ClassFile>(std::ifstream &ifs, ClassFile *u){
 
-    read<uint32_t>(ifs, &u->magic);
-    read<uint16_t>(ifs, &u->minorVersion);
-    read<uint16_t>(ifs, &u->majorVersion);
-    read<uint16_t>(ifs, &u->constantPoolCount);
-    if(u->constantPoolCount > 0){
-        u->constantPool = new ConstantPoolInfo*[u->constantPoolCount];
-        for(uint32_t i = 0; i < u->constantPoolCount; i++){
+    read<uint32_t>(ifs, &u->magic); // leitura do magic
+    read<uint16_t>(ifs, &u->minorVersion); // leitura do número de menor versão
+    read<uint16_t>(ifs, &u->majorVersion); // leitura do número de maior versão
+    read<uint16_t>(ifs, &u->constantPoolCount); // leitura do número de elementos da tabela constant pool
+    if(u->constantPoolCount > 0){ // Se existir elementos a ser lidos para o constant pool
+        u->constantPool = new ConstantPoolInfo*[u->constantPoolCount]; // cria um novo constant pool
+        for(uint32_t i = 0; i < u->constantPoolCount; i++){ // define o valor defaul de todos os u->constantPool[i] como nullptr
             u->constantPool[i] = nullptr;
         }
         for(uint32_t i = 1; i < u->constantPoolCount; i++){
-            if(u->constantPool[i-1] == nullptr || (u->constantPool[i-1]->tag != ConstantPoolInfoTag::LONG && u->constantPool[i-1]->tag != ConstantPoolInfoTag::DOUBLE)){
-                read<ConstantPoolInfo*>(ifs, &u->constantPool[i]);
+            if(u->constantPool[i-1] == nullptr || (u->constantPool[i-1]->tag != ConstantPoolInfoTag::LONG && u->constantPool[i-1]->tag != ConstantPoolInfoTag::DOUBLE)){ // Verificação para o caso de espaço quando é um double ou um long
+                read<ConstantPoolInfo*>(ifs, &u->constantPool[i]); // lê um elemento con constant pool
             }
         }
     }
-    read<uint16_t>(ifs, &u->accessFlags);
-    read<uint16_t>(ifs, &u->thisClass);
-    read<uint16_t>(ifs, &u->superClass);
-    read<uint16_t>(ifs, &u->interfacesCount);
-    if(u->interfacesCount > 0){
-        u->interfaces = new uint16_t[u->interfacesCount];
+    read<uint16_t>(ifs, &u->accessFlags); // leitura da flags de acesso
+    read<uint16_t>(ifs, &u->thisClass); // leitura do indice para constant pool que atonta para essa classe
+    read<uint16_t>(ifs, &u->superClass); // leitura do indice para constant pool que atonta para a super classe
+    read<uint16_t>(ifs, &u->interfacesCount); // leitura do número de interfaces na class
+    if(u->interfacesCount > 0){ // se existe interfaces
+        u->interfaces = new uint16_t[u->interfacesCount]; // cria um vetor de indices de interfaces
         for(uint32_t i = 0; i < u->interfacesCount; i++){
-            read<uint16_t>(ifs, &u->interfaces[i]);
+            read<uint16_t>(ifs, &u->interfaces[i]); // leitura do indice para constant pool que atonta para classe que essa classe implementa
         }
     }
-    read<uint16_t>(ifs, &u->fieldsCount);
-    if(u->fieldsCount > 0){
-        u->fields = new FieldInfo[u->fieldsCount];
+    read<uint16_t>(ifs, &u->fieldsCount); // leitura do número de field na class
+    if(u->fieldsCount > 0){ // se existe fields na classe
+        u->fields = new FieldInfo[u->fieldsCount]; // Cria um vetor de fields
         for(uint32_t i = 0; i < u->fieldsCount; i++){
-            read<FieldInfo>(ifs, &u->fields[i]);
+            read<FieldInfo>(ifs, &u->fields[i]); // lê um field
         }
     }
-    read<uint16_t>(ifs, &u->methodsCount);
-    if(u->methodsCount > 0){
-        u->methods = new MethodInfo[u->methodsCount];
+    read<uint16_t>(ifs, &u->methodsCount);  // leitura do número de métodos na class
+    if(u->methodsCount > 0){ // se existe métodos na classe
+        u->methods = new MethodInfo[u->methodsCount]; // Cria um vetor de métodoss
         for(uint32_t i = 0; i < u->methodsCount; i++){
-            read<MethodInfo>(ifs, &u->methods[i]);
+            read<MethodInfo>(ifs, &u->methods[i]); // lê um métodos
         }
     }
-    read<uint16_t>(ifs, &u->attributesCount);
-    if(u->attributesCount > 0){
-        u->attributes = new AttributeInfo*[u->attributesCount];
+    read<uint16_t>(ifs, &u->attributesCount); // leitura do número de atributos na class
+    if(u->attributesCount > 0){ // se existe atributos na classe
+        u->attributes = new AttributeInfo*[u->attributesCount]; // Cria um vetor de atributos
         for(uint32_t i = 0; i < u->attributesCount; i++){
             AttributeInfoBasic *attribAux;
-            read<AttributeInfoBasic*>(ifs, &attribAux);
+            read<AttributeInfoBasic*>(ifs, &attribAux); // lê um atrributo
             u->attributes[i] = dynamic_cast<AttributeInfo*>(attribAux);
         }
     }
@@ -164,77 +165,77 @@ void print<ClassFile>(ClassFile& u, std::ostream &os){
 template<>
 void read<ConstantPoolInfo*>(std::ifstream &ifs, ConstantPoolInfo** u){
     uint8_t tag = 0;
-    read<uint8_t>(ifs, &tag);
+    read<uint8_t>(ifs, &tag); // lê a tag te um elemento da constant pool 
     switch (tag){
-        case ConstantPoolInfoTag::CLASS:
-            *u = new CPClass;
-            (*u)->tag = tag;
-            read<CPClass>(ifs, dynamic_cast<CPClass*>(*u));
+        case ConstantPoolInfoTag::CLASS: // Se for do tipo class
+            *u = new CPClass; // Cria um constant pool para esse tipo
+            (*u)->tag = tag; // armazena a tag
+            read<CPClass>(ifs, dynamic_cast<CPClass*>(*u)); // lê os outros atributos desse constant pool
             break;
-        case ConstantPoolInfoTag::FIELDREF:
-            *u = new CPFieldref;
-            (*u)->tag = tag;
-            read<CPFieldref>(ifs, dynamic_cast<CPFieldref*>(*u));
+        case ConstantPoolInfoTag::FIELDREF: // Se for do tipo field ref
+            *u = new CPFieldref; // Cria um constant pool para esse tipo
+            (*u)->tag = tag; // armazena a tag
+            read<CPFieldref>(ifs, dynamic_cast<CPFieldref*>(*u)); // lê os outros atributos desse constant pool
             break;
-        case ConstantPoolInfoTag::METHODREF:
-            *u = new CPMethodref;
-            (*u)->tag = tag;
-            read<CPMethodref>(ifs, dynamic_cast<CPMethodref*>(*u));
+        case ConstantPoolInfoTag::METHODREF: // Se for do tipo method ref
+            *u = new CPMethodref; // Cria um constant pool para esse tipo
+            (*u)->tag = tag; // armazena a tag
+            read<CPMethodref>(ifs, dynamic_cast<CPMethodref*>(*u)); // lê os outros atributos desse constant pool
             break;
-        case ConstantPoolInfoTag::INTERFACE_METHODREF:
-            *u = new CPInterfaceMethodref;
-            (*u)->tag = tag;
-            read<CPInterfaceMethodref>(ifs, dynamic_cast<CPInterfaceMethodref*>(*u));
+        case ConstantPoolInfoTag::INTERFACE_METHODREF: // Se for do tipo interface method ref
+            *u = new CPInterfaceMethodref; // Cria um constant pool para esse tipo
+            (*u)->tag = tag; // armazena a tag
+            read<CPInterfaceMethodref>(ifs, dynamic_cast<CPInterfaceMethodref*>(*u)); // lê os outros atributos desse constant pool
             break;
-        case ConstantPoolInfoTag::STRING:
-            *u = new CPString;
-            (*u)->tag = tag;
-            read<CPString>(ifs, dynamic_cast<CPString*>(*u));
+        case ConstantPoolInfoTag::STRING: // Se for do tipo string 
+            *u = new CPString; // Cria um constant pool para esse tipo
+            (*u)->tag = tag; // armazena a tag
+            read<CPString>(ifs, dynamic_cast<CPString*>(*u)); // lê os outros atributos desse constant pool
             break;
-        case ConstantPoolInfoTag::INTEGER:
-            *u = new CPInteger;
-            (*u)->tag = tag;
-            read<CPInteger>(ifs, dynamic_cast<CPInteger*>(*u));
+        case ConstantPoolInfoTag::INTEGER: // Se for do tipo integer
+            *u = new CPInteger; // Cria um constant pool para esse tipo
+            (*u)->tag = tag; // armazena a tag
+            read<CPInteger>(ifs, dynamic_cast<CPInteger*>(*u)); // lê os outros atributos desse constant pool
             break;
-        case ConstantPoolInfoTag::FLOAT:
-            *u = new CPFloat;
-            (*u)->tag = tag;
-            read<CPFloat>(ifs, dynamic_cast<CPFloat*>(*u));
+        case ConstantPoolInfoTag::FLOAT: // Se for do tipo float
+            *u = new CPFloat; // Cria um constant pool para esse tipo
+            (*u)->tag = tag; // armazena a tag
+            read<CPFloat>(ifs, dynamic_cast<CPFloat*>(*u)); // lê os outros atributos desse constant pool
             break;
-        case ConstantPoolInfoTag::LONG:
-            *u = new CPLong;
-            (*u)->tag = tag;
-            read<CPLong>(ifs, dynamic_cast<CPLong*>(*u));
+        case ConstantPoolInfoTag::LONG: // Se for do tipo long
+            *u = new CPLong; // Cria um constant pool para esse tipo
+            (*u)->tag = tag; // armazena a tag
+            read<CPLong>(ifs, dynamic_cast<CPLong*>(*u)); // lê os outros atributos desse constant pool
             break;
-        case ConstantPoolInfoTag::DOUBLE:
-            *u = new CPDouble;
-            (*u)->tag = tag;
-            read<CPDouble>(ifs, dynamic_cast<CPDouble*>(*u));
+        case ConstantPoolInfoTag::DOUBLE: // Se for do tipo double
+            *u = new CPDouble; // Cria um constant pool para esse tipo
+            (*u)->tag = tag; // armazena a tag
+            read<CPDouble>(ifs, dynamic_cast<CPDouble*>(*u)); // lê os outros atributos desse constant pool
             break;
-        case ConstantPoolInfoTag::NAME_AND_TYPE:
-            *u = new CPNameAndType;
-            (*u)->tag = tag;
-            read<CPNameAndType>(ifs, dynamic_cast<CPNameAndType*>(*u));
+        case ConstantPoolInfoTag::NAME_AND_TYPE: // Se for do tipo name and type
+            *u = new CPNameAndType; // Cria um constant pool para esse tipo
+            (*u)->tag = tag; // armazena a tag
+            read<CPNameAndType>(ifs, dynamic_cast<CPNameAndType*>(*u)); // lê os outros atributos desse constant pool
             break;
-        case ConstantPoolInfoTag::UTF8:
-            *u = new CPUtf8;
-            (*u)->tag = tag;
-            read<CPUtf8>(ifs, dynamic_cast<CPUtf8*>(*u));
+        case ConstantPoolInfoTag::UTF8: // Se for do tipo utf8
+            *u = new CPUtf8; // Cria um constant pool para esse tipo
+            (*u)->tag = tag; // armazena a tag
+            read<CPUtf8>(ifs, dynamic_cast<CPUtf8*>(*u)); // lê os outros atributos desse constant pool
             break;
-        case ConstantPoolInfoTag::METHOD_HANDLE:
-            *u = new CPMethodHandle;
-            (*u)->tag = tag;
-            read<CPMethodHandle>(ifs, dynamic_cast<CPMethodHandle*>(*u));
+        case ConstantPoolInfoTag::METHOD_HANDLE: // Se for do tipo method handle
+            *u = new CPMethodHandle; // Cria um constant pool para esse tipo
+            (*u)->tag = tag; // armazena a tag
+            read<CPMethodHandle>(ifs, dynamic_cast<CPMethodHandle*>(*u)); // lê os outros atributos desse constant pool
             break;
-        case ConstantPoolInfoTag::METHOD_TYPE:
-            *u = new CPMethodType;
-            (*u)->tag = tag;
-            read<CPMethodType>(ifs, dynamic_cast<CPMethodType*>(*u));
+        case ConstantPoolInfoTag::METHOD_TYPE: // Se for do tipo method type
+            *u = new CPMethodType; // Cria um constant pool para esse tipo
+            (*u)->tag = tag; // armazena a tag
+            read<CPMethodType>(ifs, dynamic_cast<CPMethodType*>(*u)); // lê os outros atributos desse constant pool
             break;
-        case ConstantPoolInfoTag::INVOKE_DYNAMIC:
-            *u = new CPInvokeDynamic;
-            (*u)->tag = tag;
-            read<CPInvokeDynamic>(ifs, dynamic_cast<CPInvokeDynamic*>(*u));
+        case ConstantPoolInfoTag::INVOKE_DYNAMIC: // Se for do tipo involke dynamic
+            *u = new CPInvokeDynamic; // Cria um constant pool para esse tipo
+            (*u)->tag = tag; // armazena a tag
+            read<CPInvokeDynamic>(ifs, dynamic_cast<CPInvokeDynamic*>(*u)); // lê os outros atributos desse constant pool
             break;
         default:
             break;
@@ -243,67 +244,67 @@ void read<ConstantPoolInfo*>(std::ifstream &ifs, ConstantPoolInfo** u){
 
 template<>
 void read<CPClass>(std::ifstream &ifs, CPClass *u){
-    read<uint16_t>(ifs, &u->nameIndex);
+    read<uint16_t>(ifs, &u->nameIndex); // lê um indice para o constant pool
 }
 
 template<>
 void read<CPFieldref>(std::ifstream &ifs, CPFieldref *u){
-    read<uint16_t>(ifs, &u->classIndex);
-    read<uint16_t>(ifs, &u->nameAndTypeIndex);
+    read<uint16_t>(ifs, &u->classIndex); // lê um indice para o constant pool
+    read<uint16_t>(ifs, &u->nameAndTypeIndex); // lê um indice para o constant pool
 }
 
 template<>
 void read<CPMethodref>(std::ifstream &ifs, CPMethodref *u){
-    read<uint16_t>(ifs, &u->classIndex);
-    read<uint16_t>(ifs, &u->nameAndTypeIndex);
+    read<uint16_t>(ifs, &u->classIndex); // lê um indice para o constant pool
+    read<uint16_t>(ifs, &u->nameAndTypeIndex); // lê um indice para o constant pool
 }
 
 template<>
 void read<CPInterfaceMethodref>(std::ifstream &ifs, CPInterfaceMethodref *u){
-    read<uint16_t>(ifs, &u->classIndex);
-    read<uint16_t>(ifs, &u->nameAndTypeIndex);
+    read<uint16_t>(ifs, &u->classIndex); // lê um indice para o constant pool
+    read<uint16_t>(ifs, &u->nameAndTypeIndex); // lê um indice para o constant pool
 }
 
 template<>
 void read<CPString>(std::ifstream &ifs, CPString *u){
-    read<uint16_t>(ifs, &u->stringIndex);
+    read<uint16_t>(ifs, &u->stringIndex); // lê um indice para o constant pool
 }
 
 template<>
 void read<CPInteger>(std::ifstream &ifs, CPInteger *u){
-    read<uint32_t>(ifs, &u->bytes);
+    read<uint32_t>(ifs, &u->bytes);  // lê um inteiro
 }
 
 template<>
 void read<CPFloat>(std::ifstream &ifs, CPFloat *u){
-    read<uint32_t>(ifs, &u->bytes);
+    read<uint32_t>(ifs, &u->bytes);  // lê um float
 }
 
 template<>
 void read<CPLong>(std::ifstream &ifs, CPLong *u){
-    read<uint32_t>(ifs, &u->highBytes);
-    read<uint32_t>(ifs, &u->lowBytes);
+    read<uint32_t>(ifs, &u->highBytes); // lê os prtimeiro 32 bits de um long
+    read<uint32_t>(ifs, &u->lowBytes); // lê os ultimos 32 bits de um long
 }
 
 template<>
 void read<CPDouble>(std::ifstream &ifs, CPDouble *u){
-    read<uint32_t>(ifs, &u->highBytes);
-    read<uint32_t>(ifs, &u->lowBytes);
+    read<uint32_t>(ifs, &u->highBytes); // lê os prtimeiro 32 bits de um double
+    read<uint32_t>(ifs, &u->lowBytes); // lê os prtimeiro 32 bits de um double
 }
 
 template<>
 void read<CPNameAndType>(std::ifstream &ifs, CPNameAndType *u){
-    read<uint16_t>(ifs, &u->nameIndex);
-    read<uint16_t>(ifs, &u->descriptorIndex);
+    read<uint16_t>(ifs, &u->nameIndex); // lê um indice para o constant pool
+    read<uint16_t>(ifs, &u->descriptorIndex); // lê um indice para o constant pool
 }
 
 template<>
 void read<CPUtf8>(std::ifstream &ifs, CPUtf8 *u){
-    read<uint16_t>(ifs, &u->length);
+    read<uint16_t>(ifs, &u->length); // lê o tamanho da string que será lida
     if(u->length > 0){
         u->bytes = new uint8_t[u->length];
         for(uint32_t i = 0; i < u->length; i++){
-            read<uint8_t>(ifs, &u->bytes[i]);
+            read<uint8_t>(ifs, &u->bytes[i]); // lê cada byte da string
         }
     }
 }
@@ -311,18 +312,18 @@ void read<CPUtf8>(std::ifstream &ifs, CPUtf8 *u){
 template<>
 void read<CPMethodHandle>(std::ifstream &ifs, CPMethodHandle *u){
     read<uint8_t>(ifs, &u->referenceKind);
-    read<uint16_t>(ifs, &u->referenceIndex);
+    read<uint16_t>(ifs, &u->referenceIndex); // lê um indice para o constant pool
 }
 
 template<>
 void read<CPMethodType>(std::ifstream &ifs, CPMethodType *u){
-    read<uint16_t>(ifs, &u->descriptorIndex);
+    read<uint16_t>(ifs, &u->descriptorIndex); // lê um indice para o constant pool
 }
 
 template<>
 void read<CPInvokeDynamic>(std::ifstream &ifs, CPInvokeDynamic *u){
-    read<uint16_t>(ifs, &u->bootstrapMethodAttrIndex);
-    read<uint16_t>(ifs, &u->nameAndTypeIndex);
+    read<uint16_t>(ifs, &u->bootstrapMethodAttrIndex); // lê um indice para o constant pool
+    read<uint16_t>(ifs, &u->nameAndTypeIndex); // lê um indice para o constant pool
 }
 
 
@@ -483,15 +484,15 @@ void print<CPInvokeDynamic>(CPInvokeDynamic& u, std::ostream &os){
 
 template<>
 void read<FieldInfo>(std::ifstream &ifs, FieldInfo *u){
-    read<uint16_t>(ifs, &u->accessFlags);
-    read<uint16_t>(ifs, &u->nameIndex);
-    read<uint16_t>(ifs, &u->descriptorIndex);
-    read<uint16_t>(ifs, &u->attributesCount);
+    read<uint16_t>(ifs, &u->accessFlags); // lê as flags de acesso
+    read<uint16_t>(ifs, &u->nameIndex); // lê um indice da constant pool que aponta para CPUTF8
+    read<uint16_t>(ifs, &u->descriptorIndex); // lê um indice da constant pool que aponta para CPUTF8
+    read<uint16_t>(ifs, &u->attributesCount); // lê a quantidade de atributos
     if(u->attributesCount > 0){
         u->attributes = new AttributeInfo*[u->attributesCount];
         for(uint32_t i = 0; i < u->attributesCount; i++){
             AttributeInfoBasic *attribAux;
-            read<AttributeInfoBasic*>(ifs, &attribAux);
+            read<AttributeInfoBasic*>(ifs, &attribAux); // lê cada atributo
             u->attributes[i] = dynamic_cast<AttributeInfo*>(attribAux);
         }
     }
@@ -511,15 +512,15 @@ void print<FieldInfo>(FieldInfo& u, std::ostream &os){
 
 template<>
 void read<MethodInfo>(std::ifstream &ifs, MethodInfo *u){
-    read<uint16_t>(ifs, &u->accessFlags);
-    read<uint16_t>(ifs, &u->nameIndex);
-    read<uint16_t>(ifs, &u->descriptorIndex);
-    read<uint16_t>(ifs, &u->attributesCount);
+    read<uint16_t>(ifs, &u->accessFlags); // lê as flags de acesso
+    read<uint16_t>(ifs, &u->nameIndex); // lê um indice da constant pool que aponta para CPUTF8
+    read<uint16_t>(ifs, &u->descriptorIndex); // lê um indice da constant pool que aponta para CPUTF8
+    read<uint16_t>(ifs, &u->attributesCount); // lê a quantidade de atributos
     if(u->attributesCount > 0){
         u->attributes = new AttributeInfo*[u->attributesCount];
         for(uint32_t i = 0; i < u->attributesCount; i++){
             AttributeInfoBasic *attribAux;
-            read<AttributeInfoBasic*>(ifs, &attribAux);
+            read<AttributeInfoBasic*>(ifs, &attribAux); // lê cada atributo
             u->attributes[i] = dynamic_cast<AttributeInfo*>(attribAux);
         }
     }
@@ -541,12 +542,12 @@ void print<MethodInfo>(MethodInfo& u, std::ostream &os){
 template<>
 void read<AttributeInfoBasic*>(std::ifstream &ifs, AttributeInfoBasic** u){
     *u = new AttributeInfoBasic;
-    read<uint16_t>(ifs, &(*u)->attributeNameIndex);
-    read<uint32_t>(ifs, &(*u)->attributeLength);
+    read<uint16_t>(ifs, &(*u)->attributeNameIndex);  // indice para CP onde está armazenado a UTF8 que é o nome do tipo
+    read<uint32_t>(ifs, &(*u)->attributeLength); // lê o tamanho do restante da informação
     if((*u)->attributeLength > 0){
         (*u)->info = new uint8_t[(*u)->attributeLength];
         for(uint32_t i = 0; i < (*u)->attributeLength; i++){
-            read<uint8_t>(ifs, &(*u)->info[i]);
+            read<uint8_t>(ifs, &(*u)->info[i]); // lê as informações restantes do atributo
         }
     }
 }
@@ -556,7 +557,7 @@ void print<AttributeInfoBasic>(AttributeInfoBasic& u, std::ostream &os){
     print<uint16_t>(u.attributeNameIndex, os);
     print<uint32_t>(u.attributeLength, os);
     for(uint32_t i = 0; i < u.attributeLength; i++){
-        os << std::setfill('0') << std::setw(2) << std::right << std::hex << (uint32_t)u.info[i];
+        os << std::setfill('0') << std::setw(2) << std::right << std::hex << static_cast<uint32_t>(u.info[i]);
         if(i + 1 != u.attributeLength){
             os << " ";
         } else{

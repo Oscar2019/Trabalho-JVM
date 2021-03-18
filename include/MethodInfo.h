@@ -4,15 +4,49 @@
 #include <cstdint>
 #include "../include/AttributeInfo.h"
 
+/**
+ * @brief Estrutura que armazena os dados de um método
+ * 
+ */
 struct MethodInfo{
+    /**
+     * @brief Flag de acesso de método
+     * 
+     */
     uint16_t accessFlags;
+    /**
+     * @brief Índice que aponta para o vetor de ConstantPoolInfo* que aponta para um ponteiro de CPUtf8, onde fica armazenado o nome do método
+     * 
+     */
     uint16_t nameIndex;
+    /**
+     * @brief  Índice que aponta para o vetor de ConstantPoolInfo* que aponta para um ponteiro de CPUtf8, onde fica armazenado a descrição de tipo e argumentos do método
+     * 
+     */
     uint16_t descriptorIndex;
+    /**
+     * @brief Número de atribudos no método
+     * 
+     */
     uint16_t attributesCount;
+    /**
+     * @brief Ponteiro para um vetor de ponteiro de atributos
+     * 
+     */
     AttributeInfo **attributes;
+    /**
+     * @brief destrói os dados armazenados pelo MethodInfo
+     * 
+     */
     ~MethodInfo();
 };
 
+/**
+ * @brief Função que converte os atributos de um métodos para a estruturas mais elaboradas
+ * 
+ * @param cf 
+ * @param mi 
+ */
 void conveterAttributeInfoInMethodInfo(ConstantPoolInfo **cf, MethodInfo *mi);
 
 #endif
