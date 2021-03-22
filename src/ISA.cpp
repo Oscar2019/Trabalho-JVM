@@ -2265,8 +2265,8 @@ std::string printOp_invokestatic(ConstantPoolInfo** cp, const uint8_t* bytecode,
 std::string printOp_invokeinterface(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
     uint32_t indexbyte = read<uint16_t>(bytecode + ind + 1);
-    uint32_t count = read<uint8_t>(bytecode + ind + 5);
-    uint32_t zero = read<uint8_t>(bytecode + ind + 6);
+    uint32_t count = read<uint8_t>(bytecode + ind + 3);
+    uint32_t zero = read<uint8_t>(bytecode + ind + 4);
     res += "invokeinterface #" + std::to_string(indexbyte) + " " + std::to_string(count) + " " + std::to_string(zero) + " ";
     res += "<" + getStringFromCPInfo(cp, indexbyte) + ">\n";
     return res;
@@ -2275,8 +2275,8 @@ std::string printOp_invokeinterface(ConstantPoolInfo** cp, const uint8_t* byteco
 std::string printOp_invokedynamic(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
     uint32_t indexbyte = read<uint16_t>(bytecode + ind + 1);
-    uint32_t zero1 = read<uint8_t>(bytecode + ind + 5);
-    uint32_t zero2 = read<uint8_t>(bytecode + ind + 6);
+    uint32_t zero1 = read<uint8_t>(bytecode + ind + 3);
+    uint32_t zero2 = read<uint8_t>(bytecode + ind + 4);
     res += "invokedynamic #" + std::to_string(indexbyte) + " " + std::to_string(zero1) + " " + std::to_string(zero2) + " ";
     res += "<" + getStringFromCPInfo(cp, indexbyte) + ">\n";
     return res;
@@ -2354,7 +2354,7 @@ std::string printOp_wide(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_
 std::string printOp_multianewarray(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
     uint32_t indexbyte = read<uint16_t>(bytecode + ind + 1);
-    uint32_t dimensions = read<uint8_t>(bytecode + ind + 1);
+    uint32_t dimensions = read<uint8_t>(bytecode + ind + 3);
     res += "multianewarray #" + std::to_string(indexbyte) + " " + std::to_string(dimensions) + " ";
     res += "<" + getStringFromCPInfo(cp, indexbyte) + ">\n";
     return res;
