@@ -45,6 +45,7 @@ int main(int argc, char *argv[]){
     }
     std::cout << s << "\n";
     is.open(s, std::ios::binary);
+    is.exceptions(std::ifstream::eofbit);
     ClassFile cf;
     read<ClassFile>(is, &cf);
     conveterAttributeInfoInClassFile(cf.constantPool, &cf);
