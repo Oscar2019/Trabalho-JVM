@@ -6,6 +6,17 @@
 #include "../include/FieldInfo.h"
 #include "../include/MethodInfo.h"
 #include "../include/AttributeInfo.h"
+#include <stdexcept>
+
+
+class ClassFormatError : public std::runtime_error{
+    public:
+        explicit ClassFormatError (const std::string& what_arg);
+};
+class UnsupportedClassVersionError : public std::runtime_error{
+    public:
+        explicit UnsupportedClassVersionError (const std::string& what_arg);
+};
 
 /**
  * @brief Strutura pra representar o .class.

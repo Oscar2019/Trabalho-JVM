@@ -81,10 +81,13 @@ void read<ClassFile>(std::ifstream &ifs, ClassFile *u){
 
     read<uint32_t>(ifs, &u->magic); // leitura do magic
     if(u->magic != 0xCAFEBABE){
-        throw std::runtime_error("não possui o cafebabe");
+        throw ClassFormatError("O arquivo nao possui 0xCAFEBABE nos primeiros bytes");
     }
     read<uint16_t>(ifs, &u->minorVersion); // leitura do número de menor versão
     read<uint16_t>(ifs, &u->majorVersion); // leitura do número de maior versão
+    if(!((46 < u->majorVersion || (46 == u->majorVersion && 0 <= u->minorVersion)) && (u->majorVersion < 52 || (u->majorVersion == 52 && u->minorVersion <= 0)))){
+        throw UnsupportedClassVersionError("Versao do class file não suportada.");
+    }
     read<uint16_t>(ifs, &u->constantPoolCount); // leitura do número de elementos da tabela constant pool
     if(u->constantPoolCount > 0){ // Se existir elementos a ser lidos para o constant pool
         u->constantPool = new ConstantPoolInfo*[u->constantPoolCount]; // cria um novo constant pool

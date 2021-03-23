@@ -43,13 +43,30 @@ int main(int argc, char *argv[]){
     } else{
         s = argv[1];
     }
-    std::cout << s << "\n";
     is.open(s, std::ios::binary);
     is.exceptions(std::ifstream::eofbit);
     ClassFile cf;
-    read<ClassFile>(is, &cf);
+    try{
+        read<ClassFile>(is, &cf);
+        // try{
+        //     is.peek();
+        // } catch(std::exception &e){
+        //     Terminou com sucesso
+        // }
+    } catch(ClassFormatError &e){
+        std::cerr << e.what() << "\n";
+        return -1;
+    } catch(UnsupportedClassVersionError &e){
+        std::cerr << e.what() << "\n";
+        return -1;
+    } catch(std::exception &e){
+        std::cerr << e.what() << "\n";
+        return -1;
+    } catch( ... ){
+        std::cerr << "Um erro qualquer\n";
+        return -1;
+    }
     conveterAttributeInfoInClassFile(cf.constantPool, &cf);
-    // print<ClassFile>(cf, std::cout);
     printMenu(cf);
     return 0;
 }

@@ -2,6 +2,14 @@
 #include "../include/FieldInfo.h"
 #include "../include/MethodInfo.h"
 
+ClassFormatError::ClassFormatError(const std::string& what_arg) : runtime_error(what_arg){
+
+}
+
+UnsupportedClassVersionError::UnsupportedClassVersionError(const std::string& what_arg) : runtime_error(what_arg){
+
+}
+
 void conveterAttributeInfoInClassFile(ConstantPoolInfo **cpi, ClassFile *cf){
     for(uint32_t i = 0; i < cf->fieldsCount; i++){
         conveterAttributeInfoInFieldInfo(cpi, cf->fields + i); // Converte os atribudos do campo
