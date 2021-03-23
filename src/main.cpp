@@ -305,7 +305,8 @@ void printField(ClassFile const& cf, FieldInfo *field){
     while(option != field->attributesCount){
         CLEAR();
         std::cout << "Name: " << getCPUtf8(cf.constantPool, field->nameIndex) << "\n";    
-        std::cout << "Descrictor: " << getCPUtf8(cf.constantPool, field->descriptorIndex) << "\n";    
+        std::cout << "Descrictor: " << getCPUtf8(cf.constantPool, field->descriptorIndex) << "\n";
+        std::cout << "Access flags: " << "0x" << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)field->accessFlags << std::dec << "\n";    
         for(uint32_t i = 0; i < field->attributesCount; i++){
             std::cout << "[" << i << "] ";
             std::cout << getCPUtf8(cf.constantPool, field->attributes[i]->attributeNameIndex) << "\n";
@@ -347,7 +348,8 @@ void printMethod(ClassFile const& cf, MethodInfo *method){
     while(option != method->attributesCount){
         CLEAR();
         std::cout << "Name: " << getCPUtf8(cf.constantPool, method->nameIndex) << "\n";    
-        std::cout << "Descrictor: " << getCPUtf8(cf.constantPool, method->descriptorIndex) << "\n";    
+        std::cout << "Descrictor: " << getCPUtf8(cf.constantPool, method->descriptorIndex) << "\n";
+        std::cout << "Access flags: " << "0x" << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)method->accessFlags << std::dec << "\n";    
         for(uint32_t i = 0; i < method->attributesCount; i++){
             std::cout << "[" << i << "] ";
             std::cout << getCPUtf8(cf.constantPool, method->attributes[i]->attributeNameIndex) << "\n";
