@@ -448,6 +448,7 @@ void print<CPDouble>(CPDouble& u, std::ostream &os){
         uint64_t i;
         double f;
     } aux;
+    aux.i = 0;
     print<uint8_t>(u.tag, os);
     aux.i = (aux.i << 32) | u.highBytes;
     aux.i = (aux.i << 32) | u.highBytes;
