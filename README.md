@@ -1,15 +1,24 @@
 # Trabalho-JVM
 
-Compile com: g++ -g -Wall -std=c++11 src/main.cpp src/Tipos.cpp src/ConstantPoolInfo.cpp src/ISA.cpp src/AttributeInfo.cpp src/ClassFile.cpp src/FieldInfo.cpp src/MethodInfo.cpp -o bin/a.exe
+Compilar no Windows: g++ -g -Wall -std=c++11 src/* -o bin/a.exe
 
-Compile com: g++ -g -Wall -std=c++11 src/* -o bin/a.exe
+Compilar no Linux: g++ -g -Wall -std=c++11 src/* -o bin/a.out
 
-Execute com: ./bin/a.exe
+----------------------------------------------------------------------------
 
+Executar no Windows: ./bin/a.exe
 
-cppcheck --enable=all --suppress=missingIncludeSystem src/
+Executar no Linux: ./bin/a.out
 
-- Tradução das Flags em General Information
-- Adicionar as Flags nos Fields e Methods
+----------------------------------------------------------------------------
+
+Usar o cppcheck: cppcheck --enable=all --suppress=missingIncludeSystem src/
+
+----------------------------------------------------------------------------
+
+Falta:
+
+- Tradução das Flags na General Information
+- Tradução das Flags nos Fields
+- Tradução das Flags nos Methods
 - Não printa instrução wide
-- Ver por que o cafebabe dá erro
