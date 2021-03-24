@@ -55,6 +55,8 @@ void printTudoGeneralInformation(ClassFile const& cf){
     tab += "\t";
     std::cout << tab << "Minor version: " << cf.minorVersion << "\n"; 
     std::cout << tab << "Major version: " << cf.majorVersion << "\n"; 
+    std::cout << tab << "Java version of class file: " << cf.majorVersion << "." << cf.minorVersion << "\n"; 
+    std::cout << tab << "Java version of jvm: " << 52 << "." << 0 << "\n"; 
     std::cout << tab << "Constantpool Count: " << cf.constantPoolCount << "\n"; 
     std::cout << tab << "Access flags: " << "0x" + aux.str() << " [" << convertTudoAccessFlag(aux.str()) << "]\n";
     std::cout << tab << "This class: <" << getClass(cf.constantPool, cf.thisClass) << ">\n"; 

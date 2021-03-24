@@ -119,6 +119,8 @@ void printGeneralInformation(ClassFile const& cf){
     CLEAR();
     std::cout << "Minor version: " << cf.minorVersion << "\n"; 
     std::cout << "Major version: " << cf.majorVersion << "\n"; 
+    std::cout << "versao do java do class file: " << cf.majorVersion << "." << cf.minorVersion << "\n"; 
+    std::cout << "Versao do java do class da jvm: " << 52 << "." << 0 << "\n"; 
     std::cout << "Constantpool Count: " << cf.constantPoolCount << "\n"; 
     std::cout << "Access flags: " << "0x" << aFlag << " [" << convertAccessFlag(aFlag) << "] \n";
     std::cout << "This class: <" << getClass(cf.constantPool, cf.thisClass) << ">\n"; 

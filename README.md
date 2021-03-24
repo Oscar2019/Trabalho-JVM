@@ -6,9 +6,11 @@ Compilar no Linux: g++ -g -Wall -std=c++11 src/* -o bin/a.out
 
 ----------------------------------------------------------------------------
 
-Executar no Windows: ./bin/a.exe <caminho para o .class>
+Executar no Windows: ./bin/a.exe -p <caminho para o .class sem colocar a extensão>
+Executar no Windows: ./bin/a.exe -b <caminho para o .class sem colocar a extensão>
 
-Executar no Linux: ./bin/a.out <caminho para o .class>
+Executar no Linux: ./bin/a.out -p <caminho para o .class sem colocar a extensão>
+Executar no Linux: ./bin/a.out -b <caminho para o .class sem colocar a extensão>
 
 ----------------------------------------------------------------------------
 
