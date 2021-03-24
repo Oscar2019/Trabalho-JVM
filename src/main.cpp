@@ -2,6 +2,10 @@
 #include<fstream>
 #include<iomanip>
 #include<cstdlib>
+#include<string>
+#include<sstream>
+#include<string>
+#include<map>
 
 #include "../include/ClassFile.h"
 #include "../include/Tipos.h"
@@ -13,13 +17,31 @@
 int main(int argc, char *argv[]){
     
     std::ifstream is;
-    std::string s;
+    std::string fileName;
+    const std::map<std::string, int32_t> ourSet{
+        {"-p", 1},
+        {"-b", 2},
+    };
+    int32_t flag = 0;
     if(argc == 1){
-        std::cin >> s;
+        std::string s;
+        while(std::cin >> s){
+            if(ourSet.find(s) != ourSet.end()){
+                flag |= ourSet.at(s);
+            } else{
+                fileName = s;
+            }
+        }
     } else{
-        s = argv[1];
+        for(int32_t i = 1; i < argc; i++){
+            if(ourSet.find(argv[i]) != ourSet.end()){
+                flag |= ourSet.at(argv[i]);
+            } else{
+                fileName = argv[i];
+            }
+        }
     }
-    is.open(s, std::ios::binary);
+    is.open(fileName, std::ios::binary);
     is.exceptions(std::ifstream::eofbit);
     ClassFile cf;
     try{
@@ -43,7 +65,13 @@ int main(int argc, char *argv[]){
         return -1;
     }
     conveterAttributeInfoInClassFile(cf.constantPool, &cf);
-    printTudo(cf);
+    if(flag == 1){
+        printTudo(cf);
+    } else if(flag == 2){
+        printMenu(cf);
+    } else{
+        std::cerr << "Ponha ou \"-p\"(para printar tudo), ou \"-b\"(para printar cmo menus)\n";
+    }
     return 0;
 }
 
