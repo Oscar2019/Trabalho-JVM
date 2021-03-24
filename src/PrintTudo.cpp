@@ -1,6 +1,7 @@
-#include "../include/PrintMenu.h"
+#include "../include/PrintTudo.h"
 #include <sstream>
 #include <string>
+#include <map>
 
 #ifdef _WIN32
 #define CLEAR() system("CLS")
@@ -48,6 +49,16 @@ void printTudo(ClassFile const& cf){
         printTudoAttributes(cf);
 }
 
+extern const std::map<uint16_t, std::string> versions{
+    {46, "1.2"},  
+    {47, "1.3"},  
+    {48, "1.4"},  
+    {49, "1.5"},  
+    {50, "1.6"},  
+    {51, "1.7"},  
+    {52, "1.8"}  
+};
+
 
 void printTudoGeneralInformation(ClassFile const& cf){
     std::stringstream aux;
@@ -55,8 +66,8 @@ void printTudoGeneralInformation(ClassFile const& cf){
     tab += "\t";
     std::cout << tab << "Minor version: " << cf.minorVersion << "\n"; 
     std::cout << tab << "Major version: " << cf.majorVersion << "\n"; 
-    std::cout << tab << "Java version of class file: " << cf.majorVersion << "." << cf.minorVersion << "\n"; 
-    std::cout << tab << "Java version of jvm: " << 52 << "." << 0 << "\n"; 
+    std::cout << tab << "Java version of class file: " << versions.at(cf.majorVersion) << "\n"; 
+    std::cout << tab << "Java version of jvm: " << 1. << "." << 8 << "\n"; 
     std::cout << tab << "Constantpool Count: " << cf.constantPoolCount << "\n"; 
     std::cout << tab << "Access flags: " << "0x" + aux.str() << " [" << convertTudoAccessFlag(aux.str()) << "]\n";
     std::cout << tab << "This class: <" << getClass(cf.constantPool, cf.thisClass) << ">\n"; 
