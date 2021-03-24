@@ -41,7 +41,12 @@ int main(int argc, char *argv[]){
             }
         }
     }
-    is.open(fileName, std::ios::binary);
+    
+    is.open(fileName + ".class", std::ios::binary);
+    if(!is.is_open()){
+        std::cerr << "Arquivo \"" + fileName + ".class\" nao foi encontrado\n"; 
+        return -1;
+    }
     is.exceptions(std::ifstream::eofbit);
     ClassFile cf;
     try{
