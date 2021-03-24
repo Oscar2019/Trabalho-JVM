@@ -360,13 +360,281 @@ void printMethods(ClassFile const& cf){
     getchar();getchar();
 }
 
+std::string translateFlagMethod (uint16_t flag) {
+    switch (flag) {
+    case 1:
+        return "Public";
+        break;
+    case 2:
+        return "Private";
+        break;
+    case 4:
+        return "Protected";
+        break;
+    case 8:
+        return "Static";
+        break;
+    case 9:
+        return "Public Static";
+        break;
+    case 11:
+        return "Public Final";
+        break;
+    case 33:
+        return "Public Synchronized";
+        break;
+    case 65:
+        return "Public Bridge";
+        break;
+    case 129:
+        return "Public Varargs";
+        break;
+    case 257:
+        return "Public Native";
+        break;
+    case 2049:
+        return "Public Strict";
+        break;
+    case 4097:
+        return "Public Synthetic";
+        break;
+    case 25:
+        return "Public Static Final";
+        break;
+    case 41:
+        return "Public Static Synchronized";
+        break;
+    case 73:
+        return "Public Static Bridge";
+        break;
+    case 137:
+        return "Public Static Varargs";
+        break;
+    case 265:
+        return "Public Static Native";
+        break;
+    case 2057:
+        return "Public Static Strict";
+        break;
+    case 4105:
+        return "Public Static Synthetic";
+        break;
+    case 49:
+        return "Public Final Synchronized";
+        break;
+    case 81:
+        return "Public Final Bridge";
+        break;
+    case 145:
+        return "Public Final Varargs";
+        break;
+    case 273:
+        return "Public Final Native";
+        break;
+    case 2065:
+        return "Public Final Strict";
+        break;
+    case 4113:
+        return "Public Final Synthetic";
+        break;
+    case 57:
+        return "Public Static Final Synchronized";
+        break;
+    case 89:
+        return "Public Static Final Bridge";
+        break;
+    case 153:
+        return "Public Static Final Varargs";
+        break;
+    case 281:
+        return "Public Static Final Native";
+        break;
+    case 2073:
+        return "Public Static Final Strict";
+        break;
+    case 4121:
+        return "Public Static Final Synthetic";
+        break;
+    case 10:
+        return "Private Static";
+        break;
+    case 18:
+        return "Private Final";
+        break;
+    case 34:
+        return "Private Synchronized";
+        break;
+    case 66:
+        return "Private Bridge";
+        break;
+    case 130:
+        return "Private Varargs";
+        break;
+    case 258:
+        return "Private Native";
+        break;
+    case 2050:
+        return "Private Strict";
+        break;
+    case 4098:
+        return "Private Synthetic";
+        break;
+    case 26:
+        return "Private Static Final";
+        break;
+    case 42:
+        return "Private Static Synchronized";
+        break;
+    case 74:
+        return "Private Static Bridge";
+        break;
+    case 138:
+        return "Private Static Varargs";
+        break;
+    case 266:
+        return "Private Static Native";
+        break;
+    case 2058:
+        return "Private Static Strict";
+        break;
+    case 4106:
+        return "Private Static Synthetic";
+        break;
+    case 50:
+        return "Private Final Synchronized";
+        break;
+    case 82:
+        return "Private Final Bridge";
+        break;
+    case 146:
+        return "Private Final Varargs";
+        break;
+    case 274:
+        return "Private Final Native";
+        break;
+    case 2066:
+        return "Private Final Strict";
+        break;
+    case 4114:
+        return "Private Final Synthetic";
+        break;
+    case 58:
+        return "Private Static Final Synchronized";
+        break;
+    case 90:
+        return "Private Static Final Bridge";
+        break;
+    case 154:
+        return "Private Static Final Varargs";
+        break;
+    case 282:
+        return "Private Static Final Native";
+        break;
+    case 2074:
+        return "Private Static Final Strict";
+        break;
+    case 4122:
+        return "Private Static Final Synthetic";
+        break;
+    case 12:
+        return "Protected Static";
+        break;
+    case 20:
+        return "Protected Final";
+        break;
+    case 36:
+        return "Protected Synchronized";
+        break;
+    case 68:
+        return "Protected Bridge";
+        break;
+    case 132:
+        return "Protected Varargs";
+        break;
+    case 260:
+        return "Protected Native";
+        break;
+    case 2052:
+        return "Protected Strict";
+        break;
+    case 4100:
+        return "Protected Synthetic";
+        break;
+    case 28:
+        return "Protected Static Final";
+        break;
+    case 44:
+        return "Protected Static Synchronized";
+        break;
+    case 76:
+        return "Protected Static Bridge";
+        break;
+    case 140:
+        return "Protected Static Varargs";
+        break;
+    case 268:
+        return "Protected Static Native";
+        break;
+    case 2060:
+        return "Protected Static Strict";
+        break;
+    case 4108:
+        return "Protected Static Synthetic";
+        break;
+    case 52:
+        return "Protected Final Synchronized";
+        break;
+    case 84:
+        return "Protected Final Bridge";
+        break;
+    case 148:
+        return "Protected Final Varargs";
+        break;
+    case 276:
+        return "Protected Final Native";
+        break;
+    case 2068:
+        return "Protected Final Strict";
+        break;
+    case 4116:
+        return "Protected Final Synthetic";
+        break;
+    case 60:
+        return "Protected Static Final Synchronized";
+        break;
+    case 92:
+        return "Protected Static Final Bridge";
+        break;
+    case 156:
+        return "Protected Static Final Varargs";
+        break;
+    case 284:
+        return "Protected Static Final Native";
+        break;
+    case 2076:
+        return "Protected Static Final Strict";
+        break;
+    case 4124:
+        return "Protected Static Final Synthetic";
+        break;
+    case 1025:
+        return "Public Abstract";
+        break;
+    case 1028:
+        return "Protected Abstract";
+        break;
+    default:
+        return "Nenhuma flag foi encontrada";
+    }
+}
+
 void printMethod(ClassFile const& cf, MethodInfo *method){
     int32_t option = -1;
     while(option != method->attributesCount){
         CLEAR();
         std::cout << "Name: " << getCPUtf8(cf.constantPool, method->nameIndex) << "\n";    
         std::cout << "Descrictor: " << getCPUtf8(cf.constantPool, method->descriptorIndex) << "\n";
-        std::cout << "Access flags: " << "0x" << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)method->accessFlags << std::dec << "\n";    
+        std::cout << "Access flags: " << translateFlagMethod((uint32_t)method->accessFlags) << "\n";     
         for(uint32_t i = 0; i < method->attributesCount; i++){
             std::cout << "[" << i << "] ";
             std::cout << getCPUtf8(cf.constantPool, method->attributes[i]->attributeNameIndex) << "\n";
