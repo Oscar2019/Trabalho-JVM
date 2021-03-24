@@ -28,6 +28,8 @@ void printTudoAttributeLineNumberTable(ClassFile const& cf, AttributeInfoLineNum
 void printTudoAttributeLocalVariableTable(ClassFile const& cf, AttributeInfoLocalVariableTable *attribute);
 void printTudoAttributeDeprecated(ClassFile const& cf, AttributeInfoDeprecated *attribute);
 std::string translateTudoFlagMethod (uint16_t flag);
+std::string translateTudoFlagField (std::string flag); 
+std::string convertTudoAccessFlag (std::string hex);
 
 std::string tab;
 
@@ -48,11 +50,13 @@ void printTudo(ClassFile const& cf){
 
 
 void printTudoGeneralInformation(ClassFile const& cf){
+    std::stringstream aux;
+    aux << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)cf.accessFlags << std::dec;
     tab += "\t";
     std::cout << tab << "Minor version: " << cf.minorVersion << "\n"; 
     std::cout << tab << "Major version: " << cf.majorVersion << "\n"; 
     std::cout << tab << "Constantpool Count: " << cf.constantPoolCount << "\n"; 
-    std::cout << tab << "Access flags: " << "0x" << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)cf.accessFlags << std::dec << "\n"; 
+    std::cout << tab << "Access flags: " << aux.str() << " [" << convertTudoAccessFlag(aux.str()) << "]\n";
     std::cout << tab << "This class: <" << getClass(cf.constantPool, cf.thisClass) << ">\n"; 
     std::cout << tab << "Super class: <" << (cf.superClass == 0 ? "null" : getClass(cf.constantPool, cf.superClass)) << ">\n"; 
     std::cout << tab << "Interface count: " << cf.interfacesCount << "\n";
@@ -186,10 +190,12 @@ void printTudoFields(ClassFile const& cf){
 }
 
 void printTudoField(ClassFile const& cf, FieldInfo *field){
+    std::stringstream aux;
+    aux << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)field->accessFlags << std::dec;
     tab += "\t";
     std::cout << tab << "Name: " << getCPUtf8(cf.constantPool, field->nameIndex) << "\n";    
     std::cout << tab << "Descrictor: " << getCPUtf8(cf.constantPool, field->descriptorIndex) << "\n";
-    std::cout << tab << "Access flags: " << "0x" << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)field->accessFlags << std::dec << "\n";
+    std::cout << tab << "Access flags: " << aux.str() << " [" << translateTudoFlagField(aux.str()) << "]n";
     for(uint32_t i = 0; i < field->attributesCount; i++){
         printTudoAttribute(cf, field->attributes[i]);
     }
@@ -475,10 +481,13 @@ std::string translateTudoFlagMethod (uint16_t flag) {
 }
 
 void printTudoMethod(ClassFile const& cf, MethodInfo *method){
+    std::stringstream aux;
+    aux << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)method->accessFlags << std::dec;
+    std::string aFlag = aux.str();
     tab += "\t";
     std::cout << tab << "Name: " << getCPUtf8(cf.constantPool, method->nameIndex) << "\n";    
     std::cout << tab << "Descrictor: " << getCPUtf8(cf.constantPool, method->descriptorIndex) << "\n";
-    std::cout << tab << "Access flags: " << translateTudoFlagMethod((uint32_t)method->accessFlags) << "\n";     
+    std::cout << tab << "Access flags: " << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)method->accessFlags << std::dec << " [" << translateTudoFlagMethod((uint32_t)method->accessFlags) << "] \n";     
     for(uint32_t i = 0; i < method->attributesCount; i++){
         printTudoAttribute(cf, method->attributes[i]);
     }
@@ -520,7 +529,7 @@ void printTudoAttribute(ClassFile const& cf, AttributeInfo *attribute){
 void printTudoAttributeConstantValue(ClassFile const& cf, AttributeInfoConstantValue *attribute){
     tab += "\t";
     std::cout << tab << "Name: " << getCPUtf8(cf.constantPool, attribute->attributeNameIndex) << "\n";        
-    std::cout << tab << "indexValue: #" <<  attribute->constantvalueIndex << " " << getStringFromCPInfo(cf.constantPool, attribute->constantvalueIndex) << "\n";
+    std::cout << tab << "indexValue: #" <<  attribute->constantvalueIndex << " <" << getStringFromCPInfo(cf.constantPool, attribute->constantvalueIndex) << ">\n";
     tab.pop_back();
 }
 
@@ -628,4 +637,95 @@ void printTudoAttributeLocalVariableTable(ClassFile const& cf, AttributeInfoLoca
 
 void printTudoAttributeDeprecated(ClassFile const& cf, AttributeInfoDeprecated *attribute){
 
+}
+
+
+std::string translateTudoFlagField (std::string flag) {
+         if (flag == "0x0001") return "Public";
+    else if (flag == "0x0009") return "Public Static";
+    else if (flag == "0x0011") return "Public Final";
+    else if (flag == "0x0041") return "Public Volatile";
+    else if (flag == "0x0081") return "Public Transient";
+    else if (flag == "0x1001") return "Public Synthetic";
+    else if (flag == "0x4001") return "Public Enum";
+    else if (flag == "0x0019") return "Public Static Final";
+    else if (flag == "0x0049") return "Public Static Volatile";
+    else if (flag == "0x0089") return "Public Static Transient";
+    else if (flag == "0x1009") return "Public Static Synthetic";
+    else if (flag == "0x4009") return "Public Static Enum";
+    else if (flag == "0x0099") return "Public Static Final Transient";
+    else if (flag == "0x1019") return "Public Static Final Synthetic";
+    else if (flag == "0x4019") return "Public Static Final Enum";
+    else if (flag == "0x0002") return "Private";
+    else if (flag == "0x000A") return "Private Static";
+    else if (flag == "0x0012") return "Private Final";
+    else if (flag == "0x0042") return "Private Volatile";
+    else if (flag == "0x0082") return "Private Transient";
+    else if (flag == "0x1002") return "Private Synthetic";
+    else if (flag == "0x4002") return "Private Enum";
+    else if (flag == "0x001A") return "Private Static Final";
+    else if (flag == "0x004A") return "Private Static Volatile";
+    else if (flag == "0x008A") return "Private Static Transient";
+    else if (flag == "0x100A") return "Private Static Synthetic";
+    else if (flag == "0x400A") return "Private Static Enum";
+    else if (flag == "0x009A") return "Private Static Final Transient";
+    else if (flag == "0x101A") return "Private Static Final Synthetic";
+    else if (flag == "0x401A") return "Private Static Final Enum";
+    else if (flag == "0x0004") return "Protected";
+    else if (flag == "0x000C") return "Protected Static";
+    else if (flag == "0x0014") return "Protected Final";
+    else if (flag == "0x0044") return "Protected Volatile";
+    else if (flag == "0x0084") return "Protected Transient";
+    else if (flag == "0x1004") return "Protected Synthetic";
+    else if (flag == "0x4004") return "Protected Enum";
+    else if (flag == "0x001C") return "Protected Static Final";
+    else if (flag == "0x004C") return "Protected Static Volatile";
+    else if (flag == "0x008C") return "Protected Static Transient";
+    else if (flag == "0x100C") return "Protected Static Synthetic";
+    else if (flag == "0x400C") return "Protected Static Enum";
+    else if (flag == "0x009C") return "Protected Static Final Transient";
+    else if (flag == "0x101C") return "Protected Static Final Synthetic";
+    else if (flag == "0x401C") return "Protected Static Final Enum";
+    else return "Nenhuma flag foi encontrada";
+}
+
+
+std::string convertTudoAccessFlag (std::string hex){
+    std::stringstream ret;
+    if(hex[3] == '1'){
+        ret << "PUBLIC ";
+    }
+    if(hex[2] == '1'){
+        ret << "FINAL ";
+    }else if(hex[2] == '2'){
+        ret << "SUPER ";
+    }else if(hex[2] == '3'){
+        ret << "FINAL SUPER ";
+    }
+    
+    if(hex[1] == '2'){
+        ret << "INTERFACE ";
+    }else if(hex[1] == '4'){
+        ret << "ABSTRACT ";
+    }else if(hex[1] == '6'){
+        ret << "INTERFACE ABSTRACT ";
+    }
+
+    if(hex[0] == '1'){
+        ret << "SYNTHETIC ";
+    }else if(hex[0] == '2'){
+        ret << "ANNOTATION ";
+    }else if(hex[0] == '4'){
+        ret << "ENUM ";
+    }else if(hex[0] == '3'){
+        ret << "SYNTHETIC ANNOTATION ";
+    }else if(hex[0] == '5'){
+        ret << "SYNTHETIC ENUM ";
+    }else if(hex[0] == '6'){
+        ret << "ANNOTATION ENUM ";
+    }else if(hex[0] == '6'){
+        ret << "SYNTHETIC ANNOTATION ENUM ";
+    }
+
+    return ret.str();
 }

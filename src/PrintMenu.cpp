@@ -1,5 +1,7 @@
 #include "../include/PrintMenu.h"
 
+#include <sstream>
+
 #ifdef _WIN32
 #define CLEAR() system("CLS")
 #else
@@ -70,13 +72,55 @@ void printMenu(ClassFile const& cf){
     }
 }
 
+std::string convertAccessFlag (std::string hex){
+    std::stringstream ret;
+    if(hex[3] == '1'){
+        ret << "PUBLIC ";
+    }
+    if(hex[2] == '1'){
+        ret << "FINAL ";
+    }else if(hex[2] == '2'){
+        ret << "SUPER ";
+    }else if(hex[2] == '3'){
+        ret << "FINAL SUPER ";
+    }
+    
+    if(hex[1] == '2'){
+        ret << "INTERFACE ";
+    }else if(hex[1] == '4'){
+        ret << "ABSTRACT ";
+    }else if(hex[1] == '6'){
+        ret << "INTERFACE ABSTRACT ";
+    }
+
+    if(hex[0] == '1'){
+        ret << "SYNTHETIC ";
+    }else if(hex[0] == '2'){
+        ret << "ANNOTATION ";
+    }else if(hex[0] == '4'){
+        ret << "ENUM ";
+    }else if(hex[0] == '3'){
+        ret << "SYNTHETIC ANNOTATION ";
+    }else if(hex[0] == '5'){
+        ret << "SYNTHETIC ENUM ";
+    }else if(hex[0] == '6'){
+        ret << "ANNOTATION ENUM ";
+    }else if(hex[0] == '6'){
+        ret << "SYNTHETIC ANNOTATION ENUM ";
+    }
+
+    return ret.str();
+}
 
 void printGeneralInformation(ClassFile const& cf){
+    std::stringstream aux;
+    aux << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)cf.accessFlags << std::dec;
+    std::string aFlag = aux.str();
     CLEAR();
     std::cout << "Minor version: " << cf.minorVersion << "\n"; 
     std::cout << "Major version: " << cf.majorVersion << "\n"; 
     std::cout << "Constantpool Count: " << cf.constantPoolCount << "\n"; 
-    std::cout << "Access flags: " << "0x" << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)cf.accessFlags << std::dec << "\n"; 
+    std::cout << "Access flags: " << aFlag << " [" << convertAccessFlag(aFlag) << "] \n";
     std::cout << "This class: <" << getClass(cf.constantPool, cf.thisClass) << ">\n"; 
     std::cout << "Super class: <" << (cf.superClass == 0 ? "null" : getClass(cf.constantPool, cf.superClass)) << ">\n"; 
     std::cout << "Interface count: " << cf.interfacesCount << "\n";
@@ -273,13 +317,64 @@ void printFields(ClassFile const& cf){
     getchar();getchar();
 }
 
+std::string translateFlagField (std::string flag) {
+         if (flag == "0x0001") return "Public";
+    else if (flag == "0x0009") return "Public Static";
+    else if (flag == "0x0011") return "Public Final";
+    else if (flag == "0x0041") return "Public Volatile";
+    else if (flag == "0x0081") return "Public Transient";
+    else if (flag == "0x1001") return "Public Synthetic";
+    else if (flag == "0x4001") return "Public Enum";
+    else if (flag == "0x0019") return "Public Static Final";
+    else if (flag == "0x0049") return "Public Static Volatile";
+    else if (flag == "0x0089") return "Public Static Transient";
+    else if (flag == "0x1009") return "Public Static Synthetic";
+    else if (flag == "0x4009") return "Public Static Enum";
+    else if (flag == "0x0099") return "Public Static Final Transient";
+    else if (flag == "0x1019") return "Public Static Final Synthetic";
+    else if (flag == "0x4019") return "Public Static Final Enum";
+    else if (flag == "0x0002") return "Private";
+    else if (flag == "0x000A") return "Private Static";
+    else if (flag == "0x0012") return "Private Final";
+    else if (flag == "0x0042") return "Private Volatile";
+    else if (flag == "0x0082") return "Private Transient";
+    else if (flag == "0x1002") return "Private Synthetic";
+    else if (flag == "0x4002") return "Private Enum";
+    else if (flag == "0x001A") return "Private Static Final";
+    else if (flag == "0x004A") return "Private Static Volatile";
+    else if (flag == "0x008A") return "Private Static Transient";
+    else if (flag == "0x100A") return "Private Static Synthetic";
+    else if (flag == "0x400A") return "Private Static Enum";
+    else if (flag == "0x009A") return "Private Static Final Transient";
+    else if (flag == "0x101A") return "Private Static Final Synthetic";
+    else if (flag == "0x401A") return "Private Static Final Enum";
+    else if (flag == "0x0004") return "Protected";
+    else if (flag == "0x000C") return "Protected Static";
+    else if (flag == "0x0014") return "Protected Final";
+    else if (flag == "0x0044") return "Protected Volatile";
+    else if (flag == "0x0084") return "Protected Transient";
+    else if (flag == "0x1004") return "Protected Synthetic";
+    else if (flag == "0x4004") return "Protected Enum";
+    else if (flag == "0x001C") return "Protected Static Final";
+    else if (flag == "0x004C") return "Protected Static Volatile";
+    else if (flag == "0x008C") return "Protected Static Transient";
+    else if (flag == "0x100C") return "Protected Static Synthetic";
+    else if (flag == "0x400C") return "Protected Static Enum";
+    else if (flag == "0x009C") return "Protected Static Final Transient";
+    else if (flag == "0x101C") return "Protected Static Final Synthetic";
+    else if (flag == "0x401C") return "Protected Static Final Enum";
+    else return "Nenhuma flag foi encontrada";
+}
+
 void printField(ClassFile const& cf, FieldInfo *field){
     int32_t option = -1;
     while(option != field->attributesCount){
         CLEAR();
         std::cout << "Name: " << getCPUtf8(cf.constantPool, field->nameIndex) << "\n";    
         std::cout << "Descrictor: " << getCPUtf8(cf.constantPool, field->descriptorIndex) << "\n";
-        std::cout << "Access flags: " << "0x" << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)field->accessFlags << std::dec << "\n";    
+        std::stringstream flag;
+        flag << "0x" << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)field->accessFlags;
+        std::cout << "Access flags: " << flag.str() << " [" << translateFlagField(flag.str()) << "]\n";
         for(uint32_t i = 0; i < field->attributesCount; i++){
             std::cout << "[" << i << "] ";
             std::cout << getCPUtf8(cf.constantPool, field->attributes[i]->attributeNameIndex) << "\n";
@@ -590,8 +685,8 @@ void printMethod(ClassFile const& cf, MethodInfo *method){
         CLEAR();
         std::cout << "Name: " << getCPUtf8(cf.constantPool, method->nameIndex) << "\n";    
         std::cout << "Descrictor: " << getCPUtf8(cf.constantPool, method->descriptorIndex) << "\n";
-        std::cout << "Access flags: " << translateFlagMethod((uint32_t)method->accessFlags) << "\n";     
-        for(uint32_t i = 0; i < method->attributesCount; i++){
+        std::cout << "Access flags: " << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)method->accessFlags << std::dec << " [" << translateFlagMethod((uint32_t)method->accessFlags) << "] \n";     
+    for(uint32_t i = 0; i < method->attributesCount; i++){
             std::cout << "[" << i << "] ";
             std::cout << getCPUtf8(cf.constantPool, method->attributes[i]->attributeNameIndex) << "\n";
         }
@@ -633,7 +728,7 @@ void printAttribute(ClassFile const& cf, AttributeInfo *attribute){
 
 void printAttributeConstantValue(ClassFile const& cf, AttributeInfoConstantValue *attribute){
     std::cout << "Name: " << getCPUtf8(cf.constantPool, attribute->attributeNameIndex) << "\n";        
-    std::cout << "indexValue: #" <<  attribute->constantvalueIndex << " " << getStringFromCPInfo(cf.constantPool, attribute->constantvalueIndex) << "\n";
+    std::cout << "indexValue: #" <<  attribute->constantvalueIndex << " <" << getStringFromCPInfo(cf.constantPool, attribute->constantvalueIndex) << ">\n";
 }
 
 void printAttributeCode(ClassFile const& cf, AttributeInfoCode *attribute){

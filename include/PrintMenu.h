@@ -10,6 +10,6 @@
 #include "../include/Tipos.h"
 #include "../include/ISA.h"
 
-void printTudoMenu(ClassFile const& cf);
+void printMenu(ClassFile const& cf);
 
 #endif
