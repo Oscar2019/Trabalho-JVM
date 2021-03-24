@@ -17,6 +17,9 @@ class Wide{
         long a7, b7, c7, d7, e7, f7, g7, h7, i7, j7, k7, l7, m7, n7, o7, p7, q7, r7, s7, t7, u7, v7, w7, x7, y7, z7;
         long a8, b8, c8, d8, e8, f8, g8, h8, i8, j8, k8, l8, m8, n8, o8, p8, q8, r8, s8, t8, u8, v8, w8, x8, y8, z8;
         long a9, b9, c9, d9, e9, f9, g9, h9, i9, j9, k9, l9, m9, n9, o9, p9, q9, r9, s9, t9, u9, v9, w9, x9, y9, z9;
-        z9 = 1;
+        z9 = 12;
+        if(z9 > 10){
+            println((int)z9);
+        }
     }
 }
