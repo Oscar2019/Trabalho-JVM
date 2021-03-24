@@ -56,7 +56,7 @@ void printTudoGeneralInformation(ClassFile const& cf){
     std::cout << tab << "Minor version: " << cf.minorVersion << "\n"; 
     std::cout << tab << "Major version: " << cf.majorVersion << "\n"; 
     std::cout << tab << "Constantpool Count: " << cf.constantPoolCount << "\n"; 
-    std::cout << tab << "Access flags: " << aux.str() << " [" << convertTudoAccessFlag(aux.str()) << "]\n";
+    std::cout << tab << "Access flags: " << "0x" + aux.str() << " [" << convertTudoAccessFlag(aux.str()) << "]\n";
     std::cout << tab << "This class: <" << getClass(cf.constantPool, cf.thisClass) << ">\n"; 
     std::cout << tab << "Super class: <" << (cf.superClass == 0 ? "null" : getClass(cf.constantPool, cf.superClass)) << ">\n"; 
     std::cout << tab << "Interface count: " << cf.interfacesCount << "\n";
@@ -195,7 +195,7 @@ void printTudoField(ClassFile const& cf, FieldInfo *field){
     tab += "\t";
     std::cout << tab << "Name: " << getCPUtf8(cf.constantPool, field->nameIndex) << "\n";    
     std::cout << tab << "Descrictor: " << getCPUtf8(cf.constantPool, field->descriptorIndex) << "\n";
-    std::cout << tab << "Access flags: " << aux.str() << " [" << translateTudoFlagField(aux.str()) << "]n";
+    std::cout << tab << "Access flags: " << "0x" + aux.str() << " [" << translateTudoFlagField("0x" + aux.str()) << "]\n";
     for(uint32_t i = 0; i < field->attributesCount; i++){
         printTudoAttribute(cf, field->attributes[i]);
     }
@@ -487,7 +487,7 @@ void printTudoMethod(ClassFile const& cf, MethodInfo *method){
     tab += "\t";
     std::cout << tab << "Name: " << getCPUtf8(cf.constantPool, method->nameIndex) << "\n";    
     std::cout << tab << "Descrictor: " << getCPUtf8(cf.constantPool, method->descriptorIndex) << "\n";
-    std::cout << tab << "Access flags: " << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)method->accessFlags << std::dec << " [" << translateTudoFlagMethod((uint32_t)method->accessFlags) << "] \n";     
+    std::cout << tab << "Access flags: " << "0x" << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)method->accessFlags << std::dec << " [" << translateTudoFlagMethod((uint32_t)method->accessFlags) << "] \n";     
     for(uint32_t i = 0; i < method->attributesCount; i++){
         printTudoAttribute(cf, method->attributes[i]);
     }

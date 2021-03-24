@@ -120,7 +120,7 @@ void printGeneralInformation(ClassFile const& cf){
     std::cout << "Minor version: " << cf.minorVersion << "\n"; 
     std::cout << "Major version: " << cf.majorVersion << "\n"; 
     std::cout << "Constantpool Count: " << cf.constantPoolCount << "\n"; 
-    std::cout << "Access flags: " << aFlag << " [" << convertAccessFlag(aFlag) << "] \n";
+    std::cout << "Access flags: " << "0x" << aFlag << " [" << convertAccessFlag(aFlag) << "] \n";
     std::cout << "This class: <" << getClass(cf.constantPool, cf.thisClass) << ">\n"; 
     std::cout << "Super class: <" << (cf.superClass == 0 ? "null" : getClass(cf.constantPool, cf.superClass)) << ">\n"; 
     std::cout << "Interface count: " << cf.interfacesCount << "\n";
@@ -685,7 +685,7 @@ void printMethod(ClassFile const& cf, MethodInfo *method){
         CLEAR();
         std::cout << "Name: " << getCPUtf8(cf.constantPool, method->nameIndex) << "\n";    
         std::cout << "Descrictor: " << getCPUtf8(cf.constantPool, method->descriptorIndex) << "\n";
-        std::cout << "Access flags: " << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)method->accessFlags << std::dec << " [" << translateFlagMethod((uint32_t)method->accessFlags) << "] \n";     
+        std::cout << "Access flags: 0x" << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)method->accessFlags << std::dec << " [" << translateFlagMethod((uint32_t)method->accessFlags) << "] \n";     
     for(uint32_t i = 0; i < method->attributesCount; i++){
             std::cout << "[" << i << "] ";
             std::cout << getCPUtf8(cf.constantPool, method->attributes[i]->attributeNameIndex) << "\n";

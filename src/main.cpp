@@ -1,11 +1,12 @@
-#include<iostream>
-#include<fstream>
-#include<iomanip>
-#include<cstdlib>
-#include<string>
-#include<sstream>
-#include<string>
-#include<map>
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <cstdlib>
+#include <string>
+#include <sstream>
+#include <string>
+#include <algorithm>
+#include <map>
 
 #include "../include/ClassFile.h"
 #include "../include/Tipos.h"
@@ -13,6 +14,12 @@
 #include "../include/PrintMenu.h"
 #include "../include/PrintTudo.h"
 
+bool isSameClass(std::string s1, std::string s2){
+    std::reverse(s1.begin(), s1.end());
+    std::reverse(s2.begin(), s2.end());
+    uint32_t minSize = std::min(s2.size(), s1.size());
+    return s1.substr(0, minSize) == s2.substr(0, minSize);
+}
 
 int main(int argc, char *argv[]){
     
@@ -67,6 +74,10 @@ int main(int argc, char *argv[]){
         return -1;
     } catch( ... ){
         std::cerr << "Um erro qualquer\n";
+        return -1;
+    }
+    if(!isSameClass(getStringFromCPInfo(cf.constantPool, cf.thisClass), fileName)){
+        std::cerr << "Nome do arquivo diferente do nome da classe\n";
         return -1;
     }
     conveterAttributeInfoInClassFile(cf.constantPool, &cf);
