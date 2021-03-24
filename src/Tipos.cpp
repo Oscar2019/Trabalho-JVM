@@ -78,6 +78,11 @@ void print<uint32_t>(uint32_t& u, std::ostream &os){
 
 template<>
 void read<ClassFile>(std::ifstream &ifs, ClassFile *u){
+    u->constantPoolCount = 0;
+    u->fieldsCount = 0;
+    u->attributesCount = 0;
+    u->methodsCount = 0;
+    u->interfacesCount = 0;
 
     read<uint32_t>(ifs, &u->magic); // leitura do magic
     if(u->magic != 0xCAFEBABE){
