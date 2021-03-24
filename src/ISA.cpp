@@ -1900,7 +1900,10 @@ std::string printOp_lxor(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_
 
 std::string printOp_iinc(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    res += "iinc\n";
+    
+    uint32_t index = read<uint8_t>(bytecode + ind + 1);
+    uint32_t constp = read<uint8_t>(bytecode + ind + 2);
+    res += "iinc " + std::to_string(index) + " " + std::to_string(constp) + "\n";
     return res;
 }
 
@@ -2138,8 +2141,8 @@ std::string printOp_jsr(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t
 
 std::string printOp_ret(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    uint32_t branchbyte = read<uint8_t>(bytecode + ind + 1);
-    res += "ret " + std::to_string(branchbyte) + "\n";
+    uint32_t index = read<uint8_t>(bytecode + ind + 1);
+    res += "ret " + std::to_string(index) + "\n";
     return res;
 }
 
@@ -2347,7 +2350,38 @@ std::string printOp_monitorexit(ConstantPoolInfo** cp, const uint8_t* bytecode, 
 
 std::string printOp_wide(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
-    res += "wide\n";
+    res += "wide ";
+    if(*(bytecode + ind + 1) == 0x84){
+        uint32_t index = read<uint16_t>(bytecode + ind + 2);
+        uint32_t constp = read<uint16_t>(bytecode + ind + 4);
+        res += "iinc " + std::to_string(index) + " " + std::to_string(constp) + "\n";
+    } else{
+        if(*(bytecode + ind + 1) == 0x15){
+            res += "iload ";
+        } else if(*(bytecode + ind + 1) == 0x16){
+            res += "lload ";
+        } else if(*(bytecode + ind + 1) == 0x17){
+            res += "fload ";
+        } else if(*(bytecode + ind + 1) == 0x18){
+            res += "dload ";
+        } else if(*(bytecode + ind + 1) == 0x19){
+            res += "aload ";
+        } else if(*(bytecode + ind + 1) == 0x36){
+            res += "istore ";
+        } else if(*(bytecode + ind + 1) == 0x37){
+            res += "lstore ";
+        } else if(*(bytecode + ind + 1) == 0x38){
+            res += "fstore ";
+        } else if(*(bytecode + ind + 1) == 0x39){
+            res += "dstore ";
+        } else if(*(bytecode + ind + 1) == 0x3A){
+            res += "astore ";
+        } else if(*(bytecode + ind + 1) == 0xA9){
+            res += "ret ";
+        }
+        uint32_t index = read<uint16_t>(bytecode + ind + 2);
+        res += std::to_string(index) + "\n";
+    }
     return res;
 }
 
