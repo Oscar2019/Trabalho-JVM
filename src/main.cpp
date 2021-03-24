@@ -2,6 +2,8 @@
 #include<fstream>
 #include<iomanip>
 #include<cstdlib>
+#include<string>
+#include<sstream>
 
 #include "../include/ClassFile.h"
 #include "../include/Tipos.h"
@@ -114,13 +116,58 @@ void printMenu(ClassFile const& cf){
     }
 }
 
+std::string convertAccessFlag (std::string hex){
+    std::stringstream ret;
+    if(hex[3] == '1'){
+        ret << "PUBLIC ";
+    }
+    if(hex[2] == '1'){
+        ret << "FINAL ";
+    }else if(hex[2] == '2'){
+        ret << "SUPER ";
+    }else if(hex[2] == '3'){
+        ret << "FINAL SUPER ";
+    }
+    
+    if(hex[1] == '2'){
+        ret << "INTERFACE ";
+    }else if(hex[1] == '4'){
+        ret << "ABSTRACT ";
+    }else if(hex[1] == '6'){
+        ret << "INTERFACE ABSTRACT ";
+    }
+
+    if(hex[0] == '1'){
+        ret << "SYNTHETIC ";
+    }else if(hex[0] == '2'){
+        ret << "ANNOTATION ";
+    }else if(hex[0] == '4'){
+        ret << "ENUM ";
+    }else if(hex[0] == '3'){
+        ret << "SYNTHETIC ANNOTATION ";
+    }else if(hex[0] == '5'){
+        ret << "SYNTHETIC ENUM ";
+    }else if(hex[0] == '6'){
+        ret << "ANNOTATION ENUM ";
+    }else if(hex[0] == '6'){
+        ret << "SYNTHETIC ANNOTATION ENUM ";
+    }
+
+    return ret.str();
+}
 
 void printGeneralInformation(ClassFile const& cf){
+    std::stringstream aux;
+    aux << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)cf.accessFlags << std::dec;
+    std::string aFlag = aux.str();
     CLEAR();
     std::cout << "Minor version: " << cf.minorVersion << "\n"; 
     std::cout << "Major version: " << cf.majorVersion << "\n"; 
     std::cout << "Constantpool Count: " << cf.constantPoolCount << "\n"; 
-    std::cout << "Access flags: " << "0x" << std::setfill('0') << std::setw(4) << std::right << std::hex << (uint32_t)cf.accessFlags << std::dec << "\n"; 
+    std::cout << "Access flags: " << convertAccessFlag(aFlag) << "\n";
+    std::cout << "Access flags: "  << std::setfill('0') ;
+    std::cout << "Access flags: " << std::setw(4) ;
+    std::cout << "Access flags: " << (uint32_t)cf.accessFlags ;
     std::cout << "This class: <" << getClass(cf.constantPool, cf.thisClass) << ">\n"; 
     std::cout << "Super class: <" << (cf.superClass == 0 ? "null" : getClass(cf.constantPool, cf.superClass)) << ">\n"; 
     std::cout << "Interface count: " << cf.interfacesCount << "\n";
