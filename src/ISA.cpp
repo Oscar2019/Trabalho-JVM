@@ -828,7 +828,7 @@ uint32_t getQtdOp_jsr_w(const uint8_t* bytecode, uint32_t ind, uint32_t size){
     return 4;
 }
 
-const std::vector<std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>> qtdAttributes({
+const std::array<std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>, 0xC9 + 1> qtdAttributes{{
     getQtdOp_nop, // 0x00
     getQtdOp_aconst_null, // 0x01
     getQtdOp_iconst_m1, // 0x02
@@ -1030,62 +1030,62 @@ const std::vector<std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>> q
     getQtdOp_ifnull, // 0xC6
     getQtdOp_ifnonull, // 0xC7
     getQtdOp_goto_w, // 0xC8
-    getQtdOp_jsr_w, // 0xC9
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xCA
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xCB
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xCC
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xCD
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xCE
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xCF
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD0
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD1
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD2
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD3
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD4
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD5
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD6
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD7
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD8
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD9
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xDA
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xDB
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xDC
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xDD
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xDE
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xDF
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE0
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE1
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE2
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE3
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE4
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE5
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE6
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE7
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE8
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE9
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xEA
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xEB
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xEC
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xED
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xEE
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xEF
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF0
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF1
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF2
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF3
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF4
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF5
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF6
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF7
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF8
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF9
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xFA
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xFB
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xFC
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xFD
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xFE
-    std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>() // 0xFF
-});
+    getQtdOp_jsr_w // 0xC9
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xCA
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xCB
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xCC
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xCD
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xCE
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xCF
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD0
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD1
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD2
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD3
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD4
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD5
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD6
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD7
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD8
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xD9
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xDA
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xDB
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xDC
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xDD
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xDE
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xDF
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE0
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE1
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE2
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE3
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE4
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE5
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE6
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE7
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE8
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xE9
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xEA
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xEB
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xEC
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xED
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xEE
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xEF
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF0
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF1
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF2
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF3
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF4
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF5
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF6
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF7
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF8
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xF9
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xFA
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xFB
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xFC
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xFD
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>(), // 0xFE
+    // std::function<uint32_t(const uint8_t*, uint32_t, uint32_t)>() // 0xFF
+}};
 
 std::string printOp_nop(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32_t ind, uint32_t size){
     std::string res;
@@ -2422,7 +2422,8 @@ std::string printOp_jsr_w(ConstantPoolInfo** cp, const uint8_t* bytecode, uint32
     return res;
 }
 
-const std::vector<std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>> printMnemonic({
+
+const std::array<std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>, 0xC9 + 1> printMnemonic{{
     printOp_nop, // 0x00
     printOp_aconst_null, // 0x01
     printOp_iconst_m1, // 0x02
@@ -2624,59 +2625,59 @@ const std::vector<std::function<std::string(ConstantPoolInfo**, const uint8_t*, 
     printOp_ifnull, // 0xC6
     printOp_ifnonull, // 0xC7
     printOp_goto_w, // 0xC8
-    printOp_jsr_w, // 0xC9
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xCA
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xCB
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xCC
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xCD
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xCE
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xCF
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD0
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD1
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD2
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD3
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD4
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD5
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD6
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD7
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD8
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD9
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xDA
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xDB
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xDC
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xDD
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xDE
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xDF
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE0
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE1
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE2
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE3
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE4
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE5
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE6
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE7
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE8
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE9
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xEA
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xEB
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xEC
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xED
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xEE
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xEF
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF0
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF1
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF2
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF3
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF4
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF5
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF6
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF7
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF8
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF9
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xFA
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xFB
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xFC
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xFD
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xFE
-    std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>() // 0xFF
-});
+    printOp_jsr_w // 0xC9
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xCA
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xCB
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xCC
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xCD
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xCE
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xCF
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD0
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD1
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD2
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD3
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD4
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD5
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD6
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD7
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD8
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xD9
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xDA
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xDB
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xDC
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xDD
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xDE
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xDF
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE0
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE1
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE2
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE3
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE4
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE5
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE6
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE7
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE8
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xE9
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xEA
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xEB
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xEC
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xED
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xEE
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xEF
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF0
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF1
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF2
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF3
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF4
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF5
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF6
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF7
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF8
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xF9
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xFA
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xFB
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xFC
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xFD
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>(), // 0xFE
+    // std::function<std::string(ConstantPoolInfo**, const uint8_t*, uint32_t, uint32_t)>() // 0xFF
+}};
