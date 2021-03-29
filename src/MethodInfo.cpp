@@ -6,6 +6,14 @@ void conveterAttributeInfoInMethodInfo(ConstantPoolInfo **cf, MethodInfo *mi){
     }
 }
 
+MethodInfo::MethodInfo(){
+    accessFlags = 0;
+    nameIndex = 0;
+    descriptorIndex = 0;
+    attributesCount = 0;
+    attributes = nullptr;
+}
+
 MethodInfo::~MethodInfo(){
     for(uint32_t i = 0; i < attributesCount; i++){
         delete attributes[i]; // deleta os atributos

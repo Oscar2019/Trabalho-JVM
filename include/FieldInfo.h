@@ -31,6 +31,11 @@ struct FieldInfo{
      */
     AttributeInfo **attributes;
     /**
+     * @brief Construct a new Field Info object
+     * 
+     */
+    FieldInfo();
+    /**
      * @brief destrói os dados armazenados pelo FieldInfo
      * 
      */

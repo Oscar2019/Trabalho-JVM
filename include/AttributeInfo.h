@@ -7,16 +7,19 @@
 struct AttributeInfo{
     uint16_t attributeNameIndex;
     uint32_t attributeLength;
+    AttributeInfo();
     virtual ~AttributeInfo();
 };
 
 struct AttributeInfoBasic : AttributeInfo{
     uint8_t *info;
+    AttributeInfoBasic();
     ~AttributeInfoBasic();
 };
 
 struct AttributeInfoConstantValue : AttributeInfo{
     uint16_t constantvalueIndex;
+    AttributeInfoConstantValue();
 };
 
 struct AttributeInfoCode : AttributeInfo{
@@ -34,12 +37,14 @@ struct AttributeInfoCode : AttributeInfo{
     ExceptionTable *exceptionTable;
     uint16_t attributesCount;
     AttributeInfo **attributes;
+    AttributeInfoCode();
     ~AttributeInfoCode();
 };
 
 struct AttributeInfoExceptions : AttributeInfo{
     uint16_t numberOfExceptions;
     uint16_t *exceptionIndexTable;
+    AttributeInfoExceptions();
     ~AttributeInfoExceptions();
 };
 
@@ -52,14 +57,17 @@ struct AttributeInfoInnerClasses : AttributeInfo{
         uint16_t innerClassAccessFlags;
     };
     Class *classes;
+    AttributeInfoInnerClasses();
     ~AttributeInfoInnerClasses();
 };
 
 struct AttributeInfoSynthetic : AttributeInfo{
+    AttributeInfoSynthetic();
 };
 
 struct AttributeInfoSourceFile : AttributeInfo{
     uint16_t sourcefileIndex;
+    AttributeInfoSourceFile();
 };
 
 struct AttributeInfoLineNumberTable	 : AttributeInfo{
@@ -69,6 +77,7 @@ struct AttributeInfoLineNumberTable	 : AttributeInfo{
         uint16_t lineNumber;	
     };
     LineNumberTable *lineNumberTable;
+    AttributeInfoLineNumberTable();
     ~AttributeInfoLineNumberTable();
 };
 
@@ -82,10 +91,12 @@ struct AttributeInfoLocalVariableTable : AttributeInfo{
         uint16_t index;
     };
     LocalVariableTable *localVariableTable;
+    AttributeInfoLocalVariableTable();
     ~AttributeInfoLocalVariableTable();
 };
 
 struct AttributeInfoDeprecated : AttributeInfo{
+    AttributeInfoDeprecated(); 
 };
 
 // struct AttributeInfoStackMapTable : AttributeInfo{

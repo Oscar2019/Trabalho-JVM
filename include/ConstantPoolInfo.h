@@ -36,6 +36,11 @@ struct ConstantPoolInfo{
      */
     uint8_t tag;
     /**
+     * @brief Construct a new Constant Pool Info object
+     * 
+     */
+    ConstantPoolInfo();
+    /**
      * @brief Destrói os objetos de um ConstantPoolInfo 
      * 
      */
@@ -57,6 +62,11 @@ std::string getStringFromCPInfo(ConstantPoolInfo** cp, uint32_t ind);
  */
 struct CPClass : public ConstantPoolInfo{
     /**
+     * @brief Construct a new CPClass object
+     * 
+     */
+    CPClass();
+    /**
      * @brief Ídice para a tabela do ConstantPool que contém um CPUtf8.
      * 
      */
@@ -77,6 +87,11 @@ std::string getClass(ConstantPoolInfo** cp, uint32_t ind);
  * 
  */
 struct CPFieldref : public ConstantPoolInfo{
+    /**
+     * @brief Construct a new CPFieldref object
+     * 
+     */
+    CPFieldref();
     /**
      * @brief Ídice para a tabela do ConstantPool que contém um CPClass.
      * 
@@ -104,6 +119,11 @@ std::string getFieldref(ConstantPoolInfo** cp, uint32_t ind);
  */
 struct CPMethodref : public ConstantPoolInfo{
     /**
+     * @brief Construct a new CPMethodref object
+     * 
+     */
+    CPMethodref();
+    /**
      * @brief Ídice para a tabela do ConstantPool que contém um CPClass.
      * 
      */
@@ -129,6 +149,11 @@ std::string getMethodref(ConstantPoolInfo** cp, uint32_t ind);
  * 
  */
 struct CPInterfaceMethodref : public ConstantPoolInfo{
+    /**
+     * @brief Construct a new CPInterfaceMethodref object
+     * 
+     */
+    CPInterfaceMethodref();
     /**
      * @brief Ídice para a tabela do ConstantPool que contém um CPClass.
      * 
@@ -156,6 +181,11 @@ std::string getInterfaceMethodref(ConstantPoolInfo** cp, uint32_t ind);
  */
 struct CPString : public ConstantPoolInfo{
     /**
+     * @brief Construct a new CPString object
+     * 
+     */
+    CPString();
+    /**
      * @brief Ídice para a tabela do ConstantPool que contém um CPUtf8.
      * 
      */
@@ -176,6 +206,11 @@ std::string getString(ConstantPoolInfo** cp, uint32_t ind);
  * 
  */
 struct CPInteger : public ConstantPoolInfo{
+    /**
+     * @brief Construct a new CPInteger object
+     * 
+     */
+    CPInteger();
     /**
      * @brief Bytes do inteiro.
      * 
@@ -198,6 +233,11 @@ int32_t getInteger(ConstantPoolInfo** cp, uint32_t ind);
  */
 struct CPFloat : public ConstantPoolInfo{
     /**
+     * @brief Construct a new CPFloat object
+     * 
+     */
+    CPFloat();
+    /**
      * @brief Bytes do float.
      * 
      */
@@ -218,6 +258,11 @@ float getFloat(ConstantPoolInfo** cp, uint32_t ind);
  * 
  */
 struct CPLong : public ConstantPoolInfo{
+    /**
+     * @brief Construct a new CPLong object
+     * 
+     */
+    CPLong();
     /**
      * @brief Bytes menos significativos do long
      * 
@@ -244,6 +289,11 @@ int64_t getLong(ConstantPoolInfo** cp, uint32_t ind);
  * 
  */
 struct CPDouble : public ConstantPoolInfo{
+    /**
+     * @brief Construct a new CPDouble object
+     * 
+     */
+    CPDouble();
     /**
      * @brief Bytes menos significativos do long
      * 
@@ -272,6 +322,11 @@ double getDouble(ConstantPoolInfo** cp, uint32_t ind);
  */
 struct CPNameAndType : public ConstantPoolInfo{
     /**
+     * @brief Construct a new CPNameAndType object
+     * 
+     */
+    CPNameAndType();
+    /**
      * @brief Ídice para a tabela do ConstantPool que contém um CPUtf8.
      * 
      */
@@ -297,6 +352,11 @@ std::string getNameAndType(ConstantPoolInfo** cp, uint32_t ind);
  * 
  */
 struct CPUtf8 : public ConstantPoolInfo{
+    /**
+     * @brief Construct a new CPUtf8 object
+     * 
+     */
+    CPUtf8();
     /**
      * @brief tamanho na string
      * 
@@ -329,6 +389,11 @@ std::string getCPUtf8(ConstantPoolInfo** cp, uint32_t ind);
  */
 struct CPMethodHandle : public ConstantPoolInfo{
     /**
+     * @brief Construct a new CPMethodHandle object
+     * 
+     */
+    CPMethodHandle();
+    /**
      * @brief 
      * 
      */
@@ -346,6 +411,11 @@ struct CPMethodHandle : public ConstantPoolInfo{
  */
 struct CPMethodType : public ConstantPoolInfo{
     /**
+     * @brief Construct a new CPMethodType object
+     * 
+     */
+    CPMethodType();
+    /**
      * @brief 
      * 
      */
@@ -357,6 +427,11 @@ struct CPMethodType : public ConstantPoolInfo{
  * 
  */
 struct CPInvokeDynamic : public ConstantPoolInfo{
+    /**
+     * @brief Construct a new CPInvokeDynamic object
+     * 
+     */
+    CPInvokeDynamic();
     /**
      * @brief 
      * 

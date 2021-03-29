@@ -35,6 +35,11 @@ struct MethodInfo{
      */
     AttributeInfo **attributes;
     /**
+     * @brief Construct a new Method Info object
+     * 
+     */
+    MethodInfo();
+    /**
      * @brief destrói os dados armazenados pelo MethodInfo
      * 
      */

@@ -22,7 +22,25 @@ void conveterAttributeInfoInClassFile(ConstantPoolInfo **cpi, ClassFile *cf){
     }
 }
 
-// TODO: 
+ClassFile::ClassFile(){
+    magic = 0;
+    minorVersion = 0;
+    majorVersion = 0;
+    constantPoolCount = 0;
+    constantPool = nullptr;
+    accessFlags = 0;
+    thisClass = 0;
+    superClass = 0;
+    interfacesCount = 0;
+    interfaces = nullptr;
+    fieldsCount = 0;
+    fields = nullptr;
+    methodsCount = 0;
+    methods = nullptr;
+    attributesCount = 0;
+    attributes = nullptr;
+}
+
 ClassFile::~ClassFile(){
     for(uint32_t i = 1; i < constantPoolCount; i++){
         if(constantPool[i] != nullptr){

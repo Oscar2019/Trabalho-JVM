@@ -120,3 +120,72 @@ CPUtf8::~CPUtf8(){
         delete[] bytes;
     }
 }
+
+ConstantPoolInfo::ConstantPoolInfo(){
+    tag = 0;
+}
+
+CPClass::CPClass() : ConstantPoolInfo(){
+    nameIndex = 0;
+}
+
+CPFieldref::CPFieldref() : ConstantPoolInfo(){
+    classIndex = 0;
+    nameAndTypeIndex = 0;
+}
+
+CPMethodref::CPMethodref() : ConstantPoolInfo(){
+    classIndex = 0;
+    nameAndTypeIndex = 0;
+}
+
+CPInterfaceMethodref::CPInterfaceMethodref() : ConstantPoolInfo(){
+    classIndex = 0;
+    nameAndTypeIndex = 0;
+}
+
+CPString::CPString() : ConstantPoolInfo(){
+    stringIndex = 0;
+}
+
+CPInteger::CPInteger() : ConstantPoolInfo(){
+    bytes = 0;
+}
+
+CPFloat::CPFloat() : ConstantPoolInfo(){
+    bytes = 0;
+}
+
+CPLong::CPLong() : ConstantPoolInfo(){
+    highBytes = 0;
+    lowBytes = 0;
+}
+
+CPDouble::CPDouble() : ConstantPoolInfo(){
+    highBytes = 0;
+    lowBytes = 0;
+}
+
+CPNameAndType::CPNameAndType() : ConstantPoolInfo(){
+    nameIndex = 0;
+    descriptorIndex = 0;
+}
+
+CPUtf8::CPUtf8() : ConstantPoolInfo(){
+    length = 0;
+    bytes = nullptr;
+}
+
+CPMethodHandle::CPMethodHandle() : ConstantPoolInfo(){
+    referenceKind = 0;
+    referenceIndex = 0;
+}
+
+CPMethodType::CPMethodType() : ConstantPoolInfo(){
+    descriptorIndex = 0;
+}
+
+CPInvokeDynamic::CPInvokeDynamic() : ConstantPoolInfo(){
+    bootstrapMethodAttrIndex = 0;
+    nameAndTypeIndex = 0;
+}

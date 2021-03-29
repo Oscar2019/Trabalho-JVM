@@ -170,13 +170,37 @@ void conveterAttributeInfoInAttributeInfo(ConstantPoolInfo **cp, AttributeInfo *
     // } 
 }
 
+AttributeInfo::AttributeInfo(){
+    attributeNameIndex = 0;
+    attributeLength = 0;
+}
+
 AttributeInfo::~AttributeInfo(){
+}
+
+AttributeInfoBasic::AttributeInfoBasic() : AttributeInfo(){
+    info = nullptr;
 }
 
 AttributeInfoBasic::~AttributeInfoBasic(){
     if(attributeLength > 0){
         delete[] info;
     }
+}
+
+AttributeInfoConstantValue::AttributeInfoConstantValue() : AttributeInfo(){
+    constantvalueIndex = 0;
+}
+
+AttributeInfoCode::AttributeInfoCode() : AttributeInfo(){
+    maxStack = 0;
+    maxLocals = 0;
+    codeLength = 0;
+    code = nullptr;
+    exceptionTableLength = 0;
+    exceptionTable = nullptr;
+    attributesCount = 0;
+    attributes = nullptr;
 }
 
 AttributeInfoCode::~AttributeInfoCode(){
@@ -194,10 +218,20 @@ AttributeInfoCode::~AttributeInfoCode(){
     }
 }
 
+AttributeInfoExceptions::AttributeInfoExceptions() : AttributeInfo(){
+    numberOfExceptions = 0;
+    exceptionIndexTable = nullptr;
+}
+
 AttributeInfoExceptions::~AttributeInfoExceptions(){
     if(numberOfExceptions > 0){
         delete[] exceptionIndexTable;
     }
+}
+
+AttributeInfoInnerClasses::AttributeInfoInnerClasses() : AttributeInfo(){
+    numberOfClasses = 0;
+    classes = nullptr;
 }
 
 AttributeInfoInnerClasses::~AttributeInfoInnerClasses(){
@@ -206,14 +240,36 @@ AttributeInfoInnerClasses::~AttributeInfoInnerClasses(){
     }
 }
 
+AttributeInfoSynthetic::AttributeInfoSynthetic() : AttributeInfo(){
+
+}
+
+AttributeInfoSourceFile::AttributeInfoSourceFile() : AttributeInfo(){
+
+}
+
+AttributeInfoLineNumberTable::AttributeInfoLineNumberTable() : AttributeInfo(){
+    lineNumberTableLength = 0;
+    lineNumberTable = nullptr;
+}
+
 AttributeInfoLineNumberTable::~AttributeInfoLineNumberTable(){
     if(lineNumberTableLength){
         delete[] lineNumberTable;
     }
 }
 
+AttributeInfoLocalVariableTable::AttributeInfoLocalVariableTable() : AttributeInfo(){
+    localVariableTableLength = 0;
+    localVariableTable = nullptr;
+}
+
 AttributeInfoLocalVariableTable::~AttributeInfoLocalVariableTable(){
     if(localVariableTableLength > 0){
         delete[] localVariableTable;
     }
+}
+
+AttributeInfoDeprecated::AttributeInfoDeprecated() : AttributeInfo(){
+
 }
