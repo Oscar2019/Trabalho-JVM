@@ -1,10 +1,7 @@
 package java.lang;
 
-class Object{
+public class Object{
     
-    public static native void println(int value);
     
-    public static void main(Object[] args){
-        println(5);
-    }
 }
+// javac -sourcepath data/Java/  data/Java/java/lang/Object.java -d data/JavaLib/

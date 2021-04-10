@@ -47,17 +47,17 @@ class LinearStack : public Stack<T>{
         maxSize = new_maxSize;
         data = new T[maxSize];
     }
-    Stack(){
+    LinearStack(){
         curSize = 0;
         maxSize = 1;
         data = new T[maxSize];
     }
-    Stack(uint32_t new_maxSize){
+    LinearStack(uint32_t new_maxSize){
         curSize = 0;
         maxSize = new_maxSize;
         data = new T[maxSize];
     }
-    ~Stack(){
+    ~LinearStack(){
         delete[] data;
     }
 };
@@ -97,11 +97,11 @@ class DynamicStack : public Stack<T>{
     uint32_t size(){
         return curSize;
     }
-    Stack(){
+    DynamicStack(){
         curSize = 0;
-        no = nullptr;
+        node = nullptr;
     }
-    ~Stack(){
+    ~DynamicStack(){
         while(curSize != 0){
             pop();
         }
