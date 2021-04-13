@@ -12,11 +12,23 @@ class Frame{
         LinearStack<uint32_t> operandStack;
         ConstantPoolInfo** constantPool;
     public:
-        Frame(uint32_t varTableSize, uint32_t operandStackSize, ConstantPoolInfo** currentConstantPool) : varLocalTable(varTableSize), operandStack(operandStackSize + 1), constantPool(currentConstantPool){
-            operandStack.push(0);
+        static Frame* CreateFrame(MethodInfo* methodInfo){
+            ConstantPoolInfo** cp = methodInfo->cp;
+            for(uint32_t i = 0; i < methodInfo->attributesCount; i++){
+                AttributeInfo* attributeInfo = methodInfo->attributes[i];
+                std::string str = getStringFromCPInfo(cp, attributeInfo->attributeNameIndex);
+                if(str == "Code"){
+                    AttributeInfoCode *code = dynamic_cast<AttributeInfoCode*>(attributeInfo);
+                    return new Frame(code->maxLocals, code->maxStack, cp);
+                }
+            }
+            return nullptr;
         }
         ConstantPoolInfo** getConstantPool(){
             return constantPool;
+        }
+        Frame(uint32_t varTableSize, uint32_t operandStackSize, ConstantPoolInfo** currentConstantPool) : varLocalTable(varTableSize), operandStack(operandStackSize + 1), constantPool(currentConstantPool){
+            operandStack.push(0);
         }
         uint32_t& varAt(uint32_t ind){
             return varLocalTable[ind];

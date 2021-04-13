@@ -3,6 +3,12 @@
 
 #include <cstdint>
 #include <string>
+// #include "../include/FieldInfo.h"
+// #include "../include/MethodInfo.h"
+
+class MethodInfo;
+class ClassFile;
+
 
 /**
  * @brief Enum que contém o número das tags
@@ -71,6 +77,12 @@ struct CPClass : public ConstantPoolInfo{
      * 
      */
     uint16_t nameIndex;
+
+    bool wasLoaded;
+    uint32_t instanceFieldSize;
+    uint32_t instanceMethodSize;
+    MethodInfo **instanceMethodPointer;
+    ClassFile *classFile;
 };
 
 /**
@@ -102,6 +114,9 @@ struct CPFieldref : public ConstantPoolInfo{
      * 
      */
     uint16_t nameAndTypeIndex; 
+
+    void* classFieldValue;
+    int32_t instanceFieldDesloc;
 };
 
 /**
@@ -133,6 +148,9 @@ struct CPMethodref : public ConstantPoolInfo{
      * 
      */
     uint16_t nameAndTypeIndex;
+    
+    MethodInfo* directMethod;
+    int32_t instanceMethodDesloc;
 };
 
 /**

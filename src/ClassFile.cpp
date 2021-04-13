@@ -66,3 +66,10 @@ ClassFile::~ClassFile(){
         delete[] attributes;
     }
 }
+
+
+void ClassFile::addCPinfoInMethods(){
+    for(uint32_t i = 0; i < methodsCount; i++){
+        methods[i].cp = constantPool;
+    }
+}

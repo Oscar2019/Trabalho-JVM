@@ -5,825 +5,1198 @@
 #include "../include/RuntimeDataArea.h"
 #include "../include/MethodInfo.h"
 #include "../include/tipos.h"
-#include <codecvt>
+#include "../include/Pointer.h"
+#include <cmath>
 #include <functional>
 
-int32_t execOp_nop(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+uint32_t sizeArguments(std::string &s){
+    uint32_t ret = 0;
+    uint32_t next = 1;
+    
+    while(next < s.size() && s[next] != ')'){
+        if(s[next] == 'B'){
+            ret += 1;
+            next += 1;
+        } else if(s[next] == 'C'){
+            ret += 1;
+            next += 1;
+        } else if(s[next] == 'D'){
+            ret += 2;
+            next += 1;
+        } else if(s[next] == 'F'){
+            ret += 1;
+            next += 1;
+        } else if(s[next] == 'I'){
+            ret += 1;
+            next += 1;
+        } else if(s[next] == 'J'){
+            ret += 2;
+            next += 1;
+        } else if(s[next] == 'S'){
+            ret += 1;
+            next += 1;
+        } else if(s[next] == 'Z'){
+            ret += 1;
+            next += 1;
+        } else if(s[next] == 'L'){
+            ret += 1;
+            next += 1;
+            while(s[next] != ';'){
+                next += 1;
+            }
+            next += 1;
+        } else if(s[next] == '['){
+            ret += 1;
+            while(s[next] == '['){
+                next += 1;
+            }
+            if(s[next] == 'L'){
+                while(s[next] != ';'){
+                    next += 1;
+                }
+            }
+            next += 1;
+        }
+    }
+    return ret;
 }
 
-int32_t execOp_aconst_null(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+
+
+int32_t execOp_nop(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    return pc + 1;
 }
 
-int32_t execOp_iconst_m1(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_aconst_null(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_iconst_0(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_iconst_m1(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_iconst_1(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_iconst_0(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_iconst_2(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_iconst_1(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_iconst_3(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_iconst_2(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_iconst_4(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_iconst_3(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_iconst_5(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_iconst_4(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lconst_0(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_iconst_5(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lconst_1(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lconst_0(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fconst_0(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lconst_1(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fconst_1(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fconst_0(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fconst_2(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fconst_1(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dconst_0(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fconst_2(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dconst_1(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dconst_0(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_bipush(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dconst_1(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_sipush(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_bipush(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    int32_t byte = static_cast<int8_t>(read<uint8_t>(attrinbuteCode->code + pc + 1));
+    frame->pushOperandStack(byte);
+    return pc + 2;
 }
 
-int32_t execOp_ldc(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_sipush(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    int32_t byte = static_cast<int16_t>(read<uint16_t>(attrinbuteCode->code + pc + 1));
+    frame->pushOperandStack(byte);
+    return pc + 3;
 }
 
-int32_t execOp_ldc_w(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_ldc(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    uint32_t index;
+    index = read<uint8_t>(attrinbuteCode->code + pc + 1);
+    ConstantPoolInfo *cp = frame->getConstantPool()[index];
+    if(cp->tag == ConstantPoolInfoTag::INTEGER){
+        CPInteger *cpInteger = dynamic_cast<CPInteger*>(cp);
+        frame->pushOperandStack(cpInteger->bytes);
+    } else if(cp->tag == ConstantPoolInfoTag::FLOAT){
+        CPFloat *cpFloat = dynamic_cast<CPFloat*>(cp);
+        frame->pushOperandStack(cpFloat->bytes);
+    }
+    return pc + 2;
 }
 
-int32_t execOp_ldc2_w(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_ldc_w(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    uint32_t index;
+    index = read<uint16_t>(attrinbuteCode->code + pc + 1);
+    ConstantPoolInfo *cp = frame->getConstantPool()[index];
+    if(cp->tag == ConstantPoolInfoTag::INTEGER){
+        CPInteger *cpInteger = dynamic_cast<CPInteger*>(cp);
+        frame->pushOperandStack(cpInteger->bytes);
+    } else if(cp->tag == ConstantPoolInfoTag::FLOAT){
+        CPFloat *cpFloat = dynamic_cast<CPFloat*>(cp);
+        frame->pushOperandStack(cpFloat->bytes);
+    }
+    return pc + 3;
 }
 
-int32_t execOp_iload(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_ldc2_w(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    uint32_t index;
+    index = read<uint16_t>(attrinbuteCode->code + pc + 1);
+    ConstantPoolInfo *cp = frame->getConstantPool()[index];
+    if(cp->tag == ConstantPoolInfoTag::LONG){
+        CPLong *cpLong = dynamic_cast<CPLong*>(cp);
+        frame->pushOperandStack(cpLong->highBytes);
+        frame->pushOperandStack(cpLong->lowBytes);
+    } else if(cp->tag == ConstantPoolInfoTag::DOUBLE){
+        CPDouble *cpDouble = dynamic_cast<CPDouble*>(cp);
+        frame->pushOperandStack(cpDouble->highBytes);
+        frame->pushOperandStack(cpDouble->lowBytes);
+    }
+    return pc + 3;
 }
 
-int32_t execOp_lload(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_iload(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fload(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lload(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dload(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fload(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_aload(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dload(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_iload_0(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_aload(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_iload_1(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_iload_0(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    frame->pushOperandStack(frame->varAt(0));
+    return pc + 1;
 }
 
-int32_t execOp_iload_2(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_iload_1(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    frame->pushOperandStack(frame->varAt(1));
+    return pc + 1;
 }
 
-int32_t execOp_iload_3(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_iload_2(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lload_0(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_iload_3(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lload_1(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lload_0(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lload_2(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_lload_1(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    frame->pushOperandStack(frame->varAt(1));
+    frame->pushOperandStack(frame->varAt(2));
+    return pc + 1;
 }
 
-int32_t execOp_lload_3(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lload_2(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fload_0(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lload_3(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fload_1(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fload_0(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fload_2(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_fload_1(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    frame->pushOperandStack(frame->varAt(1));
+    return pc + 1;
 }
 
-int32_t execOp_fload_3(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fload_2(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dload_0(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fload_3(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dload_1(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dload_0(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dload_2(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_dload_1(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    frame->pushOperandStack(frame->varAt(1));
+    frame->pushOperandStack(frame->varAt(2));
+    return pc + 1;
 }
 
-int32_t execOp_dload_3(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dload_2(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_aload_0(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dload_3(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_aload_1(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_aload_0(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    frame->pushOperandStack(frame->varAt(0));
+    return pc + 1;
 }
 
-int32_t execOp_aload_2(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_aload_1(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_aload_3(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_aload_2(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_iaload(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_aload_3(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_laload(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_iaload(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_faload(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_laload(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_daload(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_faload(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_aaload(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_daload(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_baload(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_aaload(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_caload(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_baload(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_saload(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_caload(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_istore(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_saload(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lstore(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_istore(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fstore(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lstore(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dstore(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fstore(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_astore(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dstore(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_istore_0(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_astore(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_istore_1(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_istore_0(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_istore_2(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_istore_1(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    frame->varAt(1) = frame->topOperandStack();
+    frame->popOperandStack();
+    return pc + 1;
 }
 
-int32_t execOp_istore_3(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_istore_2(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lstore_0(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_istore_3(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lstore_1(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lstore_0(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lstore_2(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_lstore_1(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    frame->varAt(2) = frame->topOperandStack();
+    frame->popOperandStack();
+    frame->varAt(1) = frame->topOperandStack();
+    frame->popOperandStack();
+    return pc + 1;
 }
 
-int32_t execOp_lstore_3(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lstore_2(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fstore_0(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lstore_3(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fstore_1(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fstore_0(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fstore_2(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_fstore_1(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    frame->varAt(1) = frame->topOperandStack();
+    frame->popOperandStack();
+    return pc + 1;
 }
 
-int32_t execOp_fstore_3(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fstore_2(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dstore_0(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fstore_3(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dstore_1(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dstore_0(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dstore_2(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_dstore_1(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    frame->varAt(2) = frame->topOperandStack();
+    frame->popOperandStack();
+    frame->varAt(1) = frame->topOperandStack();
+    frame->popOperandStack();
+    return pc + 1;
 }
 
-int32_t execOp_dstore_3(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dstore_2(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_astore_0(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dstore_3(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_astore_1(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_astore_0(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_astore_2(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_astore_1(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    frame->varAt(1) = frame->topOperandStack();
+    frame->popOperandStack();
+    return pc + 1;
 }
 
-int32_t execOp_astore_3(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_astore_2(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_iastore(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_astore_3(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lastore(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_iastore(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fastore(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lastore(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dastore(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fastore(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_aastore(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dastore(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_bastore(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_aastore(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_castore(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_bastore(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_sastore(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_castore(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_pop(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_sastore(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_pop2(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_pop(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dup(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_pop2(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dup_x1(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_dup(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    frame->pushOperandStack(frame->topOperandStack());
+    return pc + 1;
 }
 
-int32_t execOp_dup_x2(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dup_x1(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dup2(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dup_x2(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dup2_x1(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dup2(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dup2_x2(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dup2_x1(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_swap(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dup2_x2(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_iadd(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_swap(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_ladd(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_iadd(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fadd(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_ladd(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dadd(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fadd(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_isub(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_dadd(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+   return pc + 0;
 }
 
-int32_t execOp_lsub(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_isub(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fsub(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lsub(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dsub(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fsub(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_imul(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dsub(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lmul(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_imul(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fmul(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lmul(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dmul(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fmul(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_idiv(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dmul(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_ldiv(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_idiv(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fdiv(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_ldiv(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_ddiv(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fdiv(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_irem(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_ddiv(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lrem(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_irem(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_frem(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lrem(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_drem(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_frem(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_ineg(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_drem(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lneg(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_ineg(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fneg(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lneg(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dneg(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fneg(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_ishl(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dneg(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lshl(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_ishl(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_ishr(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lshl(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lshr(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_ishr(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_iushr(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lshr(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lushr(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_iushr(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_iand(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lushr(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_land(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_iand(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_ior(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_land(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lor(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_ior(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_ixor(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lor(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lxor(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_ixor(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_iinc(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lxor(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_i2l(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_iinc(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    uint32_t index;
+    int32_t constp;
+    uint32_t ret;
+    if(isWide){
+        index = read<uint16_t>(attrinbuteCode->code + pc + 1);
+        constp = static_cast<int16_t>(read<uint16_t>(attrinbuteCode->code + pc + 3));
+        ret = 5;
+    } else{
+        index = read<uint8_t>(attrinbuteCode->code + pc + 1);
+        constp = static_cast<int8_t>(read<uint8_t>(attrinbuteCode->code + pc + 2));
+        ret = 3;
+    }
+    frame->varAt(index) += constp;
+    return pc + ret;
 }
 
-int32_t execOp_i2f(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_i2l(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_i2d(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_i2f(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_l2i(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_i2d(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_l2f(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_l2i(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_l2d(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_l2f(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_f2i(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_l2d(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_f2l(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_f2i(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_f2d(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_f2l(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_d2i(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_f2d(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_d2l(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_d2i(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_d2f(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_d2l(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_i2b(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_d2f(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_i2c(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_i2b(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_i2s(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_i2c(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lcmp(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_i2s(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fcmpl(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lcmp(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_fcmpg(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fcmpl(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dcmpl(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_fcmpg(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dcmpg(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dcmpl(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_ifeq(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dcmpg(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_ifne(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_ifeq(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_iflt(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_ifne(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_ifge(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_iflt(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_ifgt(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_ifge(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_ifle(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_ifgt(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_if_icmpeq(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_ifle(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_if_icmpne(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_if_icmpeq(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_if_icmplt(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_if_icmpne(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_if_icmpge(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_if_icmplt(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_if_icmpgt(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_if_icmpge(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_if_icmple(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_if_icmpgt(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_if_acmpeq(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_if_icmple(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_if_acmpne(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_if_acmpeq(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_goto(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_if_acmpne(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_jsr(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_goto(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_ret(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_jsr(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_tableswitch(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_ret(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lookupswitch(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_tableswitch(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_ireturn(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lookupswitch(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_lreturn(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_ireturn(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_freturn(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_lreturn(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_dreturn(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_freturn(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_areturn(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_dreturn(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_return(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_areturn(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_getstatic(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_return(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    finished = true;
+    return pc + 1;
 }
 
-int32_t execOp_putstatic(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_getstatic(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    uint32_t index;
+    index = read<uint16_t>(attrinbuteCode->code + pc + 1);
+    CPFieldref* cpField = dynamic_cast<CPFieldref*>(frame->getConstantPool()[index]);
+    CPNameAndType* cpNameAndType = dynamic_cast<CPNameAndType*>(frame->getConstantPool()[cpField->nameAndTypeIndex]);
+    if(cpField->classFieldValue == nullptr){
+        classLaoder->resolveConstantPoolAt(frame->getConstantPool(), index);
+    }
+    std::string descriptor = getStringFromCPInfo(frame->getConstantPool(), cpNameAndType->descriptorIndex);
+    if(descriptor[0] == 'B'){
+        uint8_t value = *reinterpret_cast<uint8_t*>(cpField->classFieldValue);
+        frame->pushOperandStack(value);
+    } else if(descriptor[0] == 'C'){
+        uint16_t value = *reinterpret_cast<uint16_t*>(cpField->classFieldValue);
+        frame->pushOperandStack(value);
+    } else if(descriptor[0] == 'D'){
+        uint64_t value = *reinterpret_cast<uint64_t*>(cpField->classFieldValue);
+        frame->pushOperandStack((value >> 32) & 0xFFFF);
+        frame->pushOperandStack(value & 0xFFFF);
+    } else if(descriptor[0] == 'F'){
+        uint32_t value = *reinterpret_cast<uint32_t*>(cpField->classFieldValue);
+        frame->pushOperandStack(value);
+    } else if(descriptor[0] == 'I'){
+        uint32_t value = *reinterpret_cast<uint32_t*>(cpField->classFieldValue);
+        frame->pushOperandStack(value);
+    } else if(descriptor[0] == 'J'){
+        uint64_t value = *reinterpret_cast<uint64_t*>(cpField->classFieldValue);
+        frame->pushOperandStack((value >> 32) & 0xFFFF);
+        frame->pushOperandStack(value & 0xFFFF);
+    } else if(descriptor[0] == 'S'){
+        uint16_t value = *reinterpret_cast<uint16_t*>(cpField->classFieldValue);
+        frame->pushOperandStack(value);
+    } else if(descriptor[0] == 'Z'){
+        uint8_t value = *reinterpret_cast<uint8_t*>(cpField->classFieldValue);
+        frame->pushOperandStack(value);
+    } else if(descriptor[0] == 'L'){
+        uint32_t value = *reinterpret_cast<uint32_t*>(cpField->classFieldValue);
+        frame->pushOperandStack(value);
+    } else if(descriptor[0] == '['){
+        uint32_t value = *reinterpret_cast<uint32_t*>(cpField->classFieldValue);
+        frame->pushOperandStack(value);
+    }
+    return pc + 3;
 }
 
-int32_t execOp_getfield(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_putstatic(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    uint32_t index;
+    index = read<uint16_t>(attrinbuteCode->code + pc + 1);
+    CPFieldref* cpField = dynamic_cast<CPFieldref*>(frame->getConstantPool()[index]);
+    CPNameAndType* cpNameAndType = dynamic_cast<CPNameAndType*>(frame->getConstantPool()[cpField->nameAndTypeIndex]);
+    if(cpField->classFieldValue == nullptr){
+        classLaoder->resolveConstantPoolAt(frame->getConstantPool(), index);
+    }
+    std::string descriptor = getStringFromCPInfo(frame->getConstantPool(), cpNameAndType->descriptorIndex);
+    if(descriptor[0] == 'B'){
+        uint32_t value = frame->topOperandStack();
+        frame->popOperandStack();
+        *reinterpret_cast<uint8_t*>(cpField->classFieldValue) = value;
+    } else if(descriptor[0] == 'C'){
+        uint32_t value = frame->topOperandStack();
+        frame->popOperandStack();
+        *reinterpret_cast<uint16_t*>(cpField->classFieldValue) = value;
+    } else if(descriptor[0] == 'D'){
+        uint32_t value = frame->topOperandStack();
+        frame->popOperandStack();
+        *reinterpret_cast<uint32_t*>(cpField->classFieldValue) = static_cast<uint64_t>(value) << 32;
+        value = frame->topOperandStack();
+        frame->popOperandStack();
+        *reinterpret_cast<uint32_t*>(cpField->classFieldValue) |= value;
+    } else if(descriptor[0] == 'F'){
+        uint32_t value = frame->topOperandStack();
+        frame->popOperandStack();
+        *reinterpret_cast<uint32_t*>(cpField->classFieldValue) = value;
+    } else if(descriptor[0] == 'I'){
+        uint32_t value = frame->topOperandStack();
+        frame->popOperandStack();
+        *reinterpret_cast<uint32_t*>(cpField->classFieldValue) = value;
+    } else if(descriptor[0] == 'J'){
+        uint32_t value = frame->topOperandStack();
+        frame->popOperandStack();
+        *reinterpret_cast<uint32_t*>(cpField->classFieldValue) = static_cast<uint64_t>(value) << 32;
+        value = frame->topOperandStack();
+        frame->popOperandStack();
+        *reinterpret_cast<uint32_t*>(cpField->classFieldValue) |= value;
+    } else if(descriptor[0] == 'S'){
+        uint32_t value = frame->topOperandStack();
+        frame->popOperandStack();
+        *reinterpret_cast<uint16_t*>(cpField->classFieldValue) = value;
+    } else if(descriptor[0] == 'Z'){
+        uint32_t value = frame->topOperandStack();
+        frame->popOperandStack();
+        *reinterpret_cast<uint8_t*>(cpField->classFieldValue) = value;
+    } else if(descriptor[0] == 'L'){
+        uint32_t value = frame->topOperandStack();
+        frame->popOperandStack();
+        *reinterpret_cast<uint32_t*>(cpField->classFieldValue) = value;
+    } else if(descriptor[0] == '['){
+        uint32_t value = frame->topOperandStack();
+        frame->popOperandStack();
+        *reinterpret_cast<uint32_t*>(cpField->classFieldValue) = value;
+    }
+    return pc + 3;
 }
 
-int32_t execOp_putfield(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_getfield(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_invokevirtual(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_putfield(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_invokespecial(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_invokevirtual(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    uint32_t index;
+    index = read<uint16_t>(attrinbuteCode->code + pc + 1);
+    CPMethodref* cpMeth = dynamic_cast<CPMethodref*>(frame->getConstantPool()[index]);
+    CPNameAndType* cpNameAndType = dynamic_cast<CPNameAndType*>(frame->getConstantPool()[cpMeth->nameAndTypeIndex]);
+    if(cpMeth->instanceMethodDesloc == -1){
+        classLaoder->resolveConstantPoolAt(frame->getConstantPool(), index);
+    }
+    std::string descriptor = getStringFromCPInfo(frame->getConstantPool(), cpNameAndType->descriptorIndex);
+    uint32_t qtdOperandStack = 1 + sizeArguments(descriptor);
+
+    uint32_t* vetAux = nullptr;
+    if(qtdOperandStack > 0){
+        vetAux = new uint32_t[qtdOperandStack];
+    }
+    for(uint32_t i = 0; i < qtdOperandStack; i++){
+        vetAux[i] = frame->topOperandStack();
+        frame->popOperandStack();
+    }
+    for(uint32_t i = 0; i < qtdOperandStack/2; i++){
+        std::swap(vetAux[i], vetAux[qtdOperandStack - i - 1]);
+    }
+
+    MethodInfo* newMethod = runTimeData->objectAt(vetAux[0])->methods[cpMeth->instanceMethodDesloc];
+    Frame* newFrame = Frame::CreateFrame(newMethod);
+    *nextFrame = newFrame;
+    *nextMethod = newMethod;
+    for(uint32_t i = 0; i < qtdOperandStack; i++){
+        newFrame->varAt(i) = vetAux[i];
+    }
+    if(qtdOperandStack > 0){
+        delete[] vetAux;
+    }
+    isInvokeInstruction = true;
+    frame->pushOperandStack(pc + 3);
+    
+    return pc + 3;
 }
 
-int32_t execOp_invokestatic(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_invokespecial(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    uint32_t index;
+    index = read<uint16_t>(attrinbuteCode->code + pc + 1);
+    CPMethodref* cpMeth = dynamic_cast<CPMethodref*>(frame->getConstantPool()[index]);
+    CPNameAndType* cpNameAndType = dynamic_cast<CPNameAndType*>(frame->getConstantPool()[cpMeth->nameAndTypeIndex]);
+    if(cpMeth->directMethod == nullptr){
+        classLaoder->resolveConstantPoolAt(frame->getConstantPool(), index);
+    }
+    std::string descriptor = getStringFromCPInfo(frame->getConstantPool(), cpNameAndType->descriptorIndex);
+    uint32_t qtdOperandStack = 1 + sizeArguments(descriptor);
+
+    MethodInfo* newMethod = cpMeth->directMethod;
+    Frame* newFrame = Frame::CreateFrame(newMethod);
+    *nextFrame = newFrame;
+    *nextMethod = newMethod;
+    for(uint32_t i = 0; i < qtdOperandStack; i++){
+        newFrame->varAt(i) = frame->topOperandStack();
+        frame->popOperandStack();
+    }
+    for(uint32_t i = 0; i < qtdOperandStack/2; i++){
+        std::swap(newFrame->varAt(i), newFrame->varAt(qtdOperandStack - i - 1));
+    }
+    isInvokeInstruction = true;
+    frame->pushOperandStack(pc + 3);
+    
+    return pc + 3;
 }
 
-int32_t execOp_invokeinterface(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_invokestatic(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    uint32_t index;
+    index = read<uint16_t>(attrinbuteCode->code + pc + 1);
+    CPMethodref* cpMeth = dynamic_cast<CPMethodref*>(frame->getConstantPool()[index]);
+    CPNameAndType* cpNameAndType = dynamic_cast<CPNameAndType*>(frame->getConstantPool()[cpMeth->nameAndTypeIndex]);
+    if(cpMeth->directMethod == nullptr){
+        classLaoder->resolveConstantPoolAt(frame->getConstantPool(), index);
+    }
+    std::string descriptor = getStringFromCPInfo(frame->getConstantPool(), cpNameAndType->descriptorIndex);
+    uint32_t qtdOperandStack = sizeArguments(descriptor);
+
+    MethodInfo* newMethod = cpMeth->directMethod;
+    Frame* newFrame = Frame::CreateFrame(newMethod);
+    if(newFrame != nullptr){
+        *nextFrame = newFrame;
+        *nextMethod = newMethod;
+        for(uint32_t i = 0; i < qtdOperandStack; i++){
+            newFrame->varAt(i) = frame->topOperandStack();
+            frame->popOperandStack();
+        }
+        for(uint32_t i = 0; i < qtdOperandStack/2; i++){
+            std::swap(newFrame->varAt(i), newFrame->varAt(qtdOperandStack - i - 1));
+        }
+        isInvokeInstruction = true;
+        frame->pushOperandStack(pc + 3);
+    } else{
+        std::string nameClass = getStringFromCPInfo(frame->getConstantPool(), cpMeth->classIndex);
+        std::string nameMethod = getStringFromCPInfo(frame->getConstantPool(), cpNameAndType->nameIndex) + ":" + descriptor;
+        if(nameClass == "java/io/PrintStream"){
+            if(nameMethod == "print_int:(I)V"){
+                int32_t value = frame->topOperandStack();
+                frame->popOperandStack();
+                std::cout << value;
+            } else if(nameMethod == "print_char:(C)V"){
+                uint8_t value = frame->topOperandStack();
+                frame->popOperandStack();
+                std::cout << value; // ATENÇÃO
+            } else if(nameMethod == "print_byte:(B)V"){
+                uint32_t value = frame->topOperandStack();
+                frame->popOperandStack();
+                std::cout << value;
+            } else if(nameMethod == "print_short:(S)V"){
+                uint32_t value = frame->topOperandStack();
+                frame->popOperandStack();
+                std::cout << value;
+            } else if(nameMethod == "print_bool:(Z)V"){
+                bool value = frame->topOperandStack();
+                frame->popOperandStack();
+                std::cout << value;
+            } else if(nameMethod == "print_long:(J)V"){
+                uint64_t value = frame->topOperandStack();
+                frame->popOperandStack();
+                value |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+                frame->popOperandStack();
+                std::cout << value;
+            } else if(nameMethod == "print_float:(F)V"){
+                union{
+                    uint32_t i;
+                    float d;
+                } value;
+                value.i = frame->topOperandStack();
+                frame->popOperandStack();
+                std::cout << value.d;
+            } else if(nameMethod == "print_double:(D)V"){
+                union{
+                    uint64_t i;
+                    double d;
+                } value;
+                value.i = frame->topOperandStack();
+                frame->popOperandStack();
+                value.i |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+                frame->popOperandStack();
+                std::cout << value.d;
+            }
+        }
+    }
+    
+    return pc + 3;
 }
 
-int32_t execOp_invokedynamic(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_invokeinterface(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_new(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_invokedynamic(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_newarray(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
-    return pc + 0;
+int32_t execOp_new(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    uint32_t index;
+    index = read<uint16_t>(attrinbuteCode->code + pc + 1);
+    CPClass *cp = dynamic_cast<CPClass*>(frame->getConstantPool()[index]);
+    if(!cp->wasLoaded){
+        classLaoder->resolveConstantPoolAt(frame->getConstantPool(), index);
+    }
+    Pointer *pointer = new Pointer();
+    if(cp->instanceFieldSize > 0){
+        pointer->data = new uint8_t[cp->instanceFieldSize];
+    }
+    pointer->metSize = cp->instanceMethodSize;
+    pointer->methods = cp->instanceMethodPointer;
+    runTimeData->pushHeap(pointer);
+    frame->pushOperandStack(runTimeData->heapSize());
+    return pc + 3;
 }
 
-int32_t execOp_anewarray(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_newarray(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_arraylength(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_anewarray(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_athrow(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_arraylength(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_checkcast(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_athrow(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_instanceof(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_checkcast(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_monitorenter(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_instanceof(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_monitorexit(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_monitorenter(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_wide(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_monitorexit(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
+}
+
+int32_t execOp_wide(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
+    return ExecutionEngine::execIntruction[attrinbuteCode->code[pc+1]](classLaoder, runTimeData, pc+1, frame, method, attrinbuteCode, returnStack, nextMethod, nextFrame, finished, isInvokeInstruction, true);
 }
 
-int32_t execOp_multianewarray(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_multianewarray(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_ifnull(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_ifnull(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_ifnonull(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_ifnonull(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_goto_w(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_goto_w(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-int32_t execOp_jsr_w(RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, bool& finished, bool& isInvokeInstruction){
+int32_t execOp_jsr_w(CassLoader* classLaoder, RuntimeDataArea* runTimeData, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide){
     return pc + 0;
 }
 
-const std::array<std::function<int32_t(RuntimeDataArea*, uint32_t, Frame*, MethodInfo*, AttributeInfoCode*, bool&, bool&)>, 0xC9 + 1> ExecutionEngine::execIntruction{{
+const std::array<std::function<int32_t(CassLoader*, RuntimeDataArea*, uint32_t, Frame*, MethodInfo*, AttributeInfoCode*, LinearStack<uint32_t>&, MethodInfo**, Frame**, bool&, bool&, bool)>, 0xC9 + 1> ExecutionEngine::execIntruction{{
     
     execOp_nop, // 0x00
     execOp_aconst_null, // 0x01
     execOp_iconst_m1, // 0x02
     execOp_iconst_0, // 0x03
     execOp_iconst_1, // 0x04
-    execOp_iconst_2, // 0x05 
+    execOp_iconst_2, // 0x05  
     execOp_iconst_3, // 0x06
     execOp_iconst_4, // 0x07
     execOp_iconst_5, // 0x08
@@ -836,7 +1209,7 @@ const std::array<std::function<int32_t(RuntimeDataArea*, uint32_t, Frame*, Metho
     execOp_dconst_1, // 0x0F
     execOp_bipush, // 0x10 
     execOp_sipush, // 0x11
-    execOp_ldc, // 0x12 ldc
+    execOp_ldc, // 0x12
     execOp_ldc_w, // 0x13
     execOp_ldc2_w, // 0x14
     execOp_iload, // 0x15
@@ -1014,7 +1387,7 @@ const std::array<std::function<int32_t(RuntimeDataArea*, uint32_t, Frame*, Metho
     execOp_instanceof, // 0xC1
     execOp_monitorenter, // 0xC2
     execOp_monitorexit, // 0xC3
-    execOp_wide, // 0xC4
+    execOp_wide, // 0xC4 wide
     execOp_multianewarray, // 0xC5
     execOp_ifnull, // 0xC6
     execOp_ifnonull, // 0xC7
@@ -1022,12 +1395,52 @@ const std::array<std::function<int32_t(RuntimeDataArea*, uint32_t, Frame*, Metho
     execOp_jsr_w // 0xC9
 }};
 
-void ExecutionEngine::execFrame(Frame *frame, MethodInfo* methodInfo, uint32_t& pc, bool& finished){
+void ExecutionEngine::execFrame(Frame *frame, MethodInfo* methodInfo, uint32_t& pc, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished){
+    
+    bool isInvokeInstruction = false;
+    AttributeInfoCode* attributeCode = dynamic_cast<AttributeInfoCode*>(methodInfo->getAttribute("Code"));
+    while(!isInvokeInstruction && !finished){
+        pc = ExecutionEngine::execIntruction[attributeCode->code[pc]](classLoader, runtimeDataArea, pc, frame, methodInfo, attributeCode, returnStack, nextMethod, nextFrame, finished, isInvokeInstruction, false);
+    }
 }
-
 void ExecutionEngine::exec(MethodInfo* nextMethod){
+    Thread& thread = runtimeDataArea->getThread();
+    LinearStack<uint32_t> returnStack(2);
+    DynamicStack<MethodInfo*> methodStack;
+    Frame* nextFrame = Frame::CreateFrame(nextMethod);
+    methodStack.push(nextMethod);
+    thread.pushFrameStack(nextFrame);
+    nextMethod = nullptr;
+    nextFrame = nullptr;
+    bool finished = false;
+    while(methodStack.size() > 0){
+        finished = false;
+        if(nextMethod != nullptr && nextFrame != nullptr){
+            methodStack.push(nextMethod);
+            thread.pushFrameStack(nextFrame);
+            nextMethod = nullptr;
+            nextFrame = nullptr;
+        } else if(nextMethod != nullptr){
+            // TODO Erro
+            nextMethod = nullptr;
+            continue;
+        }
+        Frame* topFrame = thread.topFrameStack();
+        uint32_t &pc =  thread.getPC();
+        pc = topFrame->topOperandStack();
+        topFrame->popOperandStack();
+        while(returnStack.size() > 0){
+            topFrame->pushOperandStack(returnStack.top());
+            returnStack.pop();
+        }
+        execFrame(topFrame, methodStack.top(), pc, returnStack, &nextMethod, &nextFrame, finished);
+        if(finished){
+            methodStack.pop();
+            delete topFrame;
+            thread.popFrameStack();
+        }
+    }
 }
-
 void ExecutionEngine::setRuntimeDataArea(RuntimeDataArea* new_runtimeDataArea){
     runtimeDataArea = new_runtimeDataArea;
 }

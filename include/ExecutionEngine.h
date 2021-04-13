@@ -22,9 +22,9 @@ class ExecutionEngine{
     private:
         RuntimeDataArea* runtimeDataArea;
         CassLoader* classLoader;
-        void execFrame(Frame *frame, MethodInfo* methodInfo, uint32_t& pc, bool& finished);
+        void execFrame(Frame *frame, MethodInfo* methodInfo, uint32_t& pc, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished);
     public:
-        static const std::array<std::function<int32_t(RuntimeDataArea*, uint32_t, Frame*, MethodInfo*, AttributeInfoCode*, bool&, bool&)>, 0xC9 + 1> execIntruction;
+        static const std::array<std::function<int32_t(CassLoader*, RuntimeDataArea*, uint32_t, Frame*, MethodInfo*, AttributeInfoCode*, LinearStack<uint32_t>&, MethodInfo**, Frame**, bool&, bool&, bool)>, 0xC9 + 1> execIntruction;
         void exec(MethodInfo* nextMethod);
         void setRuntimeDataArea(RuntimeDataArea* new_runtimeDataArea);
         void setClassLoader(CassLoader* new_classLoader);

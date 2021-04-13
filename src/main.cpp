@@ -8,12 +8,16 @@
 #include <algorithm>
 #include <map>
 
-#include "../include/FileSystem.h"
+// #include "../include/FileSystem.h"
 // #include "../include/ClassFile.h"
 // #include "../include/Tipos.h"
 // #include "../include/ISA.h"
 // #include "../include/PrintMenu.h"
 // #include "../include/PrintTudo.h"
+#include "../include/ClassLoader.h"
+#include "../include/RuntimeDataArea.h"
+// #include "../include/ConstantPoolInfo.h"
+#include "../include/ExecutionEngine.h"
 
 // bool isSameClass(std::string s1, std::string s2){
 //     std::reverse(s1.begin(), s1.end());
@@ -23,7 +27,28 @@
 // }
 
 int main(int argc, char *argv[]){
-    FileSystem fs(argv[0]);
+    CassLoader classLoader(argv[0]);
+    RuntimeDataArea runtimeDataArea;
+    ExecutionEngine executionEngine;
+
+    
+    classLoader.setRuntimeDataArea(&runtimeDataArea);
+    classLoader.setExecutionEngine(&executionEngine);
+    executionEngine.setRuntimeDataArea(&runtimeDataArea);
+    executionEngine.setClassLoader(&classLoader);
+    
+    std::string className = "SimplesChar";
+
+    classLoader.addClassToLoad(className);
+    classLoader.exec();
+
+    executionEngine.exec(classLoader.getMethod(className, "main:([Ljava/lang/String;)V"));
+    
+    // FileSystem fs(argv[0]);
+    // CassLoader classLoader(argv[0]);
+    // std::cerr << fs.getJavaClassPath() + fs.javaToEnvironmentPathNotation("java\\lang\\Object.class") << "\n";
+    // classLoader.readClass(fs.getJavaClassPath() + fs.javaToEnvironmentPathNotation("java\\lang\\Object.class"));
+    // classLoader.prepare(fs.getJavaClassPath() + fs.javaToEnvironmentPathNotation("java\\lang\\Object.class"));
     
     // std::ifstream is;
     // std::string fileName;
@@ -90,6 +115,7 @@ int main(int argc, char *argv[]){
     // } else{
     //     std::cerr << "Ponha ou \"-p\"(para printar tudo), ou \"-b\"(para printar cmo menus)\n";
     // }
+    
     return 0;
 }
 

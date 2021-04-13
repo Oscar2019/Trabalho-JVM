@@ -127,16 +127,25 @@ ConstantPoolInfo::ConstantPoolInfo(){
 
 CPClass::CPClass() : ConstantPoolInfo(){
     nameIndex = 0;
+    wasLoaded = false;
+    instanceFieldSize = 0;
+    instanceMethodSize = 0;
+    instanceMethodPointer = nullptr;
+    classFile = nullptr;
 }
 
 CPFieldref::CPFieldref() : ConstantPoolInfo(){
     classIndex = 0;
     nameAndTypeIndex = 0;
+    classFieldValue = nullptr;
+    instanceFieldDesloc = -1;
 }
 
 CPMethodref::CPMethodref() : ConstantPoolInfo(){
     classIndex = 0;
     nameAndTypeIndex = 0;
+    directMethod = nullptr;
+    instanceMethodDesloc = -1;
 }
 
 CPInterfaceMethodref::CPInterfaceMethodref() : ConstantPoolInfo(){

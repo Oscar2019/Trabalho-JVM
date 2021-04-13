@@ -3,12 +3,14 @@
 
 #include <cstdint>
 #include "../include/AttributeInfo.h"
+#include "../include/ConstantPoolInfo.h"
 
 /**
  * @brief Estrutura que armazena os dados de um método
  * 
  */
 struct MethodInfo{
+    ConstantPoolInfo **cp;
     /**
      * @brief Flag de acesso de método
      * 
@@ -44,6 +46,9 @@ struct MethodInfo{
      * 
      */
     ~MethodInfo();
+
+    AttributeInfo* getAttribute(std::string &attributeName);
+    AttributeInfo* getAttribute(std::string &&attributeName);
 };
 
 /**

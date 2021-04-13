@@ -7,6 +7,7 @@ void conveterAttributeInfoInMethodInfo(ConstantPoolInfo **cf, MethodInfo *mi){
 }
 
 MethodInfo::MethodInfo(){
+    cp = nullptr;
     accessFlags = 0;
     nameIndex = 0;
     descriptorIndex = 0;
@@ -21,4 +22,19 @@ MethodInfo::~MethodInfo(){
     if(attributesCount > 0){
         delete[] attributes; // deleta o vetor de atributos
     }
+}
+
+AttributeInfo* MethodInfo::getAttribute(std::string &attributeName){
+    for(uint32_t i = 0; i < attributesCount; i++){
+        AttributeInfo* attributeInfo = attributes[i];
+        std::string str = getStringFromCPInfo(cp, attributeInfo->attributeNameIndex);
+        if(str == "Code"){
+            return attributeInfo;
+        }
+    }
+    return nullptr;
+}
+
+AttributeInfo* MethodInfo::getAttribute(std::string &&attributeName){
+    return getAttribute(attributeName);
 }

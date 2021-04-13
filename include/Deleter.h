@@ -5,9 +5,9 @@
 
 class DestructBase{
     public:
-        // virtual ~DestructBase(){
+        virtual ~DestructBase(){
             
-        // };
+        };
 };
 
 template<typename T>

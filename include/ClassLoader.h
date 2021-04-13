@@ -12,9 +12,13 @@
 #include "../include/Trie.h"
 #include "../include/MethodInfo.h"
 #include "../include/ClassFile.h"
+#include "../include/tipos.h"
 #include "../include/RuntimeDataArea.h"
+#include "../include/Deleter.h"
 #include "../include/FileSystem.h"
 #include "../include/ExecutionEngine.h"
+
+bool isSameClass(std::string s1, std::string s2);
 
 class CassLoader{
     private:
@@ -61,11 +65,14 @@ class CassLoader{
         RuntimeDataArea *runtimeDataArea;
         ExecutionEngine *executionEngine;
 
+        bool interfacesAreLoaded(NodeContent *nodeContent);
+
+        void addInterfacesToLoad(NodeContent *nodeContent);
         
         void readClass(std::string s);
-        void prepareClass(NodeContent *nodeContent);
-        void resolveClass(NodeContent *nodeContent);
-        void inicializeClass(NodeContent *nodeContent);
+        void prepare(NodeContent *nodeContent);
+        void resolve(NodeContent *nodeContent);
+        void inicialize(NodeContent *nodeContent);
     public:
         CassLoader(std::string &&s);
 
@@ -75,6 +82,8 @@ class CassLoader{
         void setExecutionEngine(ExecutionEngine* new_executionEngine);
 
         void exec();
+
+        MethodInfo* getMethod(std::string className, std::string methodName);
 
         void resolveConstantPoolAt(ConstantPoolInfo** cp, uint32_t ind);
        

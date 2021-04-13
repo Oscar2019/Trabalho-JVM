@@ -107,6 +107,11 @@ struct ClassFile{
      * @brief Construct a new Class File object
      * 
      */
+    void addCPinfoInMethods();
+    /**
+     * @brief Construct a new Class File object
+     * 
+     */
     ClassFile();
     /**
      * @brief Destroy the Class File object
