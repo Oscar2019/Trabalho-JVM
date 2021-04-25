@@ -6,7 +6,7 @@
 
 class Heap{
     private:
-        std::vector<Pointer*> vet;
+        std::vector<ObjectReference*> vet;
     public:
         Heap() : vet(){
 
@@ -16,10 +16,10 @@ class Heap{
                 delete p;
             }
         }
-        void push(Pointer* pointer){
+        void push(ObjectReference* pointer){
             vet.push_back(pointer);
         }
-        Pointer* at(uint32_t i){
+        ObjectReference* at(uint32_t i){
             return vet[i-1];
         }
         uint32_t size(){

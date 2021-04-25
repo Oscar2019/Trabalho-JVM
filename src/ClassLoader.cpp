@@ -1,12 +1,15 @@
 #include "../include/ClassLoader.h"
 
-
+#include <stdexcept>
+#include <queue>
+#include "../include/PrintTudo.h"
+#include "../include/PrintMenu.h"
 
 bool isSameClass(std::string s1, std::string s2){
     return s1 == s2;
 }
 
-CassLoader::NodeContent::NodeContent(){
+ClassLoader::NodeContent::NodeContent(){
     classNum = 0;
     classFile = nullptr;
     wasResolved = false;
@@ -23,7 +26,7 @@ CassLoader::NodeContent::NodeContent(){
     acessMehodsTable = nullptr;
 }
 
-bool CassLoader::interfacesAreLoaded(NodeContent *nodeContent){
+bool ClassLoader::interfacesAreLoaded(NodeContent *nodeContent){
     ClassFile *cf = nodeContent->classFile;
     for(uint i = 0; i < cf->interfacesCount; i++){
         std::string s = getStringFromCPInfo(cf->constantPool, cf->interfaces[i]);
@@ -36,7 +39,7 @@ bool CassLoader::interfacesAreLoaded(NodeContent *nodeContent){
     return true;
 }
 
-void CassLoader::addInterfacesToLoad(NodeContent *nodeContent){
+void ClassLoader::addInterfacesToLoad(NodeContent *nodeContent){
     ClassFile *cf = nodeContent->classFile;
     for(uint i = 0; i < cf->interfacesCount; i++){
         std::string s = getStringFromCPInfo(cf->constantPool, cf->interfaces[i]);
@@ -44,56 +47,83 @@ void CassLoader::addInterfacesToLoad(NodeContent *nodeContent){
     }
 }
 
-void CassLoader::readClass(std::string s){
-    if(!tree.hasKey(s)){
+ClassFile* ClassLoader::readClass2(FileSystem &fs, std::string &s){
 
-        std::ifstream is;
-        is.open(fs.getJavaClassPath() + s + ".class", std::ios::binary);
+    std::ifstream is;
+    is.open(fs.getJavaClassPath() + s + ".class", std::ios::binary);
+    if(!is.is_open()){
+        is.open(fs.getUserClassPath() + s + ".class", std::ios::binary);
         if(!is.is_open()){
-            is.open(s + ".class", std::ios::binary);
-            // std::cerr << "Arquivo \"" + s + ".class\" nao foi encontrado\n"; 
-            // return -1;
+            std::cerr << "Arquivo \"" + s + ".class\" nao foi encontrado\n"; 
+            exit(1);
         }
-        is.exceptions(std::ifstream::eofbit);
-        ClassFile *cf = new ClassFile();
-        runtimeDataArea->pushMethodArea(new DestructSimple<ClassFile>(cf));
-        try{
-            read<ClassFile>(is, cf);
-            // try{
-            //     is.peek();
-            // } catch(std::exception &e){
-            //     Terminou com sucesso
-            // }
-        } catch(ClassFormatError &e){
-            std::cerr << e.what() << "\n";
-            // return -1;
-        } catch(UnsupportedClassVersionError &e){
-            std::cerr << e.what() << "\n";
-            // return -1;
-        } catch(std::exception &e){
-            std::cerr << e.what() << "\n";
-            // return -1;
-        } catch( ... ){
-            std::cerr << "Um erro qualquer\n";
-            // return -1;
-        }
-        if(!isSameClass(getStringFromCPInfo(cf->constantPool, cf->thisClass), s)){
+    }
+    is.exceptions(std::ifstream::eofbit);
+    ClassFile *cf = new ClassFile();
+    try{
+        read<ClassFile>(is, cf);
+        // try{
+        //     is.peek();
+        // } catch(std::exception &e){
+        //     Terminou com sucesso
+        // }
+    } catch(ClassFormatError &e){
+        std::cerr << e.what() << "\n";
+        // return -1;
+    } catch(UnsupportedClassVersionError &e){
+        std::cerr << e.what() << "\n";
+        // return -1;
+    } catch(std::exception &e){
+        std::cerr << e.what() << "\n";
+        // return -1;
+    } catch( ... ){
+        std::cerr << "Um erro qualquer\n";
+        // return -1;
+    }
+    std::string strAux = getStringFromCPInfo(cf->constantPool, cf->thisClass);
+    if(!isSameClass(strAux, s)){
+        if(strAux.size() < s.size()){
+            std::string strTmp = s.substr(0, s.size() - strAux.size());
+            if(strTmp.back() == '/'){
+                fs.setUserClassPath(strTmp);
+                s = strAux;
+            } else{
+                std::cerr << "Nome do arquivo diferente do nome da classe\n";
+            }
+        } else{
             std::cerr << "Nome do arquivo diferente do nome da classe\n";
-            // return -1;
         }
-        conveterAttributeInfoInClassFile(cf->constantPool, cf);
+    }
+    conveterAttributeInfoInClassFile(cf->constantPool, cf);
+    return cf;
+}
+
+
+std::string ClassLoader::getClassName(){
+    ClassFile* cf = tree.getData()[0]->classFile;
+    return getClass(cf->constantPool, cf->thisClass);
+}
+
+void ClassLoader::readClass(std::string &s){
+    if(!tree.hasKey(s)){
+        std::string s1 = fs.javaToEnvironmentPathNotation(s);
+
+        ClassFile *cf = ClassLoader::readClass2(fs, s1);
+        runtimeDataArea->pushMethodArea(new DestructSimple<ClassFile>(cf));
+
         NodeContent *nodeContent = new NodeContent();
         runtimeDataArea->pushMethodArea(new DestructSimple<NodeContent>(nodeContent));
         nodeContent->classNum = tree.size();
         nodeContent->classFile = cf;
-        tree.insert(s, nodeContent);
+        tree.insert(s1, nodeContent);
+        inheranceGraph.push_back({});
         classToLoad.pop();
         classPrepare.push(nodeContent);
     } else{
         classToLoad.pop();
     }
 }
-void CassLoader::prepare(NodeContent *nodeContent){
+void ClassLoader::prepare(NodeContent *nodeContent){
     ClassFile * cf = nodeContent->classFile;
     for(uint32_t i = 0; i < cf->fieldsCount; i++){
         if(cf->fields[i].accessFlags & 0x0008){
@@ -211,7 +241,7 @@ void CassLoader::prepare(NodeContent *nodeContent){
     classResolve.push(nodeContent);
 }
         
-void CassLoader::resolve(NodeContent *nodeContent){
+void ClassLoader::resolve(NodeContent *nodeContent){
     ClassFile * cf = nodeContent->classFile;
     if(cf->superClass == 0){
         for(uint32_t i = 0; i < cf->methodsCount; i++){
@@ -325,17 +355,27 @@ void CassLoader::resolve(NodeContent *nodeContent){
         if(tree.hasKey(superClassName) && interfacesAreLoaded(nodeContent)){
             NodeContent *superNodeContent = tree.getValue(superClassName);
             if(!superNodeContent->wasResolved){
-                throw std::string("Heranca Circular");
+                throw std::logic_error("Heranca Circular");
             }
+
+            inheranceGraph[nodeContent->classNum].push_back(superNodeContent->classNum);
+            for(uint32_t i = 0; i < nodeContent->classFile->interfacesCount; i++){
+                std::string str = getStringFromCPInfo(nodeContent->classFile->constantPool, nodeContent->classFile->interfaces[i]);
+                NodeContent *interfaceNodeContent = tree.getValue(str);
+                inheranceGraph[nodeContent->classNum].push_back(interfaceNodeContent->classNum);
+            }
+            inheranceGraph[nodeContent->classNum].reserve(inheranceGraph[nodeContent->classNum].size());
+
             nodeContent->iterfaceMethodLocalization = superNodeContent->iterfaceMethodLocalization;
             nodeContent->qtdMethodsClassNoPriv = superNodeContent->qtdMethodsClassNoPriv;
             nodeContent->methodsClassNoPriv.copyFrom(superNodeContent->methodsClassNoPriv);
             nodeContent->qtdMethodsInstanceNoPriv = superNodeContent->qtdMethodsInstanceNoPriv;
-            nodeContent->methodsClassNoPriv.copyFrom(superNodeContent->methodsClassNoPriv);
+            nodeContent->methodsInstanceNoPriv.copyFrom(superNodeContent->methodsInstanceNoPriv);
             nodeContent->qtdFieldsClassNoPriv = superNodeContent->qtdFieldsClassNoPriv;
-            nodeContent->methodsClassNoPriv.copyFrom(superNodeContent->methodsClassNoPriv);
+            nodeContent->fieldsClassNoPriv.copyFrom(superNodeContent->fieldsClassNoPriv);
             nodeContent->qtdFieldsInstanceNoPriv = superNodeContent->qtdFieldsInstanceNoPriv;
-            nodeContent->methodsClassNoPriv.copyFrom(superNodeContent->methodsClassNoPriv);
+            nodeContent->fieldsInstanceNoPriv.copyFrom(superNodeContent->fieldsInstanceNoPriv);
+            nodeContent->sizeInstance = superNodeContent->sizeInstance;
             for(uint32_t i = 0; i < cf->methodsCount; i++){
                 std::string methodName = getStringFromCPInfo(cf->constantPool, cf->methods[i].nameIndex);
                 std::string methodDescriptor = getStringFromCPInfo(cf->constantPool, cf->methods[i].descriptorIndex);
@@ -354,8 +394,9 @@ void CassLoader::resolve(NodeContent *nodeContent){
                 } else if((cf->methods[i].accessFlags & 0x0002)){ // private
                     nodeContent->methodsInstancePriv.insert(method, cf->methods + i);
                     nodeContent->qtdMethodsInstancePriv++;
-                } else{ // noPrivate
-                    if(tree.hasKey(method)){
+                } else{ // noPrivate    
+                    // std::cout << method << "\n";
+                    if(nodeContent->methodsInstanceNoPriv.hasKey(method)){
                         nodeContent->methodsInstanceNoPriv.getValue(method).second = cf->methods + i;
                     } else{
                         nodeContent->methodsInstanceNoPriv.insert(method, std::make_pair(nodeContent->qtdMethodsInstanceNoPriv, cf->methods + i));
@@ -363,6 +404,7 @@ void CassLoader::resolve(NodeContent *nodeContent){
                     }
                 } 
             }
+            // std::cout << "\n";
             for(uint32_t i = 0; i < cf->fieldsCount; i++){
                 std::string fieldName = getStringFromCPInfo(cf->constantPool, cf->fields[i].nameIndex);
                 std::string fieldDescriptor = getStringFromCPInfo(cf->constantPool, cf->fields[i].descriptorIndex);
@@ -442,8 +484,15 @@ void CassLoader::resolve(NodeContent *nodeContent){
             }
             auto &vetData = nodeContent->methodsInstanceNoPriv.getData();
             for(uint32_t i = 0; i < nodeContent->qtdMethodsInstanceNoPriv; i++){
+                // std::string methodName = getStringFromCPInfo(vetData[i].second->cp, vetData[i].second->nameIndex);
+                // std::string methodDescriptor = getStringFromCPInfo(vetData[i].second->cp, vetData[i].second->descriptorIndex);
+                // std::string method = methodName + ":" + methodDescriptor;
+                
+                // std::cout << method << "\n";
+                uint32_t val = vetData[i].first;
                 nodeContent->acessMehodsTable[i] = vetData[i].second;
             }
+            // std::cout << "\n";
             for(uint32_t i = 0; i < nodeContent->classFile->interfacesCount; i++){
                 std::string interfaceClassName = getStringFromCPInfo(cf->constantPool, cf->interfaces[i]);
                 NodeContent* interfaceContent = tree.getValue(interfaceClassName);
@@ -453,9 +502,11 @@ void CassLoader::resolve(NodeContent *nodeContent){
                     nodeContent->iterfaceMethodLocalization[interfaceContent->classNum] = table;
                     auto &interfaceMethods = interfaceContent->methodsInstanceNoPriv.getData();
                     for(uint32_t i = 0; i < interfaceMethods.size(); i++){
-                        std::string methodName = getStringFromCPInfo(interfaceContent->classFile->constantPool, interfaceMethods[i].second->nameIndex);
-                        std::string methodDescriptor = getStringFromCPInfo(interfaceContent->classFile->constantPool, interfaceMethods[i].second->descriptorIndex);
+                        std::string methodName = getStringFromCPInfo(interfaceMethods[i].second->cp, interfaceMethods[i].second->nameIndex);
+                        std::string methodDescriptor = getStringFromCPInfo(interfaceMethods[i].second->cp, interfaceMethods[i].second->descriptorIndex);
                         std::string method = methodName + ":" + methodDescriptor;
+                        // table[nodeContent->methodsInstanceNoPriv.getValue(method).first] = interfaceMethods[i].first;
+                        uint32_t val = nodeContent->methodsInstanceNoPriv.getValue(method).first;
                         table[interfaceMethods[i].first] = nodeContent->methodsInstanceNoPriv.getValue(method).first;
                     }
                 }
@@ -470,44 +521,50 @@ void CassLoader::resolve(NodeContent *nodeContent){
         }
     }
 }
-void CassLoader::inicialize(NodeContent *nodeContent){
+void ClassLoader::inicialize(NodeContent *nodeContent){
     classInitialize.pop();
     if(nodeContent->constantConstructor != nullptr){
-        executionEngine->exec(nodeContent->constantConstructor);
+        MethodInfo* method = nodeContent->constantConstructor;
+        executionEngine->exec(method, Frame::CreateFrame(method));
     }
 }
 
-CassLoader::CassLoader(std::string &&s) : fs(s){
+ClassLoader::ClassLoader(std::string &&s) : fs(s){
     runtimeDataArea = nullptr;
+    objectNodeContent = nullptr;
+}
+ClassLoader::ClassLoader(std::string &s) : fs(s){
+    runtimeDataArea = nullptr;
+    objectNodeContent = nullptr;
 }
 
-void CassLoader::addClassToLoad(std::string s){
+void ClassLoader::addClassToLoad(std::string s){
     s = fs.javaToEnvironmentPathNotation(s);
     classToLoad.push(s);
 }
 
-void CassLoader::setRuntimeDataArea(RuntimeDataArea* new_runtimeDataArea){
+void ClassLoader::setRuntimeDataArea(RuntimeDataArea* new_runtimeDataArea){
     runtimeDataArea = new_runtimeDataArea;
 }
-void CassLoader::setExecutionEngine(ExecutionEngine* new_executionEngine){
+void ClassLoader::setExecutionEngine(ExecutionEngine* new_executionEngine){
     executionEngine = new_executionEngine;
 }
 
-void CassLoader::exec(){
+void ClassLoader::exec(){
     while(!classToLoad.empty() || !classPrepare .empty() || !classResolve .empty() || !classInitialize.empty()){
-        if(!classInitialize.empty()){
-            inicialize(classInitialize.top());
-        } else if(!classToLoad.empty()){
+        if(!classToLoad.empty()){
             readClass(classToLoad.top());
         } else if(!classPrepare.empty()){
             prepare(classPrepare.top());
         } else if(!classResolve.empty()){
             resolve(classResolve.top());
+        } else if(!classInitialize.empty()){
+            inicialize(classInitialize.front());
         }
     }
 }
 
-MethodInfo* CassLoader::getMethod(std::string className, std::string methodName){
+MethodInfo* ClassLoader::getMethod(std::string className, std::string methodName){
     if(tree.hasKey(className)){
         NodeContent* nc = tree.getValue(className);
         if(nc->methodsClassNoPriv.hasKey(methodName)){
@@ -519,22 +576,53 @@ MethodInfo* CassLoader::getMethod(std::string className, std::string methodName)
     return nullptr;
 }
 
-void CassLoader::resolveConstantPoolAt(ConstantPoolInfo** cp, uint32_t ind){
+void ClassLoader::saveObejectInfo(){
+    std::string str = "java/lang/Object";
+    objectNodeContent = tree.getValue(str);
+}
+
+std::pair<MethodInfo**, uint32_t> ClassLoader::getObejectInfo(){
+    return {objectNodeContent->acessMehodsTable, objectNodeContent->sizeInstance};
+}
+
+void ClassLoader::resolveConstantPoolAt(ConstantPoolInfo** cp, uint32_t ind){
     if(cp[ind]->tag == ConstantPoolInfoTag::CLASS){
         CPClass* classRef = dynamic_cast<CPClass*>(cp[ind]);
         std::string className = getStringFromCPInfo(cp, ind);
+        classRef->wasLoaded = true;
+        for(uint32_t i = 0; i < className.size(); i++){
+            if(i == 0 && className[i] != '['){
+                classRef->primitiveType = 'L';
+                break;
+            }
+            if(i > 0 && className[i] != '['){
+                classRef->primitiveType = className[i];
+                className = className.substr(i+1);
+                break;
+            } else{
+                classRef->dimensions++;
+            }
+        }
+        if(className.empty()){
+            return;
+        }
+        if(className.back() == ';'){
+            className.pop_back();
+        }
         if(!tree.hasKey(className)){
             classToLoad.push(className);
             exec();
         }
         NodeContent* nc = tree.getValue(className);
-        classRef->wasLoaded = true;
+        classRef->classNum = nc->classNum;
+        classRef->classFile = nc->classFile;
         classRef->instanceFieldSize = nc->sizeInstance;
         classRef->instanceMethodSize = nc->qtdMethodsInstanceNoPriv;
-        classRef->instanceMethodPointer = nc->acessMehodsTable;
+        // classRef-> = nc->acessMehodsTable;
     } else if(cp[ind]->tag == ConstantPoolInfoTag::FIELDREF){
         CPFieldref* fieldRef = dynamic_cast<CPFieldref*>(cp[ind]);
         CPNameAndType* nameAndType = dynamic_cast<CPNameAndType*>(cp[fieldRef->nameAndTypeIndex]);
+        fieldRef->wasLoaded = true;
         std::string className = getStringFromCPInfo(cp, fieldRef->classIndex);
         std::string fieldName = getStringFromCPInfo(cp, nameAndType->nameIndex) + ":" + getStringFromCPInfo(cp, nameAndType->descriptorIndex);
         if(!tree.hasKey(className)){
@@ -553,7 +641,9 @@ void CassLoader::resolveConstantPoolAt(ConstantPoolInfo** cp, uint32_t ind){
         }
     } else if(cp[ind]->tag == ConstantPoolInfoTag::METHODREF){
         CPMethodref* methodref = dynamic_cast<CPMethodref*>(cp[ind]);
-        CPNameAndType* nameAndType = dynamic_cast<CPNameAndType*>(cp[methodref->nameAndTypeIndex]);std::string className = getStringFromCPInfo(cp, methodref->classIndex);
+        CPNameAndType* nameAndType = dynamic_cast<CPNameAndType*>(cp[methodref->nameAndTypeIndex]);
+        methodref->wasLoaded = true;
+        std::string className = getStringFromCPInfo(cp, methodref->classIndex);
         std::string methodName = getStringFromCPInfo(cp, nameAndType->nameIndex) + ":" + getStringFromCPInfo(cp, nameAndType->descriptorIndex);
         if(!tree.hasKey(className)){
             classToLoad.push(className);
@@ -571,6 +661,84 @@ void CassLoader::resolveConstantPoolAt(ConstantPoolInfo** cp, uint32_t ind){
         } else if(nc->methodsInstancePriv.hasKey(methodName)){
             methodref->directMethod = nc->methodsInstancePriv.getValue(methodName);
         }
+    } else if(cp[ind]->tag == ConstantPoolInfoTag::INTERFACE_METHODREF){
+        CPInterfaceMethodref* interfaceMethodref = dynamic_cast<CPInterfaceMethodref*>(cp[ind]);
+        CPNameAndType* nameAndType = dynamic_cast<CPNameAndType*>(cp[interfaceMethodref->nameAndTypeIndex]);
+        interfaceMethodref->wasLoaded = true;
+        std::string className = getStringFromCPInfo(cp, interfaceMethodref->classIndex);
+        std::string methodName = getStringFromCPInfo(cp, nameAndType->nameIndex) + ":" + getStringFromCPInfo(cp, nameAndType->descriptorIndex);
+        if(!tree.hasKey(className)){
+            classToLoad.push(className);
+            exec();
+        }
+        NodeContent* nc = tree.getValue(className);
+        interfaceMethodref->classNum = nc->classNum;
+        if(nc->methodsInstanceNoPriv.hasKey(methodName)){
+            interfaceMethodref->instanceMethodDesloc = nc->methodsInstanceNoPriv.getValue(methodName).first;
+        }
     }
 }
-       
+
+uint32_t ClassLoader::getClassNum(std::string &className){
+    if(!tree.hasKey(className)){
+        classToLoad.push(className);
+        exec();
+    }
+    return tree.getValue(className)->classNum;
+}
+
+MethodInfo* ClassLoader::getContructor(uint32_t classNum, std::string &methodName){
+    NodeContent* nodeContent = tree.getData()[classNum];
+    return nodeContent->constructor.getValue(methodName);
+}
+
+uint32_t ClassLoader::getInstanceSize(uint32_t classNum){
+    NodeContent* nodeContent = tree.getData()[classNum];
+    return nodeContent->sizeInstance;
+}
+
+std::map<uint32_t, uint32_t*>* ClassLoader::getIterfaceMethodLocalization(uint32_t classNum){
+    NodeContent* nodeContent = tree.getData()[classNum];
+    return &nodeContent->iterfaceMethodLocalization;
+}
+
+MethodInfo** ClassLoader::getMethodTable(uint32_t classNum){
+    NodeContent* nodeContent = tree.getData()[classNum];
+    return nodeContent->acessMehodsTable;
+}
+
+
+ClassFile* ClassLoader::getClassFile(uint32_t classNum){
+    NodeContent* nodeContent = tree.getData()[classNum];
+    return nodeContent->classFile;
+}
+
+uint32_t ClassLoader::getDatafromObject(uint32_t object, std::string& name){
+    ObjectReference* objReference = runtimeDataArea->objectAt(object);
+    NodeContent* nodeContent = tree.getData()[objReference->classNum];
+    if(nodeContent->fieldsInstanceNoPriv.hasKey(name)){
+        return nodeContent->fieldsInstanceNoPriv.getValue(name);
+    } else if(nodeContent->fieldsInstancePriv.hasKey(name)){
+        return nodeContent->fieldsInstancePriv.getValue(name);
+    }
+    return 0;
+}
+
+bool ClassLoader::parentOf(uint32_t parent, uint32_t child){
+    if(parent == child){
+        return true;
+    }
+    std::queue<uint32_t> fila;
+    fila.push(child);
+    while(!fila.empty()){
+        auto front = fila.front();
+        fila.pop();
+        for(auto p : inheranceGraph[front]){
+            if(parent == p){
+                return true;
+            }
+            fila.push(p);
+        }
+    }
+    return false;
+}

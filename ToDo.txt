@@ -1,0 +1,84 @@
+Grupo: 
+
+
+** Defesa (100)
+
+   Componente 1 - 
+   Componente 2 - 
+   Componente 3 - 
+   Componente 4 - 
+   Componente 5 - 
+
+-------------------------
+** Corretude do interpretador 
+
+Resumo: 100
+
+1.(x) array simples
+2.(x) arrays.length
+3.(x) arrays multidimensionais
+4.(x) arrays de referencia
+5.() doubles
+6.() floats
+7.() longs
+8.() inteiros  
+9.() shorts
+10.(+-) strings
+11.() desvios com cat 1 
+12.() operacoes logicas com cat 1  
+13.() operacoes de deslocamento com cat 1 
+14.() operacoes aritmeticas de cat 2 
+15.() operacoes de deslocamento de longs
+16.(x) system.out.println (int, float, string e booleano)
+17.() conversao de e para cat 2
+18.() iteracao
+19.() switches
+20.(x) fields
+21.() interfaces
+22.() recursao
+23.(x) metodos estaticos  
+24.(x) metodos nao estaticos
+25.(x) objetos 
+26.() operacoes de retorno
+27.() operacoes de manipulacao de pilha
+28.() consistencia
+29.() exceptions
+30.() invokes
+31.() polimorfismo
+32.() reescrita
+33.() herança
+-------------------------
+
+Resumo: 100
+
+-- leitura do formato ponto class:
+- Trata vers�es superiores? 
+- Despreza silenciosamente atributos n�o tratados?
+- Consist�ncia?
+- Corretude?
+- Exibe mnem�nicos?
+- Apresenta reindire��o das entradas no Constant Pool?
+
+
+Bonus: 10% (bonus sobre a corretude do interpretador)
+
+--  opcionais 
+Todas as demais instru��es.
+
+( ) threads
+( ) debug
+( ) checagem din�mica de tipos
+( ) coletor de lixo.
+
+-------------------------
+
+
+Atribui��o de nota para a JVM
+0,3*leitor_exibidor + 0,5*corretude + 0,1*defesa do interpretador + 0,1*site
+
+Site: 100 
+
+- Apresenta o Diagrama de Comunica��o entre os M�dulos e a descri��o de cada fun��o?
+- Contem a rela��o das estruturas de dados e os arquivos?
+- Est� atualizado?
+- Corretude?

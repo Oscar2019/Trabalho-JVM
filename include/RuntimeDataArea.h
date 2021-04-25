@@ -12,13 +12,13 @@ class RuntimeDataArea{
         MethodArea methodArea;
         Heap heap;
     public:
-        void pushHeap(Pointer* pointer){
+        void pushHeap(ObjectReference* pointer){
             heap.push(pointer);
         }
         void pushMethodArea(DestructBase* pointer){
             methodArea.push(pointer);
         }
-        Pointer* objectAt(uint32_t i){
+        ObjectReference* objectAt(uint32_t i){
             return heap.at(i);
         }
         uint32_t heapSize(){

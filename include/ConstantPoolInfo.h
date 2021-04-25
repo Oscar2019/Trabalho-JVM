@@ -79,9 +79,11 @@ struct CPClass : public ConstantPoolInfo{
     uint16_t nameIndex;
 
     bool wasLoaded;
+    uint8_t primitiveType;
+    uint32_t classNum;
     uint32_t instanceFieldSize;
     uint32_t instanceMethodSize;
-    MethodInfo **instanceMethodPointer;
+    uint32_t dimensions;
     ClassFile *classFile;
 };
 
@@ -115,6 +117,7 @@ struct CPFieldref : public ConstantPoolInfo{
      */
     uint16_t nameAndTypeIndex; 
 
+    bool wasLoaded;
     void* classFieldValue;
     int32_t instanceFieldDesloc;
 };
@@ -149,8 +152,9 @@ struct CPMethodref : public ConstantPoolInfo{
      */
     uint16_t nameAndTypeIndex;
     
+    bool wasLoaded;
     MethodInfo* directMethod;
-    int32_t instanceMethodDesloc;
+    uint32_t instanceMethodDesloc;
 };
 
 /**
@@ -182,6 +186,9 @@ struct CPInterfaceMethodref : public ConstantPoolInfo{
      * 
      */
     uint16_t nameAndTypeIndex;
+    bool wasLoaded;
+    uint32_t classNum;
+    uint32_t instanceMethodDesloc;
 };
 
 /**

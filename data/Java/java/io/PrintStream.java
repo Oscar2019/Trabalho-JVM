@@ -9,7 +9,7 @@ public class PrintStream{
     public static native void print_long(long value);   
     public static native void print_float(float value);   
     public static native void print_double(double value);   
-    // public static print_String(int value); 
+    public static native void print_string(String value); 
 
     public void print(int value){
         print_int(value);
@@ -35,9 +35,9 @@ public class PrintStream{
     public void print(double value){
         print_double(value);
     }
-    // public void print(String value){
-    //     print_int(value);
-    // }
+    public void print(String value){
+        print_string(value);
+    }
     
     public void println(int value){
         print_int(value);
@@ -71,10 +71,10 @@ public class PrintStream{
         print_double(value);
         print_char('\n');
     }
-    // public void println(String value){
-    //     print_int(value);
-    //     print_char('\n');
-    // }
+    public void println(String value){
+        print_string(value);
+        print_char('\n');
+    }
 }
 
 // javac -sourcepath data/Java/  data/Java/java/io/PrintStream.java -d data/JavaLib/

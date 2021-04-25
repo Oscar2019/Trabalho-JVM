@@ -93,7 +93,7 @@ class Trie{
             return tree[v].second.find(0) != tree[v].second.end();
         }
 
-        void copyFrom(Trie &other){
+        void copyFrom(Trie<T> &other){
             std::queue<std::pair<uint32_t, uint32_t>> myQueue;
             myQueue.emplace(0, 0); // first this, second other
             while(!myQueue.empty()){
@@ -112,7 +112,7 @@ class Trie{
                     } else{
                         if(it == tree[front.first].second.end()){
                             tree[front.first].second[0] = data.size();
-                            data.push_back(other.data[it->second]);
+                            data.push_back(other.data[p.second]);
                         }
                     }
                 }

@@ -6,6 +6,7 @@
 #include <cstdint>
 #include <iostream>
 #include <map>
+#include <set>
 #include <stdexcept>
 #include <stack>
 
@@ -20,7 +21,7 @@
 
 bool isSameClass(std::string s1, std::string s2);
 
-class CassLoader{
+class ClassLoader{
     private:
         struct NodeContent{
             uint32_t classNum;
@@ -61,22 +62,38 @@ class CassLoader{
         std::stack<std::string> classToLoad;
         std::stack<NodeContent*> classPrepare;
         std::stack<NodeContent*> classResolve;
-        std::stack<NodeContent*> classInitialize;
+        std::queue<NodeContent*> classInitialize;
         RuntimeDataArea *runtimeDataArea;
         ExecutionEngine *executionEngine;
+
+        std::vector<std::vector<uint32_t>> inheranceGraph;
 
         bool interfacesAreLoaded(NodeContent *nodeContent);
 
         void addInterfacesToLoad(NodeContent *nodeContent);
         
-        void readClass(std::string s);
+        void readClass(std::string &s);
         void prepare(NodeContent *nodeContent);
         void resolve(NodeContent *nodeContent);
         void inicialize(NodeContent *nodeContent);
+        NodeContent* objectNodeContent;
     public:
-        CassLoader(std::string &&s);
+        ClassLoader(std::string &&s);
+        ClassLoader(std::string &s);
 
         void addClassToLoad(std::string s);
+        void saveObejectInfo();
+        std::pair<MethodInfo**, uint32_t> getObejectInfo();
+
+        uint32_t getClassNum(std::string &className);
+        MethodInfo* getContructor(uint32_t classNum, std::string &methodName);
+        uint32_t getInstanceSize(uint32_t classNum);
+        std::map<uint32_t, uint32_t*>* getIterfaceMethodLocalization(uint32_t classNum);
+        MethodInfo** getMethodTable(uint32_t classNum);
+        ClassFile* getClassFile(uint32_t classNum);
+        std::string getClassName();
+
+        uint32_t getDatafromObject(uint32_t object, std::string& name);
 
         void setRuntimeDataArea(RuntimeDataArea* new_runtimeDataArea);
         void setExecutionEngine(ExecutionEngine* new_executionEngine);
@@ -84,6 +101,9 @@ class CassLoader{
         void exec();
 
         MethodInfo* getMethod(std::string className, std::string methodName);
+        bool parentOf(uint32_t parent, uint32_t child);
+
+        static ClassFile* readClass2(FileSystem &fs, std::string &s);
 
         void resolveConstantPoolAt(ConstantPoolInfo** cp, uint32_t ind);
        

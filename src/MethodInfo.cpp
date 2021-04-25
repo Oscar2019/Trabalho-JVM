@@ -28,7 +28,7 @@ AttributeInfo* MethodInfo::getAttribute(std::string &attributeName){
     for(uint32_t i = 0; i < attributesCount; i++){
         AttributeInfo* attributeInfo = attributes[i];
         std::string str = getStringFromCPInfo(cp, attributeInfo->attributeNameIndex);
-        if(str == "Code"){
+        if(str == attributeName){
             return attributeInfo;
         }
     }

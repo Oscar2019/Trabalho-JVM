@@ -18,6 +18,8 @@
 #include "../include/RuntimeDataArea.h"
 // #include "../include/ConstantPoolInfo.h"
 #include "../include/ExecutionEngine.h"
+#include "../include/PrintTudo.h"
+#include "../include/PrintMenu.h"
 
 // bool isSameClass(std::string s1, std::string s2){
 //     std::reverse(s1.begin(), s1.end());
@@ -27,94 +29,86 @@
 // }
 
 int main(int argc, char *argv[]){
-    CassLoader classLoader(argv[0]);
-    RuntimeDataArea runtimeDataArea;
-    ExecutionEngine executionEngine;
-
-    
-    classLoader.setRuntimeDataArea(&runtimeDataArea);
-    classLoader.setExecutionEngine(&executionEngine);
-    executionEngine.setRuntimeDataArea(&runtimeDataArea);
-    executionEngine.setClassLoader(&classLoader);
-    
-    std::string className = "SimplesChar";
-
-    classLoader.addClassToLoad(className);
-    classLoader.exec();
-
-    executionEngine.exec(classLoader.getMethod(className, "main:([Ljava/lang/String;)V"));
-    
-    // FileSystem fs(argv[0]);
     // CassLoader classLoader(argv[0]);
-    // std::cerr << fs.getJavaClassPath() + fs.javaToEnvironmentPathNotation("java\\lang\\Object.class") << "\n";
-    // classLoader.readClass(fs.getJavaClassPath() + fs.javaToEnvironmentPathNotation("java\\lang\\Object.class"));
-    // classLoader.prepare(fs.getJavaClassPath() + fs.javaToEnvironmentPathNotation("java\\lang\\Object.class"));
+    // RuntimeDataArea runtimeDataArea;
+    // ExecutionEngine executionEngine;
+
     
-    // std::ifstream is;
-    // std::string fileName;
-    // const std::map<std::string, int32_t> ourSet{
-    //     {"-p", 1},
-    //     {"-b", 2},
-    // };
-    // int32_t flag = 0;
-    // if(argc == 1){
-    //     std::string s;
-    //     while(std::cin >> s){
-    //         if(ourSet.find(s) != ourSet.end()){
-    //             flag |= ourSet.at(s);
-    //         } else{
-    //             fileName = s;
-    //         }
-    //     }
-    // } else{
-    //     for(int32_t i = 1; i < argc; i++){
-    //         if(ourSet.find(argv[i]) != ourSet.end()){
-    //             flag |= ourSet.at(argv[i]);
-    //         } else{
-    //             fileName = argv[i];
-    //         }
-    //     }
-    // }
+    // classLoader.setRuntimeDataArea(&runtimeDataArea);
+    // classLoader.setExecutionEngine(&executionEngine);
+    // executionEngine.setRuntimeDataArea(&runtimeDataArea);
+    // executionEngine.setClassLoader(&classLoader);
     
-    // is.open(fileName + ".class", std::ios::binary);
-    // if(!is.is_open()){
-    //     std::cerr << "Arquivo \"" + fileName + ".class\" nao foi encontrado\n"; 
-    //     return -1;
-    // }
-    // is.exceptions(std::ifstream::eofbit);
-    // ClassFile cf;
-    // try{
-    //     read<ClassFile>(is, &cf);
-    //     // try{
-    //     //     is.peek();
-    //     // } catch(std::exception &e){
-    //     //     Terminou com sucesso
-    //     // }
-    // } catch(ClassFormatError &e){
-    //     std::cerr << e.what() << "\n";
-    //     return -1;
-    // } catch(UnsupportedClassVersionError &e){
-    //     std::cerr << e.what() << "\n";
-    //     return -1;
-    // } catch(std::exception &e){
-    //     std::cerr << e.what() << "\n";
-    //     return -1;
-    // } catch( ... ){
-    //     std::cerr << "Um erro qualquer\n";
-    //     return -1;
-    // }
-    // if(!isSameClass(getStringFromCPInfo(cf.constantPool, cf.thisClass), fileName)){
-    //     std::cerr << "Nome do arquivo diferente do nome da classe\n";
-    //     return -1;
-    // }
-    // conveterAttributeInfoInClassFile(cf.constantPool, &cf);
-    // if(flag == 1){
-    //     printTudo(cf);
-    // } else if(flag == 2){
-    //     printMenu(cf);
-    // } else{
-    //     std::cerr << "Ponha ou \"-p\"(para printar tudo), ou \"-b\"(para printar cmo menus)\n";
-    // }
+    // std::string className = "Class04";
+
+    // classLoader.addClassToLoad(className);
+    // classLoader.exec();
+    // classLoader.saveObejectInfo();
+
+    // MethodInfo* method = classLoader.getMethod(className, "main:([Ljava/lang/String;)V");
+    // executionEngine.exec(method, Frame::CreateFrame(method));
+    
+    
+    std::ifstream is;
+    std::string fileName;
+    const std::map<std::string, int32_t> ourSet{
+        {"-p", 1},
+        {"-b", 2},
+        {"-e", 4},
+    };
+    int32_t flag = 0;
+    if(argc == 1){
+        std::string s;
+        while(std::cin >> s){
+            if(ourSet.find(s) != ourSet.end()){
+                flag |= ourSet.at(s);
+            } else{
+                fileName = s;
+            }
+        }
+    } else{
+        for(int32_t i = 1; i < argc; i++){
+            if(ourSet.find(argv[i]) != ourSet.end()){
+                flag |= ourSet.at(argv[i]);
+            } else{
+                fileName = argv[i];
+            }
+        }
+    }
+    if(flag == 1 || flag == 2){
+        FileSystem fs(argv[0]);
+
+        ClassFile* cf = ClassLoader::readClass2(fs, fileName);
+        
+        if(flag == 1){
+            printTudo(*cf);
+        } else if(flag == 2){
+            printMenu(*cf);
+        }
+        delete cf;
+    } else if(flag == 4){
+
+        ClassLoader classLoader(argv[0]);
+        RuntimeDataArea runtimeDataArea;
+        ExecutionEngine executionEngine;
+
+        
+        classLoader.setRuntimeDataArea(&runtimeDataArea);
+        classLoader.setExecutionEngine(&executionEngine);
+        executionEngine.setRuntimeDataArea(&runtimeDataArea);
+        executionEngine.setClassLoader(&classLoader);
+        
+        classLoader.addClassToLoad(fileName);
+        classLoader.exec();
+        classLoader.saveObejectInfo();
+
+        fileName = classLoader.getClassName();
+
+        MethodInfo* method = classLoader.getMethod(fileName, "main:([Ljava/lang/String;)V");
+        executionEngine.exec(method, Frame::CreateFrame(method));
+    } else{
+        std::cerr << "Ponha ou \"-p\"(para printar tudo), ou \"-b\"(para printar cmo menus), ou \"-e\"(para executar o programa)\n";
+    }
     
     return 0;
 }
