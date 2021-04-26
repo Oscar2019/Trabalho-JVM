@@ -1,0 +1,599 @@
+\hypertarget{_tipos_8cpp}{}\doxysection{Referência ao ficheiro src/\+Tipos.cpp}
+\label{_tipos_8cpp}\index{src/Tipos.cpp@{src/Tipos.cpp}}
+{\ttfamily \#include \char`\"{}../include/\+Tipos.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+template$<$$>$ uint8\+\_\+t \mbox{\hyperlink{_tipos_8cpp_a84a58ce8de91bb008e62bd8d7576bcf9}{read$<$ uint8\+\_\+t $>$}} (const uint8\+\_\+t $\ast$in)
+\item 
+template$<$$>$ uint16\+\_\+t \mbox{\hyperlink{_tipos_8cpp_acb337e0b996b7eb4f83d197c9b1a12f9}{read$<$ uint16\+\_\+t $>$}} (const uint8\+\_\+t $\ast$in)
+\item 
+template$<$$>$ uint32\+\_\+t \mbox{\hyperlink{_tipos_8cpp_ae516ebe405aedf431427028480752c0b}{read$<$ uint32\+\_\+t $>$}} (const uint8\+\_\+t $\ast$in)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a3f350beee6fc659a669437e75744580e}{read$<$ uint8\+\_\+t $>$}} (std\+::ifstream \&ifs, uint8\+\_\+t $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_adb0549fcd746d5ec60522466702b87a9}{read$<$ uint16\+\_\+t $>$}} (std\+::ifstream \&ifs, uint16\+\_\+t $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_ab67fb792eef8a39d7978184468858464}{read$<$ uint32\+\_\+t $>$}} (std\+::ifstream \&ifs, uint32\+\_\+t $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a78e725d6aa1a4bb1b3d26e4dafe5e059}{print$<$ uint8\+\_\+t $>$}} (uint8\+\_\+t \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_acf40d8a5ff2ee0e5bb42b2be35e1dcd1}{print$<$ uint16\+\_\+t $>$}} (uint16\+\_\+t \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_aafcb849961fabf365066d89b5f061a5c}{print$<$ uint32\+\_\+t $>$}} (uint32\+\_\+t \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_abb74f187f1f98c672acfe24d16ab86e1}{read$<$ Class\+File $>$}} (std\+::ifstream \&ifs, Class\+File $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a1ef736b1597d038edb321ae281afac76}{print$<$ Class\+File $>$}} (Class\+File \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a0d11f03c1a484a81df50ffb904327b2d}{read$<$ Constant\+Pool\+Info $\ast$ $>$}} (std\+::ifstream \&ifs, Constant\+Pool\+Info $\ast$$\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a894499df7cc940f3b4d6bbc1b727f043}{read$<$ CPClass $>$}} (std\+::ifstream \&ifs, CPClass $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_aacff615cadaf3b7eb1d8a57bd3f0e07d}{read$<$ CPFieldref $>$}} (std\+::ifstream \&ifs, CPFieldref $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a606cf237b938cea3bfef5be958e12f72}{read$<$ CPMethodref $>$}} (std\+::ifstream \&ifs, CPMethodref $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a2a16158434135070eb26957637b48baa}{read$<$ CPInterface\+Methodref $>$}} (std\+::ifstream \&ifs, CPInterface\+Methodref $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a705e0e1fbd1153df7aaf96c65b90ed32}{read$<$ CPString $>$}} (std\+::ifstream \&ifs, CPString $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_ac69aa78f8c49bd654be9e898a748eaab}{read$<$ CPInteger $>$}} (std\+::ifstream \&ifs, CPInteger $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_abc3774e2dcf024dac73355c4f0c9519d}{read$<$ CPFloat $>$}} (std\+::ifstream \&ifs, CPFloat $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a08919c9101c2a6d4116e52662a8c3094}{read$<$ CPLong $>$}} (std\+::ifstream \&ifs, CPLong $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a76eb736a0e337a75e6db5b4ac9b12f20}{read$<$ CPDouble $>$}} (std\+::ifstream \&ifs, CPDouble $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a2d8c2bb663df696204834c6b7b98edd5}{read$<$ CPName\+And\+Type $>$}} (std\+::ifstream \&ifs, CPName\+And\+Type $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a5ec22caf1feca08be5d198edc72618e7}{read$<$ CPUtf8 $>$}} (std\+::ifstream \&ifs, CPUtf8 $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a86d8aed4f5292fc0d64b016466d4034c}{read$<$ CPMethod\+Handle $>$}} (std\+::ifstream \&ifs, CPMethod\+Handle $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a45991bdfbd70eb9dbad1da90bcf6b184}{read$<$ CPMethod\+Type $>$}} (std\+::ifstream \&ifs, CPMethod\+Type $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a32183838ed3a43e61f8d01dc41940890}{read$<$ CPInvoke\+Dynamic $>$}} (std\+::ifstream \&ifs, CPInvoke\+Dynamic $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a4ac9d210093723ee27453c4e50e86285}{print$<$ Constant\+Pool\+Info $>$}} (Constant\+Pool\+Info \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a009bcba709f4973483ecae3f44de7cbb}{print$<$ CPClass $>$}} (CPClass \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_ab815c721151f49a902fb631e0eea85e7}{print$<$ CPFieldref $>$}} (CPFieldref \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_acb7d766753f1ac63413910b8a12867c2}{print$<$ CPMethodref $>$}} (CPMethodref \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a5fcd3309d14e6d6c5e4f2c5303d9bd1d}{print$<$ CPInterface\+Methodref $>$}} (CPInterface\+Methodref \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_ab0ce84a45f78f81cdbea09e4dee0c7b8}{print$<$ CPString $>$}} (CPString \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a9c1894967331fe1590c62f849c7bb13c}{print$<$ CPInteger $>$}} (CPInteger \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_aeaf75c63adfbb6acd6adddc28441686a}{print$<$ CPFloat $>$}} (CPFloat \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a4f4b312ef48ebb4c7e11c0d9fe81b73c}{print$<$ CPLong $>$}} (CPLong \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a4f69000f70bb0384b0768e3eeea805d5}{print$<$ CPDouble $>$}} (CPDouble \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a32827064e5f7585762e4c1bcd17ff85a}{print$<$ CPName\+And\+Type $>$}} (CPName\+And\+Type \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_ac48e9460578aa36573039def13a4244d}{print$<$ CPUtf8 $>$}} (CPUtf8 \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a2afa686e490cd2da23fd6bfaf6acff7f}{print$<$ CPMethod\+Handle $>$}} (CPMethod\+Handle \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a1b56c6777cd8a2aef6ebbd2700b6d1bc}{print$<$ CPMethod\+Type $>$}} (CPMethod\+Type \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a2e8fa404162fe4cd0cbaed199e2a85d7}{print$<$ CPInvoke\+Dynamic $>$}} (CPInvoke\+Dynamic \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a45a09c5c6bf135bd1d99921f59745253}{read$<$ Field\+Info $>$}} (std\+::ifstream \&ifs, Field\+Info $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a841aeb31705ac7ef74ee84156aed274d}{print$<$ Field\+Info $>$}} (Field\+Info \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a4c0ab33518c20b6a1aecb160562e8edb}{read$<$ Method\+Info $>$}} (std\+::ifstream \&ifs, Method\+Info $\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_aeb0f91f479f59201535a9a437cad2798}{print$<$ Method\+Info $>$}} (Method\+Info \&u, std\+::ostream \&os)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_a4881b63e9f17ad6fb4e34aa40bf5f547}{read$<$ Attribute\+Info\+Basic $\ast$ $>$}} (std\+::ifstream \&ifs, Attribute\+Info\+Basic $\ast$$\ast$u)
+\item 
+template$<$$>$ void \mbox{\hyperlink{_tipos_8cpp_af4c48d05ffe92d2f0fdec36317e6cdab}{print$<$ Attribute\+Info\+Basic $>$}} (Attribute\+Info\+Basic \&u, std\+::ostream \&os)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{_tipos_8cpp_af4c48d05ffe92d2f0fdec36317e6cdab}\label{_tipos_8cpp_af4c48d05ffe92d2f0fdec36317e6cdab}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ AttributeInfoBasic $>$@{print$<$ AttributeInfoBasic $>$}}
+\index{print$<$ AttributeInfoBasic $>$@{print$<$ AttributeInfoBasic $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ AttributeInfoBasic $>$()}{print< AttributeInfoBasic >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ Attribute\+Info\+Basic $>$ (\begin{DoxyParamCaption}\item[{Attribute\+Info\+Basic \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 0
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 1
+\mbox{\Hypertarget{_tipos_8cpp_a1ef736b1597d038edb321ae281afac76}\label{_tipos_8cpp_a1ef736b1597d038edb321ae281afac76}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ ClassFile $>$@{print$<$ ClassFile $>$}}
+\index{print$<$ ClassFile $>$@{print$<$ ClassFile $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ ClassFile $>$()}{print< ClassFile >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ Class\+File $>$ (\begin{DoxyParamCaption}\item[{Class\+File \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 2
+\mbox{\Hypertarget{_tipos_8cpp_a4ac9d210093723ee27453c4e50e86285}\label{_tipos_8cpp_a4ac9d210093723ee27453c4e50e86285}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ ConstantPoolInfo $>$@{print$<$ ConstantPoolInfo $>$}}
+\index{print$<$ ConstantPoolInfo $>$@{print$<$ ConstantPoolInfo $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ ConstantPoolInfo $>$()}{print< ConstantPoolInfo >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ Constant\+Pool\+Info $>$ (\begin{DoxyParamCaption}\item[{Constant\+Pool\+Info \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 3
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 4
+\mbox{\Hypertarget{_tipos_8cpp_a009bcba709f4973483ecae3f44de7cbb}\label{_tipos_8cpp_a009bcba709f4973483ecae3f44de7cbb}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPClass $>$@{print$<$ CPClass $>$}}
+\index{print$<$ CPClass $>$@{print$<$ CPClass $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPClass $>$()}{print< CPClass >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ CPClass $>$ (\begin{DoxyParamCaption}\item[{CPClass \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 5
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 6
+\mbox{\Hypertarget{_tipos_8cpp_a4f69000f70bb0384b0768e3eeea805d5}\label{_tipos_8cpp_a4f69000f70bb0384b0768e3eeea805d5}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPDouble $>$@{print$<$ CPDouble $>$}}
+\index{print$<$ CPDouble $>$@{print$<$ CPDouble $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPDouble $>$()}{print< CPDouble >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ CPDouble $>$ (\begin{DoxyParamCaption}\item[{CPDouble \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 7
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 8
+\mbox{\Hypertarget{_tipos_8cpp_ab815c721151f49a902fb631e0eea85e7}\label{_tipos_8cpp_ab815c721151f49a902fb631e0eea85e7}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPFieldref $>$@{print$<$ CPFieldref $>$}}
+\index{print$<$ CPFieldref $>$@{print$<$ CPFieldref $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPFieldref $>$()}{print< CPFieldref >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ CPFieldref $>$ (\begin{DoxyParamCaption}\item[{CPFieldref \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 9
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 10
+\mbox{\Hypertarget{_tipos_8cpp_aeaf75c63adfbb6acd6adddc28441686a}\label{_tipos_8cpp_aeaf75c63adfbb6acd6adddc28441686a}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPFloat $>$@{print$<$ CPFloat $>$}}
+\index{print$<$ CPFloat $>$@{print$<$ CPFloat $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPFloat $>$()}{print< CPFloat >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ CPFloat $>$ (\begin{DoxyParamCaption}\item[{CPFloat \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 11
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 12
+\mbox{\Hypertarget{_tipos_8cpp_a9c1894967331fe1590c62f849c7bb13c}\label{_tipos_8cpp_a9c1894967331fe1590c62f849c7bb13c}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPInteger $>$@{print$<$ CPInteger $>$}}
+\index{print$<$ CPInteger $>$@{print$<$ CPInteger $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPInteger $>$()}{print< CPInteger >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ CPInteger $>$ (\begin{DoxyParamCaption}\item[{CPInteger \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 13
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 14
+\mbox{\Hypertarget{_tipos_8cpp_a5fcd3309d14e6d6c5e4f2c5303d9bd1d}\label{_tipos_8cpp_a5fcd3309d14e6d6c5e4f2c5303d9bd1d}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPInterfaceMethodref $>$@{print$<$ CPInterfaceMethodref $>$}}
+\index{print$<$ CPInterfaceMethodref $>$@{print$<$ CPInterfaceMethodref $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPInterfaceMethodref $>$()}{print< CPInterfaceMethodref >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ CPInterface\+Methodref $>$ (\begin{DoxyParamCaption}\item[{CPInterface\+Methodref \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 15
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 16
+\mbox{\Hypertarget{_tipos_8cpp_a2e8fa404162fe4cd0cbaed199e2a85d7}\label{_tipos_8cpp_a2e8fa404162fe4cd0cbaed199e2a85d7}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPInvokeDynamic $>$@{print$<$ CPInvokeDynamic $>$}}
+\index{print$<$ CPInvokeDynamic $>$@{print$<$ CPInvokeDynamic $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPInvokeDynamic $>$()}{print< CPInvokeDynamic >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ CPInvoke\+Dynamic $>$ (\begin{DoxyParamCaption}\item[{CPInvoke\+Dynamic \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 17
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 18
+\mbox{\Hypertarget{_tipos_8cpp_a4f4b312ef48ebb4c7e11c0d9fe81b73c}\label{_tipos_8cpp_a4f4b312ef48ebb4c7e11c0d9fe81b73c}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPLong $>$@{print$<$ CPLong $>$}}
+\index{print$<$ CPLong $>$@{print$<$ CPLong $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPLong $>$()}{print< CPLong >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ CPLong $>$ (\begin{DoxyParamCaption}\item[{CPLong \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 19
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 20
+\mbox{\Hypertarget{_tipos_8cpp_a2afa686e490cd2da23fd6bfaf6acff7f}\label{_tipos_8cpp_a2afa686e490cd2da23fd6bfaf6acff7f}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPMethodHandle $>$@{print$<$ CPMethodHandle $>$}}
+\index{print$<$ CPMethodHandle $>$@{print$<$ CPMethodHandle $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPMethodHandle $>$()}{print< CPMethodHandle >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ CPMethod\+Handle $>$ (\begin{DoxyParamCaption}\item[{CPMethod\+Handle \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 21
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 22
+\mbox{\Hypertarget{_tipos_8cpp_acb7d766753f1ac63413910b8a12867c2}\label{_tipos_8cpp_acb7d766753f1ac63413910b8a12867c2}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPMethodref $>$@{print$<$ CPMethodref $>$}}
+\index{print$<$ CPMethodref $>$@{print$<$ CPMethodref $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPMethodref $>$()}{print< CPMethodref >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ CPMethodref $>$ (\begin{DoxyParamCaption}\item[{CPMethodref \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 23
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 24
+\mbox{\Hypertarget{_tipos_8cpp_a1b56c6777cd8a2aef6ebbd2700b6d1bc}\label{_tipos_8cpp_a1b56c6777cd8a2aef6ebbd2700b6d1bc}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPMethodType $>$@{print$<$ CPMethodType $>$}}
+\index{print$<$ CPMethodType $>$@{print$<$ CPMethodType $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPMethodType $>$()}{print< CPMethodType >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ CPMethod\+Type $>$ (\begin{DoxyParamCaption}\item[{CPMethod\+Type \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 25
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 26
+\mbox{\Hypertarget{_tipos_8cpp_a32827064e5f7585762e4c1bcd17ff85a}\label{_tipos_8cpp_a32827064e5f7585762e4c1bcd17ff85a}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPNameAndType $>$@{print$<$ CPNameAndType $>$}}
+\index{print$<$ CPNameAndType $>$@{print$<$ CPNameAndType $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPNameAndType $>$()}{print< CPNameAndType >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ CPName\+And\+Type $>$ (\begin{DoxyParamCaption}\item[{CPName\+And\+Type \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 27
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 28
+\mbox{\Hypertarget{_tipos_8cpp_ab0ce84a45f78f81cdbea09e4dee0c7b8}\label{_tipos_8cpp_ab0ce84a45f78f81cdbea09e4dee0c7b8}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPString $>$@{print$<$ CPString $>$}}
+\index{print$<$ CPString $>$@{print$<$ CPString $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPString $>$()}{print< CPString >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ CPString $>$ (\begin{DoxyParamCaption}\item[{CPString \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 29
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 30
+\mbox{\Hypertarget{_tipos_8cpp_ac48e9460578aa36573039def13a4244d}\label{_tipos_8cpp_ac48e9460578aa36573039def13a4244d}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPUtf8 $>$@{print$<$ CPUtf8 $>$}}
+\index{print$<$ CPUtf8 $>$@{print$<$ CPUtf8 $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPUtf8 $>$()}{print< CPUtf8 >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ CPUtf8 $>$ (\begin{DoxyParamCaption}\item[{CPUtf8 \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 31
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 32
+\mbox{\Hypertarget{_tipos_8cpp_a841aeb31705ac7ef74ee84156aed274d}\label{_tipos_8cpp_a841aeb31705ac7ef74ee84156aed274d}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ FieldInfo $>$@{print$<$ FieldInfo $>$}}
+\index{print$<$ FieldInfo $>$@{print$<$ FieldInfo $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ FieldInfo $>$()}{print< FieldInfo >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ Field\+Info $>$ (\begin{DoxyParamCaption}\item[{Field\+Info \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 33
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 34
+\mbox{\Hypertarget{_tipos_8cpp_aeb0f91f479f59201535a9a437cad2798}\label{_tipos_8cpp_aeb0f91f479f59201535a9a437cad2798}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ MethodInfo $>$@{print$<$ MethodInfo $>$}}
+\index{print$<$ MethodInfo $>$@{print$<$ MethodInfo $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ MethodInfo $>$()}{print< MethodInfo >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ Method\+Info $>$ (\begin{DoxyParamCaption}\item[{Method\+Info \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 35
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 36
+\mbox{\Hypertarget{_tipos_8cpp_acf40d8a5ff2ee0e5bb42b2be35e1dcd1}\label{_tipos_8cpp_acf40d8a5ff2ee0e5bb42b2be35e1dcd1}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ uint16\_t $>$@{print$<$ uint16\_t $>$}}
+\index{print$<$ uint16\_t $>$@{print$<$ uint16\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ uint16\_t $>$()}{print< uint16\_t >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ uint16\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 37
+\mbox{\Hypertarget{_tipos_8cpp_aafcb849961fabf365066d89b5f061a5c}\label{_tipos_8cpp_aafcb849961fabf365066d89b5f061a5c}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ uint32\_t $>$@{print$<$ uint32\_t $>$}}
+\index{print$<$ uint32\_t $>$@{print$<$ uint32\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ uint32\_t $>$()}{print< uint32\_t >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ uint32\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{uint32\+\_\+t \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 38
+\mbox{\Hypertarget{_tipos_8cpp_a78e725d6aa1a4bb1b3d26e4dafe5e059}\label{_tipos_8cpp_a78e725d6aa1a4bb1b3d26e4dafe5e059}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ uint8\_t $>$@{print$<$ uint8\_t $>$}}
+\index{print$<$ uint8\_t $>$@{print$<$ uint8\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ uint8\_t $>$()}{print< uint8\_t >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void print$<$ uint8\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 39
+\mbox{\Hypertarget{_tipos_8cpp_a4881b63e9f17ad6fb4e34aa40bf5f547}\label{_tipos_8cpp_a4881b63e9f17ad6fb4e34aa40bf5f547}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ AttributeInfoBasic $\ast$ $>$@{read$<$ AttributeInfoBasic $\ast$ $>$}}
+\index{read$<$ AttributeInfoBasic $\ast$ $>$@{read$<$ AttributeInfoBasic $\ast$ $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ AttributeInfoBasic $\ast$ $>$()}{read< AttributeInfoBasic * >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ Attribute\+Info\+Basic $\ast$ $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{Attribute\+Info\+Basic $\ast$$\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 40
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 41
+\mbox{\Hypertarget{_tipos_8cpp_abb74f187f1f98c672acfe24d16ab86e1}\label{_tipos_8cpp_abb74f187f1f98c672acfe24d16ab86e1}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ ClassFile $>$@{read$<$ ClassFile $>$}}
+\index{read$<$ ClassFile $>$@{read$<$ ClassFile $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ ClassFile $>$()}{read< ClassFile >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ Class\+File $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{Class\+File $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 42
+\mbox{\Hypertarget{_tipos_8cpp_a0d11f03c1a484a81df50ffb904327b2d}\label{_tipos_8cpp_a0d11f03c1a484a81df50ffb904327b2d}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ ConstantPoolInfo $\ast$ $>$@{read$<$ ConstantPoolInfo $\ast$ $>$}}
+\index{read$<$ ConstantPoolInfo $\ast$ $>$@{read$<$ ConstantPoolInfo $\ast$ $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ ConstantPoolInfo $\ast$ $>$()}{read< ConstantPoolInfo * >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ Constant\+Pool\+Info $\ast$ $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{Constant\+Pool\+Info $\ast$$\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 43
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 44
+\mbox{\Hypertarget{_tipos_8cpp_a894499df7cc940f3b4d6bbc1b727f043}\label{_tipos_8cpp_a894499df7cc940f3b4d6bbc1b727f043}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPClass $>$@{read$<$ CPClass $>$}}
+\index{read$<$ CPClass $>$@{read$<$ CPClass $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPClass $>$()}{read< CPClass >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ CPClass $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{CPClass $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 45
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 46
+\mbox{\Hypertarget{_tipos_8cpp_a76eb736a0e337a75e6db5b4ac9b12f20}\label{_tipos_8cpp_a76eb736a0e337a75e6db5b4ac9b12f20}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPDouble $>$@{read$<$ CPDouble $>$}}
+\index{read$<$ CPDouble $>$@{read$<$ CPDouble $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPDouble $>$()}{read< CPDouble >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ CPDouble $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{CPDouble $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 47
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 48
+\mbox{\Hypertarget{_tipos_8cpp_aacff615cadaf3b7eb1d8a57bd3f0e07d}\label{_tipos_8cpp_aacff615cadaf3b7eb1d8a57bd3f0e07d}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPFieldref $>$@{read$<$ CPFieldref $>$}}
+\index{read$<$ CPFieldref $>$@{read$<$ CPFieldref $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPFieldref $>$()}{read< CPFieldref >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ CPFieldref $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{CPFieldref $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 49
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 50
+\mbox{\Hypertarget{_tipos_8cpp_abc3774e2dcf024dac73355c4f0c9519d}\label{_tipos_8cpp_abc3774e2dcf024dac73355c4f0c9519d}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPFloat $>$@{read$<$ CPFloat $>$}}
+\index{read$<$ CPFloat $>$@{read$<$ CPFloat $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPFloat $>$()}{read< CPFloat >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ CPFloat $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{CPFloat $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 51
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 52
+\mbox{\Hypertarget{_tipos_8cpp_ac69aa78f8c49bd654be9e898a748eaab}\label{_tipos_8cpp_ac69aa78f8c49bd654be9e898a748eaab}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPInteger $>$@{read$<$ CPInteger $>$}}
+\index{read$<$ CPInteger $>$@{read$<$ CPInteger $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPInteger $>$()}{read< CPInteger >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ CPInteger $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{CPInteger $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 53
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 54
+\mbox{\Hypertarget{_tipos_8cpp_a2a16158434135070eb26957637b48baa}\label{_tipos_8cpp_a2a16158434135070eb26957637b48baa}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPInterfaceMethodref $>$@{read$<$ CPInterfaceMethodref $>$}}
+\index{read$<$ CPInterfaceMethodref $>$@{read$<$ CPInterfaceMethodref $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPInterfaceMethodref $>$()}{read< CPInterfaceMethodref >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ CPInterface\+Methodref $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{CPInterface\+Methodref $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 55
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 56
+\mbox{\Hypertarget{_tipos_8cpp_a32183838ed3a43e61f8d01dc41940890}\label{_tipos_8cpp_a32183838ed3a43e61f8d01dc41940890}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPInvokeDynamic $>$@{read$<$ CPInvokeDynamic $>$}}
+\index{read$<$ CPInvokeDynamic $>$@{read$<$ CPInvokeDynamic $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPInvokeDynamic $>$()}{read< CPInvokeDynamic >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ CPInvoke\+Dynamic $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{CPInvoke\+Dynamic $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 57
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 58
+\mbox{\Hypertarget{_tipos_8cpp_a08919c9101c2a6d4116e52662a8c3094}\label{_tipos_8cpp_a08919c9101c2a6d4116e52662a8c3094}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPLong $>$@{read$<$ CPLong $>$}}
+\index{read$<$ CPLong $>$@{read$<$ CPLong $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPLong $>$()}{read< CPLong >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ CPLong $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{CPLong $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 59
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 60
+\mbox{\Hypertarget{_tipos_8cpp_a86d8aed4f5292fc0d64b016466d4034c}\label{_tipos_8cpp_a86d8aed4f5292fc0d64b016466d4034c}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPMethodHandle $>$@{read$<$ CPMethodHandle $>$}}
+\index{read$<$ CPMethodHandle $>$@{read$<$ CPMethodHandle $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPMethodHandle $>$()}{read< CPMethodHandle >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ CPMethod\+Handle $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{CPMethod\+Handle $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 61
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 62
+\mbox{\Hypertarget{_tipos_8cpp_a606cf237b938cea3bfef5be958e12f72}\label{_tipos_8cpp_a606cf237b938cea3bfef5be958e12f72}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPMethodref $>$@{read$<$ CPMethodref $>$}}
+\index{read$<$ CPMethodref $>$@{read$<$ CPMethodref $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPMethodref $>$()}{read< CPMethodref >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ CPMethodref $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{CPMethodref $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 63
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 64
+\mbox{\Hypertarget{_tipos_8cpp_a45991bdfbd70eb9dbad1da90bcf6b184}\label{_tipos_8cpp_a45991bdfbd70eb9dbad1da90bcf6b184}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPMethodType $>$@{read$<$ CPMethodType $>$}}
+\index{read$<$ CPMethodType $>$@{read$<$ CPMethodType $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPMethodType $>$()}{read< CPMethodType >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ CPMethod\+Type $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{CPMethod\+Type $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 65
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 66
+\mbox{\Hypertarget{_tipos_8cpp_a2d8c2bb663df696204834c6b7b98edd5}\label{_tipos_8cpp_a2d8c2bb663df696204834c6b7b98edd5}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPNameAndType $>$@{read$<$ CPNameAndType $>$}}
+\index{read$<$ CPNameAndType $>$@{read$<$ CPNameAndType $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPNameAndType $>$()}{read< CPNameAndType >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ CPName\+And\+Type $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{CPName\+And\+Type $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 67
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 68
+\mbox{\Hypertarget{_tipos_8cpp_a705e0e1fbd1153df7aaf96c65b90ed32}\label{_tipos_8cpp_a705e0e1fbd1153df7aaf96c65b90ed32}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPString $>$@{read$<$ CPString $>$}}
+\index{read$<$ CPString $>$@{read$<$ CPString $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPString $>$()}{read< CPString >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ CPString $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{CPString $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 69
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 70
+\mbox{\Hypertarget{_tipos_8cpp_a5ec22caf1feca08be5d198edc72618e7}\label{_tipos_8cpp_a5ec22caf1feca08be5d198edc72618e7}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPUtf8 $>$@{read$<$ CPUtf8 $>$}}
+\index{read$<$ CPUtf8 $>$@{read$<$ CPUtf8 $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPUtf8 $>$()}{read< CPUtf8 >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ CPUtf8 $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{CPUtf8 $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 71
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 72
+\mbox{\Hypertarget{_tipos_8cpp_a45a09c5c6bf135bd1d99921f59745253}\label{_tipos_8cpp_a45a09c5c6bf135bd1d99921f59745253}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ FieldInfo $>$@{read$<$ FieldInfo $>$}}
+\index{read$<$ FieldInfo $>$@{read$<$ FieldInfo $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ FieldInfo $>$()}{read< FieldInfo >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ Field\+Info $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{Field\+Info $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 73
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 74
+\mbox{\Hypertarget{_tipos_8cpp_a4c0ab33518c20b6a1aecb160562e8edb}\label{_tipos_8cpp_a4c0ab33518c20b6a1aecb160562e8edb}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ MethodInfo $>$@{read$<$ MethodInfo $>$}}
+\index{read$<$ MethodInfo $>$@{read$<$ MethodInfo $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ MethodInfo $>$()}{read< MethodInfo >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ Method\+Info $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{Method\+Info $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 75
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 76
+\mbox{\Hypertarget{_tipos_8cpp_acb337e0b996b7eb4f83d197c9b1a12f9}\label{_tipos_8cpp_acb337e0b996b7eb4f83d197c9b1a12f9}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ uint16\_t $>$@{read$<$ uint16\_t $>$}}
+\index{read$<$ uint16\_t $>$@{read$<$ uint16\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ uint16\_t $>$()}{read< uint16\_t >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+uint16\+\_\+t read$<$ uint16\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{in }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 77
+\mbox{\Hypertarget{_tipos_8cpp_adb0549fcd746d5ec60522466702b87a9}\label{_tipos_8cpp_adb0549fcd746d5ec60522466702b87a9}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ uint16\_t $>$@{read$<$ uint16\_t $>$}}
+\index{read$<$ uint16\_t $>$@{read$<$ uint16\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ uint16\_t $>$()}{read< uint16\_t >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ uint16\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{uint16\+\_\+t $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 78
+\mbox{\Hypertarget{_tipos_8cpp_ae516ebe405aedf431427028480752c0b}\label{_tipos_8cpp_ae516ebe405aedf431427028480752c0b}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ uint32\_t $>$@{read$<$ uint32\_t $>$}}
+\index{read$<$ uint32\_t $>$@{read$<$ uint32\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ uint32\_t $>$()}{read< uint32\_t >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+uint32\+\_\+t read$<$ uint32\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{in }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 79
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 80
+\mbox{\Hypertarget{_tipos_8cpp_ab67fb792eef8a39d7978184468858464}\label{_tipos_8cpp_ab67fb792eef8a39d7978184468858464}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ uint32\_t $>$@{read$<$ uint32\_t $>$}}
+\index{read$<$ uint32\_t $>$@{read$<$ uint32\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ uint32\_t $>$()}{read< uint32\_t >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ uint32\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{uint32\+\_\+t $\ast$}]{u }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 81
+\mbox{\Hypertarget{_tipos_8cpp_a84a58ce8de91bb008e62bd8d7576bcf9}\label{_tipos_8cpp_a84a58ce8de91bb008e62bd8d7576bcf9}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ uint8\_t $>$@{read$<$ uint8\_t $>$}}
+\index{read$<$ uint8\_t $>$@{read$<$ uint8\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ uint8\_t $>$()}{read< uint8\_t >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+uint8\+\_\+t read$<$ uint8\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{in }\end{DoxyParamCaption})}
+
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 82
+\mbox{\Hypertarget{_tipos_8cpp_a3f350beee6fc659a669437e75744580e}\label{_tipos_8cpp_a3f350beee6fc659a669437e75744580e}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ uint8\_t $>$@{read$<$ uint8\_t $>$}}
+\index{read$<$ uint8\_t $>$@{read$<$ uint8\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ uint8\_t $>$()}{read< uint8\_t >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void read$<$ uint8\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{uint8\+\_\+t $\ast$}]{u }\end{DoxyParamCaption})}
+

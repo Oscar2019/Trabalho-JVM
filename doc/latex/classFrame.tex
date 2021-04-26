@@ -1,0 +1,248 @@
+\hypertarget{classFrame}{}\doxysection{Frame Class Reference}
+\label{classFrame}\index{Frame@{Frame}}
+
+
+Representaçõ de um frame.  
+
+
+
+
+{\ttfamily \#include $<$Frame.\+h$>$}
+
+
+
+Collaboration diagram for Frame\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFrame__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$ \mbox{\hyperlink{classFrame_a7a343cc8ade5fe6a399e9d5d5d1a061e}{get\+Constant\+Pool}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o Constant\+Pool. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFrame_a179f17d9f2c053cd8d7a46f5f4f98b97}{Frame}} (uint32\+\_\+t var\+Table\+Size, uint32\+\_\+t operand\+Stack\+Size, \mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$current\+Constant\+Pool)
+\begin{DoxyCompactList}\small\item\em Constrói o \mbox{\hyperlink{classFrame}{Frame}}. \end{DoxyCompactList}\item 
+uint32\+\_\+t \& \mbox{\hyperlink{classFrame_aa23c1c8673ca67cf67ad3a647f9f1b56}{var\+At}} (uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Obtém uma referência para um elemnto da var\+Local\+Table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFrame_afc6f418a53e2160c86a46fc6d38d10bf}{push\+Operand\+Stack}} (uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Insere um elemento na pilha de operando. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classFrame_a1d3b7f2931d969346e01987ec72f2a8a}{top\+Operand\+Stack}} ()
+\begin{DoxyCompactList}\small\item\em Obtém o elemento que está no topo da pilha. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFrame_aa6cd62c1dfe95de30f86fbfa444171d7}{pop\+Operand\+Stack}} ()
+\begin{DoxyCompactList}\small\item\em Remove o elemento que está no topo da pilha. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classFrame}{Frame}} $\ast$ \mbox{\hyperlink{classFrame_a783e5f801c60d09674e9556de8f1b319}{Create\+Frame}} (\mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$method\+Info)
+\begin{DoxyCompactList}\small\item\em Cria um novo \mbox{\hyperlink{classFrame}{Frame}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classArray}{Array}}$<$ uint32\+\_\+t $>$ \mbox{\hyperlink{classFrame_a7b7cea5add66d124b268b0b6027be550}{var\+Local\+Table}}
+\begin{DoxyCompactList}\small\item\em Table de variáveis locais. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$ uint32\+\_\+t $>$ \mbox{\hyperlink{classFrame_a9ffcf8ba2f718ad631bc0846b5d5efa3}{operand\+Stack}}
+\begin{DoxyCompactList}\small\item\em Pilha de operandos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$ \mbox{\hyperlink{classFrame_aa68a92cdade4573cb63cb3b0dd6f1b75}{constant\+Pool}}
+\begin{DoxyCompactList}\small\item\em Ponteiro para o constant\+Pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representaçõ de um frame. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFrame_a179f17d9f2c053cd8d7a46f5f4f98b97}\label{classFrame_a179f17d9f2c053cd8d7a46f5f4f98b97}} 
+\index{Frame@{Frame}!Frame@{Frame}}
+\index{Frame@{Frame}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{Frame()}{Frame()}}
+{\footnotesize\ttfamily Frame\+::\+Frame (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{var\+Table\+Size,  }\item[{uint32\+\_\+t}]{operand\+Stack\+Size,  }\item[{\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$}]{current\+Constant\+Pool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constrói o \mbox{\hyperlink{classFrame}{Frame}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var\+Table\+Size} & \\
+\hline
+{\em operand\+Stack\+Size} & \\
+\hline
+{\em current\+Constant\+Pool} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{classFrame_a179f17d9f2c053cd8d7a46f5f4f98b97_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFrame_a783e5f801c60d09674e9556de8f1b319}\label{classFrame_a783e5f801c60d09674e9556de8f1b319}} 
+\index{Frame@{Frame}!CreateFrame@{CreateFrame}}
+\index{CreateFrame@{CreateFrame}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{CreateFrame()}{CreateFrame()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classFrame}{Frame}}$\ast$ Frame\+::\+Create\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$}]{method\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Cria um novo \mbox{\hyperlink{classFrame}{Frame}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em method\+Info} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Frame$\ast$ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFrame_a783e5f801c60d09674e9556de8f1b319_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFrame_a7a343cc8ade5fe6a399e9d5d5d1a061e}\label{classFrame_a7a343cc8ade5fe6a399e9d5d5d1a061e}} 
+\index{Frame@{Frame}!getConstantPool@{getConstantPool}}
+\index{getConstantPool@{getConstantPool}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{getConstantPool()}{getConstantPool()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}}$\ast$$\ast$ Frame\+::get\+Constant\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém o Constant\+Pool. 
+
+\begin{DoxyReturn}{Returns}
+Constant\+Pool\+Info$\ast$$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFrame_aa6cd62c1dfe95de30f86fbfa444171d7}\label{classFrame_aa6cd62c1dfe95de30f86fbfa444171d7}} 
+\index{Frame@{Frame}!popOperandStack@{popOperandStack}}
+\index{popOperandStack@{popOperandStack}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{popOperandStack()}{popOperandStack()}}
+{\footnotesize\ttfamily void Frame\+::pop\+Operand\+Stack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove o elemento que está no topo da pilha. 
+
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFrame_aa6cd62c1dfe95de30f86fbfa444171d7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFrame_afc6f418a53e2160c86a46fc6d38d10bf}\label{classFrame_afc6f418a53e2160c86a46fc6d38d10bf}} 
+\index{Frame@{Frame}!pushOperandStack@{pushOperandStack}}
+\index{pushOperandStack@{pushOperandStack}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{pushOperandStack()}{pushOperandStack()}}
+{\footnotesize\ttfamily void Frame\+::push\+Operand\+Stack (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insere um elemento na pilha de operando. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFrame_afc6f418a53e2160c86a46fc6d38d10bf_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFrame_a1d3b7f2931d969346e01987ec72f2a8a}\label{classFrame_a1d3b7f2931d969346e01987ec72f2a8a}} 
+\index{Frame@{Frame}!topOperandStack@{topOperandStack}}
+\index{topOperandStack@{topOperandStack}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{topOperandStack()}{topOperandStack()}}
+{\footnotesize\ttfamily uint32\+\_\+t Frame\+::top\+Operand\+Stack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém o elemento que está no topo da pilha. 
+
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classFrame_a1d3b7f2931d969346e01987ec72f2a8a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classFrame_aa23c1c8673ca67cf67ad3a647f9f1b56}\label{classFrame_aa23c1c8673ca67cf67ad3a647f9f1b56}} 
+\index{Frame@{Frame}!varAt@{varAt}}
+\index{varAt@{varAt}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{varAt()}{varAt()}}
+{\footnotesize\ttfamily uint32\+\_\+t\& Frame\+::var\+At (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém uma referência para um elemnto da var\+Local\+Table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t\& 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classFrame_aa68a92cdade4573cb63cb3b0dd6f1b75}\label{classFrame_aa68a92cdade4573cb63cb3b0dd6f1b75}} 
+\index{Frame@{Frame}!constantPool@{constantPool}}
+\index{constantPool@{constantPool}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{constantPool}{constantPool}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}}$\ast$$\ast$ Frame\+::constant\+Pool\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ponteiro para o constant\+Pool. 
+
+\mbox{\Hypertarget{classFrame_a9ffcf8ba2f718ad631bc0846b5d5efa3}\label{classFrame_a9ffcf8ba2f718ad631bc0846b5d5efa3}} 
+\index{Frame@{Frame}!operandStack@{operandStack}}
+\index{operandStack@{operandStack}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{operandStack}{operandStack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$uint32\+\_\+t$>$ Frame\+::operand\+Stack\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pilha de operandos. 
+
+\mbox{\Hypertarget{classFrame_a7b7cea5add66d124b268b0b6027be550}\label{classFrame_a7b7cea5add66d124b268b0b6027be550}} 
+\index{Frame@{Frame}!varLocalTable@{varLocalTable}}
+\index{varLocalTable@{varLocalTable}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{varLocalTable}{varLocalTable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classArray}{Array}}$<$uint32\+\_\+t$>$ Frame\+::var\+Local\+Table\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Table de variáveis locais. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Frame_8h}{Frame.\+h}}\end{DoxyCompactItemize}

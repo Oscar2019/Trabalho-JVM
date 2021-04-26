@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Código-Fonte de include/AttributeInfo.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">AttributeInfo.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_attribute_info_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __CLASS_ATTRIBUTE_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __CLASS_ATTRIBUTE_H__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../include/ConstantPoolInfo.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="struct_attribute_info.html">    7</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_attribute_info.html">AttributeInfo</a>{</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="struct_attribute_info.html#ac0d9d9ffa3214f362c4e06df78036d6e">    8</a></span>&#160;    uint16_t <a class="code" href="struct_attribute_info.html#ac0d9d9ffa3214f362c4e06df78036d6e">attributeNameIndex</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="struct_attribute_info.html#a1755dec7721e0e62a53c698831ba514d">    9</a></span>&#160;    uint32_t <a class="code" href="struct_attribute_info.html#a1755dec7721e0e62a53c698831ba514d">attributeLength</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="struct_attribute_info.html#a4c27dd5573a587f1ee5f99b741bf28ac">   10</a></span>&#160;    <a class="code" href="struct_attribute_info.html#a4c27dd5573a587f1ee5f99b741bf28ac">AttributeInfo</a>();</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="struct_attribute_info.html#a369786452d79ca1c7f5111edf02cf7ab">   11</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="struct_attribute_info.html#a369786452d79ca1c7f5111edf02cf7ab">~AttributeInfo</a>();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;};</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="struct_attribute_info_basic.html">   14</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_attribute_info_basic.html">AttributeInfoBasic</a> : <a class="code" href="struct_attribute_info.html">AttributeInfo</a>{</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct_attribute_info_basic.html#a871f9a3f8307c3f6ef7664f55b9e25bf">   15</a></span>&#160;    uint8_t *<a class="code" href="struct_attribute_info_basic.html#a871f9a3f8307c3f6ef7664f55b9e25bf">info</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="struct_attribute_info_basic.html#af9b59775e0bdfebea191300a57283341">   16</a></span>&#160;    <a class="code" href="struct_attribute_info_basic.html#af9b59775e0bdfebea191300a57283341">AttributeInfoBasic</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="struct_attribute_info_basic.html#a404c603c693921fed271be4b9a4b59b9">   17</a></span>&#160;    <a class="code" href="struct_attribute_info_basic.html#a404c603c693921fed271be4b9a4b59b9">~AttributeInfoBasic</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="struct_attribute_info_constant_value.html">   20</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_attribute_info_constant_value.html">AttributeInfoConstantValue</a> : <a class="code" href="struct_attribute_info.html">AttributeInfo</a>{</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_attribute_info_constant_value.html#a90c8d12c1cbc0b8d135648af0ec8215e">   21</a></span>&#160;    uint16_t <a class="code" href="struct_attribute_info_constant_value.html#a90c8d12c1cbc0b8d135648af0ec8215e">constantvalueIndex</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="struct_attribute_info_constant_value.html#adc8be783e8c04d54fecb69eb676f6be8">   22</a></span>&#160;    <a class="code" href="struct_attribute_info_constant_value.html#adc8be783e8c04d54fecb69eb676f6be8">AttributeInfoConstantValue</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="struct_attribute_info_code.html">   25</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_attribute_info_code.html">AttributeInfoCode</a> : <a class="code" href="struct_attribute_info.html">AttributeInfo</a>{</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="struct_attribute_info_code.html#a6070c333f036faa757c8010a40da776d">   26</a></span>&#160;    uint16_t <a class="code" href="struct_attribute_info_code.html#a6070c333f036faa757c8010a40da776d">maxStack</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="struct_attribute_info_code.html#aa301b3561738681bd2cc802f618c0950">   27</a></span>&#160;    uint16_t <a class="code" href="struct_attribute_info_code.html#aa301b3561738681bd2cc802f618c0950">maxLocals</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="struct_attribute_info_code.html#a23ca2ccea1f14a50421fe66f4fbbbc0a">   28</a></span>&#160;    uint32_t <a class="code" href="struct_attribute_info_code.html#a23ca2ccea1f14a50421fe66f4fbbbc0a">codeLength</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="struct_attribute_info_code.html#a1e56f5b1404ecb44aec9d2dcaef77428">   29</a></span>&#160;    uint8_t *<a class="code" href="struct_attribute_info_code.html#a1e56f5b1404ecb44aec9d2dcaef77428">code</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="struct_attribute_info_code.html#ae72c9e1c75411d0d04c1c8bfe94741fd">   30</a></span>&#160;    uint16_t <a class="code" href="struct_attribute_info_code.html#ae72c9e1c75411d0d04c1c8bfe94741fd">exceptionTableLength</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="struct_attribute_info_code_1_1_exception_table.html">   31</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_attribute_info_code_1_1_exception_table.html">ExceptionTable</a>{</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="struct_attribute_info_code_1_1_exception_table.html#a186d099030ac2b11ce02ecc9656343f4">   32</a></span>&#160;        uint16_t <a class="code" href="struct_attribute_info_code_1_1_exception_table.html#a186d099030ac2b11ce02ecc9656343f4">startPc</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="struct_attribute_info_code_1_1_exception_table.html#aeec87604e5481dd8ee70aaada77405bc">   33</a></span>&#160;        uint16_t <a class="code" href="struct_attribute_info_code_1_1_exception_table.html#aeec87604e5481dd8ee70aaada77405bc">endPc</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="struct_attribute_info_code_1_1_exception_table.html#a8844e056a5b5c4a328a21326b47e9a48">   34</a></span>&#160;        uint16_t <a class="code" href="struct_attribute_info_code_1_1_exception_table.html#a8844e056a5b5c4a328a21326b47e9a48">handlerPc</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="struct_attribute_info_code_1_1_exception_table.html#a8c33189733947bc41817a008741e0cb3">   35</a></span>&#160;        uint16_t <a class="code" href="struct_attribute_info_code_1_1_exception_table.html#a8c33189733947bc41817a008741e0cb3">catchType</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    };</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="struct_attribute_info_code.html#ac86e42e9879683fe22b8d1df21858876">   37</a></span>&#160;    <a class="code" href="struct_attribute_info_code_1_1_exception_table.html">ExceptionTable</a> *<a class="code" href="struct_attribute_info_code.html#ac86e42e9879683fe22b8d1df21858876">exceptionTable</a>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="struct_attribute_info_code.html#a011cc92425a3280ca4402449c4d9568f">   38</a></span>&#160;    uint16_t <a class="code" href="struct_attribute_info_code.html#a011cc92425a3280ca4402449c4d9568f">attributesCount</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="struct_attribute_info_code.html#ac944e38309640d7a42c9d95fe2708c99">   39</a></span>&#160;    <a class="code" href="struct_attribute_info.html">AttributeInfo</a> **<a class="code" href="struct_attribute_info_code.html#ac944e38309640d7a42c9d95fe2708c99">attributes</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="struct_attribute_info_code.html#a76420cbceba2bece77be489d40c97a8c">   40</a></span>&#160;    <a class="code" href="struct_attribute_info_code.html#a76420cbceba2bece77be489d40c97a8c">AttributeInfoCode</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="struct_attribute_info_code.html#a9fc864781e94ad3e07f52635b5e1392d">   41</a></span>&#160;    <a class="code" href="struct_attribute_info_code.html#a9fc864781e94ad3e07f52635b5e1392d">~AttributeInfoCode</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="struct_attribute_info_exceptions.html">   44</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_attribute_info_exceptions.html">AttributeInfoExceptions</a> : <a class="code" href="struct_attribute_info.html">AttributeInfo</a>{</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="struct_attribute_info_exceptions.html#ad66e4cb319e09d6af0236a563baf8393">   45</a></span>&#160;    uint16_t <a class="code" href="struct_attribute_info_exceptions.html#ad66e4cb319e09d6af0236a563baf8393">numberOfExceptions</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="struct_attribute_info_exceptions.html#a91f1e9eeb5c04ae1da6d77c385ab34e3">   46</a></span>&#160;    uint16_t *<a class="code" href="struct_attribute_info_exceptions.html#a91f1e9eeb5c04ae1da6d77c385ab34e3">exceptionIndexTable</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="struct_attribute_info_exceptions.html#a22098216e62c68e7fe309c816c70f65c">   47</a></span>&#160;    <a class="code" href="struct_attribute_info_exceptions.html#a22098216e62c68e7fe309c816c70f65c">AttributeInfoExceptions</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="struct_attribute_info_exceptions.html#a36984b1393abed142050ea90a48475ec">   48</a></span>&#160;    <a class="code" href="struct_attribute_info_exceptions.html#a36984b1393abed142050ea90a48475ec">~AttributeInfoExceptions</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="struct_attribute_info_inner_classes.html">   51</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_attribute_info_inner_classes.html">AttributeInfoInnerClasses</a> : <a class="code" href="struct_attribute_info.html">AttributeInfo</a>{</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="struct_attribute_info_inner_classes.html#a0922b1837381864899763adc94a3aede">   52</a></span>&#160;    uint16_t <a class="code" href="struct_attribute_info_inner_classes.html#a0922b1837381864899763adc94a3aede">numberOfClasses</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="struct_attribute_info_inner_classes_1_1_class.html">   53</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_attribute_info_inner_classes_1_1_class.html">Class</a>{   </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="struct_attribute_info_inner_classes_1_1_class.html#a8eb34e736c7f3ee2f76ffc631c13e427">   54</a></span>&#160;        uint16_t <a class="code" href="struct_attribute_info_inner_classes_1_1_class.html#a8eb34e736c7f3ee2f76ffc631c13e427">innerClassInfoIndex</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="struct_attribute_info_inner_classes_1_1_class.html#a928e9acc7573d5456caef89e71cd9cc7">   55</a></span>&#160;        uint16_t <a class="code" href="struct_attribute_info_inner_classes_1_1_class.html#a928e9acc7573d5456caef89e71cd9cc7">outerClassInfoIndex</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="struct_attribute_info_inner_classes_1_1_class.html#a0841f5618cd30f64eec6eaec759aae63">   56</a></span>&#160;        uint16_t <a class="code" href="struct_attribute_info_inner_classes_1_1_class.html#a0841f5618cd30f64eec6eaec759aae63">innerNameIndex</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="struct_attribute_info_inner_classes_1_1_class.html#ad7e88d6a2a664f89c6470e51f0bc1690">   57</a></span>&#160;        uint16_t <a class="code" href="struct_attribute_info_inner_classes_1_1_class.html#ad7e88d6a2a664f89c6470e51f0bc1690">innerClassAccessFlags</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    };</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="struct_attribute_info_inner_classes.html#ac2db0ed540bb1c4b808da78e72db45ca">   59</a></span>&#160;    <a class="code" href="struct_attribute_info_inner_classes_1_1_class.html">Class</a> *<a class="code" href="struct_attribute_info_inner_classes.html#ac2db0ed540bb1c4b808da78e72db45ca">classes</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="struct_attribute_info_inner_classes.html#ab3006bb6651becd00db86f822a45f893">   60</a></span>&#160;    <a class="code" href="struct_attribute_info_inner_classes.html#ab3006bb6651becd00db86f822a45f893">AttributeInfoInnerClasses</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="struct_attribute_info_inner_classes.html#a9ef726d4c1d68d2d48770d2614de99e7">   61</a></span>&#160;    <a class="code" href="struct_attribute_info_inner_classes.html#a9ef726d4c1d68d2d48770d2614de99e7">~AttributeInfoInnerClasses</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="struct_attribute_info_synthetic.html">   64</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_attribute_info_synthetic.html">AttributeInfoSynthetic</a> : <a class="code" href="struct_attribute_info.html">AttributeInfo</a>{</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="struct_attribute_info_synthetic.html#a5e1cb2675d38b48cb136f98ccc2ab2cf">   65</a></span>&#160;    <a class="code" href="struct_attribute_info_synthetic.html#a5e1cb2675d38b48cb136f98ccc2ab2cf">AttributeInfoSynthetic</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="struct_attribute_info_source_file.html">   68</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_attribute_info_source_file.html">AttributeInfoSourceFile</a> : <a class="code" href="struct_attribute_info.html">AttributeInfo</a>{</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="struct_attribute_info_source_file.html#a3cbbe798e96d35b0e41f01985d747438">   69</a></span>&#160;    uint16_t <a class="code" href="struct_attribute_info_source_file.html#a3cbbe798e96d35b0e41f01985d747438">sourcefileIndex</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="struct_attribute_info_source_file.html#a95112585179b4f1818fc032dd7d0c286">   70</a></span>&#160;    <a class="code" href="struct_attribute_info_source_file.html#a95112585179b4f1818fc032dd7d0c286">AttributeInfoSourceFile</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="struct_attribute_info_line_number_table.html">   73</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_attribute_info_line_number_table.html">AttributeInfoLineNumberTable</a>  : <a class="code" href="struct_attribute_info.html">AttributeInfo</a>{</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="struct_attribute_info_line_number_table.html#a788833ad7f6b21e40f165cecc429cc05">   74</a></span>&#160;    uint16_t <a class="code" href="struct_attribute_info_line_number_table.html#a788833ad7f6b21e40f165cecc429cc05">lineNumberTableLength</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="struct_attribute_info_line_number_table_1_1_line_number_table.html">   75</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_attribute_info_line_number_table_1_1_line_number_table.html">LineNumberTable</a>{   </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="struct_attribute_info_line_number_table_1_1_line_number_table.html#a18b32ba7b5575b4ba023be3564ca4578">   76</a></span>&#160;        uint16_t <a class="code" href="struct_attribute_info_line_number_table_1_1_line_number_table.html#a18b32ba7b5575b4ba023be3564ca4578">startPc</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="struct_attribute_info_line_number_table_1_1_line_number_table.html#a7ac83f6b1c479840ef705b894c5905fc">   77</a></span>&#160;        uint16_t <a class="code" href="struct_attribute_info_line_number_table_1_1_line_number_table.html#a7ac83f6b1c479840ef705b894c5905fc">lineNumber</a>;    </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    };</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="struct_attribute_info_line_number_table.html#a8c3f1a6731e7e30d4c53296a43e0de09">   79</a></span>&#160;    <a class="code" href="struct_attribute_info_line_number_table_1_1_line_number_table.html">LineNumberTable</a> *<a class="code" href="struct_attribute_info_line_number_table.html#a8c3f1a6731e7e30d4c53296a43e0de09">lineNumberTable</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="struct_attribute_info_line_number_table.html#a8d20c746318dc0db5915654468960c22">   80</a></span>&#160;    <a class="code" href="struct_attribute_info_line_number_table.html#a8d20c746318dc0db5915654468960c22">AttributeInfoLineNumberTable</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="struct_attribute_info_line_number_table.html#a95b099c7487e392512176d56d7ab3379">   81</a></span>&#160;    <a class="code" href="struct_attribute_info_line_number_table.html#a95b099c7487e392512176d56d7ab3379">~AttributeInfoLineNumberTable</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="struct_attribute_info_local_variable_table.html">   84</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_attribute_info_local_variable_table.html">AttributeInfoLocalVariableTable</a> : <a class="code" href="struct_attribute_info.html">AttributeInfo</a>{</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="struct_attribute_info_local_variable_table.html#a25e9750069dba2dfeef55f177ae6e782">   85</a></span>&#160;    uint16_t <a class="code" href="struct_attribute_info_local_variable_table.html#a25e9750069dba2dfeef55f177ae6e782">localVariableTableLength</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html">   86</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html">LocalVariableTable</a>{   </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html#a3f9b56e05f39b19218e189827ba436a2">   87</a></span>&#160;        uint16_t <a class="code" href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html#a3f9b56e05f39b19218e189827ba436a2">startPc</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html#adce11fcd498599dd6c055c92e797f177">   88</a></span>&#160;        uint16_t <a class="code" href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html#adce11fcd498599dd6c055c92e797f177">length</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html#aeff2edc66a92d499b336ab0d6db5ef9c">   89</a></span>&#160;        uint16_t <a class="code" href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html#aeff2edc66a92d499b336ab0d6db5ef9c">nameIndex</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html#aab44c8fca35e1d0d6543e9f288f7193b">   90</a></span>&#160;        uint16_t <a class="code" href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html#aab44c8fca35e1d0d6543e9f288f7193b">descriptorIndex</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html#abb31f64f1f6c4a159db1ad02d335b5f4">   91</a></span>&#160;        uint16_t <a class="code" href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html#abb31f64f1f6c4a159db1ad02d335b5f4">index</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    };</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="struct_attribute_info_local_variable_table.html#a045c5d001f2fb709c9df40e76d902199">   93</a></span>&#160;    <a class="code" href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html">LocalVariableTable</a> *<a class="code" href="struct_attribute_info_local_variable_table.html#a045c5d001f2fb709c9df40e76d902199">localVariableTable</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="struct_attribute_info_local_variable_table.html#acbb108b388744ea5aecbbd42eb428602">   94</a></span>&#160;    <a class="code" href="struct_attribute_info_local_variable_table.html#acbb108b388744ea5aecbbd42eb428602">AttributeInfoLocalVariableTable</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="struct_attribute_info_local_variable_table.html#a28653b75325662eb55ff73f8ee2a5b4a">   95</a></span>&#160;    <a class="code" href="struct_attribute_info_local_variable_table.html#a28653b75325662eb55ff73f8ee2a5b4a">~AttributeInfoLocalVariableTable</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="struct_attribute_info_deprecated.html">   98</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_attribute_info_deprecated.html">AttributeInfoDeprecated</a> : <a class="code" href="struct_attribute_info.html">AttributeInfo</a>{</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="struct_attribute_info_deprecated.html#a116f82c8fbfbe5ad0a92a342125cb909">   99</a></span>&#160;    <a class="code" href="struct_attribute_info_deprecated.html#a116f82c8fbfbe5ad0a92a342125cb909">AttributeInfoDeprecated</a>(); </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">// struct AttributeInfoStackMapTable : AttributeInfo{</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">//     uint16_t numberOfEntries;</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">//     // StackMapFrame *entries;</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">// };</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">// struct AttributeInfoEnclosingMethod : AttributeInfo{</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">//     uint16_t classIndex;</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">//     uint16_t methodIndex;</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">// };</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">// struct AttributeInfoSignature : AttributeInfo{</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">//     uint16_t signatureIndex;</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">// };</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">// struct AttributeInfoSourceDebugExtension : AttributeInfo{</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">//     uint8_t *debug_Extension;</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">// };</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">// struct AttributeInfoLocalVariableTypeTable : AttributeInfo{</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">//     uint16_t localVariableTypeTableLength;</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">//     struct {   uint16_t startPc;</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">//         uint16_t length;</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">//         uint16_t nameIndex;</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">//         uint16_t signatureIndex;</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">//         uint16_t index;</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">//     } *localVariableTypeTable;</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">// };</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">// struct AttributeInfoRuntimeVisibleAnnotations : AttributeInfo{</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">//     uint16_t num_annotations;</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">//     // Annotation *annotations;</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">// };</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">// struct AttributeInfoRuntimeInvisibleAnnotations : AttributeInfo{</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">//     uint16_t num_annotations;</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">//     // Annotation *annotations;</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">// };</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">// struct AttributeInfoRuntimeVisibleParameterAnnotations : AttributeInfo{</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">//     uint8_t numParameters;</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment">//     struct {   </span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">//         uint16_t numAnnotations;</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">//         // Annotation *annotations;</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">//     } *parameterAnnotations;</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">// };</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment">// struct AttributeInfoRuntimeInvisibleParameterAnnotations : AttributeInfo{</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="comment">//     uint8_t numParameters;</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">//     struct {   </span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">//         uint16_t numAnnotations;</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">//         // Annotation *annotations;</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">//     } *parameterAnnotations;</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">// };</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">// struct AttributeInfoRuntimeVisibleTypeAnnotations : AttributeInfo{</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">//     uint8_t numAnnotations;</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">//     // TypeAnnotation *annotations;</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">// };</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="comment">// struct AttributeInfoRuntimeInvisibleTypeAnnotations : AttributeInfo{</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">//     uint8_t numAnnotations;</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment">//     // TypeAnnotation *annotations;</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment">// };</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="comment">// struct AttributeInfoAnnotationDefault : AttributeInfo{</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment">//     // ElementValue defaultValue;</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment">// };</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">// struct AttributeInfoBootstrapMethods : AttributeInfo{</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">//     uint16_t numBootstrapMethods;</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">//     struct {   uint16_t bootstrapMethodRef;</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">//         uint16_t numBootstrapArguments;</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="comment">//         uint16_t *bootstrapArguments;</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment">//     } *bootstrap_methods;</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment">// };</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">// struct AttributeInfoMethodParameters : AttributeInfo{</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">//     uint8_t parameters_count;</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment">//     struct {   </span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">//         uint16_t name_index;</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">//         uint16_t access_flags;</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">//     } *parameters;</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment">// };</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="_attribute_info_8h.html#ac12b69bf57c6322cca4ae3eb6919af2b">  181</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_attribute_info_8h.html#ac12b69bf57c6322cca4ae3eb6919af2b">conveterAttributeInfoInAttributeInfo</a>(<a class="code" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **cf, <a class="code" href="struct_attribute_info.html">AttributeInfo</a> **ai);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_attribute_info_8h_html_ac12b69bf57c6322cca4ae3eb6919af2b"><div class="ttname"><a href="_attribute_info_8h.html#ac12b69bf57c6322cca4ae3eb6919af2b">conveterAttributeInfoInAttributeInfo</a></div><div class="ttdeci">void conveterAttributeInfoInAttributeInfo(ConstantPoolInfo **cf, AttributeInfo **ai)</div></div>
+<div class="ttc" id="astruct_attribute_info_basic_html"><div class="ttname"><a href="struct_attribute_info_basic.html">AttributeInfoBasic</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:14</div></div>
+<div class="ttc" id="astruct_attribute_info_basic_html_a404c603c693921fed271be4b9a4b59b9"><div class="ttname"><a href="struct_attribute_info_basic.html#a404c603c693921fed271be4b9a4b59b9">AttributeInfoBasic::~AttributeInfoBasic</a></div><div class="ttdeci">~AttributeInfoBasic()</div></div>
+<div class="ttc" id="astruct_attribute_info_basic_html_a871f9a3f8307c3f6ef7664f55b9e25bf"><div class="ttname"><a href="struct_attribute_info_basic.html#a871f9a3f8307c3f6ef7664f55b9e25bf">AttributeInfoBasic::info</a></div><div class="ttdeci">uint8_t * info</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:15</div></div>
+<div class="ttc" id="astruct_attribute_info_basic_html_af9b59775e0bdfebea191300a57283341"><div class="ttname"><a href="struct_attribute_info_basic.html#af9b59775e0bdfebea191300a57283341">AttributeInfoBasic::AttributeInfoBasic</a></div><div class="ttdeci">AttributeInfoBasic()</div></div>
+<div class="ttc" id="astruct_attribute_info_code_1_1_exception_table_html"><div class="ttname"><a href="struct_attribute_info_code_1_1_exception_table.html">AttributeInfoCode::ExceptionTable</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:31</div></div>
+<div class="ttc" id="astruct_attribute_info_code_1_1_exception_table_html_a186d099030ac2b11ce02ecc9656343f4"><div class="ttname"><a href="struct_attribute_info_code_1_1_exception_table.html#a186d099030ac2b11ce02ecc9656343f4">AttributeInfoCode::ExceptionTable::startPc</a></div><div class="ttdeci">uint16_t startPc</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:32</div></div>
+<div class="ttc" id="astruct_attribute_info_code_1_1_exception_table_html_a8844e056a5b5c4a328a21326b47e9a48"><div class="ttname"><a href="struct_attribute_info_code_1_1_exception_table.html#a8844e056a5b5c4a328a21326b47e9a48">AttributeInfoCode::ExceptionTable::handlerPc</a></div><div class="ttdeci">uint16_t handlerPc</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:34</div></div>
+<div class="ttc" id="astruct_attribute_info_code_1_1_exception_table_html_a8c33189733947bc41817a008741e0cb3"><div class="ttname"><a href="struct_attribute_info_code_1_1_exception_table.html#a8c33189733947bc41817a008741e0cb3">AttributeInfoCode::ExceptionTable::catchType</a></div><div class="ttdeci">uint16_t catchType</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:35</div></div>
+<div class="ttc" id="astruct_attribute_info_code_1_1_exception_table_html_aeec87604e5481dd8ee70aaada77405bc"><div class="ttname"><a href="struct_attribute_info_code_1_1_exception_table.html#aeec87604e5481dd8ee70aaada77405bc">AttributeInfoCode::ExceptionTable::endPc</a></div><div class="ttdeci">uint16_t endPc</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:33</div></div>
+<div class="ttc" id="astruct_attribute_info_code_html"><div class="ttname"><a href="struct_attribute_info_code.html">AttributeInfoCode</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:25</div></div>
+<div class="ttc" id="astruct_attribute_info_code_html_a011cc92425a3280ca4402449c4d9568f"><div class="ttname"><a href="struct_attribute_info_code.html#a011cc92425a3280ca4402449c4d9568f">AttributeInfoCode::attributesCount</a></div><div class="ttdeci">uint16_t attributesCount</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:38</div></div>
+<div class="ttc" id="astruct_attribute_info_code_html_a1e56f5b1404ecb44aec9d2dcaef77428"><div class="ttname"><a href="struct_attribute_info_code.html#a1e56f5b1404ecb44aec9d2dcaef77428">AttributeInfoCode::code</a></div><div class="ttdeci">uint8_t * code</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:29</div></div>
+<div class="ttc" id="astruct_attribute_info_code_html_a23ca2ccea1f14a50421fe66f4fbbbc0a"><div class="ttname"><a href="struct_attribute_info_code.html#a23ca2ccea1f14a50421fe66f4fbbbc0a">AttributeInfoCode::codeLength</a></div><div class="ttdeci">uint32_t codeLength</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:28</div></div>
+<div class="ttc" id="astruct_attribute_info_code_html_a6070c333f036faa757c8010a40da776d"><div class="ttname"><a href="struct_attribute_info_code.html#a6070c333f036faa757c8010a40da776d">AttributeInfoCode::maxStack</a></div><div class="ttdeci">uint16_t maxStack</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:26</div></div>
+<div class="ttc" id="astruct_attribute_info_code_html_a76420cbceba2bece77be489d40c97a8c"><div class="ttname"><a href="struct_attribute_info_code.html#a76420cbceba2bece77be489d40c97a8c">AttributeInfoCode::AttributeInfoCode</a></div><div class="ttdeci">AttributeInfoCode()</div></div>
+<div class="ttc" id="astruct_attribute_info_code_html_a9fc864781e94ad3e07f52635b5e1392d"><div class="ttname"><a href="struct_attribute_info_code.html#a9fc864781e94ad3e07f52635b5e1392d">AttributeInfoCode::~AttributeInfoCode</a></div><div class="ttdeci">~AttributeInfoCode()</div></div>
+<div class="ttc" id="astruct_attribute_info_code_html_aa301b3561738681bd2cc802f618c0950"><div class="ttname"><a href="struct_attribute_info_code.html#aa301b3561738681bd2cc802f618c0950">AttributeInfoCode::maxLocals</a></div><div class="ttdeci">uint16_t maxLocals</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:27</div></div>
+<div class="ttc" id="astruct_attribute_info_code_html_ac86e42e9879683fe22b8d1df21858876"><div class="ttname"><a href="struct_attribute_info_code.html#ac86e42e9879683fe22b8d1df21858876">AttributeInfoCode::exceptionTable</a></div><div class="ttdeci">ExceptionTable * exceptionTable</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:37</div></div>
+<div class="ttc" id="astruct_attribute_info_code_html_ac944e38309640d7a42c9d95fe2708c99"><div class="ttname"><a href="struct_attribute_info_code.html#ac944e38309640d7a42c9d95fe2708c99">AttributeInfoCode::attributes</a></div><div class="ttdeci">AttributeInfo ** attributes</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:39</div></div>
+<div class="ttc" id="astruct_attribute_info_code_html_ae72c9e1c75411d0d04c1c8bfe94741fd"><div class="ttname"><a href="struct_attribute_info_code.html#ae72c9e1c75411d0d04c1c8bfe94741fd">AttributeInfoCode::exceptionTableLength</a></div><div class="ttdeci">uint16_t exceptionTableLength</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:30</div></div>
+<div class="ttc" id="astruct_attribute_info_constant_value_html"><div class="ttname"><a href="struct_attribute_info_constant_value.html">AttributeInfoConstantValue</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:20</div></div>
+<div class="ttc" id="astruct_attribute_info_constant_value_html_a90c8d12c1cbc0b8d135648af0ec8215e"><div class="ttname"><a href="struct_attribute_info_constant_value.html#a90c8d12c1cbc0b8d135648af0ec8215e">AttributeInfoConstantValue::constantvalueIndex</a></div><div class="ttdeci">uint16_t constantvalueIndex</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:21</div></div>
+<div class="ttc" id="astruct_attribute_info_constant_value_html_adc8be783e8c04d54fecb69eb676f6be8"><div class="ttname"><a href="struct_attribute_info_constant_value.html#adc8be783e8c04d54fecb69eb676f6be8">AttributeInfoConstantValue::AttributeInfoConstantValue</a></div><div class="ttdeci">AttributeInfoConstantValue()</div></div>
+<div class="ttc" id="astruct_attribute_info_deprecated_html"><div class="ttname"><a href="struct_attribute_info_deprecated.html">AttributeInfoDeprecated</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:98</div></div>
+<div class="ttc" id="astruct_attribute_info_deprecated_html_a116f82c8fbfbe5ad0a92a342125cb909"><div class="ttname"><a href="struct_attribute_info_deprecated.html#a116f82c8fbfbe5ad0a92a342125cb909">AttributeInfoDeprecated::AttributeInfoDeprecated</a></div><div class="ttdeci">AttributeInfoDeprecated()</div></div>
+<div class="ttc" id="astruct_attribute_info_exceptions_html"><div class="ttname"><a href="struct_attribute_info_exceptions.html">AttributeInfoExceptions</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:44</div></div>
+<div class="ttc" id="astruct_attribute_info_exceptions_html_a22098216e62c68e7fe309c816c70f65c"><div class="ttname"><a href="struct_attribute_info_exceptions.html#a22098216e62c68e7fe309c816c70f65c">AttributeInfoExceptions::AttributeInfoExceptions</a></div><div class="ttdeci">AttributeInfoExceptions()</div></div>
+<div class="ttc" id="astruct_attribute_info_exceptions_html_a36984b1393abed142050ea90a48475ec"><div class="ttname"><a href="struct_attribute_info_exceptions.html#a36984b1393abed142050ea90a48475ec">AttributeInfoExceptions::~AttributeInfoExceptions</a></div><div class="ttdeci">~AttributeInfoExceptions()</div></div>
+<div class="ttc" id="astruct_attribute_info_exceptions_html_a91f1e9eeb5c04ae1da6d77c385ab34e3"><div class="ttname"><a href="struct_attribute_info_exceptions.html#a91f1e9eeb5c04ae1da6d77c385ab34e3">AttributeInfoExceptions::exceptionIndexTable</a></div><div class="ttdeci">uint16_t * exceptionIndexTable</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:46</div></div>
+<div class="ttc" id="astruct_attribute_info_exceptions_html_ad66e4cb319e09d6af0236a563baf8393"><div class="ttname"><a href="struct_attribute_info_exceptions.html#ad66e4cb319e09d6af0236a563baf8393">AttributeInfoExceptions::numberOfExceptions</a></div><div class="ttdeci">uint16_t numberOfExceptions</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:45</div></div>
+<div class="ttc" id="astruct_attribute_info_html"><div class="ttname"><a href="struct_attribute_info.html">AttributeInfo</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:7</div></div>
+<div class="ttc" id="astruct_attribute_info_html_a1755dec7721e0e62a53c698831ba514d"><div class="ttname"><a href="struct_attribute_info.html#a1755dec7721e0e62a53c698831ba514d">AttributeInfo::attributeLength</a></div><div class="ttdeci">uint32_t attributeLength</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:9</div></div>
+<div class="ttc" id="astruct_attribute_info_html_a369786452d79ca1c7f5111edf02cf7ab"><div class="ttname"><a href="struct_attribute_info.html#a369786452d79ca1c7f5111edf02cf7ab">AttributeInfo::~AttributeInfo</a></div><div class="ttdeci">virtual ~AttributeInfo()</div></div>
+<div class="ttc" id="astruct_attribute_info_html_a4c27dd5573a587f1ee5f99b741bf28ac"><div class="ttname"><a href="struct_attribute_info.html#a4c27dd5573a587f1ee5f99b741bf28ac">AttributeInfo::AttributeInfo</a></div><div class="ttdeci">AttributeInfo()</div></div>
+<div class="ttc" id="astruct_attribute_info_html_ac0d9d9ffa3214f362c4e06df78036d6e"><div class="ttname"><a href="struct_attribute_info.html#ac0d9d9ffa3214f362c4e06df78036d6e">AttributeInfo::attributeNameIndex</a></div><div class="ttdeci">uint16_t attributeNameIndex</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:8</div></div>
+<div class="ttc" id="astruct_attribute_info_inner_classes_1_1_class_html"><div class="ttname"><a href="struct_attribute_info_inner_classes_1_1_class.html">AttributeInfoInnerClasses::Class</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:53</div></div>
+<div class="ttc" id="astruct_attribute_info_inner_classes_1_1_class_html_a0841f5618cd30f64eec6eaec759aae63"><div class="ttname"><a href="struct_attribute_info_inner_classes_1_1_class.html#a0841f5618cd30f64eec6eaec759aae63">AttributeInfoInnerClasses::Class::innerNameIndex</a></div><div class="ttdeci">uint16_t innerNameIndex</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:56</div></div>
+<div class="ttc" id="astruct_attribute_info_inner_classes_1_1_class_html_a8eb34e736c7f3ee2f76ffc631c13e427"><div class="ttname"><a href="struct_attribute_info_inner_classes_1_1_class.html#a8eb34e736c7f3ee2f76ffc631c13e427">AttributeInfoInnerClasses::Class::innerClassInfoIndex</a></div><div class="ttdeci">uint16_t innerClassInfoIndex</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:54</div></div>
+<div class="ttc" id="astruct_attribute_info_inner_classes_1_1_class_html_a928e9acc7573d5456caef89e71cd9cc7"><div class="ttname"><a href="struct_attribute_info_inner_classes_1_1_class.html#a928e9acc7573d5456caef89e71cd9cc7">AttributeInfoInnerClasses::Class::outerClassInfoIndex</a></div><div class="ttdeci">uint16_t outerClassInfoIndex</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:55</div></div>
+<div class="ttc" id="astruct_attribute_info_inner_classes_1_1_class_html_ad7e88d6a2a664f89c6470e51f0bc1690"><div class="ttname"><a href="struct_attribute_info_inner_classes_1_1_class.html#ad7e88d6a2a664f89c6470e51f0bc1690">AttributeInfoInnerClasses::Class::innerClassAccessFlags</a></div><div class="ttdeci">uint16_t innerClassAccessFlags</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:57</div></div>
+<div class="ttc" id="astruct_attribute_info_inner_classes_html"><div class="ttname"><a href="struct_attribute_info_inner_classes.html">AttributeInfoInnerClasses</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:51</div></div>
+<div class="ttc" id="astruct_attribute_info_inner_classes_html_a0922b1837381864899763adc94a3aede"><div class="ttname"><a href="struct_attribute_info_inner_classes.html#a0922b1837381864899763adc94a3aede">AttributeInfoInnerClasses::numberOfClasses</a></div><div class="ttdeci">uint16_t numberOfClasses</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:52</div></div>
+<div class="ttc" id="astruct_attribute_info_inner_classes_html_a9ef726d4c1d68d2d48770d2614de99e7"><div class="ttname"><a href="struct_attribute_info_inner_classes.html#a9ef726d4c1d68d2d48770d2614de99e7">AttributeInfoInnerClasses::~AttributeInfoInnerClasses</a></div><div class="ttdeci">~AttributeInfoInnerClasses()</div></div>
+<div class="ttc" id="astruct_attribute_info_inner_classes_html_ab3006bb6651becd00db86f822a45f893"><div class="ttname"><a href="struct_attribute_info_inner_classes.html#ab3006bb6651becd00db86f822a45f893">AttributeInfoInnerClasses::AttributeInfoInnerClasses</a></div><div class="ttdeci">AttributeInfoInnerClasses()</div></div>
+<div class="ttc" id="astruct_attribute_info_inner_classes_html_ac2db0ed540bb1c4b808da78e72db45ca"><div class="ttname"><a href="struct_attribute_info_inner_classes.html#ac2db0ed540bb1c4b808da78e72db45ca">AttributeInfoInnerClasses::classes</a></div><div class="ttdeci">Class * classes</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:59</div></div>
+<div class="ttc" id="astruct_attribute_info_line_number_table_1_1_line_number_table_html"><div class="ttname"><a href="struct_attribute_info_line_number_table_1_1_line_number_table.html">AttributeInfoLineNumberTable::LineNumberTable</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:75</div></div>
+<div class="ttc" id="astruct_attribute_info_line_number_table_1_1_line_number_table_html_a18b32ba7b5575b4ba023be3564ca4578"><div class="ttname"><a href="struct_attribute_info_line_number_table_1_1_line_number_table.html#a18b32ba7b5575b4ba023be3564ca4578">AttributeInfoLineNumberTable::LineNumberTable::startPc</a></div><div class="ttdeci">uint16_t startPc</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:76</div></div>
+<div class="ttc" id="astruct_attribute_info_line_number_table_1_1_line_number_table_html_a7ac83f6b1c479840ef705b894c5905fc"><div class="ttname"><a href="struct_attribute_info_line_number_table_1_1_line_number_table.html#a7ac83f6b1c479840ef705b894c5905fc">AttributeInfoLineNumberTable::LineNumberTable::lineNumber</a></div><div class="ttdeci">uint16_t lineNumber</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:77</div></div>
+<div class="ttc" id="astruct_attribute_info_line_number_table_html"><div class="ttname"><a href="struct_attribute_info_line_number_table.html">AttributeInfoLineNumberTable</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:73</div></div>
+<div class="ttc" id="astruct_attribute_info_line_number_table_html_a788833ad7f6b21e40f165cecc429cc05"><div class="ttname"><a href="struct_attribute_info_line_number_table.html#a788833ad7f6b21e40f165cecc429cc05">AttributeInfoLineNumberTable::lineNumberTableLength</a></div><div class="ttdeci">uint16_t lineNumberTableLength</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:74</div></div>
+<div class="ttc" id="astruct_attribute_info_line_number_table_html_a8c3f1a6731e7e30d4c53296a43e0de09"><div class="ttname"><a href="struct_attribute_info_line_number_table.html#a8c3f1a6731e7e30d4c53296a43e0de09">AttributeInfoLineNumberTable::lineNumberTable</a></div><div class="ttdeci">LineNumberTable * lineNumberTable</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:79</div></div>
+<div class="ttc" id="astruct_attribute_info_line_number_table_html_a8d20c746318dc0db5915654468960c22"><div class="ttname"><a href="struct_attribute_info_line_number_table.html#a8d20c746318dc0db5915654468960c22">AttributeInfoLineNumberTable::AttributeInfoLineNumberTable</a></div><div class="ttdeci">AttributeInfoLineNumberTable()</div></div>
+<div class="ttc" id="astruct_attribute_info_line_number_table_html_a95b099c7487e392512176d56d7ab3379"><div class="ttname"><a href="struct_attribute_info_line_number_table.html#a95b099c7487e392512176d56d7ab3379">AttributeInfoLineNumberTable::~AttributeInfoLineNumberTable</a></div><div class="ttdeci">~AttributeInfoLineNumberTable()</div></div>
+<div class="ttc" id="astruct_attribute_info_local_variable_table_1_1_local_variable_table_html"><div class="ttname"><a href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html">AttributeInfoLocalVariableTable::LocalVariableTable</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:86</div></div>
+<div class="ttc" id="astruct_attribute_info_local_variable_table_1_1_local_variable_table_html_a3f9b56e05f39b19218e189827ba436a2"><div class="ttname"><a href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html#a3f9b56e05f39b19218e189827ba436a2">AttributeInfoLocalVariableTable::LocalVariableTable::startPc</a></div><div class="ttdeci">uint16_t startPc</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:87</div></div>
+<div class="ttc" id="astruct_attribute_info_local_variable_table_1_1_local_variable_table_html_aab44c8fca35e1d0d6543e9f288f7193b"><div class="ttname"><a href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html#aab44c8fca35e1d0d6543e9f288f7193b">AttributeInfoLocalVariableTable::LocalVariableTable::descriptorIndex</a></div><div class="ttdeci">uint16_t descriptorIndex</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:90</div></div>
+<div class="ttc" id="astruct_attribute_info_local_variable_table_1_1_local_variable_table_html_abb31f64f1f6c4a159db1ad02d335b5f4"><div class="ttname"><a href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html#abb31f64f1f6c4a159db1ad02d335b5f4">AttributeInfoLocalVariableTable::LocalVariableTable::index</a></div><div class="ttdeci">uint16_t index</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:91</div></div>
+<div class="ttc" id="astruct_attribute_info_local_variable_table_1_1_local_variable_table_html_adce11fcd498599dd6c055c92e797f177"><div class="ttname"><a href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html#adce11fcd498599dd6c055c92e797f177">AttributeInfoLocalVariableTable::LocalVariableTable::length</a></div><div class="ttdeci">uint16_t length</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:88</div></div>
+<div class="ttc" id="astruct_attribute_info_local_variable_table_1_1_local_variable_table_html_aeff2edc66a92d499b336ab0d6db5ef9c"><div class="ttname"><a href="struct_attribute_info_local_variable_table_1_1_local_variable_table.html#aeff2edc66a92d499b336ab0d6db5ef9c">AttributeInfoLocalVariableTable::LocalVariableTable::nameIndex</a></div><div class="ttdeci">uint16_t nameIndex</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:89</div></div>
+<div class="ttc" id="astruct_attribute_info_local_variable_table_html"><div class="ttname"><a href="struct_attribute_info_local_variable_table.html">AttributeInfoLocalVariableTable</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:84</div></div>
+<div class="ttc" id="astruct_attribute_info_local_variable_table_html_a045c5d001f2fb709c9df40e76d902199"><div class="ttname"><a href="struct_attribute_info_local_variable_table.html#a045c5d001f2fb709c9df40e76d902199">AttributeInfoLocalVariableTable::localVariableTable</a></div><div class="ttdeci">LocalVariableTable * localVariableTable</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:93</div></div>
+<div class="ttc" id="astruct_attribute_info_local_variable_table_html_a25e9750069dba2dfeef55f177ae6e782"><div class="ttname"><a href="struct_attribute_info_local_variable_table.html#a25e9750069dba2dfeef55f177ae6e782">AttributeInfoLocalVariableTable::localVariableTableLength</a></div><div class="ttdeci">uint16_t localVariableTableLength</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:85</div></div>
+<div class="ttc" id="astruct_attribute_info_local_variable_table_html_a28653b75325662eb55ff73f8ee2a5b4a"><div class="ttname"><a href="struct_attribute_info_local_variable_table.html#a28653b75325662eb55ff73f8ee2a5b4a">AttributeInfoLocalVariableTable::~AttributeInfoLocalVariableTable</a></div><div class="ttdeci">~AttributeInfoLocalVariableTable()</div></div>
+<div class="ttc" id="astruct_attribute_info_local_variable_table_html_acbb108b388744ea5aecbbd42eb428602"><div class="ttname"><a href="struct_attribute_info_local_variable_table.html#acbb108b388744ea5aecbbd42eb428602">AttributeInfoLocalVariableTable::AttributeInfoLocalVariableTable</a></div><div class="ttdeci">AttributeInfoLocalVariableTable()</div></div>
+<div class="ttc" id="astruct_attribute_info_source_file_html"><div class="ttname"><a href="struct_attribute_info_source_file.html">AttributeInfoSourceFile</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:68</div></div>
+<div class="ttc" id="astruct_attribute_info_source_file_html_a3cbbe798e96d35b0e41f01985d747438"><div class="ttname"><a href="struct_attribute_info_source_file.html#a3cbbe798e96d35b0e41f01985d747438">AttributeInfoSourceFile::sourcefileIndex</a></div><div class="ttdeci">uint16_t sourcefileIndex</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:69</div></div>
+<div class="ttc" id="astruct_attribute_info_source_file_html_a95112585179b4f1818fc032dd7d0c286"><div class="ttname"><a href="struct_attribute_info_source_file.html#a95112585179b4f1818fc032dd7d0c286">AttributeInfoSourceFile::AttributeInfoSourceFile</a></div><div class="ttdeci">AttributeInfoSourceFile()</div></div>
+<div class="ttc" id="astruct_attribute_info_synthetic_html"><div class="ttname"><a href="struct_attribute_info_synthetic.html">AttributeInfoSynthetic</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:64</div></div>
+<div class="ttc" id="astruct_attribute_info_synthetic_html_a5e1cb2675d38b48cb136f98ccc2ab2cf"><div class="ttname"><a href="struct_attribute_info_synthetic.html#a5e1cb2675d38b48cb136f98ccc2ab2cf">AttributeInfoSynthetic::AttributeInfoSynthetic</a></div><div class="ttdeci">AttributeInfoSynthetic()</div></div>
+<div class="ttc" id="astruct_constant_pool_info_html"><div class="ttname"><a href="struct_constant_pool_info.html">ConstantPoolInfo</a></div><div class="ttdoc">Estrutura base de todos os constant Pool.</div><div class="ttdef"><b>Definition:</b> ConstantPoolInfo.h:38</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

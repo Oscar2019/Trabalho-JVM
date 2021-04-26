@@ -1,0 +1,237 @@
+\hypertarget{classTrie}{}\doxysection{Trie$<$ T $>$ Class Template Reference}
+\label{classTrie}\index{Trie$<$ T $>$@{Trie$<$ T $>$}}
+
+
+Estrutura de dados organizada em uma árvore de prefixos que armazena um valor.  
+
+
+
+
+{\ttfamily \#include $<$Trie.\+h$>$}
+
+
+
+Inheritance diagram for Trie$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTrie__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Trie$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{classTrie__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ T $>$ \& \mbox{\hyperlink{classTrie_aaeec21c262fbf759f71d7dcdd1925143}{get\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Obtém os dados da \mbox{\hyperlink{classTrie}{Trie}}. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classTrie_a8fed33e2a8777e406f006c1ed7c47da3}{get\+Value}} (std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em Obtém os dados de um prefixo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTrie_abc590da298b40a5b765787b10f5e77b9}{insert}} (std\+::string \&s, T \&value)
+\begin{DoxyCompactList}\small\item\em Insere um elemento na \mbox{\hyperlink{classTrie}{Trie}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTrie_a024d7587e5b3cb33e9e212c9dd605119}{insert}} (std\+::string \&s, T \&\&value)
+\begin{DoxyCompactList}\small\item\em Insere um elemento na \mbox{\hyperlink{classTrie}{Trie}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTrie_aabeeb088fe82e4de76aae2d43bba8b5c}{has\+Key}} (std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em Determina se existe um elemento sobre um prefixo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTrie_aad25485cc220f05b3d564188561e7926}{copy\+From}} (\mbox{\hyperlink{classTrie}{Trie}}$<$ T $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Cópia os dados de uma outra \mbox{\hyperlink{classTrie}{Trie}}. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classTrie_a4af99372ebf77e0f1ed116cd8dfae53b}{size}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o número de dados armazenados na \mbox{\hyperlink{classTrie}{Trie}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTrie_af8a231351d78977f070e94f1850ce9ad}{Trie}} ()
+\begin{DoxyCompactList}\small\item\em Construct da \mbox{\hyperlink{classTrie}{Trie}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::pair$<$ uint32\+\_\+t, std\+::map$<$ uint8\+\_\+t, uint32\+\_\+t $>$ $>$ $>$ \mbox{\hyperlink{classTrie_aefe085edc660e8f8bd7c5116bf04de14}{tree}}
+\begin{DoxyCompactList}\small\item\em Árvore de prefixos. \end{DoxyCompactList}\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classTrie_a85fb4e08359a1dcb40ced61c1f84457d}{data}}
+\begin{DoxyCompactList}\small\item\em Dados que estão sendo armazenados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Trie$<$ T $>$}
+
+Estrutura de dados organizada em uma árvore de prefixos que armazena um valor. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTrie_af8a231351d78977f070e94f1850ce9ad}\label{classTrie_af8a231351d78977f070e94f1850ce9ad}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!Trie@{Trie}}
+\index{Trie@{Trie}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Trie()}{Trie()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classTrie}{Trie}}$<$ T $>$\+::\mbox{\hyperlink{classTrie}{Trie}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct da \mbox{\hyperlink{classTrie}{Trie}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTrie_aad25485cc220f05b3d564188561e7926}\label{classTrie_aad25485cc220f05b3d564188561e7926}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!copyFrom@{copyFrom}}
+\index{copyFrom@{copyFrom}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{copyFrom()}{copyFrom()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classTrie}{Trie}}$<$ T $>$\+::copy\+From (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTrie}{Trie}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Cópia os dados de uma outra \mbox{\hyperlink{classTrie}{Trie}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTrie_aaeec21c262fbf759f71d7dcdd1925143}\label{classTrie_aaeec21c262fbf759f71d7dcdd1925143}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!getData@{getData}}
+\index{getData@{getData}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$T$>$\& \mbox{\hyperlink{classTrie}{Trie}}$<$ T $>$\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém os dados da \mbox{\hyperlink{classTrie}{Trie}}. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+T$>$\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTrie_a8fed33e2a8777e406f006c1ed7c47da3}\label{classTrie_a8fed33e2a8777e406f006c1ed7c47da3}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!getValue@{getValue}}
+\index{getValue@{getValue}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T\& \mbox{\hyperlink{classTrie}{Trie}}$<$ T $>$\+::get\+Value (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém os dados de um prefixo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTrie_aabeeb088fe82e4de76aae2d43bba8b5c}\label{classTrie_aabeeb088fe82e4de76aae2d43bba8b5c}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!hasKey@{hasKey}}
+\index{hasKey@{hasKey}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{hasKey()}{hasKey()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classTrie}{Trie}}$<$ T $>$\+::has\+Key (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determina se existe um elemento sobre um prefixo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTrie_a024d7587e5b3cb33e9e212c9dd605119}\label{classTrie_a024d7587e5b3cb33e9e212c9dd605119}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classTrie}{Trie}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s,  }\item[{T \&\&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insere um elemento na \mbox{\hyperlink{classTrie}{Trie}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTrie_abc590da298b40a5b765787b10f5e77b9}\label{classTrie_abc590da298b40a5b765787b10f5e77b9}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classTrie}{Trie}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s,  }\item[{T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insere um elemento na \mbox{\hyperlink{classTrie}{Trie}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTrie_a4af99372ebf77e0f1ed116cd8dfae53b}\label{classTrie_a4af99372ebf77e0f1ed116cd8dfae53b}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!size@{size}}
+\index{size@{size}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+uint32\+\_\+t \mbox{\hyperlink{classTrie}{Trie}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna o número de dados armazenados na \mbox{\hyperlink{classTrie}{Trie}}. 
+
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTrie_a85fb4e08359a1dcb40ced61c1f84457d}\label{classTrie_a85fb4e08359a1dcb40ced61c1f84457d}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!data@{data}}
+\index{data@{data}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$T$>$ \mbox{\hyperlink{classTrie}{Trie}}$<$ T $>$\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Dados que estão sendo armazenados. 
+
+\mbox{\Hypertarget{classTrie_aefe085edc660e8f8bd7c5116bf04de14}\label{classTrie_aefe085edc660e8f8bd7c5116bf04de14}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!tree@{tree}}
+\index{tree@{tree}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{tree}{tree}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$std\+::pair$<$uint32\+\_\+t, std\+::map$<$uint8\+\_\+t, uint32\+\_\+t$>$ $>$ $>$ \mbox{\hyperlink{classTrie}{Trie}}$<$ T $>$\+::tree\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Árvore de prefixos. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Trie_8h}{Trie.\+h}}\end{DoxyCompactItemize}

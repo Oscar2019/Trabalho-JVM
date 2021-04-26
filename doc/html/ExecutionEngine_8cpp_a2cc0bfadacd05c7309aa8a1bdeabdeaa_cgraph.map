@@ -1,0 +1,52 @@
+<map id="execOp_invokestatic" name="execOp_invokestatic">
+<area shape="rect" id="node1" title=" " alt="" coords="5,464,161,491"/>
+<area shape="rect" id="node2" href="$classFrame.html#a783e5f801c60d09674e9556de8f1b319" title="Cria um novo Frame." alt="" coords="949,507,1104,533"/>
+<area shape="rect" id="node5" href="$ConstantPoolInfo_8h.html#afe1697068c0f2f8b2c45ae37899e874c" title="Gera uma string do ConstantPoolInfo no índice ind." alt="" coords="1229,793,1385,820"/>
+<area shape="rect" id="node17" href="$classFrame.html#a7a343cc8ade5fe6a399e9d5d5d1a061e" title="Obtém o ConstantPool." alt="" coords="1469,119,1648,145"/>
+<area shape="rect" id="node18" href="$classClassLoader.html#ae5a50b6253e237015f2641b06e80c9ae" title=" " alt="" coords="659,297,851,338"/>
+<area shape="rect" id="node21" href="$classRuntimeDataArea.html#a692f2aabdbe0f94ca40409b641aa501c" title="Retorna o i&#45;ésimo valor no var locals no elemento no topo da heap." alt="" coords="1459,43,1659,69"/>
+<area shape="rect" id="node23" href="$classFrame.html#aa6cd62c1dfe95de30f86fbfa444171d7" title="Remove o elemento que está no topo da pilha." alt="" coords="1213,245,1400,272"/>
+<area shape="rect" id="node25" href="$classFrame.html#afc6f418a53e2160c86a46fc6d38d10bf" title="Insere um elemento na pilha de operando." alt="" coords="1462,220,1655,247"/>
+<area shape="rect" id="node26" href="$Tipos_8h.html#acb337e0b996b7eb4f83d197c9b1a12f9" title="Função que lê um uinnt16_t de um vetor de uint8_t." alt="" coords="249,1212,384,1239"/>
+<area shape="rect" id="node28" href="$Tipos_8h.html#ae516ebe405aedf431427028480752c0b" title="Função que lê um uinnt32_t de um vetor de uint8_t." alt="" coords="249,1161,384,1188"/>
+<area shape="rect" id="node29" href="$classClassLoader.html#ad0b5c4fff295d13b587481c6ade4cf7e" title=" " alt="" coords="209,398,424,439"/>
+<area shape="rect" id="node36" href="$classFrame.html#a1d3b7f2931d969346e01987ec72f2a8a" title="Obtém o elemento que está no topo da pilha." alt="" coords="1215,499,1398,525"/>
+<area shape="rect" id="node49" href="$ExecutionEngine_8cpp.html#a845ddf36686352f95e8ac69748ef4e07" title=" " alt="" coords="257,1263,376,1289"/>
+<area shape="rect" id="node50" href="$classFrame.html#aa23c1c8673ca67cf67ad3a647f9f1b56" title="Obtém uma referência para um elemnto da varLocalTable." alt="" coords="263,1313,370,1340"/>
+<area shape="rect" id="node3" href="$classFrame.html#a179f17d9f2c053cd8d7a46f5f4f98b97" title="Constrói o Frame." alt="" coords="1251,549,1363,576"/>
+<area shape="rect" id="node4" href="$classLinearStack.html#a21f220f3c54293f3cc931781b0511c95" title="Insre um novo elemento para a pilha." alt="" coords="1707,347,1844,373"/>
+<area shape="rect" id="node6" href="$ConstantPoolInfo_8cpp.html#abf3ac3c335453aeeaef5215f929ca198" title="Gera a string que é apontada pelo nameIndex." alt="" coords="1736,853,1815,880"/>
+<area shape="rect" id="node7" href="$ConstantPoolInfo_8cpp.html#a5e9d056ada05e799dca7e544a7878f94" title="Gera uma string que está sendo armazenada por CPUtf8." alt="" coords="1892,929,1980,956"/>
+<area shape="rect" id="node8" href="$ConstantPoolInfo_8cpp.html#a7c2c013a83861a4863262f5662805cde" title="Gera um double que está sendo armazenado no CPDouble." alt="" coords="1514,549,1603,576"/>
+<area shape="rect" id="node9" href="$ConstantPoolInfo_8cpp.html#aa11fd5cae250b13659b5bc7896666470" title="Gera a string." alt="" coords="1513,904,1605,931"/>
+<area shape="rect" id="node10" href="$ConstantPoolInfo_8cpp.html#a17eba7eed349812217e563f49ea1ce31" title="Gera a string." alt="" coords="1707,904,1844,931"/>
+<area shape="rect" id="node11" href="$ConstantPoolInfo_8cpp.html#a4c191de500bacf8bcbf78fecaaff5c9c" title="Gera um float que está sendo armazenado no CPFloat." alt="" coords="1521,600,1597,627"/>
+<area shape="rect" id="node12" href="$ConstantPoolInfo_8cpp.html#ad170cd1f7d25904c16944ac727b0a3df" title="Gera um inteiro que está sendo armazenado no CPInteger." alt="" coords="1514,651,1603,677"/>
+<area shape="rect" id="node13" href="$ConstantPoolInfo_8cpp.html#ac1af9208eec2a80387bfc0df984658c4" title="Gera a string." alt="" coords="1475,803,1643,829"/>
+<area shape="rect" id="node14" href="$ConstantPoolInfo_8cpp.html#ae9e5dbc5679d30d4ed4627e5f97f5580" title="Gera um long que está sendo armazenado no CPLong." alt="" coords="1521,701,1596,728"/>
+<area shape="rect" id="node15" href="$ConstantPoolInfo_8cpp.html#ab1000528a22b627ac08ba4f02a28307a" title="Gera a string." alt="" coords="1503,853,1614,880"/>
+<area shape="rect" id="node16" href="$ConstantPoolInfo_8cpp.html#a225c1b5cec4bb5cf3f07f9864b9d0431" title="Gera a string." alt="" coords="1735,980,1816,1007"/>
+<area shape="rect" id="node19" href="$classTrie.html#a8fed33e2a8777e406f006c1ed7c47da3" title="Obtém os dados de um prefixo." alt="" coords="971,304,1082,331"/>
+<area shape="rect" id="node20" href="$classTrie.html#aabeeb088fe82e4de76aae2d43bba8b5c" title="Determina se existe um elemento sobre um prefixo." alt="" coords="977,355,1077,381"/>
+<area shape="rect" id="node22" href="$classHeap.html#ae3962ba3eee949e7fa6c903692213ea0" title="Retorna um objeto no indice i&#45;1." alt="" coords="1737,43,1814,69"/>
+<area shape="rect" id="node24" href="$classLinearStack.html#aa18d8e72f505a2de25318f3c3ee4a870" title="Remove o elemento que está no topo da pilha." alt="" coords="1493,321,1624,348"/>
+<area shape="rect" id="node27" href="$Tipos_8cpp.html#a84a58ce8de91bb008e62bd8d7576bcf9" title="Função que lê uma um uint8_t de um vetor de uint8_t." alt="" coords="478,1212,605,1239"/>
+<area shape="rect" id="node30" href="$classClassLoader.html#a8ce606eb72c0f99cf498d7951ed2c8ed" title=" " alt="" coords="472,659,611,685"/>
+<area shape="rect" id="node31" href="$classClassLoader.html#a876bf5d97790a654cea79c8a751d137c" title=" " alt="" coords="671,565,838,592"/>
+<area shape="rect" id="node37" href="$classClassLoader.html#a33f3ccf64645de7255d065ccaf7b01a8" title=" " alt="" coords="675,841,834,868"/>
+<area shape="rect" id="node41" href="$classClassLoader.html#a1c3946493085036732eee45ce6d34b78" title=" " alt="" coords="668,947,841,973"/>
+<area shape="rect" id="node44" href="$classClassLoader.html#a65f077ff2065e040c0017c5934ce837c" title=" " alt="" coords="676,659,833,685"/>
+<area shape="rect" id="node32" href="$classExecutionEngine.html#a682da5b3ec16f062c9610e661d70ec50" title="Executa um metódo." alt="" coords="943,405,1110,432"/>
+<area shape="rect" id="node33" href="$classExecutionEngine.html#ada7b7d1f4910d72145dc9119c8f2ca22" title="Função que executa um frame." alt="" coords="1203,144,1411,171"/>
+<area shape="rect" id="node34" href="$classThread.html#a08a208b471cbfedce38e0adffcaf376c" title="Reporna uma referência pro contador de programa." alt="" coords="1250,397,1363,424"/>
+<area shape="rect" id="node35" href="$classLinearStack.html#ad68476dbea1871261e4f4e678d72550e" title="Retorna uma referencia para o elemento que está no topo da pilha." alt="" coords="1495,448,1622,475"/>
+<area shape="rect" id="node38" href="$ConstantPoolInfo_8h.html#a5e9d056ada05e799dca7e544a7878f94" title="Gera uma string que está sendo armazenada por CPUtf8." alt="" coords="983,943,1071,969"/>
+<area shape="rect" id="node39" href="$classTrie.html#abc590da298b40a5b765787b10f5e77b9" title="Insere um elemento na Trie." alt="" coords="981,841,1072,868"/>
+<area shape="rect" id="node40" href="$classRuntimeDataArea.html#a88b1e47c4a2429064143ffee5174fe28" title="Adiciona um elemento na methodArea do RuntimeDataArea." alt="" coords="899,892,1155,919"/>
+<area shape="rect" id="node42" href="$classFileSystem.html#a7e78eaad15da3dcbc4b3e4566f8b6a8e" title="converte o padrão de barra para a notaçãço da máquina." alt="" coords="913,994,1140,1035"/>
+<area shape="rect" id="node43" href="$classClassLoader.html#a479243c8856801e1ccfd8097ff393dbe" title=" " alt="" coords="936,1060,1117,1087"/>
+<area shape="rect" id="node45" href="$classClassLoader.html#a1698541290a606b85bb363db50717e71" title=" " alt="" coords="927,710,1126,751"/>
+<area shape="rect" id="node46" href="$classTrie.html#aad25485cc220f05b3d564188561e7926" title="Cópia os dados de uma outra Trie." alt="" coords="968,557,1085,584"/>
+<area shape="rect" id="node47" href="$classTrie.html#aaeec21c262fbf759f71d7dcdd1925143" title="Obtém os dados da Trie." alt="" coords="974,608,1079,635"/>
+<area shape="rect" id="node48" href="$classClassLoader.html#a5cebc26d9096d2d5c93887f66cc153ca" title=" " alt="" coords="929,775,1125,817"/>
+</map>

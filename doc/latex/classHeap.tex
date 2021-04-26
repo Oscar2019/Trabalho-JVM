@@ -1,0 +1,134 @@
+\hypertarget{classHeap}{}\doxysection{Heap Class Reference}
+\label{classHeap}\index{Heap@{Heap}}
+
+
+Representação de uma heap.  
+
+
+
+
+{\ttfamily \#include $<$Heap.\+h$>$}
+
+
+
+Collaboration diagram for Heap\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{classHeap__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHeap_a6595efd3562a6334d2f5471c2b3b7cb4}{Heap}} ()
+\begin{DoxyCompactList}\small\item\em Construtor de um novo \mbox{\hyperlink{classHeap}{Heap}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHeap_a734051272cbd0945d3916a1a89707ba2}{$\sim$\+Heap}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor de um novo \mbox{\hyperlink{classHeap}{Heap}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHeap_ac873a59e332fed213d347929aeb78f9a}{push}} (\mbox{\hyperlink{structObjectReference}{Object\+Reference}} $\ast$pointer)
+\begin{DoxyCompactList}\small\item\em Insere um novo Java objeto para a heap. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structObjectReference}{Object\+Reference}} $\ast$ \mbox{\hyperlink{classHeap_ae3962ba3eee949e7fa6c903692213ea0}{at}} (uint32\+\_\+t i)
+\begin{DoxyCompactList}\small\item\em Retorna um objeto no indice i-\/1. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classHeap_a9f965000993e896a9ba00fb5aedfc55d}{size}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o tamanho da pilha. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structObjectReference}{Object\+Reference}} $\ast$ $>$ \mbox{\hyperlink{classHeap_aa83dab5c94bc666acd04b34cec74f33d}{vet}}
+\begin{DoxyCompactList}\small\item\em vetor onde os objetos são armazenados \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representação de uma heap. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHeap_a6595efd3562a6334d2f5471c2b3b7cb4}\label{classHeap_a6595efd3562a6334d2f5471c2b3b7cb4}} 
+\index{Heap@{Heap}!Heap@{Heap}}
+\index{Heap@{Heap}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{Heap()}{Heap()}}
+{\footnotesize\ttfamily Heap\+::\+Heap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor de um novo \mbox{\hyperlink{classHeap}{Heap}} object. 
+
+\mbox{\Hypertarget{classHeap_a734051272cbd0945d3916a1a89707ba2}\label{classHeap_a734051272cbd0945d3916a1a89707ba2}} 
+\index{Heap@{Heap}!````~Heap@{$\sim$Heap}}
+\index{````~Heap@{$\sim$Heap}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{$\sim$Heap()}{~Heap()}}
+{\footnotesize\ttfamily Heap\+::$\sim$\+Heap (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destrutor de um novo \mbox{\hyperlink{classHeap}{Heap}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHeap_ae3962ba3eee949e7fa6c903692213ea0}\label{classHeap_ae3962ba3eee949e7fa6c903692213ea0}} 
+\index{Heap@{Heap}!at@{at}}
+\index{at@{at}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structObjectReference}{Object\+Reference}}$\ast$ Heap\+::at (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna um objeto no indice i-\/1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Object\+Reference$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHeap_ac873a59e332fed213d347929aeb78f9a}\label{classHeap_ac873a59e332fed213d347929aeb78f9a}} 
+\index{Heap@{Heap}!push@{push}}
+\index{push@{push}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily void Heap\+::push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structObjectReference}{Object\+Reference}} $\ast$}]{pointer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insere um novo Java objeto para a heap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHeap_a9f965000993e896a9ba00fb5aedfc55d}\label{classHeap_a9f965000993e896a9ba00fb5aedfc55d}} 
+\index{Heap@{Heap}!size@{size}}
+\index{size@{size}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily uint32\+\_\+t Heap\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna o tamanho da pilha. 
+
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classHeap_aa83dab5c94bc666acd04b34cec74f33d}\label{classHeap_aa83dab5c94bc666acd04b34cec74f33d}} 
+\index{Heap@{Heap}!vet@{vet}}
+\index{vet@{vet}!Heap@{Heap}}
+\doxysubsubsection{\texorpdfstring{vet}{vet}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structObjectReference}{Object\+Reference}}$\ast$$>$ Heap\+::vet\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+vetor onde os objetos são armazenados 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Heap_8h}{Heap.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="DestructBase" name="DestructBase">
+<area shape="rect" id="node1" title="destrutor base para gerar polimorfismo" alt="" coords="97,5,243,83"/>
+<area shape="rect" id="node2" href="$classDestructArray.html" title="Destrutor para uma alocação de array." alt="" coords="5,131,156,223"/>
+<area shape="rect" id="node3" href="$classDestructSimple.html" title="Destrutor para uma alocação simples." alt="" coords="181,131,341,223"/>
+</map>

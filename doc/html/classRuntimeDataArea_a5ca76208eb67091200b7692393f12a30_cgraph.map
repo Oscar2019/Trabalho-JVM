@@ -1,0 +1,4 @@
+<map id="RuntimeDataArea::heapSize" name="RuntimeDataArea::heapSize">
+<area shape="rect" id="node1" title="retorna o númeor de elementos na heap" alt="" coords="5,5,211,32"/>
+<area shape="rect" id="node2" href="$classHeap.html#a9f965000993e896a9ba00fb5aedfc55d" title="Retorna o tamanho da pilha." alt="" coords="259,5,349,32"/>
+</map>

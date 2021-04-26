@@ -1,0 +1,88 @@
+\hypertarget{class_stack}{}\doxysection{Referência à classe Template Stack$<$ T $>$}
+\label{class_stack}\index{Stack$<$ T $>$@{Stack$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Stack.\+h$>$}
+
+Diagrama de heranças da classe Stack$<$ T $>$\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_stack}
+\end{center}
+\end{figure}
+\doxysubsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_stack_adc394bc023a7258e05086f43948aa434}{push}} (T \&)=0
+\item 
+virtual void \mbox{\hyperlink{class_stack_a1df988e3ef82cc614535523719ffc497}{push}} (T \&\&)=0
+\item 
+virtual T \& \mbox{\hyperlink{class_stack_af31b8f8a474ee57a908dad239ce0f838}{top}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_stack_a57338b5ac889cf1563e4597bbb3152ea}{pop}} ()=0
+\item 
+virtual uint32\+\_\+t \mbox{\hyperlink{class_stack_af1acad2fef00fdfc24a3e12a2e6b08e3}{size}} ()=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação dos métodos}
+\mbox{\Hypertarget{class_stack_a57338b5ac889cf1563e4597bbb3152ea}\label{class_stack_a57338b5ac889cf1563e4597bbb3152ea}} 
+\index{Stack$<$ T $>$@{Stack$<$ T $>$}!pop@{pop}}
+\index{pop@{pop}!Stack$<$ T $>$@{Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual void \mbox{\hyperlink{class_stack}{Stack}}$<$ T $>$\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implementado em \mbox{\hyperlink{class_dynamic_stack_ab1f72a3ef97015e7acd2be9f0e013542}{Dynamic\+Stack$<$ T $>$}}, \mbox{\hyperlink{class_dynamic_stack_ab1f72a3ef97015e7acd2be9f0e013542}{Dynamic\+Stack$<$ Frame $\ast$ $>$}}, \mbox{\hyperlink{class_linear_stack_aa18d8e72f505a2de25318f3c3ee4a870}{Linear\+Stack$<$ T $>$}} e \mbox{\hyperlink{class_linear_stack_aa18d8e72f505a2de25318f3c3ee4a870}{Linear\+Stack$<$ uint32\+\_\+t $>$}}.
+
+\mbox{\Hypertarget{class_stack_a1df988e3ef82cc614535523719ffc497}\label{class_stack_a1df988e3ef82cc614535523719ffc497}} 
+\index{Stack$<$ T $>$@{Stack$<$ T $>$}!push@{push}}
+\index{push@{push}!Stack$<$ T $>$@{Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual void \mbox{\hyperlink{class_stack}{Stack}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{T \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implementado em \mbox{\hyperlink{class_dynamic_stack_abf00ec9e8252aab7866971b1892cadad}{Dynamic\+Stack$<$ T $>$}}, \mbox{\hyperlink{class_linear_stack_ac03439ee30eecfeaa4ee574932cf1825}{Linear\+Stack$<$ T $>$}} e \mbox{\hyperlink{class_dynamic_stack_abf00ec9e8252aab7866971b1892cadad}{Dynamic\+Stack$<$ Frame $\ast$ $>$}}.
+
+\mbox{\Hypertarget{class_stack_adc394bc023a7258e05086f43948aa434}\label{class_stack_adc394bc023a7258e05086f43948aa434}} 
+\index{Stack$<$ T $>$@{Stack$<$ T $>$}!push@{push}}
+\index{push@{push}!Stack$<$ T $>$@{Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual void \mbox{\hyperlink{class_stack}{Stack}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{T \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implementado em \mbox{\hyperlink{class_dynamic_stack_aa0405e57e5646b6dcdb3bbd496610be8}{Dynamic\+Stack$<$ T $>$}}, \mbox{\hyperlink{class_linear_stack_a21f220f3c54293f3cc931781b0511c95}{Linear\+Stack$<$ T $>$}} e \mbox{\hyperlink{class_dynamic_stack_aa0405e57e5646b6dcdb3bbd496610be8}{Dynamic\+Stack$<$ Frame $\ast$ $>$}}.
+
+\mbox{\Hypertarget{class_stack_af1acad2fef00fdfc24a3e12a2e6b08e3}\label{class_stack_af1acad2fef00fdfc24a3e12a2e6b08e3}} 
+\index{Stack$<$ T $>$@{Stack$<$ T $>$}!size@{size}}
+\index{size@{size}!Stack$<$ T $>$@{Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual uint32\+\_\+t \mbox{\hyperlink{class_stack}{Stack}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implementado em \mbox{\hyperlink{class_dynamic_stack_a7ce12821e2f33ecf4a5e793a06bf2812}{Dynamic\+Stack$<$ T $>$}}, \mbox{\hyperlink{class_dynamic_stack_a7ce12821e2f33ecf4a5e793a06bf2812}{Dynamic\+Stack$<$ Frame $\ast$ $>$}}, \mbox{\hyperlink{class_linear_stack_aef89a3dfadb69f24dac6e46f3f3fb02b}{Linear\+Stack$<$ T $>$}} e \mbox{\hyperlink{class_linear_stack_aef89a3dfadb69f24dac6e46f3f3fb02b}{Linear\+Stack$<$ uint32\+\_\+t $>$}}.
+
+\mbox{\Hypertarget{class_stack_af31b8f8a474ee57a908dad239ce0f838}\label{class_stack_af31b8f8a474ee57a908dad239ce0f838}} 
+\index{Stack$<$ T $>$@{Stack$<$ T $>$}!top@{top}}
+\index{top@{top}!Stack$<$ T $>$@{Stack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{top()}{top()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual T\& \mbox{\hyperlink{class_stack}{Stack}}$<$ T $>$\+::top (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implementado em \mbox{\hyperlink{class_dynamic_stack_a65db13d0d236d82eebf13583cc9eecc9}{Dynamic\+Stack$<$ T $>$}}, \mbox{\hyperlink{class_dynamic_stack_a65db13d0d236d82eebf13583cc9eecc9}{Dynamic\+Stack$<$ Frame $\ast$ $>$}}, \mbox{\hyperlink{class_linear_stack_ad68476dbea1871261e4f4e678d72550e}{Linear\+Stack$<$ T $>$}} e \mbox{\hyperlink{class_linear_stack_ad68476dbea1871261e4f4e678d72550e}{Linear\+Stack$<$ uint32\+\_\+t $>$}}.
+
+
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_stack_8h}{Stack.\+h}}\end{DoxyCompactItemize}

@@ -11,27 +11,80 @@
 #include "../include/MethodInfo.h"
 
 
+/**
+ * @brief Reprasentação de um Java array
+ * 
+ */
 struct ArrayReference{
+    /**
+     * @brief Número de elementos máximos em um Java array
+     * 
+     */
     uint32_t size;
+    /**
+     * @brief Número de dimensões de um Java array
+     * 
+     */
     uint32_t dimensions;
+    /**
+     * @brief Tipo básico do Java array
+     * 
+     */
     uint8_t tipo;
+    /**
+     * @brief Construtor de um objeto ArrayReference
+     * 
+     * @param new_tipo 
+     * @param new_dimensions 
+     */
     ArrayReference(uint8_t new_tipo, uint8_t new_dimensions){
         size = 0;
         tipo = new_tipo;
     }
+    /**
+     * @brief Create um vetor de dados
+     * 
+     * @param size 
+     */
     virtual void createData(uint32_t size) = 0;
+    /**
+     * @brief Destrutor de um objeto ArrayReference
+     * 
+     * @param new_tipo 
+     * @param new_dimensions 
+     */
     virtual ~ArrayReference(){
 
     }
 };
 
+/**
+ * @brief Especialização de ArrayReference para algum tipo especifico de array
+ * 
+ * @tparam T 
+ */
 template<typename T>
 struct ArrayType : virtual public ArrayReference{
+    /**
+     * @brief Vetor onde os dados do Java array são armazenados
+     * 
+     */
     T *data;
+    /**
+     * @brief Construtor de um objeto ArrayType
+     * 
+     * @param new_tipo 
+     * @param new_dimensions 
+     */
     ArrayType(uint8_t new_tipo, uint8_t new_dimensions) : ArrayReference(new_tipo, new_dimensions){
         data = nullptr;
         dimensions = new_dimensions;
     }
+    /**
+     * @brief Cria o vetor onde os dados do Java array são armazenados.
+     * 
+     * @param new_size 
+     */
     void createData(uint32_t new_size){
         if(data != nullptr){
             delete[] data;
@@ -42,21 +95,56 @@ struct ArrayType : virtual public ArrayReference{
         size = new_size;
         std::fill(data, data + new_size, 0);
     }
+    /**
+     * @brief Destrutor de um objeto ArrayType
+     * 
+     */
     ~ArrayType(){
         if(data != nullptr){
             delete[] data;
         }
     }
 };
-
+/**
+ * @brief representação de um Java objeto .
+ * 
+ */
 struct ObjectReference{
+    /**
+     * @brief Dados dos fields do objeto.
+     * 
+     */
     uint8_t *data;
+    /**
+     * @brief ClassFile do objeto.
+     * 
+     */
     ClassFile *classFile;
     uint32_t metSize;
+    /**
+     * @brief Vector para permitir o acesso rápido dos métodos
+     * 
+     */
     MethodInfo **methods;
+    /**
+     * @brief Caso seja um vetor, apontará para um
+     * 
+     */
     ArrayReference* arrayReference;
+    /**
+     * @brief localizador de methodos na interface
+     * 
+     */
     std::map<uint32_t, uint32_t*>* iterfaceMethodLocalization;
+    /**
+     * @brief npymero da classe
+     * 
+     */
     uint32_t classNum;
+    /**
+     * @brief Construtor de um objeto ArrayType
+     * 
+     */
     ObjectReference(){
         data = nullptr;
         classFile = nullptr;
@@ -66,6 +154,11 @@ struct ObjectReference{
         iterfaceMethodLocalization = nullptr;
         classNum = 0;
     }
+    /**
+     * @brief Create p campo do fields do usuário
+     * 
+     * @param new_size 
+     */
     void createData(uint32_t new_size){
         if(data != nullptr){
             delete[] data;
@@ -75,6 +168,12 @@ struct ObjectReference{
         }
         std::fill(data, data + new_size, 0);
     }
+    /**
+     * @brief Create a Array Reference object
+     * 
+     * @param tipo 
+     * @param dimensions 
+     */
     void createArrayReference(uint8_t tipo, uint32_t dimensions){
         if(arrayReference != nullptr){
             delete[] arrayReference;
@@ -106,6 +205,10 @@ struct ObjectReference{
             arrayReference = new ArrayType<uint32_t>(tipo, dimensions);
         }
     }
+    /**
+     * @brief Destrutor de um objeto ObjectReference
+     * 
+     */
     ~ObjectReference(){
         if(data != nullptr){
             delete[] data;

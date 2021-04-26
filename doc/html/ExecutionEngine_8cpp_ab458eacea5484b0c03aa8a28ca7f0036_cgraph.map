@@ -1,0 +1,9 @@
+<map id="execOp_if_icmpeq" name="execOp_if_icmpeq">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,147,83"/>
+<area shape="rect" id="node2" href="$classFrame.html#aa6cd62c1dfe95de30f86fbfa444171d7" title="Remove o elemento que está no topo da pilha." alt="" coords="195,5,381,32"/>
+<area shape="rect" id="node4" href="$Tipos_8h.html#acb337e0b996b7eb4f83d197c9b1a12f9" title="Função que lê um uinnt16_t de um vetor de uint8_t." alt="" coords="221,56,355,83"/>
+<area shape="rect" id="node6" href="$classFrame.html#a1d3b7f2931d969346e01987ec72f2a8a" title="Obtém o elemento que está no topo da pilha." alt="" coords="197,107,379,133"/>
+<area shape="rect" id="node3" href="$classLinearStack.html#aa18d8e72f505a2de25318f3c3ee4a870" title="Remove o elemento que está no topo da pilha." alt="" coords="429,5,560,32"/>
+<area shape="rect" id="node5" href="$Tipos_8cpp.html#a84a58ce8de91bb008e62bd8d7576bcf9" title="Função que lê uma um uint8_t de um vetor de uint8_t." alt="" coords="431,56,558,83"/>
+<area shape="rect" id="node7" href="$classLinearStack.html#ad68476dbea1871261e4f4e678d72550e" title="Retorna uma referencia para o elemento que está no topo da pilha." alt="" coords="431,107,558,133"/>
+</map>

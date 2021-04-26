@@ -1273,9 +1273,6 @@ int32_t execOp_iadd(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
         uint32_t u;
         int32_t i;
     } value1, value2, result; // tipos do resutado
-
-    value1.u = frame->topOperandStack(); // grava os bit da primeira parcela da soma
-    frame->popOperandStack(); // apaga da pilha de operandos
     
     value2.u = frame->topOperandStack(); // grava os bit da segunda parcela da soma
     frame->popOperandStack(); // apaga da pilha de operandos
@@ -1364,15 +1361,58 @@ int32_t execOp_isub(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
 }
 
 int32_t execOp_lsub(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint64_t u;
+        int64_t l;
+    } value1, value2, result;
+    value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value2.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+
+    result.l = value1.l - value2.l;
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_fsub(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        uint32_t u;    
+        float f;    
+    } value1, value2, result;
+    value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+
+    result.f = value1.f - value2.f;
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_dsub(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        uint64_t u;    
+        double d;    
+    } value1, value2, result;
+    value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value2.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+
+    result.d = value1.d - value2.d;
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_imul(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
@@ -1395,7 +1435,7 @@ int32_t execOp_imul(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
 int32_t execOp_lmul(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
     union{
         uint64_t u;
-        int64_t i;
+        int64_t l;
     } value1, value2, result;
     value2.u = frame->topOperandStack();
     frame->popOperandStack();
@@ -1406,42 +1446,150 @@ int32_t execOp_lmul(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
     value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
     frame->popOperandStack();
 
-    result.i = value1.i * value2.i;
+    result.l = value1.l * value2.l;
     frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
     frame->pushOperandStack(result.u & 0xFFFFFFFF);
     return pc + 1;
 }
 
 int32_t execOp_fmul(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        uint32_t u;    
+        float f;    
+    } value1, value2, result;
+    value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+
+    result.f = value1.f * value2.f;
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_dmul(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        uint64_t u;    
+        double d;    
+    } value1, value2, result;
+    value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value2.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+
+    result.d = value1.d * value2.d;
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_idiv(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        uint32_t u;    
+        int32_t i;    
+    } value1, value2, result;
+    value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+
+    result.i = (value1.i / value2.i);
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_ldiv(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        uint64_t u;    
+        int64_t l;    
+    } value1, value2, result;
+    value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value2.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+
+    result.l = (value1.l / value2.l);
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_fdiv(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        uint32_t u;    
+        float f;    
+    } value1, value2, result;
+    value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+
+    result.f = (value1.f / value2.f);
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_ddiv(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        uint64_t u;    
+        double d;    
+    } value1, value2, result;
+    value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value2.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+
+    result.d = (value1.d / value2.d);
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_irem(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        uint32_t u;    
+        int32_t i;    
+    } value1, value2, result;
+    value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+
+    result.i = value1.i - (value1.i / value2.i) * value2.i;
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_lrem(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        uint64_t u;    
+        int64_t l;    
+    } value1, value2, result;
+    value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value2.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+
+    result.l = value1.l - (value1.l / value2.l) * value2.l;
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_frem(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
@@ -2900,8 +3048,14 @@ int32_t execOp_invokevirtual(ClassLoader* classLoader, RuntimeDataArea* runTimeD
     }
 
     auto auxMeMata = runTimeData->objectAt(vetAux[0]);
+    std::string name;
     MethodInfo* newMethod = auxMeMata->methods[cpMeth->instanceMethodDesloc];
+    name = getStringFromCPInfo(newMethod->cp, newMethod->nameIndex);
+    name = getStringFromCPInfo(newMethod->cp, newMethod->nameIndex);
+    // std::cout << cpMeth->instanceMethodDesloc << "\n";
+    // std::cout << newMethod << "\n";
     Frame* newFrame = Frame::CreateFrame(newMethod);
+    // std::cout << newFrame << "\n";
     *nextFrame = newFrame;
     *nextMethod = newMethod;
     for(uint32_t i = 0; i < qtdOperandStack; i++){

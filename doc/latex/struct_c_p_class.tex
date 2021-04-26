@@ -1,0 +1,117 @@
+\hypertarget{struct_c_p_class}{}\doxysection{Referência à estrutura CPClass}
+\label{struct_c_p_class}\index{CPClass@{CPClass}}
+
+
+Estrutura usada para representar uma classe ou interface.  
+
+
+
+
+{\ttfamily \#include $<$Constant\+Pool\+Info.\+h$>$}
+
+Diagrama de heranças da classe CPClass\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_c_p_class}
+\end{center}
+\end{figure}
+\doxysubsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_c_p_class_a1e43719dd0ccfb3d56eb03a3abb73453}{CPClass}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{struct_c_p_class}{CPClass}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_c_p_class_ac9a2d3a13421a693c2639a592fa3b4b7}{name\+Index}}
+\begin{DoxyCompactList}\small\item\em Ídice para a tabela do Constant\+Pool que contém um \mbox{\hyperlink{struct_c_p_utf8}{CPUtf8}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_c_p_class_ac568f744355b4879b7e6b3968681d69e}{was\+Loaded}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_c_p_class_a81a4bfa2341e60ad270f13b6c9dfc70f}{primitive\+Type}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_c_p_class_af0fecad8d8f291be8f97c632b7aecd6c}{class\+Num}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_c_p_class_a05cbedf99a3f065490f791e89f1f71a2}{instance\+Field\+Size}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_c_p_class_ab4b42fe4933e61099ab57448ae4c8a98}{instance\+Method\+Size}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_c_p_class_a49580ec641ed38806c980672bd2bcbee}{dimensions}}
+\item 
+\mbox{\hyperlink{struct_class_file}{Class\+File}} $\ast$ \mbox{\hyperlink{struct_c_p_class_a90d60b9411d6e72a33e0efde08530bbe}{class\+File}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Estrutura usada para representar uma classe ou interface. 
+
+\doxysubsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{struct_c_p_class_a1e43719dd0ccfb3d56eb03a3abb73453}\label{struct_c_p_class_a1e43719dd0ccfb3d56eb03a3abb73453}} 
+\index{CPClass@{CPClass}!CPClass@{CPClass}}
+\index{CPClass@{CPClass}!CPClass@{CPClass}}
+\doxysubsubsection{\texorpdfstring{CPClass()}{CPClass()}}
+{\footnotesize\ttfamily CPClass\+::\+CPClass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{struct_c_p_class}{CPClass}} object. 
+
+
+
+\doxysubsection{Documentação dos dados membro}
+\mbox{\Hypertarget{struct_c_p_class_a90d60b9411d6e72a33e0efde08530bbe}\label{struct_c_p_class_a90d60b9411d6e72a33e0efde08530bbe}} 
+\index{CPClass@{CPClass}!classFile@{classFile}}
+\index{classFile@{classFile}!CPClass@{CPClass}}
+\doxysubsubsection{\texorpdfstring{classFile}{classFile}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_class_file}{Class\+File}}$\ast$ CPClass\+::class\+File}
+
+\mbox{\Hypertarget{struct_c_p_class_af0fecad8d8f291be8f97c632b7aecd6c}\label{struct_c_p_class_af0fecad8d8f291be8f97c632b7aecd6c}} 
+\index{CPClass@{CPClass}!classNum@{classNum}}
+\index{classNum@{classNum}!CPClass@{CPClass}}
+\doxysubsubsection{\texorpdfstring{classNum}{classNum}}
+{\footnotesize\ttfamily uint32\+\_\+t CPClass\+::class\+Num}
+
+\mbox{\Hypertarget{struct_c_p_class_a49580ec641ed38806c980672bd2bcbee}\label{struct_c_p_class_a49580ec641ed38806c980672bd2bcbee}} 
+\index{CPClass@{CPClass}!dimensions@{dimensions}}
+\index{dimensions@{dimensions}!CPClass@{CPClass}}
+\doxysubsubsection{\texorpdfstring{dimensions}{dimensions}}
+{\footnotesize\ttfamily uint32\+\_\+t CPClass\+::dimensions}
+
+\mbox{\Hypertarget{struct_c_p_class_a05cbedf99a3f065490f791e89f1f71a2}\label{struct_c_p_class_a05cbedf99a3f065490f791e89f1f71a2}} 
+\index{CPClass@{CPClass}!instanceFieldSize@{instanceFieldSize}}
+\index{instanceFieldSize@{instanceFieldSize}!CPClass@{CPClass}}
+\doxysubsubsection{\texorpdfstring{instanceFieldSize}{instanceFieldSize}}
+{\footnotesize\ttfamily uint32\+\_\+t CPClass\+::instance\+Field\+Size}
+
+\mbox{\Hypertarget{struct_c_p_class_ab4b42fe4933e61099ab57448ae4c8a98}\label{struct_c_p_class_ab4b42fe4933e61099ab57448ae4c8a98}} 
+\index{CPClass@{CPClass}!instanceMethodSize@{instanceMethodSize}}
+\index{instanceMethodSize@{instanceMethodSize}!CPClass@{CPClass}}
+\doxysubsubsection{\texorpdfstring{instanceMethodSize}{instanceMethodSize}}
+{\footnotesize\ttfamily uint32\+\_\+t CPClass\+::instance\+Method\+Size}
+
+\mbox{\Hypertarget{struct_c_p_class_ac9a2d3a13421a693c2639a592fa3b4b7}\label{struct_c_p_class_ac9a2d3a13421a693c2639a592fa3b4b7}} 
+\index{CPClass@{CPClass}!nameIndex@{nameIndex}}
+\index{nameIndex@{nameIndex}!CPClass@{CPClass}}
+\doxysubsubsection{\texorpdfstring{nameIndex}{nameIndex}}
+{\footnotesize\ttfamily uint16\+\_\+t CPClass\+::name\+Index}
+
+
+
+Ídice para a tabela do Constant\+Pool que contém um \mbox{\hyperlink{struct_c_p_utf8}{CPUtf8}}. 
+
+\mbox{\Hypertarget{struct_c_p_class_a81a4bfa2341e60ad270f13b6c9dfc70f}\label{struct_c_p_class_a81a4bfa2341e60ad270f13b6c9dfc70f}} 
+\index{CPClass@{CPClass}!primitiveType@{primitiveType}}
+\index{primitiveType@{primitiveType}!CPClass@{CPClass}}
+\doxysubsubsection{\texorpdfstring{primitiveType}{primitiveType}}
+{\footnotesize\ttfamily uint8\+\_\+t CPClass\+::primitive\+Type}
+
+\mbox{\Hypertarget{struct_c_p_class_ac568f744355b4879b7e6b3968681d69e}\label{struct_c_p_class_ac568f744355b4879b7e6b3968681d69e}} 
+\index{CPClass@{CPClass}!wasLoaded@{wasLoaded}}
+\index{wasLoaded@{wasLoaded}!CPClass@{CPClass}}
+\doxysubsubsection{\texorpdfstring{wasLoaded}{wasLoaded}}
+{\footnotesize\ttfamily bool CPClass\+::was\+Loaded}
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_constant_pool_info_8h}{Constant\+Pool\+Info.\+h}}\end{DoxyCompactItemize}

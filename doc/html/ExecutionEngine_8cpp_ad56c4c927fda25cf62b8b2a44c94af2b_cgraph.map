@@ -1,0 +1,5 @@
+<map id="execOp_pop2" name="execOp_pop2">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,115,32"/>
+<area shape="rect" id="node2" href="$classFrame.html#aa6cd62c1dfe95de30f86fbfa444171d7" title="Remove o elemento que está no topo da pilha." alt="" coords="163,5,349,32"/>
+<area shape="rect" id="node3" href="$classLinearStack.html#aa18d8e72f505a2de25318f3c3ee4a870" title="Remove o elemento que está no topo da pilha." alt="" coords="397,5,528,32"/>
+</map>

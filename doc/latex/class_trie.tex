@@ -1,0 +1,92 @@
+\hypertarget{class_trie}{}\doxysection{Referência à classe Template Trie$<$ T $>$}
+\label{class_trie}\index{Trie$<$ T $>$@{Trie$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Trie.\+h$>$}
+
+\doxysubsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ T $>$ \& \mbox{\hyperlink{class_trie_aaeec21c262fbf759f71d7dcdd1925143}{get\+Data}} ()
+\item 
+T \& \mbox{\hyperlink{class_trie_a8fed33e2a8777e406f006c1ed7c47da3}{get\+Value}} (std\+::string \&s)
+\item 
+void \mbox{\hyperlink{class_trie_abc590da298b40a5b765787b10f5e77b9}{insert}} (std\+::string \&s, T \&value)
+\item 
+void \mbox{\hyperlink{class_trie_a024d7587e5b3cb33e9e212c9dd605119}{insert}} (std\+::string \&s, T \&\&value)
+\item 
+bool \mbox{\hyperlink{class_trie_aabeeb088fe82e4de76aae2d43bba8b5c}{has\+Key}} (std\+::string \&s)
+\item 
+void \mbox{\hyperlink{class_trie_aad25485cc220f05b3d564188561e7926}{copy\+From}} (\mbox{\hyperlink{class_trie}{Trie}}$<$ T $>$ \&other)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_trie_a4af99372ebf77e0f1ed116cd8dfae53b}{size}} ()
+\item 
+\mbox{\hyperlink{class_trie_af8a231351d78977f070e94f1850ce9ad}{Trie}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{class_trie_af8a231351d78977f070e94f1850ce9ad}\label{class_trie_af8a231351d78977f070e94f1850ce9ad}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!Trie@{Trie}}
+\index{Trie@{Trie}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Trie()}{Trie()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_trie}{Trie}}$<$ T $>$\+::\mbox{\hyperlink{class_trie}{Trie}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Documentação dos métodos}
+\mbox{\Hypertarget{class_trie_aad25485cc220f05b3d564188561e7926}\label{class_trie_aad25485cc220f05b3d564188561e7926}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!copyFrom@{copyFrom}}
+\index{copyFrom@{copyFrom}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{copyFrom()}{copyFrom()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_trie}{Trie}}$<$ T $>$\+::copy\+From (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_trie}{Trie}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_trie_aaeec21c262fbf759f71d7dcdd1925143}\label{class_trie_aaeec21c262fbf759f71d7dcdd1925143}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!getData@{getData}}
+\index{getData@{getData}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::vector$<$T$>$\& \mbox{\hyperlink{class_trie}{Trie}}$<$ T $>$\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_trie_a8fed33e2a8777e406f006c1ed7c47da3}\label{class_trie_a8fed33e2a8777e406f006c1ed7c47da3}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!getValue@{getValue}}
+\index{getValue@{getValue}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T\& \mbox{\hyperlink{class_trie}{Trie}}$<$ T $>$\+::get\+Value (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_trie_aabeeb088fe82e4de76aae2d43bba8b5c}\label{class_trie_aabeeb088fe82e4de76aae2d43bba8b5c}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!hasKey@{hasKey}}
+\index{hasKey@{hasKey}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{hasKey()}{hasKey()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{class_trie}{Trie}}$<$ T $>$\+::has\+Key (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_trie_a024d7587e5b3cb33e9e212c9dd605119}\label{class_trie_a024d7587e5b3cb33e9e212c9dd605119}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_trie}{Trie}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s,  }\item[{T \&\&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_trie_abc590da298b40a5b765787b10f5e77b9}\label{class_trie_abc590da298b40a5b765787b10f5e77b9}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_trie}{Trie}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s,  }\item[{T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_trie_a4af99372ebf77e0f1ed116cd8dfae53b}\label{class_trie_a4af99372ebf77e0f1ed116cd8dfae53b}} 
+\index{Trie$<$ T $>$@{Trie$<$ T $>$}!size@{size}}
+\index{size@{size}!Trie$<$ T $>$@{Trie$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+uint32\+\_\+t \mbox{\hyperlink{class_trie}{Trie}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_trie_8h}{Trie.\+h}}\end{DoxyCompactItemize}

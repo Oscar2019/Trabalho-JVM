@@ -351,6 +351,7 @@ void ClassLoader::resolve(NodeContent *nodeContent, std::queue<NodeContent*>& cl
         classResolve.pop();
         classInitialize.push(nodeContent);
     } else{
+        // std::string thisClassName = getStringFromCPInfo(cf->constantPool, cf->thisClass);
         std::string superClassName = getStringFromCPInfo(cf->constantPool, cf->superClass);
         if(tree.hasKey(superClassName) && interfacesAreLoaded(nodeContent)){
             NodeContent *superNodeContent = tree.getValue(superClassName);
@@ -492,7 +493,7 @@ void ClassLoader::resolve(NodeContent *nodeContent, std::queue<NodeContent*>& cl
                 
                 // std::cout << method << "\n";
                 // uint32_t val = vetData[i].first;
-                nodeContent->acessMehodsTable[i] = vetData[i].second;
+                nodeContent->acessMehodsTable[vetData[i].first] = vetData[i].second;
             }
             // std::cout << "\n";
             for(uint32_t i = 0; i < nodeContent->classFile->interfacesCount; i++){

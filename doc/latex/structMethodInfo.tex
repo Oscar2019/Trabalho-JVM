@@ -1,0 +1,168 @@
+\hypertarget{structMethodInfo}{}\doxysection{Method\+Info Struct Reference}
+\label{structMethodInfo}\index{MethodInfo@{MethodInfo}}
+
+
+Estrutura que armazena os dados de um método.  
+
+
+
+
+{\ttfamily \#include $<$Method\+Info.\+h$>$}
+
+
+
+Collaboration diagram for Method\+Info\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structMethodInfo__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structMethodInfo_a97018093ab73b48132b694d2d1a92f78}{Method\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Method Info object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structMethodInfo_ab2a081a2855eec567e82adfff26059cd}{$\sim$\+Method\+Info}} ()
+\begin{DoxyCompactList}\small\item\em destrói os dados armazenados pelo \mbox{\hyperlink{structMethodInfo}{Method\+Info}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}} $\ast$ \mbox{\hyperlink{structMethodInfo_a30a1c0753ec253028c759e56d544b3bf}{get\+Attribute}} (std\+::string \&attribute\+Name)
+\item 
+\mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}} $\ast$ \mbox{\hyperlink{structMethodInfo_a5778336f861f796618406aeae7c80ccd}{get\+Attribute}} (std\+::string \&\&attribute\+Name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$ \mbox{\hyperlink{structMethodInfo_af213e4dc9f78d59daf546455fc2b27c4}{cp}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structMethodInfo_a1075fd2ba433b27d9b04dec3a78de9f3}{access\+Flags}}
+\begin{DoxyCompactList}\small\item\em Flag de acesso de método. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{structMethodInfo_a946349e82f47156b63c58e57061d6891}{name\+Index}}
+\begin{DoxyCompactList}\small\item\em Índice que aponta para o vetor de Constant\+Pool\+Info$\ast$ que aponta para um ponteiro de \mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}}, onde fica armazenado o nome do método. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{structMethodInfo_a4be51921e4147d189cc314b9b3a75161}{descriptor\+Index}}
+\begin{DoxyCompactList}\small\item\em Índice que aponta para o vetor de Constant\+Pool\+Info$\ast$ que aponta para um ponteiro de \mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}}, onde fica armazenado a descrição de tipo e argumentos do método. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{structMethodInfo_a0980de52cac7b97181222b39b28e0fe0}{attributes\+Count}}
+\begin{DoxyCompactList}\small\item\em Número de atribudos no método. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}} $\ast$$\ast$ \mbox{\hyperlink{structMethodInfo_a2fe5271897a188c488b68e030ae90403}{attributes}}
+\begin{DoxyCompactList}\small\item\em Ponteiro para um vetor de ponteiro de atributos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Estrutura que armazena os dados de um método. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structMethodInfo_a97018093ab73b48132b694d2d1a92f78}\label{structMethodInfo_a97018093ab73b48132b694d2d1a92f78}} 
+\index{MethodInfo@{MethodInfo}!MethodInfo@{MethodInfo}}
+\index{MethodInfo@{MethodInfo}!MethodInfo@{MethodInfo}}
+\doxysubsubsection{\texorpdfstring{MethodInfo()}{MethodInfo()}}
+{\footnotesize\ttfamily Method\+Info\+::\+Method\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new Method Info object. 
+
+\mbox{\Hypertarget{structMethodInfo_ab2a081a2855eec567e82adfff26059cd}\label{structMethodInfo_ab2a081a2855eec567e82adfff26059cd}} 
+\index{MethodInfo@{MethodInfo}!````~MethodInfo@{$\sim$MethodInfo}}
+\index{````~MethodInfo@{$\sim$MethodInfo}!MethodInfo@{MethodInfo}}
+\doxysubsubsection{\texorpdfstring{$\sim$MethodInfo()}{~MethodInfo()}}
+{\footnotesize\ttfamily Method\+Info\+::$\sim$\+Method\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+destrói os dados armazenados pelo \mbox{\hyperlink{structMethodInfo}{Method\+Info}} 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structMethodInfo_a5778336f861f796618406aeae7c80ccd}\label{structMethodInfo_a5778336f861f796618406aeae7c80ccd}} 
+\index{MethodInfo@{MethodInfo}!getAttribute@{getAttribute}}
+\index{getAttribute@{getAttribute}!MethodInfo@{MethodInfo}}
+\doxysubsubsection{\texorpdfstring{getAttribute()}{getAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}} $\ast$ Method\+Info\+::get\+Attribute (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{attribute\+Name }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structMethodInfo_a5778336f861f796618406aeae7c80ccd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structMethodInfo_a30a1c0753ec253028c759e56d544b3bf}\label{structMethodInfo_a30a1c0753ec253028c759e56d544b3bf}} 
+\index{MethodInfo@{MethodInfo}!getAttribute@{getAttribute}}
+\index{getAttribute@{getAttribute}!MethodInfo@{MethodInfo}}
+\doxysubsubsection{\texorpdfstring{getAttribute()}{getAttribute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}} $\ast$ Method\+Info\+::get\+Attribute (\begin{DoxyParamCaption}\item[{std\+::string \&}]{attribute\+Name }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structMethodInfo_a30a1c0753ec253028c759e56d544b3bf_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structMethodInfo_a1075fd2ba433b27d9b04dec3a78de9f3}\label{structMethodInfo_a1075fd2ba433b27d9b04dec3a78de9f3}} 
+\index{MethodInfo@{MethodInfo}!accessFlags@{accessFlags}}
+\index{accessFlags@{accessFlags}!MethodInfo@{MethodInfo}}
+\doxysubsubsection{\texorpdfstring{accessFlags}{accessFlags}}
+{\footnotesize\ttfamily uint16\+\_\+t Method\+Info\+::access\+Flags}
+
+
+
+Flag de acesso de método. 
+
+\mbox{\Hypertarget{structMethodInfo_a2fe5271897a188c488b68e030ae90403}\label{structMethodInfo_a2fe5271897a188c488b68e030ae90403}} 
+\index{MethodInfo@{MethodInfo}!attributes@{attributes}}
+\index{attributes@{attributes}!MethodInfo@{MethodInfo}}
+\doxysubsubsection{\texorpdfstring{attributes}{attributes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}}$\ast$$\ast$ Method\+Info\+::attributes}
+
+
+
+Ponteiro para um vetor de ponteiro de atributos. 
+
+\mbox{\Hypertarget{structMethodInfo_a0980de52cac7b97181222b39b28e0fe0}\label{structMethodInfo_a0980de52cac7b97181222b39b28e0fe0}} 
+\index{MethodInfo@{MethodInfo}!attributesCount@{attributesCount}}
+\index{attributesCount@{attributesCount}!MethodInfo@{MethodInfo}}
+\doxysubsubsection{\texorpdfstring{attributesCount}{attributesCount}}
+{\footnotesize\ttfamily uint16\+\_\+t Method\+Info\+::attributes\+Count}
+
+
+
+Número de atribudos no método. 
+
+\mbox{\Hypertarget{structMethodInfo_af213e4dc9f78d59daf546455fc2b27c4}\label{structMethodInfo_af213e4dc9f78d59daf546455fc2b27c4}} 
+\index{MethodInfo@{MethodInfo}!cp@{cp}}
+\index{cp@{cp}!MethodInfo@{MethodInfo}}
+\doxysubsubsection{\texorpdfstring{cp}{cp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}}$\ast$$\ast$ Method\+Info\+::cp}
+
+\mbox{\Hypertarget{structMethodInfo_a4be51921e4147d189cc314b9b3a75161}\label{structMethodInfo_a4be51921e4147d189cc314b9b3a75161}} 
+\index{MethodInfo@{MethodInfo}!descriptorIndex@{descriptorIndex}}
+\index{descriptorIndex@{descriptorIndex}!MethodInfo@{MethodInfo}}
+\doxysubsubsection{\texorpdfstring{descriptorIndex}{descriptorIndex}}
+{\footnotesize\ttfamily uint16\+\_\+t Method\+Info\+::descriptor\+Index}
+
+
+
+Índice que aponta para o vetor de Constant\+Pool\+Info$\ast$ que aponta para um ponteiro de \mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}}, onde fica armazenado a descrição de tipo e argumentos do método. 
+
+\mbox{\Hypertarget{structMethodInfo_a946349e82f47156b63c58e57061d6891}\label{structMethodInfo_a946349e82f47156b63c58e57061d6891}} 
+\index{MethodInfo@{MethodInfo}!nameIndex@{nameIndex}}
+\index{nameIndex@{nameIndex}!MethodInfo@{MethodInfo}}
+\doxysubsubsection{\texorpdfstring{nameIndex}{nameIndex}}
+{\footnotesize\ttfamily uint16\+\_\+t Method\+Info\+::name\+Index}
+
+
+
+Índice que aponta para o vetor de Constant\+Pool\+Info$\ast$ que aponta para um ponteiro de \mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}}, onde fica armazenado o nome do método. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{MethodInfo_8h}{Method\+Info.\+h}}\item 
+src/\mbox{\hyperlink{MethodInfo_8cpp}{Method\+Info.\+cpp}}\end{DoxyCompactItemize}

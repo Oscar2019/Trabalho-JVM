@@ -1,0 +1,323 @@
+\hypertarget{_print_tudo_8cpp}{}\doxysection{Referência ao ficheiro src/\+Print\+Tudo.cpp}
+\label{_print_tudo_8cpp}\index{src/PrintTudo.cpp@{src/PrintTudo.cpp}}
+{\ttfamily \#include \char`\"{}../include/\+Print\+Tudo.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_print_tudo_8cpp_aacb71dbc63837c5e60f70180643354b2}{CLEAR}}()~system(\char`\"{}clear\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_a19676f164ba3fb06df3b247e25a2baf8}{print\+Tudo\+General\+Information}} (Class\+File const \&cf)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_abcfe80347944d499463f811c02379f7a}{print\+Tudo\+Constant\+Pool}} (Class\+File const \&cf)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_a1386f83705b05407b618f4ec729c1a2b}{print\+Tudo\+Interfaces}} (Class\+File const \&cf)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_a9e9b15e7193f58965dd914a831e53be1}{print\+Tudo\+Fields}} (Class\+File const \&cf)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_a56df304175fbb57e8365d89a8aa92c32}{print\+Tudo\+Field}} (Class\+File const \&cf, Field\+Info $\ast$field)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_a8cac85539d7cd706247d89c0f75d7696}{print\+Tudo\+Methods}} (Class\+File const \&cf)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_aca33f9f66fd0cfecd1218ab919d4765a}{print\+Tudo\+Method}} (Class\+File const \&cf, Method\+Info $\ast$field)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_a047220267306c94d9570ef5494b9f989}{print\+Tudo\+Attributes}} (Class\+File const \&cf)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_a811ce9d29fdfcee18bc97ed51288a20e}{print\+Tudo\+Attribute}} (Class\+File const \&cf, Attribute\+Info $\ast$attribute)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_ad2de31238db7d9e4da9ba7419ee5fa19}{print\+Tudo\+Attribute\+Constant\+Value}} (Class\+File const \&cf, Attribute\+Info\+Constant\+Value $\ast$attribute)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_a127513c6d27c1f7e5b1e2b23a4698fc6}{print\+Tudo\+Attribute\+Code}} (Class\+File const \&cf, Attribute\+Info\+Code $\ast$attribute)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_acd1d6bce54f0bf844f0b3aae077ddd13}{print\+Tudo\+Assemply\+Code}} (Class\+File const \&cf, uint32\+\_\+t code\+Size, uint8\+\_\+t $\ast$code)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_a7d88211d1ec964984235129ea3bd9977}{print\+Tudo\+Attribute\+Exceptions}} (Class\+File const \&cf, Attribute\+Info\+Exceptions $\ast$attribute)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_abedd243d5e8d629be267275ecb65fcc3}{print\+Tudo\+Attribute\+Inner\+Classes}} (Class\+File const \&cf, Attribute\+Info\+Inner\+Classes $\ast$attribute)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_ac0badc4e2f60b5ec867c735ca5f75a11}{print\+Tudo\+Attribute\+Synthetic}} (Class\+File const \&cf, Attribute\+Info\+Synthetic $\ast$attribute)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_a90402588f2d088c592d5b0ac1a6a3909}{print\+Tudo\+Attribute\+Source\+File}} (Class\+File const \&cf, Attribute\+Info\+Source\+File $\ast$attribute)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_a3b45262e87991b6aab6770ffe4314ae1}{print\+Tudo\+Attribute\+Line\+Number\+Table}} (Class\+File const \&cf, Attribute\+Info\+Line\+Number\+Table $\ast$attribute)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_a93a834255f12f6983596b15f4e2e8318}{print\+Tudo\+Attribute\+Local\+Variable\+Table}} (Class\+File const \&cf, Attribute\+Info\+Local\+Variable\+Table $\ast$attribute)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_a3cd15dbf5926cfd5cd639db964dc28a8}{print\+Tudo\+Attribute\+Deprecated}} (Class\+File const \&cf, Attribute\+Info\+Deprecated $\ast$attribute)
+\item 
+std\+::string \mbox{\hyperlink{_print_tudo_8cpp_ae842390f9ffe213978d023197c90a5db}{translate\+Tudo\+Flag\+Method}} (uint16\+\_\+t flag)
+\item 
+std\+::string \mbox{\hyperlink{_print_tudo_8cpp_aa5fb4df812f28a2a053e2b0b3680de54}{translate\+Tudo\+Flag\+Field}} (std\+::string flag)
+\item 
+std\+::string \mbox{\hyperlink{_print_tudo_8cpp_a9da89bef5d11c2b4ed1686d558982401}{convert\+Tudo\+Access\+Flag}} (std\+::string hex)
+\item 
+void \mbox{\hyperlink{_print_tudo_8cpp_a3123949b31d0b98f5cb30fb418610232}{print\+Tudo}} (Class\+File const \&cf)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variáveis}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{_print_tudo_8cpp_a4aea670416cbb1791779d45c4ae8ab90}{tab}}
+\item 
+const std\+::map$<$ uint16\+\_\+t, std\+::string $>$ \mbox{\hyperlink{_print_tudo_8cpp_a347c552a234207caf9c66bb52a4aece2}{versions}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação das macros}
+\mbox{\Hypertarget{_print_tudo_8cpp_aacb71dbc63837c5e60f70180643354b2}\label{_print_tudo_8cpp_aacb71dbc63837c5e60f70180643354b2}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!CLEAR@{CLEAR}}
+\index{CLEAR@{CLEAR}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{CLEAR}{CLEAR}}
+{\footnotesize\ttfamily \#define CLEAR(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~system(\char`\"{}clear\char`\"{})}
+
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{_print_tudo_8cpp_a9da89bef5d11c2b4ed1686d558982401}\label{_print_tudo_8cpp_a9da89bef5d11c2b4ed1686d558982401}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!convertTudoAccessFlag@{convertTudoAccessFlag}}
+\index{convertTudoAccessFlag@{convertTudoAccessFlag}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{convertTudoAccessFlag()}{convertTudoAccessFlag()}}
+{\footnotesize\ttfamily std\+::string convert\+Tudo\+Access\+Flag (\begin{DoxyParamCaption}\item[{std\+::string}]{hex }\end{DoxyParamCaption})}
+
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 0
+\mbox{\Hypertarget{_print_tudo_8cpp_a3123949b31d0b98f5cb30fb418610232}\label{_print_tudo_8cpp_a3123949b31d0b98f5cb30fb418610232}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudo@{printTudo}}
+\index{printTudo@{printTudo}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudo()}{printTudo()}}
+{\footnotesize\ttfamily void print\+Tudo (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 1
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 2
+\mbox{\Hypertarget{_print_tudo_8cpp_acd1d6bce54f0bf844f0b3aae077ddd13}\label{_print_tudo_8cpp_acd1d6bce54f0bf844f0b3aae077ddd13}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoAssemplyCode@{printTudoAssemplyCode}}
+\index{printTudoAssemplyCode@{printTudoAssemplyCode}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoAssemplyCode()}{printTudoAssemplyCode()}}
+{\footnotesize\ttfamily void print\+Tudo\+Assemply\+Code (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf,  }\item[{uint32\+\_\+t}]{code\+Size,  }\item[{uint8\+\_\+t $\ast$}]{code }\end{DoxyParamCaption})}
+
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 3
+\mbox{\Hypertarget{_print_tudo_8cpp_a811ce9d29fdfcee18bc97ed51288a20e}\label{_print_tudo_8cpp_a811ce9d29fdfcee18bc97ed51288a20e}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoAttribute@{printTudoAttribute}}
+\index{printTudoAttribute@{printTudoAttribute}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoAttribute()}{printTudoAttribute()}}
+{\footnotesize\ttfamily void print\+Tudo\+Attribute (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf,  }\item[{Attribute\+Info $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 4
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 5
+\mbox{\Hypertarget{_print_tudo_8cpp_a127513c6d27c1f7e5b1e2b23a4698fc6}\label{_print_tudo_8cpp_a127513c6d27c1f7e5b1e2b23a4698fc6}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoAttributeCode@{printTudoAttributeCode}}
+\index{printTudoAttributeCode@{printTudoAttributeCode}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoAttributeCode()}{printTudoAttributeCode()}}
+{\footnotesize\ttfamily void print\+Tudo\+Attribute\+Code (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf,  }\item[{Attribute\+Info\+Code $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 6
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 7
+\mbox{\Hypertarget{_print_tudo_8cpp_ad2de31238db7d9e4da9ba7419ee5fa19}\label{_print_tudo_8cpp_ad2de31238db7d9e4da9ba7419ee5fa19}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoAttributeConstantValue@{printTudoAttributeConstantValue}}
+\index{printTudoAttributeConstantValue@{printTudoAttributeConstantValue}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoAttributeConstantValue()}{printTudoAttributeConstantValue()}}
+{\footnotesize\ttfamily void print\+Tudo\+Attribute\+Constant\+Value (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf,  }\item[{Attribute\+Info\+Constant\+Value $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 8
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 9
+\mbox{\Hypertarget{_print_tudo_8cpp_a3cd15dbf5926cfd5cd639db964dc28a8}\label{_print_tudo_8cpp_a3cd15dbf5926cfd5cd639db964dc28a8}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoAttributeDeprecated@{printTudoAttributeDeprecated}}
+\index{printTudoAttributeDeprecated@{printTudoAttributeDeprecated}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoAttributeDeprecated()}{printTudoAttributeDeprecated()}}
+{\footnotesize\ttfamily void print\+Tudo\+Attribute\+Deprecated (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf,  }\item[{Attribute\+Info\+Deprecated $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 10
+\mbox{\Hypertarget{_print_tudo_8cpp_a7d88211d1ec964984235129ea3bd9977}\label{_print_tudo_8cpp_a7d88211d1ec964984235129ea3bd9977}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoAttributeExceptions@{printTudoAttributeExceptions}}
+\index{printTudoAttributeExceptions@{printTudoAttributeExceptions}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoAttributeExceptions()}{printTudoAttributeExceptions()}}
+{\footnotesize\ttfamily void print\+Tudo\+Attribute\+Exceptions (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf,  }\item[{Attribute\+Info\+Exceptions $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 11
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 12
+\mbox{\Hypertarget{_print_tudo_8cpp_abedd243d5e8d629be267275ecb65fcc3}\label{_print_tudo_8cpp_abedd243d5e8d629be267275ecb65fcc3}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoAttributeInnerClasses@{printTudoAttributeInnerClasses}}
+\index{printTudoAttributeInnerClasses@{printTudoAttributeInnerClasses}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoAttributeInnerClasses()}{printTudoAttributeInnerClasses()}}
+{\footnotesize\ttfamily void print\+Tudo\+Attribute\+Inner\+Classes (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf,  }\item[{Attribute\+Info\+Inner\+Classes $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 13
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 14
+\mbox{\Hypertarget{_print_tudo_8cpp_a3b45262e87991b6aab6770ffe4314ae1}\label{_print_tudo_8cpp_a3b45262e87991b6aab6770ffe4314ae1}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoAttributeLineNumberTable@{printTudoAttributeLineNumberTable}}
+\index{printTudoAttributeLineNumberTable@{printTudoAttributeLineNumberTable}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoAttributeLineNumberTable()}{printTudoAttributeLineNumberTable()}}
+{\footnotesize\ttfamily void print\+Tudo\+Attribute\+Line\+Number\+Table (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf,  }\item[{Attribute\+Info\+Line\+Number\+Table $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 15
+\mbox{\Hypertarget{_print_tudo_8cpp_a93a834255f12f6983596b15f4e2e8318}\label{_print_tudo_8cpp_a93a834255f12f6983596b15f4e2e8318}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoAttributeLocalVariableTable@{printTudoAttributeLocalVariableTable}}
+\index{printTudoAttributeLocalVariableTable@{printTudoAttributeLocalVariableTable}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoAttributeLocalVariableTable()}{printTudoAttributeLocalVariableTable()}}
+{\footnotesize\ttfamily void print\+Tudo\+Attribute\+Local\+Variable\+Table (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf,  }\item[{Attribute\+Info\+Local\+Variable\+Table $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 16
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 17
+\mbox{\Hypertarget{_print_tudo_8cpp_a047220267306c94d9570ef5494b9f989}\label{_print_tudo_8cpp_a047220267306c94d9570ef5494b9f989}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoAttributes@{printTudoAttributes}}
+\index{printTudoAttributes@{printTudoAttributes}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoAttributes()}{printTudoAttributes()}}
+{\footnotesize\ttfamily void print\+Tudo\+Attributes (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 18
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 19
+\mbox{\Hypertarget{_print_tudo_8cpp_a90402588f2d088c592d5b0ac1a6a3909}\label{_print_tudo_8cpp_a90402588f2d088c592d5b0ac1a6a3909}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoAttributeSourceFile@{printTudoAttributeSourceFile}}
+\index{printTudoAttributeSourceFile@{printTudoAttributeSourceFile}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoAttributeSourceFile()}{printTudoAttributeSourceFile()}}
+{\footnotesize\ttfamily void print\+Tudo\+Attribute\+Source\+File (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf,  }\item[{Attribute\+Info\+Source\+File $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 20
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 21
+\mbox{\Hypertarget{_print_tudo_8cpp_ac0badc4e2f60b5ec867c735ca5f75a11}\label{_print_tudo_8cpp_ac0badc4e2f60b5ec867c735ca5f75a11}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoAttributeSynthetic@{printTudoAttributeSynthetic}}
+\index{printTudoAttributeSynthetic@{printTudoAttributeSynthetic}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoAttributeSynthetic()}{printTudoAttributeSynthetic()}}
+{\footnotesize\ttfamily void print\+Tudo\+Attribute\+Synthetic (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf,  }\item[{Attribute\+Info\+Synthetic $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 22
+\mbox{\Hypertarget{_print_tudo_8cpp_abcfe80347944d499463f811c02379f7a}\label{_print_tudo_8cpp_abcfe80347944d499463f811c02379f7a}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoConstantPool@{printTudoConstantPool}}
+\index{printTudoConstantPool@{printTudoConstantPool}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoConstantPool()}{printTudoConstantPool()}}
+{\footnotesize\ttfamily void print\+Tudo\+Constant\+Pool (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 23
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 24
+\mbox{\Hypertarget{_print_tudo_8cpp_a56df304175fbb57e8365d89a8aa92c32}\label{_print_tudo_8cpp_a56df304175fbb57e8365d89a8aa92c32}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoField@{printTudoField}}
+\index{printTudoField@{printTudoField}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoField()}{printTudoField()}}
+{\footnotesize\ttfamily void print\+Tudo\+Field (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf,  }\item[{Field\+Info $\ast$}]{field }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 25
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 26
+\mbox{\Hypertarget{_print_tudo_8cpp_a9e9b15e7193f58965dd914a831e53be1}\label{_print_tudo_8cpp_a9e9b15e7193f58965dd914a831e53be1}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoFields@{printTudoFields}}
+\index{printTudoFields@{printTudoFields}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoFields()}{printTudoFields()}}
+{\footnotesize\ttfamily void print\+Tudo\+Fields (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 27
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 28
+\mbox{\Hypertarget{_print_tudo_8cpp_a19676f164ba3fb06df3b247e25a2baf8}\label{_print_tudo_8cpp_a19676f164ba3fb06df3b247e25a2baf8}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoGeneralInformation@{printTudoGeneralInformation}}
+\index{printTudoGeneralInformation@{printTudoGeneralInformation}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoGeneralInformation()}{printTudoGeneralInformation()}}
+{\footnotesize\ttfamily void print\+Tudo\+General\+Information (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 29
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 30
+\mbox{\Hypertarget{_print_tudo_8cpp_a1386f83705b05407b618f4ec729c1a2b}\label{_print_tudo_8cpp_a1386f83705b05407b618f4ec729c1a2b}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoInterfaces@{printTudoInterfaces}}
+\index{printTudoInterfaces@{printTudoInterfaces}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoInterfaces()}{printTudoInterfaces()}}
+{\footnotesize\ttfamily void print\+Tudo\+Interfaces (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 31
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 32
+\mbox{\Hypertarget{_print_tudo_8cpp_aca33f9f66fd0cfecd1218ab919d4765a}\label{_print_tudo_8cpp_aca33f9f66fd0cfecd1218ab919d4765a}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoMethod@{printTudoMethod}}
+\index{printTudoMethod@{printTudoMethod}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoMethod()}{printTudoMethod()}}
+{\footnotesize\ttfamily void print\+Tudo\+Method (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf,  }\item[{Method\+Info $\ast$}]{field }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 33
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 34
+\mbox{\Hypertarget{_print_tudo_8cpp_a8cac85539d7cd706247d89c0f75d7696}\label{_print_tudo_8cpp_a8cac85539d7cd706247d89c0f75d7696}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!printTudoMethods@{printTudoMethods}}
+\index{printTudoMethods@{printTudoMethods}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{printTudoMethods()}{printTudoMethods()}}
+{\footnotesize\ttfamily void print\+Tudo\+Methods (\begin{DoxyParamCaption}\item[{Class\+File const \&}]{cf }\end{DoxyParamCaption})}
+
+Grafo de chamadas desta função\+:
+% FIG 35
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 36
+\mbox{\Hypertarget{_print_tudo_8cpp_aa5fb4df812f28a2a053e2b0b3680de54}\label{_print_tudo_8cpp_aa5fb4df812f28a2a053e2b0b3680de54}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!translateTudoFlagField@{translateTudoFlagField}}
+\index{translateTudoFlagField@{translateTudoFlagField}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{translateTudoFlagField()}{translateTudoFlagField()}}
+{\footnotesize\ttfamily std\+::string translate\+Tudo\+Flag\+Field (\begin{DoxyParamCaption}\item[{std\+::string}]{flag }\end{DoxyParamCaption})}
+
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 37
+\mbox{\Hypertarget{_print_tudo_8cpp_ae842390f9ffe213978d023197c90a5db}\label{_print_tudo_8cpp_ae842390f9ffe213978d023197c90a5db}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!translateTudoFlagMethod@{translateTudoFlagMethod}}
+\index{translateTudoFlagMethod@{translateTudoFlagMethod}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{translateTudoFlagMethod()}{translateTudoFlagMethod()}}
+{\footnotesize\ttfamily std\+::string translate\+Tudo\+Flag\+Method (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{flag }\end{DoxyParamCaption})}
+
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 38
+
+
+\doxysubsection{Documentação das variáveis}
+\mbox{\Hypertarget{_print_tudo_8cpp_a4aea670416cbb1791779d45c4ae8ab90}\label{_print_tudo_8cpp_a4aea670416cbb1791779d45c4ae8ab90}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!tab@{tab}}
+\index{tab@{tab}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{tab}{tab}}
+{\footnotesize\ttfamily std\+::string tab}
+
+\mbox{\Hypertarget{_print_tudo_8cpp_a347c552a234207caf9c66bb52a4aece2}\label{_print_tudo_8cpp_a347c552a234207caf9c66bb52a4aece2}} 
+\index{PrintTudo.cpp@{PrintTudo.cpp}!versions@{versions}}
+\index{versions@{versions}!PrintTudo.cpp@{PrintTudo.cpp}}
+\doxysubsubsection{\texorpdfstring{versions}{versions}}
+{\footnotesize\ttfamily const std\+::map$<$uint16\+\_\+t, std\+::string$>$ versions\hspace{0.3cm}{\ttfamily [extern]}}
+
+{\bfseries Valor inicial\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \{46, \textcolor{stringliteral}{"{}1.2"{}}\},  }
+\DoxyCodeLine{    \{47, \textcolor{stringliteral}{"{}1.3"{}}\},  }
+\DoxyCodeLine{    \{48, \textcolor{stringliteral}{"{}1.4"{}}\},  }
+\DoxyCodeLine{    \{49, \textcolor{stringliteral}{"{}1.5"{}}\},  }
+\DoxyCodeLine{    \{50, \textcolor{stringliteral}{"{}1.6"{}}\},  }
+\DoxyCodeLine{    \{51, \textcolor{stringliteral}{"{}1.7"{}}\},  }
+\DoxyCodeLine{    \{52, \textcolor{stringliteral}{"{}1.8"{}}\}  }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

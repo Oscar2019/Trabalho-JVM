@@ -1,0 +1,247 @@
+\hypertarget{classLinearStack}{}\doxysection{Linear\+Stack$<$ T $>$ Class Template Reference}
+\label{classLinearStack}\index{LinearStack$<$ T $>$@{LinearStack$<$ T $>$}}
+
+
+Pilha alocada em forma de um vetor.  
+
+
+
+
+{\ttfamily \#include $<$Execution\+Engine.\+h$>$}
+
+
+
+Inheritance diagram for Linear\+Stack$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classLinearStack__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Linear\+Stack$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{classLinearStack__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLinearStack_a21f220f3c54293f3cc931781b0511c95}{push}} (T \&value)
+\begin{DoxyCompactList}\small\item\em Insre um novo elemento para a pilha. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLinearStack_ac03439ee30eecfeaa4ee574932cf1825}{push}} (T \&\&value)
+\begin{DoxyCompactList}\small\item\em Insre um novo elemento para a pilha. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classLinearStack_ad68476dbea1871261e4f4e678d72550e}{top}} ()
+\begin{DoxyCompactList}\small\item\em Retorna uma referencia para o elemento que está no topo da pilha. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLinearStack_aa18d8e72f505a2de25318f3c3ee4a870}{pop}} ()
+\begin{DoxyCompactList}\small\item\em Remove o elemento que está no topo da pilha. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classLinearStack_aef89a3dfadb69f24dac6e46f3f3fb02b}{size}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o número de elementos na pilha. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLinearStack_a76af371f210689158a241d80a9af746f}{reserve}} (uint32\+\_\+t new\+\_\+max\+Size)
+\begin{DoxyCompactList}\small\item\em Muda a capacidade máxima da string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLinearStack_a9fec1be29287ab0eed694b3e2a09da9e}{Linear\+Stack}} ()
+\begin{DoxyCompactList}\small\item\em Construtor do objeto de \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLinearStack_a5655339cb0df16f939f15f581a3a7be4}{Linear\+Stack}} (uint32\+\_\+t new\+\_\+max\+Size)
+\begin{DoxyCompactList}\small\item\em Construtor do objeto de \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLinearStack_aa6c15c6a83d4310ed2921ac23465229a}{$\sim$\+Linear\+Stack}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor do objeto de \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classLinearStack_a88528c4a9892503d61481691db023bf4}{max\+Size}}
+\begin{DoxyCompactList}\small\item\em Número máximo de elementos na pilha. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classLinearStack_a9e925a59f2566fed1b94a65f4051d10c}{cur\+Size}}
+\begin{DoxyCompactList}\small\item\em Número de elementos que atualmente está contido na pilha. \end{DoxyCompactList}\item 
+T $\ast$ \mbox{\hyperlink{classLinearStack_a7e5285e8f1c2a6fe1ca55ec5cc33bb56}{data}}
+\begin{DoxyCompactList}\small\item\em Vetor onde os elementos são armazenados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Linear\+Stack$<$ T $>$}
+
+Pilha alocada em forma de um vetor. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLinearStack_a9fec1be29287ab0eed694b3e2a09da9e}\label{classLinearStack_a9fec1be29287ab0eed694b3e2a09da9e}} 
+\index{LinearStack$<$ T $>$@{LinearStack$<$ T $>$}!LinearStack@{LinearStack}}
+\index{LinearStack@{LinearStack}!LinearStack$<$ T $>$@{LinearStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{LinearStack()}{LinearStack()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$ T $>$\+::\mbox{\hyperlink{classLinearStack}{Linear\+Stack}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor do objeto de \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}. 
+
+\mbox{\Hypertarget{classLinearStack_a5655339cb0df16f939f15f581a3a7be4}\label{classLinearStack_a5655339cb0df16f939f15f581a3a7be4}} 
+\index{LinearStack$<$ T $>$@{LinearStack$<$ T $>$}!LinearStack@{LinearStack}}
+\index{LinearStack@{LinearStack}!LinearStack$<$ T $>$@{LinearStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{LinearStack()}{LinearStack()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$ T $>$\+::\mbox{\hyperlink{classLinearStack}{Linear\+Stack}} (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{new\+\_\+max\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor do objeto de \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+max\+Size} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLinearStack_aa6c15c6a83d4310ed2921ac23465229a}\label{classLinearStack_aa6c15c6a83d4310ed2921ac23465229a}} 
+\index{LinearStack$<$ T $>$@{LinearStack$<$ T $>$}!````~LinearStack@{$\sim$LinearStack}}
+\index{````~LinearStack@{$\sim$LinearStack}!LinearStack$<$ T $>$@{LinearStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$LinearStack()}{~LinearStack()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classLinearStack}{Linear\+Stack}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destrutor do objeto de \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLinearStack_aa18d8e72f505a2de25318f3c3ee4a870}\label{classLinearStack_aa18d8e72f505a2de25318f3c3ee4a870}} 
+\index{LinearStack$<$ T $>$@{LinearStack$<$ T $>$}!pop@{pop}}
+\index{pop@{pop}!LinearStack$<$ T $>$@{LinearStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$ T $>$\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove o elemento que está no topo da pilha. 
+
+\mbox{\Hypertarget{classLinearStack_ac03439ee30eecfeaa4ee574932cf1825}\label{classLinearStack_ac03439ee30eecfeaa4ee574932cf1825}} 
+\index{LinearStack$<$ T $>$@{LinearStack$<$ T $>$}!push@{push}}
+\index{push@{push}!LinearStack$<$ T $>$@{LinearStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{T \&\&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insre um novo elemento para a pilha. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLinearStack_a21f220f3c54293f3cc931781b0511c95}\label{classLinearStack_a21f220f3c54293f3cc931781b0511c95}} 
+\index{LinearStack$<$ T $>$@{LinearStack$<$ T $>$}!push@{push}}
+\index{push@{push}!LinearStack$<$ T $>$@{LinearStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insre um novo elemento para a pilha. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLinearStack_a76af371f210689158a241d80a9af746f}\label{classLinearStack_a76af371f210689158a241d80a9af746f}} 
+\index{LinearStack$<$ T $>$@{LinearStack$<$ T $>$}!reserve@{reserve}}
+\index{reserve@{reserve}!LinearStack$<$ T $>$@{LinearStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{reserve()}{reserve()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$ T $>$\+::reserve (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{new\+\_\+max\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Muda a capacidade máxima da string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+max\+Size} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLinearStack_aef89a3dfadb69f24dac6e46f3f3fb02b}\label{classLinearStack_aef89a3dfadb69f24dac6e46f3f3fb02b}} 
+\index{LinearStack$<$ T $>$@{LinearStack$<$ T $>$}!size@{size}}
+\index{size@{size}!LinearStack$<$ T $>$@{LinearStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+uint32\+\_\+t \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna o número de elementos na pilha. 
+
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLinearStack_ad68476dbea1871261e4f4e678d72550e}\label{classLinearStack_ad68476dbea1871261e4f4e678d72550e}} 
+\index{LinearStack$<$ T $>$@{LinearStack$<$ T $>$}!top@{top}}
+\index{top@{top}!LinearStack$<$ T $>$@{LinearStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{top()}{top()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T\& \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$ T $>$\+::top (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna uma referencia para o elemento que está no topo da pilha. 
+
+\begin{DoxyReturn}{Returns}
+T\& 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classLinearStack_a9e925a59f2566fed1b94a65f4051d10c}\label{classLinearStack_a9e925a59f2566fed1b94a65f4051d10c}} 
+\index{LinearStack$<$ T $>$@{LinearStack$<$ T $>$}!curSize@{curSize}}
+\index{curSize@{curSize}!LinearStack$<$ T $>$@{LinearStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{curSize}{curSize}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+uint32\+\_\+t \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$ T $>$\+::cur\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Número de elementos que atualmente está contido na pilha. 
+
+\mbox{\Hypertarget{classLinearStack_a7e5285e8f1c2a6fe1ca55ec5cc33bb56}\label{classLinearStack_a7e5285e8f1c2a6fe1ca55ec5cc33bb56}} 
+\index{LinearStack$<$ T $>$@{LinearStack$<$ T $>$}!data@{data}}
+\index{data@{data}!LinearStack$<$ T $>$@{LinearStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T$\ast$ \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$ T $>$\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vetor onde os elementos são armazenados. 
+
+\mbox{\Hypertarget{classLinearStack_a88528c4a9892503d61481691db023bf4}\label{classLinearStack_a88528c4a9892503d61481691db023bf4}} 
+\index{LinearStack$<$ T $>$@{LinearStack$<$ T $>$}!maxSize@{maxSize}}
+\index{maxSize@{maxSize}!LinearStack$<$ T $>$@{LinearStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{maxSize}{maxSize}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+uint32\+\_\+t \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$ T $>$\+::max\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Número máximo de elementos na pilha. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ExecutionEngine_8h}{Execution\+Engine.\+h}}\item 
+include/\mbox{\hyperlink{Stack_8h}{Stack.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="execOp_iconst_3" name="execOp_iconst_3">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node2" href="$classFrame.html#afc6f418a53e2160c86a46fc6d38d10bf" title="Insere um elemento na pilha de operando." alt="" coords="184,5,377,32"/>
+<area shape="rect" id="node3" href="$classLinearStack.html#a21f220f3c54293f3cc931781b0511c95" title="Insre um novo elemento para a pilha." alt="" coords="425,5,563,32"/>
+</map>

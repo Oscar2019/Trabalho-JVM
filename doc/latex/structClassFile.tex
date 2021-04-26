@@ -1,0 +1,218 @@
+\hypertarget{structClassFile}{}\doxysection{Class\+File Struct Reference}
+\label{structClassFile}\index{ClassFile@{ClassFile}}
+
+
+Strutura pra representar o .class.  
+
+
+
+
+{\ttfamily \#include $<$Class\+File.\+h$>$}
+
+
+
+Collaboration diagram for Class\+File\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structClassFile__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structClassFile_a02cbab76d516d3a26509a4678f1bbb18}{add\+C\+Pinfo\+In\+Methods}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Class File object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structClassFile_a47669d90346c9fa0db30ae582c74a199}{Class\+File}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Class File object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structClassFile_a8ba282fcf2e55ac5a4dc03f3fcc247b3}{$\sim$\+Class\+File}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Class File object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structClassFile_a9d4d72751ff9250dd3305d5d853f7921}{magic}}
+\begin{DoxyCompactList}\small\item\em Número magico que define que o arquivo é um .class. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{structClassFile_afb41e706bd0e19ed5a24cd0e99ecc4c1}{minor\+Version}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structClassFile_a3424e098e9ef6dbfbdbb9c708afaffe7}{major\+Version}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structClassFile_af185527e4689b1672655f608df4a3c62}{constant\+Pool\+Count}}
+\begin{DoxyCompactList}\small\item\em Número de elementos no constant pool do .class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$ \mbox{\hyperlink{structClassFile_a7f74890dd83bbb818f52d937f72ac5e8}{constant\+Pool}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structClassFile_afbb2cd57bb6eb5baa34e83127e928c18}{access\+Flags}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structClassFile_abc02e661935c638b2f231cef576859f1}{this\+Class}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structClassFile_a306c9da73620fa5ad94bbaa64a19afdd}{super\+Class}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structClassFile_adcd02751a38d5b17559fd3c5201b2c42}{interfaces\+Count}}
+\item 
+uint16\+\_\+t $\ast$ \mbox{\hyperlink{structClassFile_a86680de028c6df386edafa8e8436b92c}{interfaces}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structClassFile_a87f4d2ede2eb9df54d69952df84226ca}{fields\+Count}}
+\item 
+\mbox{\hyperlink{structFieldInfo}{Field\+Info}} $\ast$ \mbox{\hyperlink{structClassFile_add171dc12613ad29ef94f4f18a50f06a}{fields}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structClassFile_a24d224be2ab473bac3506890c6ff6a4d}{methods\+Count}}
+\item 
+\mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$ \mbox{\hyperlink{structClassFile_a67e02d50e6807bb97d7d8f265deef9a0}{methods}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structClassFile_ad88c9b8262fbd79d49ad2c163ad45716}{attributes\+Count}}
+\item 
+\mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}} $\ast$$\ast$ \mbox{\hyperlink{structClassFile_addeb2f51bcb7e2536e7d6fef1947ce73}{attributes}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Strutura pra representar o .class. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structClassFile_a47669d90346c9fa0db30ae582c74a199}\label{structClassFile_a47669d90346c9fa0db30ae582c74a199}} 
+\index{ClassFile@{ClassFile}!ClassFile@{ClassFile}}
+\index{ClassFile@{ClassFile}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{ClassFile()}{ClassFile()}}
+{\footnotesize\ttfamily Class\+File\+::\+Class\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new Class File object. 
+
+\mbox{\Hypertarget{structClassFile_a8ba282fcf2e55ac5a4dc03f3fcc247b3}\label{structClassFile_a8ba282fcf2e55ac5a4dc03f3fcc247b3}} 
+\index{ClassFile@{ClassFile}!````~ClassFile@{$\sim$ClassFile}}
+\index{````~ClassFile@{$\sim$ClassFile}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{$\sim$ClassFile()}{~ClassFile()}}
+{\footnotesize\ttfamily Class\+File\+::$\sim$\+Class\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Class File object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structClassFile_a02cbab76d516d3a26509a4678f1bbb18}\label{structClassFile_a02cbab76d516d3a26509a4678f1bbb18}} 
+\index{ClassFile@{ClassFile}!addCPinfoInMethods@{addCPinfoInMethods}}
+\index{addCPinfoInMethods@{addCPinfoInMethods}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{addCPinfoInMethods()}{addCPinfoInMethods()}}
+{\footnotesize\ttfamily void Class\+File\+::add\+C\+Pinfo\+In\+Methods (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new Class File object. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structClassFile_afbb2cd57bb6eb5baa34e83127e928c18}\label{structClassFile_afbb2cd57bb6eb5baa34e83127e928c18}} 
+\index{ClassFile@{ClassFile}!accessFlags@{accessFlags}}
+\index{accessFlags@{accessFlags}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{accessFlags}{accessFlags}}
+{\footnotesize\ttfamily uint16\+\_\+t Class\+File\+::access\+Flags}
+
+\mbox{\Hypertarget{structClassFile_addeb2f51bcb7e2536e7d6fef1947ce73}\label{structClassFile_addeb2f51bcb7e2536e7d6fef1947ce73}} 
+\index{ClassFile@{ClassFile}!attributes@{attributes}}
+\index{attributes@{attributes}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{attributes}{attributes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}}$\ast$$\ast$ Class\+File\+::attributes}
+
+\mbox{\Hypertarget{structClassFile_ad88c9b8262fbd79d49ad2c163ad45716}\label{structClassFile_ad88c9b8262fbd79d49ad2c163ad45716}} 
+\index{ClassFile@{ClassFile}!attributesCount@{attributesCount}}
+\index{attributesCount@{attributesCount}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{attributesCount}{attributesCount}}
+{\footnotesize\ttfamily uint16\+\_\+t Class\+File\+::attributes\+Count}
+
+\mbox{\Hypertarget{structClassFile_a7f74890dd83bbb818f52d937f72ac5e8}\label{structClassFile_a7f74890dd83bbb818f52d937f72ac5e8}} 
+\index{ClassFile@{ClassFile}!constantPool@{constantPool}}
+\index{constantPool@{constantPool}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{constantPool}{constantPool}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}}$\ast$$\ast$ Class\+File\+::constant\+Pool}
+
+\mbox{\Hypertarget{structClassFile_af185527e4689b1672655f608df4a3c62}\label{structClassFile_af185527e4689b1672655f608df4a3c62}} 
+\index{ClassFile@{ClassFile}!constantPoolCount@{constantPoolCount}}
+\index{constantPoolCount@{constantPoolCount}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{constantPoolCount}{constantPoolCount}}
+{\footnotesize\ttfamily uint16\+\_\+t Class\+File\+::constant\+Pool\+Count}
+
+
+
+Número de elementos no constant pool do .class. 
+
+\mbox{\Hypertarget{structClassFile_add171dc12613ad29ef94f4f18a50f06a}\label{structClassFile_add171dc12613ad29ef94f4f18a50f06a}} 
+\index{ClassFile@{ClassFile}!fields@{fields}}
+\index{fields@{fields}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{fields}{fields}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structFieldInfo}{Field\+Info}}$\ast$ Class\+File\+::fields}
+
+\mbox{\Hypertarget{structClassFile_a87f4d2ede2eb9df54d69952df84226ca}\label{structClassFile_a87f4d2ede2eb9df54d69952df84226ca}} 
+\index{ClassFile@{ClassFile}!fieldsCount@{fieldsCount}}
+\index{fieldsCount@{fieldsCount}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{fieldsCount}{fieldsCount}}
+{\footnotesize\ttfamily uint16\+\_\+t Class\+File\+::fields\+Count}
+
+\mbox{\Hypertarget{structClassFile_a86680de028c6df386edafa8e8436b92c}\label{structClassFile_a86680de028c6df386edafa8e8436b92c}} 
+\index{ClassFile@{ClassFile}!interfaces@{interfaces}}
+\index{interfaces@{interfaces}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{interfaces}{interfaces}}
+{\footnotesize\ttfamily uint16\+\_\+t$\ast$ Class\+File\+::interfaces}
+
+\mbox{\Hypertarget{structClassFile_adcd02751a38d5b17559fd3c5201b2c42}\label{structClassFile_adcd02751a38d5b17559fd3c5201b2c42}} 
+\index{ClassFile@{ClassFile}!interfacesCount@{interfacesCount}}
+\index{interfacesCount@{interfacesCount}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{interfacesCount}{interfacesCount}}
+{\footnotesize\ttfamily uint16\+\_\+t Class\+File\+::interfaces\+Count}
+
+\mbox{\Hypertarget{structClassFile_a9d4d72751ff9250dd3305d5d853f7921}\label{structClassFile_a9d4d72751ff9250dd3305d5d853f7921}} 
+\index{ClassFile@{ClassFile}!magic@{magic}}
+\index{magic@{magic}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{magic}{magic}}
+{\footnotesize\ttfamily uint32\+\_\+t Class\+File\+::magic}
+
+
+
+Número magico que define que o arquivo é um .class. 
+
+\mbox{\Hypertarget{structClassFile_a3424e098e9ef6dbfbdbb9c708afaffe7}\label{structClassFile_a3424e098e9ef6dbfbdbb9c708afaffe7}} 
+\index{ClassFile@{ClassFile}!majorVersion@{majorVersion}}
+\index{majorVersion@{majorVersion}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{majorVersion}{majorVersion}}
+{\footnotesize\ttfamily uint16\+\_\+t Class\+File\+::major\+Version}
+
+\mbox{\Hypertarget{structClassFile_a67e02d50e6807bb97d7d8f265deef9a0}\label{structClassFile_a67e02d50e6807bb97d7d8f265deef9a0}} 
+\index{ClassFile@{ClassFile}!methods@{methods}}
+\index{methods@{methods}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{methods}{methods}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMethodInfo}{Method\+Info}}$\ast$ Class\+File\+::methods}
+
+\mbox{\Hypertarget{structClassFile_a24d224be2ab473bac3506890c6ff6a4d}\label{structClassFile_a24d224be2ab473bac3506890c6ff6a4d}} 
+\index{ClassFile@{ClassFile}!methodsCount@{methodsCount}}
+\index{methodsCount@{methodsCount}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{methodsCount}{methodsCount}}
+{\footnotesize\ttfamily uint16\+\_\+t Class\+File\+::methods\+Count}
+
+\mbox{\Hypertarget{structClassFile_afb41e706bd0e19ed5a24cd0e99ecc4c1}\label{structClassFile_afb41e706bd0e19ed5a24cd0e99ecc4c1}} 
+\index{ClassFile@{ClassFile}!minorVersion@{minorVersion}}
+\index{minorVersion@{minorVersion}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{minorVersion}{minorVersion}}
+{\footnotesize\ttfamily uint16\+\_\+t Class\+File\+::minor\+Version}
+
+\mbox{\Hypertarget{structClassFile_a306c9da73620fa5ad94bbaa64a19afdd}\label{structClassFile_a306c9da73620fa5ad94bbaa64a19afdd}} 
+\index{ClassFile@{ClassFile}!superClass@{superClass}}
+\index{superClass@{superClass}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{superClass}{superClass}}
+{\footnotesize\ttfamily uint16\+\_\+t Class\+File\+::super\+Class}
+
+\mbox{\Hypertarget{structClassFile_abc02e661935c638b2f231cef576859f1}\label{structClassFile_abc02e661935c638b2f231cef576859f1}} 
+\index{ClassFile@{ClassFile}!thisClass@{thisClass}}
+\index{thisClass@{thisClass}!ClassFile@{ClassFile}}
+\doxysubsubsection{\texorpdfstring{thisClass}{thisClass}}
+{\footnotesize\ttfamily uint16\+\_\+t Class\+File\+::this\+Class}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ClassFile_8h}{Class\+File.\+h}}\item 
+src/\mbox{\hyperlink{ClassFile_8cpp}{Class\+File.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,55 @@
+\hypertarget{class_execution_engine}{}\doxysection{Referência à classe Execution\+Engine}
+\label{class_execution_engine}\index{ExecutionEngine@{ExecutionEngine}}
+
+
+{\ttfamily \#include $<$Execution\+Engine.\+h$>$}
+
+\doxysubsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_execution_engine_a682da5b3ec16f062c9610e661d70ec50}{exec}} (\mbox{\hyperlink{struct_method_info}{Method\+Info}} $\ast$next\+Method, \mbox{\hyperlink{class_frame}{Frame}} $\ast$next\+Frame)
+\item 
+void \mbox{\hyperlink{class_execution_engine_a3d06f6325271958b1abe0941ce2112a0}{set\+Runtime\+Data\+Area}} (\mbox{\hyperlink{class_runtime_data_area}{Runtime\+Data\+Area}} $\ast$new\+\_\+runtime\+Data\+Area)
+\item 
+void \mbox{\hyperlink{class_execution_engine_a8e393804cf4e6de592af74ba16a32060}{set\+Class\+Loader}} (\mbox{\hyperlink{class_class_loader}{Class\+Loader}} $\ast$new\+\_\+class\+Loader)
+\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Públicos Estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::array$<$ std\+::function$<$ int32\+\_\+t(\mbox{\hyperlink{class_class_loader}{Class\+Loader}} $\ast$, \mbox{\hyperlink{class_runtime_data_area}{Runtime\+Data\+Area}} $\ast$, \mbox{\hyperlink{class_execution_engine}{Execution\+Engine}} $\ast$, uint32\+\_\+t, \mbox{\hyperlink{class_frame}{Frame}} $\ast$, \mbox{\hyperlink{struct_method_info}{Method\+Info}} $\ast$, \mbox{\hyperlink{struct_attribute_info_code}{Attribute\+Info\+Code}} $\ast$, \mbox{\hyperlink{class_linear_stack}{Linear\+Stack}}$<$ uint32\+\_\+t $>$ \&, \mbox{\hyperlink{struct_method_info}{Method\+Info}} $\ast$$\ast$, \mbox{\hyperlink{class_frame}{Frame}} $\ast$$\ast$, bool \&, bool \&, bool, uint32\+\_\+t \&)$>$, 0x\+C9+1 $>$ \mbox{\hyperlink{class_execution_engine_a3862ba3d55780d428cae97ef6b63422c}{exec\+Intruction}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação dos métodos}
+\mbox{\Hypertarget{class_execution_engine_a682da5b3ec16f062c9610e661d70ec50}\label{class_execution_engine_a682da5b3ec16f062c9610e661d70ec50}} 
+\index{ExecutionEngine@{ExecutionEngine}!exec@{exec}}
+\index{exec@{exec}!ExecutionEngine@{ExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{exec()}{exec()}}
+{\footnotesize\ttfamily void Execution\+Engine\+::exec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_method_info}{Method\+Info}} $\ast$}]{next\+Method,  }\item[{\mbox{\hyperlink{class_frame}{Frame}} $\ast$}]{next\+Frame }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_execution_engine_a8e393804cf4e6de592af74ba16a32060}\label{class_execution_engine_a8e393804cf4e6de592af74ba16a32060}} 
+\index{ExecutionEngine@{ExecutionEngine}!setClassLoader@{setClassLoader}}
+\index{setClassLoader@{setClassLoader}!ExecutionEngine@{ExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{setClassLoader()}{setClassLoader()}}
+{\footnotesize\ttfamily void Execution\+Engine\+::set\+Class\+Loader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_class_loader}{Class\+Loader}} $\ast$}]{new\+\_\+class\+Loader }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_execution_engine_a3d06f6325271958b1abe0941ce2112a0}\label{class_execution_engine_a3d06f6325271958b1abe0941ce2112a0}} 
+\index{ExecutionEngine@{ExecutionEngine}!setRuntimeDataArea@{setRuntimeDataArea}}
+\index{setRuntimeDataArea@{setRuntimeDataArea}!ExecutionEngine@{ExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{setRuntimeDataArea()}{setRuntimeDataArea()}}
+{\footnotesize\ttfamily void Execution\+Engine\+::set\+Runtime\+Data\+Area (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_runtime_data_area}{Runtime\+Data\+Area}} $\ast$}]{new\+\_\+runtime\+Data\+Area }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Documentação dos dados membro}
+\mbox{\Hypertarget{class_execution_engine_a3862ba3d55780d428cae97ef6b63422c}\label{class_execution_engine_a3862ba3d55780d428cae97ef6b63422c}} 
+\index{ExecutionEngine@{ExecutionEngine}!execIntruction@{execIntruction}}
+\index{execIntruction@{execIntruction}!ExecutionEngine@{ExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{execIntruction}{execIntruction}}
+{\footnotesize\ttfamily const std\+::array$<$std\+::function$<$int32\+\_\+t(\mbox{\hyperlink{class_class_loader}{Class\+Loader}}$\ast$, \mbox{\hyperlink{class_runtime_data_area}{Runtime\+Data\+Area}}$\ast$, \mbox{\hyperlink{class_execution_engine}{Execution\+Engine}}$\ast$, uint32\+\_\+t, \mbox{\hyperlink{class_frame}{Frame}}$\ast$, \mbox{\hyperlink{struct_method_info}{Method\+Info}}$\ast$, \mbox{\hyperlink{struct_attribute_info_code}{Attribute\+Info\+Code}}$\ast$, \mbox{\hyperlink{class_linear_stack}{Linear\+Stack}}$<$uint32\+\_\+t$>$\&, \mbox{\hyperlink{struct_method_info}{Method\+Info}}$\ast$$\ast$, \mbox{\hyperlink{class_frame}{Frame}}$\ast$$\ast$, bool\&, bool\&, bool, uint32\+\_\+t\&)$>$, 0x\+C9 + 1$>$ Execution\+Engine\+::exec\+Intruction\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_execution_engine_8h}{Execution\+Engine.\+h}}\end{DoxyCompactItemize}

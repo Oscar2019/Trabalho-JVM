@@ -1,0 +1,12 @@
+<map id="CPClass" name="CPClass">
+<area shape="rect" id="node1" title="Estrutura usada para representar uma classe ou interface." alt="" coords="429,800,528,877"/>
+<area shape="rect" id="node2" href="$structConstantPoolInfo.html" title="Estrutura base de todos os constant Pool." alt="" coords="95,145,265,237"/>
+<area shape="rect" id="node5" href="$structClassFile.html" title="Strutura pra representar o .class." alt="" coords="509,631,691,737"/>
+<area shape="rect" id="node9" href="$structMethodInfo.html" title="Estrutura que armazena os dados de um método." alt="" coords="703,447,835,568"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,5,72,83"/>
+<area shape="rect" id="node4" title=" " alt="" coords="948,5,1023,83"/>
+<area shape="rect" id="node6" href="$structAttributeInfo.html" title=" " alt="" coords="574,145,714,237"/>
+<area shape="rect" id="node8" href="$structFieldInfo.html" title="Estrutura que armazena os dados de um campo." alt="" coords="860,461,975,553"/>
+<area shape="rect" id="node7" title=" " alt="" coords="425,5,500,83"/>
+<area shape="rect" id="node10" title=" " alt="" coords="1279,645,1329,723"/>
+</map>

@@ -1,0 +1,448 @@
+\hypertarget{classClassLoader}{}\doxysection{Class\+Loader Class Reference}
+\label{classClassLoader}\index{ClassLoader@{ClassLoader}}
+
+
+{\ttfamily \#include $<$Class\+Loader.\+h$>$}
+
+
+
+Collaboration diagram for Class\+Loader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassLoader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClassLoader_af396f2eae432348c812c6cae6627f4eb}{Class\+Loader}} (std\+::string \&\&s)
+\item 
+\mbox{\hyperlink{classClassLoader_a0f09f8c18253b103014c5f3c87759da5}{Class\+Loader}} (std\+::string \&s)
+\item 
+void \mbox{\hyperlink{classClassLoader_aa4c21d92e0f63b930734707f0bf8b619}{add\+Class\+To\+Load}} (std\+::string s)
+\item 
+void \mbox{\hyperlink{classClassLoader_a3a6ff437ae838e214a8be17cd413e918}{save\+Obeject\+Info}} ()
+\item 
+std\+::pair$<$ \mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$$\ast$, uint32\+\_\+t $>$ \mbox{\hyperlink{classClassLoader_aab41df8c6d759cb1564c5a1a4086b258}{get\+Obeject\+Info}} ()
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classClassLoader_a3a4e32bf702b533d250529970bd88d0f}{get\+Class\+Num}} (std\+::string \&class\+Name)
+\item 
+\mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$ \mbox{\hyperlink{classClassLoader_ae8db34b8db83b40f7f45b7511e9e7fb2}{get\+Contructor}} (uint32\+\_\+t class\+Num, std\+::string \&method\+Name)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classClassLoader_a3bb18b1c8e2f62067390c9a5d5ed0b26}{get\+Instance\+Size}} (uint32\+\_\+t class\+Num)
+\item 
+std\+::map$<$ uint32\+\_\+t, uint32\+\_\+t $\ast$ $>$ $\ast$ \mbox{\hyperlink{classClassLoader_a466111fdd65e3314bcc2e381cadfd35e}{get\+Iterface\+Method\+Localization}} (uint32\+\_\+t class\+Num)
+\item 
+\mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$$\ast$ \mbox{\hyperlink{classClassLoader_a1ebfe9533b2e60215645323304dff3a4}{get\+Method\+Table}} (uint32\+\_\+t class\+Num)
+\item 
+\mbox{\hyperlink{structClassFile}{Class\+File}} $\ast$ \mbox{\hyperlink{classClassLoader_a86239271251def987753682b502110b6}{get\+Class\+File}} (uint32\+\_\+t class\+Num)
+\item 
+std\+::string \mbox{\hyperlink{classClassLoader_a6285f98f448417ff4c2ff8f183df4ce7}{get\+Class\+Name}} ()
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classClassLoader_ae5a50b6253e237015f2641b06e80c9ae}{get\+Datafrom\+Object}} (uint32\+\_\+t object, std\+::string \&name)
+\item 
+void \mbox{\hyperlink{classClassLoader_a8b16a507b33981b4b55c7bea7a1bf444}{set\+Runtime\+Data\+Area}} (\mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}} $\ast$new\+\_\+runtime\+Data\+Area)
+\item 
+void \mbox{\hyperlink{classClassLoader_ace3807f8e19eb290cad0c2b472876cfe}{set\+Execution\+Engine}} (\mbox{\hyperlink{classExecutionEngine}{Execution\+Engine}} $\ast$new\+\_\+execution\+Engine)
+\item 
+void \mbox{\hyperlink{classClassLoader_a8ce606eb72c0f99cf498d7951ed2c8ed}{exec}} ()
+\item 
+\mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$ \mbox{\hyperlink{classClassLoader_a491a0f6eaca75acd26e4841b21a76544}{get\+Method}} (std\+::string class\+Name, std\+::string method\+Name)
+\item 
+bool \mbox{\hyperlink{classClassLoader_a21a3409cee5dd50af757e80b76a4b3f8}{parent\+Of}} (uint32\+\_\+t parent, uint32\+\_\+t child)
+\item 
+void \mbox{\hyperlink{classClassLoader_ad0b5c4fff295d13b587481c6ade4cf7e}{resolve\+Constant\+Pool\+At}} (\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structClassFile}{Class\+File}} $\ast$ \mbox{\hyperlink{classClassLoader_a479243c8856801e1ccfd8097ff393dbe}{read\+Class2}} (\mbox{\hyperlink{classFileSystem}{File\+System}} \&\mbox{\hyperlink{classClassLoader_a89998fa47d63831f30e767b24e38c13c}{fs}}, std\+::string \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classClassLoader_a5cebc26d9096d2d5c93887f66cc153ca}{interfaces\+Are\+Loaded}} (\mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$node\+Content)
+\item 
+void \mbox{\hyperlink{classClassLoader_a1698541290a606b85bb363db50717e71}{add\+Interfaces\+To\+Load}} (\mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$node\+Content)
+\item 
+void \mbox{\hyperlink{classClassLoader_a1c3946493085036732eee45ce6d34b78}{read\+Class}} (std\+::string \&s)
+\item 
+void \mbox{\hyperlink{classClassLoader_a33f3ccf64645de7255d065ccaf7b01a8}{prepare}} (\mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$node\+Content)
+\item 
+void \mbox{\hyperlink{classClassLoader_a65f077ff2065e040c0017c5934ce837c}{resolve}} (\mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$node\+Content, std\+::queue$<$ \mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$ $>$ \&class\+Initialize)
+\item 
+void \mbox{\hyperlink{classClassLoader_a876bf5d97790a654cea79c8a751d137c}{inicialize}} (\mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$node\+Content, std\+::queue$<$ \mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$ $>$ \&class\+Initialize)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTrie}{Trie}}$<$ \mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$ $>$ \mbox{\hyperlink{classClassLoader_a4f49b25f8914954fd3370ce88e3b538a}{tree}}
+\item 
+\mbox{\hyperlink{classFileSystem}{File\+System}} \mbox{\hyperlink{classClassLoader_a89998fa47d63831f30e767b24e38c13c}{fs}}
+\item 
+std\+::queue$<$ std\+::string $>$ \mbox{\hyperlink{classClassLoader_a1dac2bb2fb3f732e489d3ffafdb8624c}{class\+To\+Load}}
+\item 
+std\+::queue$<$ \mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$ $>$ \mbox{\hyperlink{classClassLoader_abf2d7bf3404b921962d8b6265fb8ec5d}{class\+Prepare}}
+\item 
+std\+::stack$<$ \mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$ $>$ \mbox{\hyperlink{classClassLoader_ad87ad392e6c84174cff78a2839796ca9}{class\+Resolve}}
+\item 
+\mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}} $\ast$ \mbox{\hyperlink{classClassLoader_af37e8e275b1edab3d87f3de2aeb54400}{runtime\+Data\+Area}}
+\item 
+\mbox{\hyperlink{classExecutionEngine}{Execution\+Engine}} $\ast$ \mbox{\hyperlink{classClassLoader_a1b53955e73cbe06b0df93e8b79d266be}{execution\+Engine}}
+\item 
+std\+::vector$<$ std\+::vector$<$ uint32\+\_\+t $>$ $>$ \mbox{\hyperlink{classClassLoader_a951961a73274521b0a966ff13a538b5a}{inherance\+Graph}}
+\item 
+\mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$ \mbox{\hyperlink{classClassLoader_a68ab2c4c03b3727b99c1e8ab381c67cf}{object\+Node\+Content}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classClassLoader_af396f2eae432348c812c6cae6627f4eb}\label{classClassLoader_af396f2eae432348c812c6cae6627f4eb}} 
+\index{ClassLoader@{ClassLoader}!ClassLoader@{ClassLoader}}
+\index{ClassLoader@{ClassLoader}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{ClassLoader()}{ClassLoader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Class\+Loader\+::\+Class\+Loader (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classClassLoader_a0f09f8c18253b103014c5f3c87759da5}\label{classClassLoader_a0f09f8c18253b103014c5f3c87759da5}} 
+\index{ClassLoader@{ClassLoader}!ClassLoader@{ClassLoader}}
+\index{ClassLoader@{ClassLoader}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{ClassLoader()}{ClassLoader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Class\+Loader\+::\+Class\+Loader (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classClassLoader_aa4c21d92e0f63b930734707f0bf8b619}\label{classClassLoader_aa4c21d92e0f63b930734707f0bf8b619}} 
+\index{ClassLoader@{ClassLoader}!addClassToLoad@{addClassToLoad}}
+\index{addClassToLoad@{addClassToLoad}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{addClassToLoad()}{addClassToLoad()}}
+{\footnotesize\ttfamily void Class\+Loader\+::add\+Class\+To\+Load (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassLoader_aa4c21d92e0f63b930734707f0bf8b619_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassLoader_a1698541290a606b85bb363db50717e71}\label{classClassLoader_a1698541290a606b85bb363db50717e71}} 
+\index{ClassLoader@{ClassLoader}!addInterfacesToLoad@{addInterfacesToLoad}}
+\index{addInterfacesToLoad@{addInterfacesToLoad}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{addInterfacesToLoad()}{addInterfacesToLoad()}}
+{\footnotesize\ttfamily void Class\+Loader\+::add\+Interfaces\+To\+Load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$}]{node\+Content }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassLoader_a1698541290a606b85bb363db50717e71_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassLoader_a8ce606eb72c0f99cf498d7951ed2c8ed}\label{classClassLoader_a8ce606eb72c0f99cf498d7951ed2c8ed}} 
+\index{ClassLoader@{ClassLoader}!exec@{exec}}
+\index{exec@{exec}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{exec()}{exec()}}
+{\footnotesize\ttfamily void Class\+Loader\+::exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassLoader_a8ce606eb72c0f99cf498d7951ed2c8ed_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassLoader_a86239271251def987753682b502110b6}\label{classClassLoader_a86239271251def987753682b502110b6}} 
+\index{ClassLoader@{ClassLoader}!getClassFile@{getClassFile}}
+\index{getClassFile@{getClassFile}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{getClassFile()}{getClassFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structClassFile}{Class\+File}} $\ast$ Class\+Loader\+::get\+Class\+File (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{class\+Num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classClassLoader_a6285f98f448417ff4c2ff8f183df4ce7}\label{classClassLoader_a6285f98f448417ff4c2ff8f183df4ce7}} 
+\index{ClassLoader@{ClassLoader}!getClassName@{getClassName}}
+\index{getClassName@{getClassName}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{getClassName()}{getClassName()}}
+{\footnotesize\ttfamily std\+::string Class\+Loader\+::get\+Class\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassLoader_a6285f98f448417ff4c2ff8f183df4ce7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassLoader_a3a4e32bf702b533d250529970bd88d0f}\label{classClassLoader_a3a4e32bf702b533d250529970bd88d0f}} 
+\index{ClassLoader@{ClassLoader}!getClassNum@{getClassNum}}
+\index{getClassNum@{getClassNum}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{getClassNum()}{getClassNum()}}
+{\footnotesize\ttfamily uint32\+\_\+t Class\+Loader\+::get\+Class\+Num (\begin{DoxyParamCaption}\item[{std\+::string \&}]{class\+Name }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassLoader_a3a4e32bf702b533d250529970bd88d0f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassLoader_ae8db34b8db83b40f7f45b7511e9e7fb2}\label{classClassLoader_ae8db34b8db83b40f7f45b7511e9e7fb2}} 
+\index{ClassLoader@{ClassLoader}!getContructor@{getContructor}}
+\index{getContructor@{getContructor}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{getContructor()}{getContructor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$ Class\+Loader\+::get\+Contructor (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{class\+Num,  }\item[{std\+::string \&}]{method\+Name }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classClassLoader_ae8db34b8db83b40f7f45b7511e9e7fb2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassLoader_ae5a50b6253e237015f2641b06e80c9ae}\label{classClassLoader_ae5a50b6253e237015f2641b06e80c9ae}} 
+\index{ClassLoader@{ClassLoader}!getDatafromObject@{getDatafromObject}}
+\index{getDatafromObject@{getDatafromObject}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{getDatafromObject()}{getDatafromObject()}}
+{\footnotesize\ttfamily uint32\+\_\+t Class\+Loader\+::get\+Datafrom\+Object (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{object,  }\item[{std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassLoader_ae5a50b6253e237015f2641b06e80c9ae_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassLoader_a3bb18b1c8e2f62067390c9a5d5ed0b26}\label{classClassLoader_a3bb18b1c8e2f62067390c9a5d5ed0b26}} 
+\index{ClassLoader@{ClassLoader}!getInstanceSize@{getInstanceSize}}
+\index{getInstanceSize@{getInstanceSize}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{getInstanceSize()}{getInstanceSize()}}
+{\footnotesize\ttfamily uint32\+\_\+t Class\+Loader\+::get\+Instance\+Size (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{class\+Num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classClassLoader_a466111fdd65e3314bcc2e381cadfd35e}\label{classClassLoader_a466111fdd65e3314bcc2e381cadfd35e}} 
+\index{ClassLoader@{ClassLoader}!getIterfaceMethodLocalization@{getIterfaceMethodLocalization}}
+\index{getIterfaceMethodLocalization@{getIterfaceMethodLocalization}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{getIterfaceMethodLocalization()}{getIterfaceMethodLocalization()}}
+{\footnotesize\ttfamily std\+::map$<$ uint32\+\_\+t, uint32\+\_\+t $\ast$ $>$ $\ast$ Class\+Loader\+::get\+Iterface\+Method\+Localization (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{class\+Num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classClassLoader_a491a0f6eaca75acd26e4841b21a76544}\label{classClassLoader_a491a0f6eaca75acd26e4841b21a76544}} 
+\index{ClassLoader@{ClassLoader}!getMethod@{getMethod}}
+\index{getMethod@{getMethod}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{getMethod()}{getMethod()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$ Class\+Loader\+::get\+Method (\begin{DoxyParamCaption}\item[{std\+::string}]{class\+Name,  }\item[{std\+::string}]{method\+Name }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classClassLoader_a491a0f6eaca75acd26e4841b21a76544_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassLoader_a1ebfe9533b2e60215645323304dff3a4}\label{classClassLoader_a1ebfe9533b2e60215645323304dff3a4}} 
+\index{ClassLoader@{ClassLoader}!getMethodTable@{getMethodTable}}
+\index{getMethodTable@{getMethodTable}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{getMethodTable()}{getMethodTable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$$\ast$ Class\+Loader\+::get\+Method\+Table (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{class\+Num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classClassLoader_aab41df8c6d759cb1564c5a1a4086b258}\label{classClassLoader_aab41df8c6d759cb1564c5a1a4086b258}} 
+\index{ClassLoader@{ClassLoader}!getObejectInfo@{getObejectInfo}}
+\index{getObejectInfo@{getObejectInfo}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{getObejectInfo()}{getObejectInfo()}}
+{\footnotesize\ttfamily std\+::pair$<$ \mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$$\ast$, uint32\+\_\+t $>$ Class\+Loader\+::get\+Obeject\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classClassLoader_a876bf5d97790a654cea79c8a751d137c}\label{classClassLoader_a876bf5d97790a654cea79c8a751d137c}} 
+\index{ClassLoader@{ClassLoader}!inicialize@{inicialize}}
+\index{inicialize@{inicialize}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{inicialize()}{inicialize()}}
+{\footnotesize\ttfamily void Class\+Loader\+::inicialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$}]{node\+Content,  }\item[{std\+::queue$<$ \mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$ $>$ \&}]{class\+Initialize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassLoader_a876bf5d97790a654cea79c8a751d137c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassLoader_a5cebc26d9096d2d5c93887f66cc153ca}\label{classClassLoader_a5cebc26d9096d2d5c93887f66cc153ca}} 
+\index{ClassLoader@{ClassLoader}!interfacesAreLoaded@{interfacesAreLoaded}}
+\index{interfacesAreLoaded@{interfacesAreLoaded}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{interfacesAreLoaded()}{interfacesAreLoaded()}}
+{\footnotesize\ttfamily bool Class\+Loader\+::interfaces\+Are\+Loaded (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$}]{node\+Content }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassLoader_a5cebc26d9096d2d5c93887f66cc153ca_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassLoader_a21a3409cee5dd50af757e80b76a4b3f8}\label{classClassLoader_a21a3409cee5dd50af757e80b76a4b3f8}} 
+\index{ClassLoader@{ClassLoader}!parentOf@{parentOf}}
+\index{parentOf@{parentOf}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{parentOf()}{parentOf()}}
+{\footnotesize\ttfamily bool Class\+Loader\+::parent\+Of (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{parent,  }\item[{uint32\+\_\+t}]{child }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classClassLoader_a33f3ccf64645de7255d065ccaf7b01a8}\label{classClassLoader_a33f3ccf64645de7255d065ccaf7b01a8}} 
+\index{ClassLoader@{ClassLoader}!prepare@{prepare}}
+\index{prepare@{prepare}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{prepare()}{prepare()}}
+{\footnotesize\ttfamily void Class\+Loader\+::prepare (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$}]{node\+Content }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassLoader_a33f3ccf64645de7255d065ccaf7b01a8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassLoader_a1c3946493085036732eee45ce6d34b78}\label{classClassLoader_a1c3946493085036732eee45ce6d34b78}} 
+\index{ClassLoader@{ClassLoader}!readClass@{readClass}}
+\index{readClass@{readClass}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{readClass()}{readClass()}}
+{\footnotesize\ttfamily void Class\+Loader\+::read\+Class (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassLoader_a1c3946493085036732eee45ce6d34b78_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassLoader_a479243c8856801e1ccfd8097ff393dbe}\label{classClassLoader_a479243c8856801e1ccfd8097ff393dbe}} 
+\index{ClassLoader@{ClassLoader}!readClass2@{readClass2}}
+\index{readClass2@{readClass2}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{readClass2()}{readClass2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structClassFile}{Class\+File}} $\ast$ Class\+Loader\+::read\+Class2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFileSystem}{File\+System}} \&}]{fs,  }\item[{std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassLoader_a479243c8856801e1ccfd8097ff393dbe_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassLoader_a65f077ff2065e040c0017c5934ce837c}\label{classClassLoader_a65f077ff2065e040c0017c5934ce837c}} 
+\index{ClassLoader@{ClassLoader}!resolve@{resolve}}
+\index{resolve@{resolve}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{resolve()}{resolve()}}
+{\footnotesize\ttfamily void Class\+Loader\+::resolve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$}]{node\+Content,  }\item[{std\+::queue$<$ \mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}} $\ast$ $>$ \&}]{class\+Initialize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassLoader_a65f077ff2065e040c0017c5934ce837c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassLoader_ad0b5c4fff295d13b587481c6ade4cf7e}\label{classClassLoader_ad0b5c4fff295d13b587481c6ade4cf7e}} 
+\index{ClassLoader@{ClassLoader}!resolveConstantPoolAt@{resolveConstantPoolAt}}
+\index{resolveConstantPoolAt@{resolveConstantPoolAt}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{resolveConstantPoolAt()}{resolveConstantPoolAt()}}
+{\footnotesize\ttfamily void Class\+Loader\+::resolve\+Constant\+Pool\+At (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classClassLoader_ad0b5c4fff295d13b587481c6ade4cf7e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classClassLoader_a3a6ff437ae838e214a8be17cd413e918}\label{classClassLoader_a3a6ff437ae838e214a8be17cd413e918}} 
+\index{ClassLoader@{ClassLoader}!saveObejectInfo@{saveObejectInfo}}
+\index{saveObejectInfo@{saveObejectInfo}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{saveObejectInfo()}{saveObejectInfo()}}
+{\footnotesize\ttfamily void Class\+Loader\+::save\+Obeject\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classClassLoader_ace3807f8e19eb290cad0c2b472876cfe}\label{classClassLoader_ace3807f8e19eb290cad0c2b472876cfe}} 
+\index{ClassLoader@{ClassLoader}!setExecutionEngine@{setExecutionEngine}}
+\index{setExecutionEngine@{setExecutionEngine}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{setExecutionEngine()}{setExecutionEngine()}}
+{\footnotesize\ttfamily void Class\+Loader\+::set\+Execution\+Engine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classExecutionEngine}{Execution\+Engine}} $\ast$}]{new\+\_\+execution\+Engine }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classClassLoader_a8b16a507b33981b4b55c7bea7a1bf444}\label{classClassLoader_a8b16a507b33981b4b55c7bea7a1bf444}} 
+\index{ClassLoader@{ClassLoader}!setRuntimeDataArea@{setRuntimeDataArea}}
+\index{setRuntimeDataArea@{setRuntimeDataArea}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{setRuntimeDataArea()}{setRuntimeDataArea()}}
+{\footnotesize\ttfamily void Class\+Loader\+::set\+Runtime\+Data\+Area (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}} $\ast$}]{new\+\_\+runtime\+Data\+Area }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classClassLoader_abf2d7bf3404b921962d8b6265fb8ec5d}\label{classClassLoader_abf2d7bf3404b921962d8b6265fb8ec5d}} 
+\index{ClassLoader@{ClassLoader}!classPrepare@{classPrepare}}
+\index{classPrepare@{classPrepare}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{classPrepare}{classPrepare}}
+{\footnotesize\ttfamily std\+::queue$<$\mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}}$\ast$$>$ Class\+Loader\+::class\+Prepare\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classClassLoader_ad87ad392e6c84174cff78a2839796ca9}\label{classClassLoader_ad87ad392e6c84174cff78a2839796ca9}} 
+\index{ClassLoader@{ClassLoader}!classResolve@{classResolve}}
+\index{classResolve@{classResolve}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{classResolve}{classResolve}}
+{\footnotesize\ttfamily std\+::stack$<$\mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}}$\ast$$>$ Class\+Loader\+::class\+Resolve\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classClassLoader_a1dac2bb2fb3f732e489d3ffafdb8624c}\label{classClassLoader_a1dac2bb2fb3f732e489d3ffafdb8624c}} 
+\index{ClassLoader@{ClassLoader}!classToLoad@{classToLoad}}
+\index{classToLoad@{classToLoad}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{classToLoad}{classToLoad}}
+{\footnotesize\ttfamily std\+::queue$<$std\+::string$>$ Class\+Loader\+::class\+To\+Load\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classClassLoader_a1b53955e73cbe06b0df93e8b79d266be}\label{classClassLoader_a1b53955e73cbe06b0df93e8b79d266be}} 
+\index{ClassLoader@{ClassLoader}!executionEngine@{executionEngine}}
+\index{executionEngine@{executionEngine}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{executionEngine}{executionEngine}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classExecutionEngine}{Execution\+Engine}}$\ast$ Class\+Loader\+::execution\+Engine\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classClassLoader_a89998fa47d63831f30e767b24e38c13c}\label{classClassLoader_a89998fa47d63831f30e767b24e38c13c}} 
+\index{ClassLoader@{ClassLoader}!fs@{fs}}
+\index{fs@{fs}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{fs}{fs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFileSystem}{File\+System}} Class\+Loader\+::fs\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classClassLoader_a951961a73274521b0a966ff13a538b5a}\label{classClassLoader_a951961a73274521b0a966ff13a538b5a}} 
+\index{ClassLoader@{ClassLoader}!inheranceGraph@{inheranceGraph}}
+\index{inheranceGraph@{inheranceGraph}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{inheranceGraph}{inheranceGraph}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$uint32\+\_\+t$>$ $>$ Class\+Loader\+::inherance\+Graph\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classClassLoader_a68ab2c4c03b3727b99c1e8ab381c67cf}\label{classClassLoader_a68ab2c4c03b3727b99c1e8ab381c67cf}} 
+\index{ClassLoader@{ClassLoader}!objectNodeContent@{objectNodeContent}}
+\index{objectNodeContent@{objectNodeContent}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{objectNodeContent}{objectNodeContent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}}$\ast$ Class\+Loader\+::object\+Node\+Content\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classClassLoader_af37e8e275b1edab3d87f3de2aeb54400}\label{classClassLoader_af37e8e275b1edab3d87f3de2aeb54400}} 
+\index{ClassLoader@{ClassLoader}!runtimeDataArea@{runtimeDataArea}}
+\index{runtimeDataArea@{runtimeDataArea}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{runtimeDataArea}{runtimeDataArea}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}}$\ast$ Class\+Loader\+::runtime\+Data\+Area\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classClassLoader_a4f49b25f8914954fd3370ce88e3b538a}\label{classClassLoader_a4f49b25f8914954fd3370ce88e3b538a}} 
+\index{ClassLoader@{ClassLoader}!tree@{tree}}
+\index{tree@{tree}!ClassLoader@{ClassLoader}}
+\doxysubsubsection{\texorpdfstring{tree}{tree}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTrie}{Trie}}$<$\mbox{\hyperlink{structClassLoader_1_1NodeContent}{Node\+Content}}$\ast$$>$ Class\+Loader\+::tree\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ClassLoader_8h}{Class\+Loader.\+h}}\item 
+src/\mbox{\hyperlink{ClassLoader_8cpp}{Class\+Loader.\+cpp}}\end{DoxyCompactItemize}

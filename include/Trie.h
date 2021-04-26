@@ -10,17 +10,39 @@
 #include <stack>
 #include <string>
 
-
+/**
+ * @brief Estrutura de dados organizada em uma árvore de prefixos que armazena um valor.
+ * 
+ * @tparam T 
+ */
 template<typename T>
 class Trie{
     private:
+        /**
+         * @brief Árvore de prefixos. 
+         * 
+         */
         std::vector<std::pair<uint32_t, std::map<uint8_t, uint32_t>>> tree;
+        /**
+         * @brief Dados que estão sendo armazenados.
+         * 
+         */
         std::vector<T> data;
-        // uint32_t currSize;
     public:
+        /**
+         * @brief Obtém os dados da Trie
+         * 
+         * @return std::vector<T>& 
+         */
         std::vector<T>& getData(){
             return data;
         }
+        /**
+         * @brief Obtém os dados de um prefixo
+         * 
+         * @param s 
+         * @return T& 
+         */
         T& getValue(std::string &s){
             uint32_t v = 0;
             for(auto p : s){
@@ -37,7 +59,12 @@ class Trie{
             }
             return data[it->second];
         }
-
+        /**
+         * @brief Insere um elemento na Trie
+         * 
+         * @param s 
+         * @param value 
+         */
         void insert(std::string &s, T &value){
             uint32_t v = 0;
             for(auto p : s){
@@ -58,7 +85,12 @@ class Trie{
                 data.push_back(value);
             }
         }
-
+        /**
+         * @brief Insere um elemento na Trie
+         * 
+         * @param s 
+         * @param value 
+         */
         void insert(std::string &s, T &&value){
             uint32_t v = 0;
             for(auto p : s){
@@ -79,7 +111,13 @@ class Trie{
                 data.push_back(value);
             }
         }
-
+        /**
+         * @brief Determina se existe um elemento sobre um prefixo
+         * 
+         * @param s 
+         * @return true 
+         * @return false 
+         */
         bool hasKey(std::string &s){
             uint32_t v = 0;
             for(auto p : s){
@@ -92,7 +130,11 @@ class Trie{
             }
             return tree[v].second.find(0) != tree[v].second.end();
         }
-
+        /**
+         * @brief Cópia os dados de uma outra Trie. 
+         * 
+         * @param other 
+         */
         void copyFrom(Trie<T> &other){
             std::queue<std::pair<uint32_t, uint32_t>> myQueue;
             myQueue.emplace(0, 0); // first this, second other
@@ -118,18 +160,22 @@ class Trie{
                 }
             }
         }
-
+        /**
+         * @brief Retorna o número de dados armazenados na Trie
+         * 
+         * @return uint32_t 
+         */
         uint32_t size(){
             return data.size();
         }
+        /**
+         * @brief Construct da Trie
+         * 
+         */
         Trie() : tree(), data(){
             tree.push_back({});
             // currSize = 0;
         }
-
-        // ~Trie(){
-
-        // }
 };
 
 #endif

@@ -1,0 +1,13 @@
+<map id="RuntimeDataArea" name="RuntimeDataArea">
+<area shape="rect" id="node1" title="Class que representa o RuntimeDataArea." alt="" coords="223,940,381,1076"/>
+<area shape="rect" id="node2" href="$classHeap.html" title="Representação de uma heap." alt="" coords="87,741,179,877"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,557,217,635"/>
+<area shape="rect" id="node4" href="$classThread.html" title="Descreve um thread." alt="" coords="225,741,379,877"/>
+<area shape="rect" id="node5" href="$classDynamicStack.html" title=" " alt="" coords="291,513,489,679"/>
+<area shape="rect" id="node6" href="$structDynamicStack_1_1Node.html" title=" " alt="" coords="459,145,655,223"/>
+<area shape="rect" id="node9" href="$classDynamicStack.html" title=" " alt="" coords="397,285,551,451"/>
+<area shape="rect" id="node7" title=" " alt="" coords="537,5,576,83"/>
+<area shape="rect" id="node8" title=" " alt="" coords="278,145,353,223"/>
+<area shape="rect" id="node10" href="$classMethodArea.html" title="Representação da MethodArea." alt="" coords="483,756,620,863"/>
+<area shape="rect" id="node11" title=" " alt="" coords="513,557,704,635"/>
+</map>

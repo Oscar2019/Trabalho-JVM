@@ -1,0 +1,186 @@
+\hypertarget{structObjectReference}{}\doxysection{Object\+Reference Struct Reference}
+\label{structObjectReference}\index{ObjectReference@{ObjectReference}}
+
+
+representação de um Java objeto .  
+
+
+
+
+{\ttfamily \#include $<$Pointer.\+h$>$}
+
+
+
+Collaboration diagram for Object\+Reference\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structObjectReference__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structObjectReference_a74663db4bd791e157b7cd769a1302e40}{Object\+Reference}} ()
+\begin{DoxyCompactList}\small\item\em Construtor de um objeto \mbox{\hyperlink{structArrayType}{Array\+Type}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structObjectReference_ad27b96d0498507006f84a328c28836d1}{create\+Data}} (uint32\+\_\+t new\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Create p campo do fields do usuário. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structObjectReference_aae091756c306c6992884519004c7cc7d}{create\+Array\+Reference}} (uint8\+\_\+t tipo, uint32\+\_\+t dimensions)
+\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{classArray}{Array}} Reference object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structObjectReference_a326ef90e683789efc0b6d20f1d95c29e}{$\sim$\+Object\+Reference}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor de um objeto \mbox{\hyperlink{structObjectReference}{Object\+Reference}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{structObjectReference_a259a3c6895122273f4e7c0b2445e3881}{data}}
+\begin{DoxyCompactList}\small\item\em Dados dos fields do objeto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structClassFile}{Class\+File}} $\ast$ \mbox{\hyperlink{structObjectReference_aab5da1fccbe3a349553b397f9c2fa288}{class\+File}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{structClassFile}{Class\+File}} do objeto. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{structObjectReference_a7b3554084ae94acbda02f5fbea97e7dd}{met\+Size}}
+\item 
+\mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$$\ast$ \mbox{\hyperlink{structObjectReference_a7fb0a20d43e5954336251e9d12329ec8}{methods}}
+\begin{DoxyCompactList}\small\item\em Vector para permitir o acesso rápido dos métodos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structArrayReference}{Array\+Reference}} $\ast$ \mbox{\hyperlink{structObjectReference_ad1801312f7f18f26ab8eac2bb89fa163}{array\+Reference}}
+\begin{DoxyCompactList}\small\item\em Caso seja um vetor, apontará para um. \end{DoxyCompactList}\item 
+std\+::map$<$ uint32\+\_\+t, uint32\+\_\+t $\ast$ $>$ $\ast$ \mbox{\hyperlink{structObjectReference_a648b7111cedbe8b2ccf192b34e7074b9}{iterface\+Method\+Localization}}
+\begin{DoxyCompactList}\small\item\em localizador de methodos na interface \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{structObjectReference_aa1ad795367661dd136bec143e882f5e3}{class\+Num}}
+\begin{DoxyCompactList}\small\item\em npymero da classe \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+representação de um Java objeto . 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structObjectReference_a74663db4bd791e157b7cd769a1302e40}\label{structObjectReference_a74663db4bd791e157b7cd769a1302e40}} 
+\index{ObjectReference@{ObjectReference}!ObjectReference@{ObjectReference}}
+\index{ObjectReference@{ObjectReference}!ObjectReference@{ObjectReference}}
+\doxysubsubsection{\texorpdfstring{ObjectReference()}{ObjectReference()}}
+{\footnotesize\ttfamily Object\+Reference\+::\+Object\+Reference (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor de um objeto \mbox{\hyperlink{structArrayType}{Array\+Type}}. 
+
+\mbox{\Hypertarget{structObjectReference_a326ef90e683789efc0b6d20f1d95c29e}\label{structObjectReference_a326ef90e683789efc0b6d20f1d95c29e}} 
+\index{ObjectReference@{ObjectReference}!````~ObjectReference@{$\sim$ObjectReference}}
+\index{````~ObjectReference@{$\sim$ObjectReference}!ObjectReference@{ObjectReference}}
+\doxysubsubsection{\texorpdfstring{$\sim$ObjectReference()}{~ObjectReference()}}
+{\footnotesize\ttfamily Object\+Reference\+::$\sim$\+Object\+Reference (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destrutor de um objeto \mbox{\hyperlink{structObjectReference}{Object\+Reference}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structObjectReference_aae091756c306c6992884519004c7cc7d}\label{structObjectReference_aae091756c306c6992884519004c7cc7d}} 
+\index{ObjectReference@{ObjectReference}!createArrayReference@{createArrayReference}}
+\index{createArrayReference@{createArrayReference}!ObjectReference@{ObjectReference}}
+\doxysubsubsection{\texorpdfstring{createArrayReference()}{createArrayReference()}}
+{\footnotesize\ttfamily void Object\+Reference\+::create\+Array\+Reference (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{tipo,  }\item[{uint32\+\_\+t}]{dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a \mbox{\hyperlink{classArray}{Array}} Reference object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tipo} & \\
+\hline
+{\em dimensions} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structObjectReference_ad27b96d0498507006f84a328c28836d1}\label{structObjectReference_ad27b96d0498507006f84a328c28836d1}} 
+\index{ObjectReference@{ObjectReference}!createData@{createData}}
+\index{createData@{createData}!ObjectReference@{ObjectReference}}
+\doxysubsubsection{\texorpdfstring{createData()}{createData()}}
+{\footnotesize\ttfamily void Object\+Reference\+::create\+Data (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{new\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create p campo do fields do usuário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+size} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structObjectReference_ad1801312f7f18f26ab8eac2bb89fa163}\label{structObjectReference_ad1801312f7f18f26ab8eac2bb89fa163}} 
+\index{ObjectReference@{ObjectReference}!arrayReference@{arrayReference}}
+\index{arrayReference@{arrayReference}!ObjectReference@{ObjectReference}}
+\doxysubsubsection{\texorpdfstring{arrayReference}{arrayReference}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structArrayReference}{Array\+Reference}}$\ast$ Object\+Reference\+::array\+Reference}
+
+
+
+Caso seja um vetor, apontará para um. 
+
+\mbox{\Hypertarget{structObjectReference_aab5da1fccbe3a349553b397f9c2fa288}\label{structObjectReference_aab5da1fccbe3a349553b397f9c2fa288}} 
+\index{ObjectReference@{ObjectReference}!classFile@{classFile}}
+\index{classFile@{classFile}!ObjectReference@{ObjectReference}}
+\doxysubsubsection{\texorpdfstring{classFile}{classFile}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structClassFile}{Class\+File}}$\ast$ Object\+Reference\+::class\+File}
+
+
+
+\mbox{\hyperlink{structClassFile}{Class\+File}} do objeto. 
+
+\mbox{\Hypertarget{structObjectReference_aa1ad795367661dd136bec143e882f5e3}\label{structObjectReference_aa1ad795367661dd136bec143e882f5e3}} 
+\index{ObjectReference@{ObjectReference}!classNum@{classNum}}
+\index{classNum@{classNum}!ObjectReference@{ObjectReference}}
+\doxysubsubsection{\texorpdfstring{classNum}{classNum}}
+{\footnotesize\ttfamily uint32\+\_\+t Object\+Reference\+::class\+Num}
+
+
+
+npymero da classe 
+
+\mbox{\Hypertarget{structObjectReference_a259a3c6895122273f4e7c0b2445e3881}\label{structObjectReference_a259a3c6895122273f4e7c0b2445e3881}} 
+\index{ObjectReference@{ObjectReference}!data@{data}}
+\index{data@{data}!ObjectReference@{ObjectReference}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ Object\+Reference\+::data}
+
+
+
+Dados dos fields do objeto. 
+
+\mbox{\Hypertarget{structObjectReference_a648b7111cedbe8b2ccf192b34e7074b9}\label{structObjectReference_a648b7111cedbe8b2ccf192b34e7074b9}} 
+\index{ObjectReference@{ObjectReference}!iterfaceMethodLocalization@{iterfaceMethodLocalization}}
+\index{iterfaceMethodLocalization@{iterfaceMethodLocalization}!ObjectReference@{ObjectReference}}
+\doxysubsubsection{\texorpdfstring{iterfaceMethodLocalization}{iterfaceMethodLocalization}}
+{\footnotesize\ttfamily std\+::map$<$uint32\+\_\+t, uint32\+\_\+t$\ast$$>$$\ast$ Object\+Reference\+::iterface\+Method\+Localization}
+
+
+
+localizador de methodos na interface 
+
+\mbox{\Hypertarget{structObjectReference_a7fb0a20d43e5954336251e9d12329ec8}\label{structObjectReference_a7fb0a20d43e5954336251e9d12329ec8}} 
+\index{ObjectReference@{ObjectReference}!methods@{methods}}
+\index{methods@{methods}!ObjectReference@{ObjectReference}}
+\doxysubsubsection{\texorpdfstring{methods}{methods}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMethodInfo}{Method\+Info}}$\ast$$\ast$ Object\+Reference\+::methods}
+
+
+
+Vector para permitir o acesso rápido dos métodos. 
+
+\mbox{\Hypertarget{structObjectReference_a7b3554084ae94acbda02f5fbea97e7dd}\label{structObjectReference_a7b3554084ae94acbda02f5fbea97e7dd}} 
+\index{ObjectReference@{ObjectReference}!metSize@{metSize}}
+\index{metSize@{metSize}!ObjectReference@{ObjectReference}}
+\doxysubsubsection{\texorpdfstring{metSize}{metSize}}
+{\footnotesize\ttfamily uint32\+\_\+t Object\+Reference\+::met\+Size}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Pointer_8h}{Pointer.\+h}}\end{DoxyCompactItemize}

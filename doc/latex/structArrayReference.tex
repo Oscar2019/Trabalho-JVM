@@ -1,0 +1,151 @@
+\hypertarget{structArrayReference}{}\doxysection{Array\+Reference Struct Reference}
+\label{structArrayReference}\index{ArrayReference@{ArrayReference}}
+
+
+Reprasentação de um Java array.  
+
+
+
+
+{\ttfamily \#include $<$Pointer.\+h$>$}
+
+
+
+Inheritance diagram for Array\+Reference\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{structArrayReference__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Array\+Reference\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{structArrayReference__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structArrayReference_a81b2199741b06e056f5c443944745933}{Array\+Reference}} (uint8\+\_\+t new\+\_\+tipo, uint8\+\_\+t new\+\_\+dimensions)
+\begin{DoxyCompactList}\small\item\em Construtor de um objeto \mbox{\hyperlink{structArrayReference}{Array\+Reference}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{structArrayReference_a826f3e4ada0866cf9681a2fb98900d85}{create\+Data}} (uint32\+\_\+t \mbox{\hyperlink{structArrayReference_af0ecbe1233b43d395c4453f998934527}{size}})=0
+\begin{DoxyCompactList}\small\item\em Create um vetor de dados. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{structArrayReference_a2794da0ece9120a923a6ac30f599dbf6}{$\sim$\+Array\+Reference}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor de um objeto \mbox{\hyperlink{structArrayReference}{Array\+Reference}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structArrayReference_af0ecbe1233b43d395c4453f998934527}{size}}
+\begin{DoxyCompactList}\small\item\em Número de elementos máximos em um Java array. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{structArrayReference_a92ddd28ac69c733ab68a513194b8b551}{dimensions}}
+\begin{DoxyCompactList}\small\item\em Número de dimensões de um Java array. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{structArrayReference_a8e702387cf00bb3701a032eb970b3b26}{tipo}}
+\begin{DoxyCompactList}\small\item\em Tipo básico do Java array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reprasentação de um Java array. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structArrayReference_a81b2199741b06e056f5c443944745933}\label{structArrayReference_a81b2199741b06e056f5c443944745933}} 
+\index{ArrayReference@{ArrayReference}!ArrayReference@{ArrayReference}}
+\index{ArrayReference@{ArrayReference}!ArrayReference@{ArrayReference}}
+\doxysubsubsection{\texorpdfstring{ArrayReference()}{ArrayReference()}}
+{\footnotesize\ttfamily Array\+Reference\+::\+Array\+Reference (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{new\+\_\+tipo,  }\item[{uint8\+\_\+t}]{new\+\_\+dimensions }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor de um objeto \mbox{\hyperlink{structArrayReference}{Array\+Reference}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+tipo} & \\
+\hline
+{\em new\+\_\+dimensions} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structArrayReference_a2794da0ece9120a923a6ac30f599dbf6}\label{structArrayReference_a2794da0ece9120a923a6ac30f599dbf6}} 
+\index{ArrayReference@{ArrayReference}!````~ArrayReference@{$\sim$ArrayReference}}
+\index{````~ArrayReference@{$\sim$ArrayReference}!ArrayReference@{ArrayReference}}
+\doxysubsubsection{\texorpdfstring{$\sim$ArrayReference()}{~ArrayReference()}}
+{\footnotesize\ttfamily virtual Array\+Reference\+::$\sim$\+Array\+Reference (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destrutor de um objeto \mbox{\hyperlink{structArrayReference}{Array\+Reference}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+tipo} & \\
+\hline
+{\em new\+\_\+dimensions} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structArrayReference_a826f3e4ada0866cf9681a2fb98900d85}\label{structArrayReference_a826f3e4ada0866cf9681a2fb98900d85}} 
+\index{ArrayReference@{ArrayReference}!createData@{createData}}
+\index{createData@{createData}!ArrayReference@{ArrayReference}}
+\doxysubsubsection{\texorpdfstring{createData()}{createData()}}
+{\footnotesize\ttfamily virtual void Array\+Reference\+::create\+Data (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Create um vetor de dados. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{structArrayType_a22d4674c85c99a4a092596589e499892}{Array\+Type$<$ T $>$}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structArrayReference_a92ddd28ac69c733ab68a513194b8b551}\label{structArrayReference_a92ddd28ac69c733ab68a513194b8b551}} 
+\index{ArrayReference@{ArrayReference}!dimensions@{dimensions}}
+\index{dimensions@{dimensions}!ArrayReference@{ArrayReference}}
+\doxysubsubsection{\texorpdfstring{dimensions}{dimensions}}
+{\footnotesize\ttfamily uint32\+\_\+t Array\+Reference\+::dimensions}
+
+
+
+Número de dimensões de um Java array. 
+
+\mbox{\Hypertarget{structArrayReference_af0ecbe1233b43d395c4453f998934527}\label{structArrayReference_af0ecbe1233b43d395c4453f998934527}} 
+\index{ArrayReference@{ArrayReference}!size@{size}}
+\index{size@{size}!ArrayReference@{ArrayReference}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily uint32\+\_\+t Array\+Reference\+::size}
+
+
+
+Número de elementos máximos em um Java array. 
+
+\mbox{\Hypertarget{structArrayReference_a8e702387cf00bb3701a032eb970b3b26}\label{structArrayReference_a8e702387cf00bb3701a032eb970b3b26}} 
+\index{ArrayReference@{ArrayReference}!tipo@{tipo}}
+\index{tipo@{tipo}!ArrayReference@{ArrayReference}}
+\doxysubsubsection{\texorpdfstring{tipo}{tipo}}
+{\footnotesize\ttfamily uint8\+\_\+t Array\+Reference\+::tipo}
+
+
+
+Tipo básico do Java array. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Pointer_8h}{Pointer.\+h}}\end{DoxyCompactItemize}

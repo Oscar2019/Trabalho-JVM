@@ -1,0 +1,323 @@
+\hypertarget{ConstantPoolInfo_8cpp}{}\doxysection{src/\+Constant\+Pool\+Info.cpp File Reference}
+\label{ConstantPoolInfo_8cpp}\index{src/ConstantPoolInfo.cpp@{src/ConstantPoolInfo.cpp}}
+{\ttfamily \#include \char`\"{}../include/\+Constant\+Pool\+Info.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{ConstantPoolInfo_8cpp_abf3ac3c335453aeeaef5215f929ca198}{get\+Class}} (\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera a string que é apontada pelo name\+Index. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{ConstantPoolInfo_8cpp_aa11fd5cae250b13659b5bc7896666470}{get\+Fieldref}} (\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera a string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{ConstantPoolInfo_8cpp_ab1000528a22b627ac08ba4f02a28307a}{get\+Methodref}} (\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera a string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{ConstantPoolInfo_8cpp_ac1af9208eec2a80387bfc0df984658c4}{get\+Interface\+Methodref}} (\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera a string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{ConstantPoolInfo_8cpp_a225c1b5cec4bb5cf3f07f9864b9d0431}{get\+String}} (\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera a string. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{ConstantPoolInfo_8cpp_ad170cd1f7d25904c16944ac727b0a3df}{get\+Integer}} (\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera um inteiro que está sendo armazenado no \mbox{\hyperlink{structCPInteger}{C\+P\+Integer}}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{ConstantPoolInfo_8cpp_a4c191de500bacf8bcbf78fecaaff5c9c}{get\+Float}} (\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera um float que está sendo armazenado no \mbox{\hyperlink{structCPFloat}{C\+P\+Float}}. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{ConstantPoolInfo_8cpp_ae9e5dbc5679d30d4ed4627e5f97f5580}{get\+Long}} (\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera um long que está sendo armazenado no \mbox{\hyperlink{structCPLong}{C\+P\+Long}}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{ConstantPoolInfo_8cpp_a7c2c013a83861a4863262f5662805cde}{get\+Double}} (\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera um double que está sendo armazenado no \mbox{\hyperlink{structCPDouble}{C\+P\+Double}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{ConstantPoolInfo_8cpp_a17eba7eed349812217e563f49ea1ce31}{get\+Name\+And\+Type}} (\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera a string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{ConstantPoolInfo_8cpp_a5e9d056ada05e799dca7e544a7878f94}{get\+C\+P\+Utf8}} (\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera uma string que está sendo armazenada por \mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{ConstantPoolInfo_8cpp_afe1697068c0f2f8b2c45ae37899e874c}{get\+String\+From\+C\+P\+Info}} (\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera uma string do \mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} no índice ind. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ConstantPoolInfo_8cpp_abf3ac3c335453aeeaef5215f929ca198}\label{ConstantPoolInfo_8cpp_abf3ac3c335453aeeaef5215f929ca198}} 
+\index{ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}!getClass@{getClass}}
+\index{getClass@{getClass}!ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}}
+\doxysubsubsection{\texorpdfstring{getClass()}{getClass()}}
+{\footnotesize\ttfamily std\+::string get\+Class (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera a string que é apontada pelo name\+Index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{ConstantPoolInfo_8cpp_abf3ac3c335453aeeaef5215f929ca198_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ConstantPoolInfo_8cpp_a5e9d056ada05e799dca7e544a7878f94}\label{ConstantPoolInfo_8cpp_a5e9d056ada05e799dca7e544a7878f94}} 
+\index{ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}!getCPUtf8@{getCPUtf8}}
+\index{getCPUtf8@{getCPUtf8}!ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}}
+\doxysubsubsection{\texorpdfstring{getCPUtf8()}{getCPUtf8()}}
+{\footnotesize\ttfamily std\+::string get\+C\+P\+Utf8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera uma string que está sendo armazenada por \mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ConstantPoolInfo_8cpp_a7c2c013a83861a4863262f5662805cde}\label{ConstantPoolInfo_8cpp_a7c2c013a83861a4863262f5662805cde}} 
+\index{ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}!getDouble@{getDouble}}
+\index{getDouble@{getDouble}!ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}}
+\doxysubsubsection{\texorpdfstring{getDouble()}{getDouble()}}
+{\footnotesize\ttfamily double get\+Double (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera um double que está sendo armazenado no \mbox{\hyperlink{structCPDouble}{C\+P\+Double}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ConstantPoolInfo_8cpp_aa11fd5cae250b13659b5bc7896666470}\label{ConstantPoolInfo_8cpp_aa11fd5cae250b13659b5bc7896666470}} 
+\index{ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}!getFieldref@{getFieldref}}
+\index{getFieldref@{getFieldref}!ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}}
+\doxysubsubsection{\texorpdfstring{getFieldref()}{getFieldref()}}
+{\footnotesize\ttfamily std\+::string get\+Fieldref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ConstantPoolInfo_8cpp_aa11fd5cae250b13659b5bc7896666470_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ConstantPoolInfo_8cpp_a4c191de500bacf8bcbf78fecaaff5c9c}\label{ConstantPoolInfo_8cpp_a4c191de500bacf8bcbf78fecaaff5c9c}} 
+\index{ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}!getFloat@{getFloat}}
+\index{getFloat@{getFloat}!ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}}
+\doxysubsubsection{\texorpdfstring{getFloat()}{getFloat()}}
+{\footnotesize\ttfamily float get\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera um float que está sendo armazenado no \mbox{\hyperlink{structCPFloat}{C\+P\+Float}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ConstantPoolInfo_8cpp_ad170cd1f7d25904c16944ac727b0a3df}\label{ConstantPoolInfo_8cpp_ad170cd1f7d25904c16944ac727b0a3df}} 
+\index{ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}!getInteger@{getInteger}}
+\index{getInteger@{getInteger}!ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}}
+\doxysubsubsection{\texorpdfstring{getInteger()}{getInteger()}}
+{\footnotesize\ttfamily int32\+\_\+t get\+Integer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera um inteiro que está sendo armazenado no \mbox{\hyperlink{structCPInteger}{C\+P\+Integer}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int32\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ConstantPoolInfo_8cpp_ac1af9208eec2a80387bfc0df984658c4}\label{ConstantPoolInfo_8cpp_ac1af9208eec2a80387bfc0df984658c4}} 
+\index{ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}!getInterfaceMethodref@{getInterfaceMethodref}}
+\index{getInterfaceMethodref@{getInterfaceMethodref}!ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}}
+\doxysubsubsection{\texorpdfstring{getInterfaceMethodref()}{getInterfaceMethodref()}}
+{\footnotesize\ttfamily std\+::string get\+Interface\+Methodref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ConstantPoolInfo_8cpp_ac1af9208eec2a80387bfc0df984658c4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ConstantPoolInfo_8cpp_ae9e5dbc5679d30d4ed4627e5f97f5580}\label{ConstantPoolInfo_8cpp_ae9e5dbc5679d30d4ed4627e5f97f5580}} 
+\index{ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}!getLong@{getLong}}
+\index{getLong@{getLong}!ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}}
+\doxysubsubsection{\texorpdfstring{getLong()}{getLong()}}
+{\footnotesize\ttfamily int64\+\_\+t get\+Long (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera um long que está sendo armazenado no \mbox{\hyperlink{structCPLong}{C\+P\+Long}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int64\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ConstantPoolInfo_8cpp_ab1000528a22b627ac08ba4f02a28307a}\label{ConstantPoolInfo_8cpp_ab1000528a22b627ac08ba4f02a28307a}} 
+\index{ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}!getMethodref@{getMethodref}}
+\index{getMethodref@{getMethodref}!ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}}
+\doxysubsubsection{\texorpdfstring{getMethodref()}{getMethodref()}}
+{\footnotesize\ttfamily std\+::string get\+Methodref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ConstantPoolInfo_8cpp_ab1000528a22b627ac08ba4f02a28307a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ConstantPoolInfo_8cpp_a17eba7eed349812217e563f49ea1ce31}\label{ConstantPoolInfo_8cpp_a17eba7eed349812217e563f49ea1ce31}} 
+\index{ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}!getNameAndType@{getNameAndType}}
+\index{getNameAndType@{getNameAndType}!ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}}
+\doxysubsubsection{\texorpdfstring{getNameAndType()}{getNameAndType()}}
+{\footnotesize\ttfamily std\+::string get\+Name\+And\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{ConstantPoolInfo_8cpp_a17eba7eed349812217e563f49ea1ce31_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ConstantPoolInfo_8cpp_a225c1b5cec4bb5cf3f07f9864b9d0431}\label{ConstantPoolInfo_8cpp_a225c1b5cec4bb5cf3f07f9864b9d0431}} 
+\index{ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}!getString@{getString}}
+\index{getString@{getString}!ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}}
+\doxysubsubsection{\texorpdfstring{getString()}{getString()}}
+{\footnotesize\ttfamily std\+::string get\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{ConstantPoolInfo_8cpp_a225c1b5cec4bb5cf3f07f9864b9d0431_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{ConstantPoolInfo_8cpp_afe1697068c0f2f8b2c45ae37899e874c}\label{ConstantPoolInfo_8cpp_afe1697068c0f2f8b2c45ae37899e874c}} 
+\index{ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}!getStringFromCPInfo@{getStringFromCPInfo}}
+\index{getStringFromCPInfo@{getStringFromCPInfo}!ConstantPoolInfo.cpp@{ConstantPoolInfo.cpp}}
+\doxysubsubsection{\texorpdfstring{getStringFromCPInfo()}{getStringFromCPInfo()}}
+{\footnotesize\ttfamily std\+::string get\+String\+From\+C\+P\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera uma string do \mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} no índice ind. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ConstantPoolInfo_8cpp_afe1697068c0f2f8b2c45ae37899e874c_cgraph}
+\end{center}
+\end{figure}

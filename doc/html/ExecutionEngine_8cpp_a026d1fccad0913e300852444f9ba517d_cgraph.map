@@ -1,0 +1,8 @@
+<map id="execOp_freturn" name="execOp_freturn">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,127,83"/>
+<area shape="rect" id="node2" href="$classFrame.html#aa6cd62c1dfe95de30f86fbfa444171d7" title="Remove o elemento que está no topo da pilha." alt="" coords="175,5,361,32"/>
+<area shape="rect" id="node4" href="$classLinearStack.html#a21f220f3c54293f3cc931781b0511c95" title="Insre um novo elemento para a pilha." alt="" coords="199,56,337,83"/>
+<area shape="rect" id="node5" href="$classFrame.html#a1d3b7f2931d969346e01987ec72f2a8a" title="Obtém o elemento que está no topo da pilha." alt="" coords="177,107,359,133"/>
+<area shape="rect" id="node3" href="$classLinearStack.html#aa18d8e72f505a2de25318f3c3ee4a870" title="Remove o elemento que está no topo da pilha." alt="" coords="409,5,540,32"/>
+<area shape="rect" id="node6" href="$classLinearStack.html#ad68476dbea1871261e4f4e678d72550e" title="Retorna uma referencia para o elemento que está no topo da pilha." alt="" coords="411,107,538,133"/>
+</map>

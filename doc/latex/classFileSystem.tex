@@ -1,0 +1,211 @@
+\hypertarget{classFileSystem}{}\doxysection{File\+System Class Reference}
+\label{classFileSystem}\index{FileSystem@{FileSystem}}
+
+
+Classe dedicada para o sistemas de arquivo do SO.  
+
+
+
+
+{\ttfamily \#include $<$File\+System.\+h$>$}
+
+
+
+Collaboration diagram for File\+System\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{classFileSystem__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFileSystem_a94c02861afb3d373dceee9763f45d47c}{File\+System}} (std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em Construct a new File System object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFileSystem_a6888979b41a60eb97ed1b0d5d8558c21}{File\+System}} (std\+::string \&\&s)
+\begin{DoxyCompactList}\small\item\em Construct a new File System object. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classFileSystem_ad1b3df38069a4b709e5b86c8b5d299b6}{get\+Java\+Class\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Get the Java Class Path object. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classFileSystem_a97e0e4f182f7daee2d2e5e6d5efc7cc9}{get\+User\+Class\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Get the User Class Path object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFileSystem_a7ba3685fb008878012f54741f7ffcdf1}{set\+User\+Class\+Path}} (std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em Set the User Class Path object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classFileSystem_a7e78eaad15da3dcbc4b3e4566f8b6a8e}{java\+To\+Environment\+Path\+Notation}} (std\+::string s)
+\begin{DoxyCompactList}\small\item\em converte o padrão de barra para a notaçãço da máquina. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classFileSystem_aa5a2f15dd1c6a59cf0df9d383bc675a7}{environment\+To\+Java\+Path\+Notation}} (std\+::string s)
+\begin{DoxyCompactList}\small\item\em converte o padrão de barra para a notaçãço do Java. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{classFileSystem_a7056843a9d7593c6346c3b1525e2b5cd}{bar}}
+\begin{DoxyCompactList}\small\item\em Induca se é uma parra ou uma contrabarra. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classFileSystem_ac969ceedb198af58cbe4ec48362e9105}{java\+Class\+Path}}
+\begin{DoxyCompactList}\small\item\em Path para a biblioteca padrão do java. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classFileSystem_ac87e4ad57ee149932e344a861babaadc}{user\+Class\+Path}}
+\begin{DoxyCompactList}\small\item\em Path para o usuário java. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classFileSystem_a4902d0f17f31520e5303510dd3f3bb68}{count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe dedicada para o sistemas de arquivo do SO. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFileSystem_a94c02861afb3d373dceee9763f45d47c}\label{classFileSystem_a94c02861afb3d373dceee9763f45d47c}} 
+\index{FileSystem@{FileSystem}!FileSystem@{FileSystem}}
+\index{FileSystem@{FileSystem}!FileSystem@{FileSystem}}
+\doxysubsubsection{\texorpdfstring{FileSystem()}{FileSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily File\+System\+::\+File\+System (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Construct a new File System object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFileSystem_a6888979b41a60eb97ed1b0d5d8558c21}\label{classFileSystem_a6888979b41a60eb97ed1b0d5d8558c21}} 
+\index{FileSystem@{FileSystem}!FileSystem@{FileSystem}}
+\index{FileSystem@{FileSystem}!FileSystem@{FileSystem}}
+\doxysubsubsection{\texorpdfstring{FileSystem()}{FileSystem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily File\+System\+::\+File\+System (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{s }\end{DoxyParamCaption})}
+
+
+
+Construct a new File System object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFileSystem_aa5a2f15dd1c6a59cf0df9d383bc675a7}\label{classFileSystem_aa5a2f15dd1c6a59cf0df9d383bc675a7}} 
+\index{FileSystem@{FileSystem}!environmentToJavaPathNotation@{environmentToJavaPathNotation}}
+\index{environmentToJavaPathNotation@{environmentToJavaPathNotation}!FileSystem@{FileSystem}}
+\doxysubsubsection{\texorpdfstring{environmentToJavaPathNotation()}{environmentToJavaPathNotation()}}
+{\footnotesize\ttfamily std\+::string File\+System\+::environment\+To\+Java\+Path\+Notation (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+
+
+converte o padrão de barra para a notaçãço do Java. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileSystem_ad1b3df38069a4b709e5b86c8b5d299b6}\label{classFileSystem_ad1b3df38069a4b709e5b86c8b5d299b6}} 
+\index{FileSystem@{FileSystem}!getJavaClassPath@{getJavaClassPath}}
+\index{getJavaClassPath@{getJavaClassPath}!FileSystem@{FileSystem}}
+\doxysubsubsection{\texorpdfstring{getJavaClassPath()}{getJavaClassPath()}}
+{\footnotesize\ttfamily const std\+::string\& File\+System\+::get\+Java\+Class\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the Java Class Path object. 
+
+\begin{DoxyReturn}{Returns}
+const std\+::string\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileSystem_a97e0e4f182f7daee2d2e5e6d5efc7cc9}\label{classFileSystem_a97e0e4f182f7daee2d2e5e6d5efc7cc9}} 
+\index{FileSystem@{FileSystem}!getUserClassPath@{getUserClassPath}}
+\index{getUserClassPath@{getUserClassPath}!FileSystem@{FileSystem}}
+\doxysubsubsection{\texorpdfstring{getUserClassPath()}{getUserClassPath()}}
+{\footnotesize\ttfamily const std\+::string\& File\+System\+::get\+User\+Class\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the User Class Path object. 
+
+\begin{DoxyReturn}{Returns}
+const std\+::string\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileSystem_a7e78eaad15da3dcbc4b3e4566f8b6a8e}\label{classFileSystem_a7e78eaad15da3dcbc4b3e4566f8b6a8e}} 
+\index{FileSystem@{FileSystem}!javaToEnvironmentPathNotation@{javaToEnvironmentPathNotation}}
+\index{javaToEnvironmentPathNotation@{javaToEnvironmentPathNotation}!FileSystem@{FileSystem}}
+\doxysubsubsection{\texorpdfstring{javaToEnvironmentPathNotation()}{javaToEnvironmentPathNotation()}}
+{\footnotesize\ttfamily std\+::string File\+System\+::java\+To\+Environment\+Path\+Notation (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+
+
+converte o padrão de barra para a notaçãço da máquina. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFileSystem_a7ba3685fb008878012f54741f7ffcdf1}\label{classFileSystem_a7ba3685fb008878012f54741f7ffcdf1}} 
+\index{FileSystem@{FileSystem}!setUserClassPath@{setUserClassPath}}
+\index{setUserClassPath@{setUserClassPath}!FileSystem@{FileSystem}}
+\doxysubsubsection{\texorpdfstring{setUserClassPath()}{setUserClassPath()}}
+{\footnotesize\ttfamily void File\+System\+::set\+User\+Class\+Path (\begin{DoxyParamCaption}\item[{std\+::string \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Set the User Class Path object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classFileSystem_a7056843a9d7593c6346c3b1525e2b5cd}\label{classFileSystem_a7056843a9d7593c6346c3b1525e2b5cd}} 
+\index{FileSystem@{FileSystem}!bar@{bar}}
+\index{bar@{bar}!FileSystem@{FileSystem}}
+\doxysubsubsection{\texorpdfstring{bar}{bar}}
+{\footnotesize\ttfamily char File\+System\+::bar\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Induca se é uma parra ou uma contrabarra. 
+
+\mbox{\Hypertarget{classFileSystem_a4902d0f17f31520e5303510dd3f3bb68}\label{classFileSystem_a4902d0f17f31520e5303510dd3f3bb68}} 
+\index{FileSystem@{FileSystem}!count@{count}}
+\index{count@{count}!FileSystem@{FileSystem}}
+\doxysubsubsection{\texorpdfstring{count}{count}}
+{\footnotesize\ttfamily uint32\+\_\+t File\+System\+::count\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classFileSystem_ac969ceedb198af58cbe4ec48362e9105}\label{classFileSystem_ac969ceedb198af58cbe4ec48362e9105}} 
+\index{FileSystem@{FileSystem}!javaClassPath@{javaClassPath}}
+\index{javaClassPath@{javaClassPath}!FileSystem@{FileSystem}}
+\doxysubsubsection{\texorpdfstring{javaClassPath}{javaClassPath}}
+{\footnotesize\ttfamily std\+::string File\+System\+::java\+Class\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Path para a biblioteca padrão do java. 
+
+\mbox{\Hypertarget{classFileSystem_ac87e4ad57ee149932e344a861babaadc}\label{classFileSystem_ac87e4ad57ee149932e344a861babaadc}} 
+\index{FileSystem@{FileSystem}!userClassPath@{userClassPath}}
+\index{userClassPath@{userClassPath}!FileSystem@{FileSystem}}
+\doxysubsubsection{\texorpdfstring{userClassPath}{userClassPath}}
+{\footnotesize\ttfamily std\+::string File\+System\+::user\+Class\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Path para o usuário java. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{FileSystem_8h}{File\+System.\+h}}\end{DoxyCompactItemize}

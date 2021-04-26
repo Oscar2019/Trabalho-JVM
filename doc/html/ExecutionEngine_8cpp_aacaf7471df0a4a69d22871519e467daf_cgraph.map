@@ -1,0 +1,8 @@
+<map id="execOp_istore_1" name="execOp_istore_1">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,135,83"/>
+<area shape="rect" id="node2" href="$classFrame.html#aa6cd62c1dfe95de30f86fbfa444171d7" title="Remove o elemento que está no topo da pilha." alt="" coords="183,5,369,32"/>
+<area shape="rect" id="node4" href="$classFrame.html#a1d3b7f2931d969346e01987ec72f2a8a" title="Obtém o elemento que está no topo da pilha." alt="" coords="185,56,367,83"/>
+<area shape="rect" id="node6" href="$classFrame.html#aa23c1c8673ca67cf67ad3a647f9f1b56" title="Obtém uma referência para um elemnto da varLocalTable." alt="" coords="223,107,329,133"/>
+<area shape="rect" id="node3" href="$classLinearStack.html#aa18d8e72f505a2de25318f3c3ee4a870" title="Remove o elemento que está no topo da pilha." alt="" coords="417,5,548,32"/>
+<area shape="rect" id="node5" href="$classLinearStack.html#ad68476dbea1871261e4f4e678d72550e" title="Retorna uma referencia para o elemento que está no topo da pilha." alt="" coords="419,56,546,83"/>
+</map>

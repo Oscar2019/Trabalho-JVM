@@ -1,0 +1,321 @@
+\hypertarget{PrintMenu_8cpp}{}\doxysection{src/\+Print\+Menu.cpp File Reference}
+\label{PrintMenu_8cpp}\index{src/PrintMenu.cpp@{src/PrintMenu.cpp}}
+{\ttfamily \#include \char`\"{}../include/\+Print\+Menu.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../include/\+Print\+Tudo.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{PrintMenu_8cpp_aacb71dbc63837c5e60f70180643354b2}{C\+L\+E\+AR}}()~system(\char`\"{}clear\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_a4a449ec161fa1015070b7773e8e74142}{print\+General\+Information}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_a0eaa40eedf206281ad44cf7e90df8935}{print\+Constant\+Pool}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_aa7997cd4741c35d27bc4faa77c3685d6}{print\+Interfaces}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_aac2dae3e961030500080e5003236897b}{print\+Fields}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_a0dcf0141e3a4412830dde2a8f9abf837}{print\+Field}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf, \mbox{\hyperlink{structFieldInfo}{Field\+Info}} $\ast$field)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_a248294d9c0a26ee24db5af6a3998ef79}{print\+Methods}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_a4196a88e551ca218a5ce58f7e8463827}{print\+Method}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf, \mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$field)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_ab78e91e3db45547f7aaecafaadd7d341}{print\+Attributes}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_a4e1043ade1570fc3be53e4c4d306ce98}{print\+Attribute}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf, \mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}} $\ast$attribute)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_a2c303e3df50150a2db3d7bbaf4303bdb}{print\+Attribute\+Constant\+Value}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf, \mbox{\hyperlink{structAttributeInfoConstantValue}{Attribute\+Info\+Constant\+Value}} $\ast$attribute)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_aea00814bf40f6faa988136b79baeb076}{print\+Attribute\+Code}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf, \mbox{\hyperlink{structAttributeInfoCode}{Attribute\+Info\+Code}} $\ast$attribute)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_af536315b6b246e82865d002e95c0b619}{print\+Assemply\+Code}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf, uint32\+\_\+t code\+Size, uint8\+\_\+t $\ast$code)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_adfff5444ed831eb425ecd64655dadfc2}{print\+Attribute\+Exceptions}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf, \mbox{\hyperlink{structAttributeInfoExceptions}{Attribute\+Info\+Exceptions}} $\ast$attribute)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_a45bcc6b562ab617af5cc44be75ced0fc}{print\+Attribute\+Inner\+Classes}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf, \mbox{\hyperlink{structAttributeInfoInnerClasses}{Attribute\+Info\+Inner\+Classes}} $\ast$attribute)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_acaa4b6c433637bffc9bb7fdfaf8b5c70}{print\+Attribute\+Synthetic}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf, \mbox{\hyperlink{structAttributeInfoSynthetic}{Attribute\+Info\+Synthetic}} $\ast$attribute)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_aaafa46f1e91a67dc990bd0c063a9c6cd}{print\+Attribute\+Source\+File}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf, \mbox{\hyperlink{structAttributeInfoSourceFile}{Attribute\+Info\+Source\+File}} $\ast$attribute)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_a0eb85519340307d44fff1adf4a165ce1}{print\+Attribute\+Line\+Number\+Table}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf, \mbox{\hyperlink{structAttributeInfoLineNumberTable}{Attribute\+Info\+Line\+Number\+Table}} $\ast$attribute)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_a24a92f7faa503bd9981e17824744f49c}{print\+Attribute\+Local\+Variable\+Table}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf, \mbox{\hyperlink{structAttributeInfoLocalVariableTable}{Attribute\+Info\+Local\+Variable\+Table}} $\ast$attribute)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_ad8deca425250652430f4f56088a1cbfa}{print\+Attribute\+Deprecated}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf, \mbox{\hyperlink{structAttributeInfoDeprecated}{Attribute\+Info\+Deprecated}} $\ast$attribute)
+\item 
+std\+::string \mbox{\hyperlink{PrintMenu_8cpp_a6bbd379e108af5493cac070704d732cc}{translate\+Flag\+Method}} (uint16\+\_\+t flag)
+\item 
+void \mbox{\hyperlink{PrintMenu_8cpp_ac78f7aed8a15dc0da7ed6b4b3cd9b0c7}{print\+Menu}} (\mbox{\hyperlink{structClassFile}{Class\+File}} const \&cf)
+\item 
+std\+::string \mbox{\hyperlink{PrintMenu_8cpp_af019dc445ce639622916594b94271dc7}{convert\+Access\+Flag}} (std\+::string hex)
+\item 
+std\+::string \mbox{\hyperlink{PrintMenu_8cpp_aec5bbd89b1c74c41279a30d0dc1afb5f}{translate\+Flag\+Field}} (std\+::string flag)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{PrintMenu_8cpp_aacb71dbc63837c5e60f70180643354b2}\label{PrintMenu_8cpp_aacb71dbc63837c5e60f70180643354b2}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!CLEAR@{CLEAR}}
+\index{CLEAR@{CLEAR}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{CLEAR}{CLEAR}}
+{\footnotesize\ttfamily \#define C\+L\+E\+AR(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~system(\char`\"{}clear\char`\"{})}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{PrintMenu_8cpp_af019dc445ce639622916594b94271dc7}\label{PrintMenu_8cpp_af019dc445ce639622916594b94271dc7}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!convertAccessFlag@{convertAccessFlag}}
+\index{convertAccessFlag@{convertAccessFlag}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{convertAccessFlag()}{convertAccessFlag()}}
+{\footnotesize\ttfamily std\+::string convert\+Access\+Flag (\begin{DoxyParamCaption}\item[{std\+::string}]{hex }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PrintMenu_8cpp_af536315b6b246e82865d002e95c0b619}\label{PrintMenu_8cpp_af536315b6b246e82865d002e95c0b619}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printAssemplyCode@{printAssemplyCode}}
+\index{printAssemplyCode@{printAssemplyCode}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printAssemplyCode()}{printAssemplyCode()}}
+{\footnotesize\ttfamily void print\+Assemply\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf,  }\item[{uint32\+\_\+t}]{code\+Size,  }\item[{uint8\+\_\+t $\ast$}]{code }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PrintMenu_8cpp_a4e1043ade1570fc3be53e4c4d306ce98}\label{PrintMenu_8cpp_a4e1043ade1570fc3be53e4c4d306ce98}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printAttribute@{printAttribute}}
+\index{printAttribute@{printAttribute}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printAttribute()}{printAttribute()}}
+{\footnotesize\ttfamily void print\+Attribute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf,  }\item[{\mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}} $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PrintMenu_8cpp_a4e1043ade1570fc3be53e4c4d306ce98_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{PrintMenu_8cpp_aea00814bf40f6faa988136b79baeb076}\label{PrintMenu_8cpp_aea00814bf40f6faa988136b79baeb076}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printAttributeCode@{printAttributeCode}}
+\index{printAttributeCode@{printAttributeCode}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printAttributeCode()}{printAttributeCode()}}
+{\footnotesize\ttfamily void print\+Attribute\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf,  }\item[{\mbox{\hyperlink{structAttributeInfoCode}{Attribute\+Info\+Code}} $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PrintMenu_8cpp_aea00814bf40f6faa988136b79baeb076_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{PrintMenu_8cpp_a2c303e3df50150a2db3d7bbaf4303bdb}\label{PrintMenu_8cpp_a2c303e3df50150a2db3d7bbaf4303bdb}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printAttributeConstantValue@{printAttributeConstantValue}}
+\index{printAttributeConstantValue@{printAttributeConstantValue}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printAttributeConstantValue()}{printAttributeConstantValue()}}
+{\footnotesize\ttfamily void print\+Attribute\+Constant\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf,  }\item[{\mbox{\hyperlink{structAttributeInfoConstantValue}{Attribute\+Info\+Constant\+Value}} $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PrintMenu_8cpp_a2c303e3df50150a2db3d7bbaf4303bdb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{PrintMenu_8cpp_ad8deca425250652430f4f56088a1cbfa}\label{PrintMenu_8cpp_ad8deca425250652430f4f56088a1cbfa}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printAttributeDeprecated@{printAttributeDeprecated}}
+\index{printAttributeDeprecated@{printAttributeDeprecated}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printAttributeDeprecated()}{printAttributeDeprecated()}}
+{\footnotesize\ttfamily void print\+Attribute\+Deprecated (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf,  }\item[{\mbox{\hyperlink{structAttributeInfoDeprecated}{Attribute\+Info\+Deprecated}} $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PrintMenu_8cpp_adfff5444ed831eb425ecd64655dadfc2}\label{PrintMenu_8cpp_adfff5444ed831eb425ecd64655dadfc2}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printAttributeExceptions@{printAttributeExceptions}}
+\index{printAttributeExceptions@{printAttributeExceptions}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printAttributeExceptions()}{printAttributeExceptions()}}
+{\footnotesize\ttfamily void print\+Attribute\+Exceptions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf,  }\item[{\mbox{\hyperlink{structAttributeInfoExceptions}{Attribute\+Info\+Exceptions}} $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PrintMenu_8cpp_adfff5444ed831eb425ecd64655dadfc2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{PrintMenu_8cpp_a45bcc6b562ab617af5cc44be75ced0fc}\label{PrintMenu_8cpp_a45bcc6b562ab617af5cc44be75ced0fc}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printAttributeInnerClasses@{printAttributeInnerClasses}}
+\index{printAttributeInnerClasses@{printAttributeInnerClasses}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printAttributeInnerClasses()}{printAttributeInnerClasses()}}
+{\footnotesize\ttfamily void print\+Attribute\+Inner\+Classes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf,  }\item[{\mbox{\hyperlink{structAttributeInfoInnerClasses}{Attribute\+Info\+Inner\+Classes}} $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PrintMenu_8cpp_a45bcc6b562ab617af5cc44be75ced0fc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{PrintMenu_8cpp_a0eb85519340307d44fff1adf4a165ce1}\label{PrintMenu_8cpp_a0eb85519340307d44fff1adf4a165ce1}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printAttributeLineNumberTable@{printAttributeLineNumberTable}}
+\index{printAttributeLineNumberTable@{printAttributeLineNumberTable}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printAttributeLineNumberTable()}{printAttributeLineNumberTable()}}
+{\footnotesize\ttfamily void print\+Attribute\+Line\+Number\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf,  }\item[{\mbox{\hyperlink{structAttributeInfoLineNumberTable}{Attribute\+Info\+Line\+Number\+Table}} $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PrintMenu_8cpp_a24a92f7faa503bd9981e17824744f49c}\label{PrintMenu_8cpp_a24a92f7faa503bd9981e17824744f49c}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printAttributeLocalVariableTable@{printAttributeLocalVariableTable}}
+\index{printAttributeLocalVariableTable@{printAttributeLocalVariableTable}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printAttributeLocalVariableTable()}{printAttributeLocalVariableTable()}}
+{\footnotesize\ttfamily void print\+Attribute\+Local\+Variable\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf,  }\item[{\mbox{\hyperlink{structAttributeInfoLocalVariableTable}{Attribute\+Info\+Local\+Variable\+Table}} $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{PrintMenu_8cpp_a24a92f7faa503bd9981e17824744f49c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{PrintMenu_8cpp_ab78e91e3db45547f7aaecafaadd7d341}\label{PrintMenu_8cpp_ab78e91e3db45547f7aaecafaadd7d341}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printAttributes@{printAttributes}}
+\index{printAttributes@{printAttributes}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printAttributes()}{printAttributes()}}
+{\footnotesize\ttfamily void print\+Attributes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PrintMenu_8cpp_ab78e91e3db45547f7aaecafaadd7d341_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{PrintMenu_8cpp_aaafa46f1e91a67dc990bd0c063a9c6cd}\label{PrintMenu_8cpp_aaafa46f1e91a67dc990bd0c063a9c6cd}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printAttributeSourceFile@{printAttributeSourceFile}}
+\index{printAttributeSourceFile@{printAttributeSourceFile}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printAttributeSourceFile()}{printAttributeSourceFile()}}
+{\footnotesize\ttfamily void print\+Attribute\+Source\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf,  }\item[{\mbox{\hyperlink{structAttributeInfoSourceFile}{Attribute\+Info\+Source\+File}} $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{PrintMenu_8cpp_aaafa46f1e91a67dc990bd0c063a9c6cd_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{PrintMenu_8cpp_acaa4b6c433637bffc9bb7fdfaf8b5c70}\label{PrintMenu_8cpp_acaa4b6c433637bffc9bb7fdfaf8b5c70}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printAttributeSynthetic@{printAttributeSynthetic}}
+\index{printAttributeSynthetic@{printAttributeSynthetic}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printAttributeSynthetic()}{printAttributeSynthetic()}}
+{\footnotesize\ttfamily void print\+Attribute\+Synthetic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf,  }\item[{\mbox{\hyperlink{structAttributeInfoSynthetic}{Attribute\+Info\+Synthetic}} $\ast$}]{attribute }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PrintMenu_8cpp_a0eaa40eedf206281ad44cf7e90df8935}\label{PrintMenu_8cpp_a0eaa40eedf206281ad44cf7e90df8935}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printConstantPool@{printConstantPool}}
+\index{printConstantPool@{printConstantPool}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printConstantPool()}{printConstantPool()}}
+{\footnotesize\ttfamily void print\+Constant\+Pool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PrintMenu_8cpp_a0eaa40eedf206281ad44cf7e90df8935_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{PrintMenu_8cpp_a0dcf0141e3a4412830dde2a8f9abf837}\label{PrintMenu_8cpp_a0dcf0141e3a4412830dde2a8f9abf837}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printField@{printField}}
+\index{printField@{printField}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printField()}{printField()}}
+{\footnotesize\ttfamily void print\+Field (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf,  }\item[{\mbox{\hyperlink{structFieldInfo}{Field\+Info}} $\ast$}]{field }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PrintMenu_8cpp_a0dcf0141e3a4412830dde2a8f9abf837_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{PrintMenu_8cpp_aac2dae3e961030500080e5003236897b}\label{PrintMenu_8cpp_aac2dae3e961030500080e5003236897b}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printFields@{printFields}}
+\index{printFields@{printFields}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printFields()}{printFields()}}
+{\footnotesize\ttfamily void print\+Fields (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PrintMenu_8cpp_aac2dae3e961030500080e5003236897b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{PrintMenu_8cpp_a4a449ec161fa1015070b7773e8e74142}\label{PrintMenu_8cpp_a4a449ec161fa1015070b7773e8e74142}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printGeneralInformation@{printGeneralInformation}}
+\index{printGeneralInformation@{printGeneralInformation}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printGeneralInformation()}{printGeneralInformation()}}
+{\footnotesize\ttfamily void print\+General\+Information (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PrintMenu_8cpp_a4a449ec161fa1015070b7773e8e74142_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{PrintMenu_8cpp_aa7997cd4741c35d27bc4faa77c3685d6}\label{PrintMenu_8cpp_aa7997cd4741c35d27bc4faa77c3685d6}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printInterfaces@{printInterfaces}}
+\index{printInterfaces@{printInterfaces}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printInterfaces()}{printInterfaces()}}
+{\footnotesize\ttfamily void print\+Interfaces (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PrintMenu_8cpp_aa7997cd4741c35d27bc4faa77c3685d6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{PrintMenu_8cpp_ac78f7aed8a15dc0da7ed6b4b3cd9b0c7}\label{PrintMenu_8cpp_ac78f7aed8a15dc0da7ed6b4b3cd9b0c7}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printMenu@{printMenu}}
+\index{printMenu@{printMenu}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printMenu()}{printMenu()}}
+{\footnotesize\ttfamily void print\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PrintMenu_8cpp_ac78f7aed8a15dc0da7ed6b4b3cd9b0c7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{PrintMenu_8cpp_a4196a88e551ca218a5ce58f7e8463827}\label{PrintMenu_8cpp_a4196a88e551ca218a5ce58f7e8463827}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printMethod@{printMethod}}
+\index{printMethod@{printMethod}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printMethod()}{printMethod()}}
+{\footnotesize\ttfamily void print\+Method (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf,  }\item[{\mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$}]{field }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PrintMenu_8cpp_a4196a88e551ca218a5ce58f7e8463827_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{PrintMenu_8cpp_a248294d9c0a26ee24db5af6a3998ef79}\label{PrintMenu_8cpp_a248294d9c0a26ee24db5af6a3998ef79}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!printMethods@{printMethods}}
+\index{printMethods@{printMethods}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{printMethods()}{printMethods()}}
+{\footnotesize\ttfamily void print\+Methods (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} const \&}]{cf }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PrintMenu_8cpp_a248294d9c0a26ee24db5af6a3998ef79_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{PrintMenu_8cpp_aec5bbd89b1c74c41279a30d0dc1afb5f}\label{PrintMenu_8cpp_aec5bbd89b1c74c41279a30d0dc1afb5f}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!translateFlagField@{translateFlagField}}
+\index{translateFlagField@{translateFlagField}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{translateFlagField()}{translateFlagField()}}
+{\footnotesize\ttfamily std\+::string translate\+Flag\+Field (\begin{DoxyParamCaption}\item[{std\+::string}]{flag }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{PrintMenu_8cpp_a6bbd379e108af5493cac070704d732cc}\label{PrintMenu_8cpp_a6bbd379e108af5493cac070704d732cc}} 
+\index{PrintMenu.cpp@{PrintMenu.cpp}!translateFlagMethod@{translateFlagMethod}}
+\index{translateFlagMethod@{translateFlagMethod}!PrintMenu.cpp@{PrintMenu.cpp}}
+\doxysubsubsection{\texorpdfstring{translateFlagMethod()}{translateFlagMethod()}}
+{\footnotesize\ttfamily std\+::string translate\+Flag\+Method (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{flag }\end{DoxyParamCaption})}
+

@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classDestructBase.html" title="destrutor base para gerar polimorfismo" alt="" coords="5,31,115,57"/>
+<area shape="rect" id="node2" href="$classDestructArray.html" title="Destrutor para uma alocação de array." alt="" coords="167,5,318,32"/>
+<area shape="rect" id="node3" href="$classDestructSimple.html" title="Destrutor para uma alocação simples." alt="" coords="163,56,323,83"/>
+</map>

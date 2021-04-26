@@ -1,0 +1,112 @@
+\hypertarget{structCPMethodref}{}\doxysection{C\+P\+Methodref Struct Reference}
+\label{structCPMethodref}\index{CPMethodref@{CPMethodref}}
+
+
+Estrutura usada para representar um método.  
+
+
+
+
+{\ttfamily \#include $<$Constant\+Pool\+Info.\+h$>$}
+
+
+
+Inheritance diagram for C\+P\+Methodref\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{structCPMethodref__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+P\+Methodref\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structCPMethodref__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structCPMethodref_a309a8adbf886fb128a0e6c813a641dea}{C\+P\+Methodref}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{structCPMethodref}{C\+P\+Methodref}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structCPMethodref_aae5aa81a7bfd0a8e91bb6fdfd22d0da7}{class\+Index}}
+\begin{DoxyCompactList}\small\item\em Ídice para a tabela do Constant\+Pool que contém um \mbox{\hyperlink{structCPClass}{C\+P\+Class}}. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{structCPMethodref_a09f69ea0b62e9fdb576f7a3bdd95b34b}{name\+And\+Type\+Index}}
+\begin{DoxyCompactList}\small\item\em Ídice para a tabela do Constant\+Pool que contém um \mbox{\hyperlink{structCPNameAndType}{C\+P\+Name\+And\+Type}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structCPMethodref_a322056f8a4dd18ea4cea861a24374f68}{was\+Loaded}}
+\item 
+\mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$ \mbox{\hyperlink{structCPMethodref_ac78922c9d987404ac019bf0137c137cc}{direct\+Method}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structCPMethodref_a5749e475256674908e24ee00b70ff7f3}{instance\+Method\+Desloc}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Estrutura usada para representar um método. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structCPMethodref_a309a8adbf886fb128a0e6c813a641dea}\label{structCPMethodref_a309a8adbf886fb128a0e6c813a641dea}} 
+\index{CPMethodref@{CPMethodref}!CPMethodref@{CPMethodref}}
+\index{CPMethodref@{CPMethodref}!CPMethodref@{CPMethodref}}
+\doxysubsubsection{\texorpdfstring{CPMethodref()}{CPMethodref()}}
+{\footnotesize\ttfamily C\+P\+Methodref\+::\+C\+P\+Methodref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{structCPMethodref}{C\+P\+Methodref}} object. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structCPMethodref_aae5aa81a7bfd0a8e91bb6fdfd22d0da7}\label{structCPMethodref_aae5aa81a7bfd0a8e91bb6fdfd22d0da7}} 
+\index{CPMethodref@{CPMethodref}!classIndex@{classIndex}}
+\index{classIndex@{classIndex}!CPMethodref@{CPMethodref}}
+\doxysubsubsection{\texorpdfstring{classIndex}{classIndex}}
+{\footnotesize\ttfamily uint16\+\_\+t C\+P\+Methodref\+::class\+Index}
+
+
+
+Ídice para a tabela do Constant\+Pool que contém um \mbox{\hyperlink{structCPClass}{C\+P\+Class}}. 
+
+\mbox{\Hypertarget{structCPMethodref_ac78922c9d987404ac019bf0137c137cc}\label{structCPMethodref_ac78922c9d987404ac019bf0137c137cc}} 
+\index{CPMethodref@{CPMethodref}!directMethod@{directMethod}}
+\index{directMethod@{directMethod}!CPMethodref@{CPMethodref}}
+\doxysubsubsection{\texorpdfstring{directMethod}{directMethod}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMethodInfo}{Method\+Info}}$\ast$ C\+P\+Methodref\+::direct\+Method}
+
+\mbox{\Hypertarget{structCPMethodref_a5749e475256674908e24ee00b70ff7f3}\label{structCPMethodref_a5749e475256674908e24ee00b70ff7f3}} 
+\index{CPMethodref@{CPMethodref}!instanceMethodDesloc@{instanceMethodDesloc}}
+\index{instanceMethodDesloc@{instanceMethodDesloc}!CPMethodref@{CPMethodref}}
+\doxysubsubsection{\texorpdfstring{instanceMethodDesloc}{instanceMethodDesloc}}
+{\footnotesize\ttfamily uint32\+\_\+t C\+P\+Methodref\+::instance\+Method\+Desloc}
+
+\mbox{\Hypertarget{structCPMethodref_a09f69ea0b62e9fdb576f7a3bdd95b34b}\label{structCPMethodref_a09f69ea0b62e9fdb576f7a3bdd95b34b}} 
+\index{CPMethodref@{CPMethodref}!nameAndTypeIndex@{nameAndTypeIndex}}
+\index{nameAndTypeIndex@{nameAndTypeIndex}!CPMethodref@{CPMethodref}}
+\doxysubsubsection{\texorpdfstring{nameAndTypeIndex}{nameAndTypeIndex}}
+{\footnotesize\ttfamily uint16\+\_\+t C\+P\+Methodref\+::name\+And\+Type\+Index}
+
+
+
+Ídice para a tabela do Constant\+Pool que contém um \mbox{\hyperlink{structCPNameAndType}{C\+P\+Name\+And\+Type}}. 
+
+\mbox{\Hypertarget{structCPMethodref_a322056f8a4dd18ea4cea861a24374f68}\label{structCPMethodref_a322056f8a4dd18ea4cea861a24374f68}} 
+\index{CPMethodref@{CPMethodref}!wasLoaded@{wasLoaded}}
+\index{wasLoaded@{wasLoaded}!CPMethodref@{CPMethodref}}
+\doxysubsubsection{\texorpdfstring{wasLoaded}{wasLoaded}}
+{\footnotesize\ttfamily bool C\+P\+Methodref\+::was\+Loaded}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ConstantPoolInfo_8h}{Constant\+Pool\+Info.\+h}}\item 
+src/\mbox{\hyperlink{ConstantPoolInfo_8cpp}{Constant\+Pool\+Info.\+cpp}}\end{DoxyCompactItemize}

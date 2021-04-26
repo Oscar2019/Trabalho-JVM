@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Código-Fonte de include/Stack.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Stack.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_stack_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __STACK_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __STACK_H__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_stack.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_stack.html">Stack</a>{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_stack.html#adc394bc023a7258e05086f43948aa434">   14</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_stack.html#adc394bc023a7258e05086f43948aa434">push</a>(T&amp;) = 0;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_stack.html#a1df988e3ef82cc614535523719ffc497">   15</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_stack.html#a1df988e3ef82cc614535523719ffc497">push</a>(T&amp;&amp;) = 0;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_stack.html#af31b8f8a474ee57a908dad239ce0f838">   16</a></span>&#160;        <span class="keyword">virtual</span> T&amp; <a class="code" href="class_stack.html#af31b8f8a474ee57a908dad239ce0f838">top</a>() = 0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_stack.html#a57338b5ac889cf1563e4597bbb3152ea">   17</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_stack.html#a57338b5ac889cf1563e4597bbb3152ea">pop</a>() = 0;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_stack.html#af1acad2fef00fdfc24a3e12a2e6b08e3">   18</a></span>&#160;        <span class="keyword">virtual</span> uint32_t <a class="code" href="class_stack.html#af1acad2fef00fdfc24a3e12a2e6b08e3">size</a>() = 0;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_linear_stack.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_linear_stack.html">LinearStack</a> : <span class="keyword">public</span> <a class="code" href="class_stack.html">Stack</a>&lt;T&gt;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        uint32_t maxSize;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        uint32_t curSize;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        T* data;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_linear_stack.html#a21f220f3c54293f3cc931781b0511c95">   28</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_linear_stack.html#a21f220f3c54293f3cc931781b0511c95">push</a>(T&amp; value){</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        data[curSize] = value;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        curSize++;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_linear_stack.html#ac03439ee30eecfeaa4ee574932cf1825">   32</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_linear_stack.html#ac03439ee30eecfeaa4ee574932cf1825">push</a>(T&amp;&amp; value){</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        data[curSize] = value;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        curSize++;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_linear_stack.html#ad68476dbea1871261e4f4e678d72550e">   36</a></span>&#160;    T&amp; <a class="code" href="class_linear_stack.html#ad68476dbea1871261e4f4e678d72550e">top</a>(){</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> data[curSize - 1];</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_linear_stack.html#aa18d8e72f505a2de25318f3c3ee4a870">   39</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_linear_stack.html#aa18d8e72f505a2de25318f3c3ee4a870">pop</a>(){</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        curSize--;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_linear_stack.html#aef89a3dfadb69f24dac6e46f3f3fb02b">   42</a></span>&#160;    uint32_t <a class="code" href="class_linear_stack.html#aef89a3dfadb69f24dac6e46f3f3fb02b">size</a>(){</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> curSize;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_linear_stack.html#a76af371f210689158a241d80a9af746f">   45</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_linear_stack.html#a76af371f210689158a241d80a9af746f">reserve</a>(uint32_t new_maxSize){</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">delete</span>[] data;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        maxSize = new_maxSize;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        data = <span class="keyword">new</span> T[maxSize];</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_linear_stack.html#a9fec1be29287ab0eed694b3e2a09da9e">   50</a></span>&#160;    <a class="code" href="class_linear_stack.html#a9fec1be29287ab0eed694b3e2a09da9e">LinearStack</a>(){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        curSize = 0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        maxSize = 1;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        data = <span class="keyword">new</span> T[maxSize];</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_linear_stack.html#a5655339cb0df16f939f15f581a3a7be4">   55</a></span>&#160;    <a class="code" href="class_linear_stack.html#a5655339cb0df16f939f15f581a3a7be4">LinearStack</a>(uint32_t new_maxSize){</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        curSize = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        maxSize = new_maxSize;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        data = <span class="keyword">new</span> T[maxSize];</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_linear_stack.html#aa6c15c6a83d4310ed2921ac23465229a">   60</a></span>&#160;    <a class="code" href="class_linear_stack.html#aa6c15c6a83d4310ed2921ac23465229a">~LinearStack</a>(){</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">delete</span>[] data;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_dynamic_stack.html">   67</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_dynamic_stack.html">DynamicStack</a> : <span class="keyword">public</span> <a class="code" href="class_stack.html">Stack</a>&lt;T&gt;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">struct </span>Node{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            Node *nextNode;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            T value;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            Node(T&amp; new_value, Node *new_nextNode = <span class="keyword">nullptr</span>){</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                value = new_value;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                nextNode = new_nextNode;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        };</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        uint32_t curSize;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        Node* node;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_dynamic_stack.html#aa0405e57e5646b6dcdb3bbd496610be8">   80</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_dynamic_stack.html#aa0405e57e5646b6dcdb3bbd496610be8">push</a>(T&amp; value){</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        node = <span class="keyword">new</span> Node(value, node);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        curSize++;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_dynamic_stack.html#abf00ec9e8252aab7866971b1892cadad">   84</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_dynamic_stack.html#abf00ec9e8252aab7866971b1892cadad">push</a>(T&amp;&amp; value){</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        node = <span class="keyword">new</span> Node(value, node);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        curSize++;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_dynamic_stack.html#a65db13d0d236d82eebf13583cc9eecc9">   88</a></span>&#160;    T&amp; <a class="code" href="class_dynamic_stack.html#a65db13d0d236d82eebf13583cc9eecc9">top</a>(){</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> node-&gt;value;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_dynamic_stack.html#ab1f72a3ef97015e7acd2be9f0e013542">   91</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_dynamic_stack.html#ab1f72a3ef97015e7acd2be9f0e013542">pop</a>(){</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keyword">auto</span> aux = node;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        node = node-&gt;nextNode;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">delete</span> aux;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        curSize--;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_dynamic_stack.html#a7ce12821e2f33ecf4a5e793a06bf2812">   97</a></span>&#160;    uint32_t <a class="code" href="class_dynamic_stack.html#a7ce12821e2f33ecf4a5e793a06bf2812">size</a>(){</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">return</span> curSize;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="class_dynamic_stack.html#aff1ba818b55cc15e6c42a72221e90778">  100</a></span>&#160;    <a class="code" href="class_dynamic_stack.html#aff1ba818b55cc15e6c42a72221e90778">DynamicStack</a>(){</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        curSize = 0;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        node = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="class_dynamic_stack.html#a152049cfcf76654e65e729ea8920062a">  104</a></span>&#160;    <a class="code" href="class_dynamic_stack.html#a152049cfcf76654e65e729ea8920062a">~DynamicStack</a>(){</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">while</span>(curSize != 0){</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <a class="code" href="class_dynamic_stack.html#ab1f72a3ef97015e7acd2be9f0e013542">pop</a>();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;};</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_dynamic_stack_html"><div class="ttname"><a href="class_dynamic_stack.html">DynamicStack</a></div><div class="ttdef"><b>Definition:</b> Stack.h:67</div></div>
+<div class="ttc" id="aclass_dynamic_stack_html_a152049cfcf76654e65e729ea8920062a"><div class="ttname"><a href="class_dynamic_stack.html#a152049cfcf76654e65e729ea8920062a">DynamicStack::~DynamicStack</a></div><div class="ttdeci">~DynamicStack()</div><div class="ttdef"><b>Definition:</b> Stack.h:104</div></div>
+<div class="ttc" id="aclass_dynamic_stack_html_a65db13d0d236d82eebf13583cc9eecc9"><div class="ttname"><a href="class_dynamic_stack.html#a65db13d0d236d82eebf13583cc9eecc9">DynamicStack::top</a></div><div class="ttdeci">T &amp; top()</div><div class="ttdef"><b>Definition:</b> Stack.h:88</div></div>
+<div class="ttc" id="aclass_dynamic_stack_html_a7ce12821e2f33ecf4a5e793a06bf2812"><div class="ttname"><a href="class_dynamic_stack.html#a7ce12821e2f33ecf4a5e793a06bf2812">DynamicStack::size</a></div><div class="ttdeci">uint32_t size()</div><div class="ttdef"><b>Definition:</b> Stack.h:97</div></div>
+<div class="ttc" id="aclass_dynamic_stack_html_aa0405e57e5646b6dcdb3bbd496610be8"><div class="ttname"><a href="class_dynamic_stack.html#aa0405e57e5646b6dcdb3bbd496610be8">DynamicStack::push</a></div><div class="ttdeci">void push(T &amp;value)</div><div class="ttdef"><b>Definition:</b> Stack.h:80</div></div>
+<div class="ttc" id="aclass_dynamic_stack_html_ab1f72a3ef97015e7acd2be9f0e013542"><div class="ttname"><a href="class_dynamic_stack.html#ab1f72a3ef97015e7acd2be9f0e013542">DynamicStack::pop</a></div><div class="ttdeci">void pop()</div><div class="ttdef"><b>Definition:</b> Stack.h:91</div></div>
+<div class="ttc" id="aclass_dynamic_stack_html_abf00ec9e8252aab7866971b1892cadad"><div class="ttname"><a href="class_dynamic_stack.html#abf00ec9e8252aab7866971b1892cadad">DynamicStack::push</a></div><div class="ttdeci">void push(T &amp;&amp;value)</div><div class="ttdef"><b>Definition:</b> Stack.h:84</div></div>
+<div class="ttc" id="aclass_dynamic_stack_html_aff1ba818b55cc15e6c42a72221e90778"><div class="ttname"><a href="class_dynamic_stack.html#aff1ba818b55cc15e6c42a72221e90778">DynamicStack::DynamicStack</a></div><div class="ttdeci">DynamicStack()</div><div class="ttdef"><b>Definition:</b> Stack.h:100</div></div>
+<div class="ttc" id="aclass_linear_stack_html"><div class="ttname"><a href="class_linear_stack.html">LinearStack</a></div><div class="ttdef"><b>Definition:</b> Stack.h:22</div></div>
+<div class="ttc" id="aclass_linear_stack_html_a21f220f3c54293f3cc931781b0511c95"><div class="ttname"><a href="class_linear_stack.html#a21f220f3c54293f3cc931781b0511c95">LinearStack::push</a></div><div class="ttdeci">void push(T &amp;value)</div><div class="ttdef"><b>Definition:</b> Stack.h:28</div></div>
+<div class="ttc" id="aclass_linear_stack_html_a5655339cb0df16f939f15f581a3a7be4"><div class="ttname"><a href="class_linear_stack.html#a5655339cb0df16f939f15f581a3a7be4">LinearStack::LinearStack</a></div><div class="ttdeci">LinearStack(uint32_t new_maxSize)</div><div class="ttdef"><b>Definition:</b> Stack.h:55</div></div>
+<div class="ttc" id="aclass_linear_stack_html_a76af371f210689158a241d80a9af746f"><div class="ttname"><a href="class_linear_stack.html#a76af371f210689158a241d80a9af746f">LinearStack::reserve</a></div><div class="ttdeci">void reserve(uint32_t new_maxSize)</div><div class="ttdef"><b>Definition:</b> Stack.h:45</div></div>
+<div class="ttc" id="aclass_linear_stack_html_a9fec1be29287ab0eed694b3e2a09da9e"><div class="ttname"><a href="class_linear_stack.html#a9fec1be29287ab0eed694b3e2a09da9e">LinearStack::LinearStack</a></div><div class="ttdeci">LinearStack()</div><div class="ttdef"><b>Definition:</b> Stack.h:50</div></div>
+<div class="ttc" id="aclass_linear_stack_html_aa18d8e72f505a2de25318f3c3ee4a870"><div class="ttname"><a href="class_linear_stack.html#aa18d8e72f505a2de25318f3c3ee4a870">LinearStack::pop</a></div><div class="ttdeci">void pop()</div><div class="ttdef"><b>Definition:</b> Stack.h:39</div></div>
+<div class="ttc" id="aclass_linear_stack_html_aa6c15c6a83d4310ed2921ac23465229a"><div class="ttname"><a href="class_linear_stack.html#aa6c15c6a83d4310ed2921ac23465229a">LinearStack::~LinearStack</a></div><div class="ttdeci">~LinearStack()</div><div class="ttdef"><b>Definition:</b> Stack.h:60</div></div>
+<div class="ttc" id="aclass_linear_stack_html_ac03439ee30eecfeaa4ee574932cf1825"><div class="ttname"><a href="class_linear_stack.html#ac03439ee30eecfeaa4ee574932cf1825">LinearStack::push</a></div><div class="ttdeci">void push(T &amp;&amp;value)</div><div class="ttdef"><b>Definition:</b> Stack.h:32</div></div>
+<div class="ttc" id="aclass_linear_stack_html_ad68476dbea1871261e4f4e678d72550e"><div class="ttname"><a href="class_linear_stack.html#ad68476dbea1871261e4f4e678d72550e">LinearStack::top</a></div><div class="ttdeci">T &amp; top()</div><div class="ttdef"><b>Definition:</b> Stack.h:36</div></div>
+<div class="ttc" id="aclass_linear_stack_html_aef89a3dfadb69f24dac6e46f3f3fb02b"><div class="ttname"><a href="class_linear_stack.html#aef89a3dfadb69f24dac6e46f3f3fb02b">LinearStack::size</a></div><div class="ttdeci">uint32_t size()</div><div class="ttdef"><b>Definition:</b> Stack.h:42</div></div>
+<div class="ttc" id="aclass_stack_html"><div class="ttname"><a href="class_stack.html">Stack</a></div><div class="ttdef"><b>Definition:</b> Stack.h:12</div></div>
+<div class="ttc" id="aclass_stack_html_a1df988e3ef82cc614535523719ffc497"><div class="ttname"><a href="class_stack.html#a1df988e3ef82cc614535523719ffc497">Stack::push</a></div><div class="ttdeci">virtual void push(T &amp;&amp;)=0</div></div>
+<div class="ttc" id="aclass_stack_html_a57338b5ac889cf1563e4597bbb3152ea"><div class="ttname"><a href="class_stack.html#a57338b5ac889cf1563e4597bbb3152ea">Stack::pop</a></div><div class="ttdeci">virtual void pop()=0</div></div>
+<div class="ttc" id="aclass_stack_html_adc394bc023a7258e05086f43948aa434"><div class="ttname"><a href="class_stack.html#adc394bc023a7258e05086f43948aa434">Stack::push</a></div><div class="ttdeci">virtual void push(T &amp;)=0</div></div>
+<div class="ttc" id="aclass_stack_html_af1acad2fef00fdfc24a3e12a2e6b08e3"><div class="ttname"><a href="class_stack.html#af1acad2fef00fdfc24a3e12a2e6b08e3">Stack::size</a></div><div class="ttdeci">virtual uint32_t size()=0</div></div>
+<div class="ttc" id="aclass_stack_html_af31b8f8a474ee57a908dad239ce0f838"><div class="ttname"><a href="class_stack.html#af31b8f8a474ee57a908dad239ce0f838">Stack::top</a></div><div class="ttdeci">virtual T &amp; top()=0</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

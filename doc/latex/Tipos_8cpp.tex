@@ -1,0 +1,1485 @@
+\hypertarget{Tipos_8cpp}{}\doxysection{src/\+Tipos.cpp File Reference}
+\label{Tipos_8cpp}\index{src/Tipos.cpp@{src/Tipos.cpp}}
+{\ttfamily \#include \char`\"{}../include/\+Tipos.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+template$<$$>$ uint8\+\_\+t \mbox{\hyperlink{Tipos_8cpp_a84a58ce8de91bb008e62bd8d7576bcf9}{read$<$ uint8\+\_\+t $>$}} (const uint8\+\_\+t $\ast$in)
+\begin{DoxyCompactList}\small\item\em Função que lê uma um uint8\+\_\+t de um vetor de uint8\+\_\+t. \end{DoxyCompactList}\item 
+template$<$$>$ uint16\+\_\+t \mbox{\hyperlink{Tipos_8cpp_acb337e0b996b7eb4f83d197c9b1a12f9}{read$<$ uint16\+\_\+t $>$}} (const uint8\+\_\+t $\ast$in)
+\begin{DoxyCompactList}\small\item\em Função que lê um uinnt16\+\_\+t de um vetor de uint8\+\_\+t. \end{DoxyCompactList}\item 
+template$<$$>$ uint32\+\_\+t \mbox{\hyperlink{Tipos_8cpp_ae516ebe405aedf431427028480752c0b}{read$<$ uint32\+\_\+t $>$}} (const uint8\+\_\+t $\ast$in)
+\begin{DoxyCompactList}\small\item\em Função que lê um uinnt32\+\_\+t de um vetor de uint8\+\_\+t. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a3f350beee6fc659a669437e75744580e}{read$<$ uint8\+\_\+t $>$}} (std\+::ifstream \&ifs, uint8\+\_\+t $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um uint8\+\_\+t informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_adb0549fcd746d5ec60522466702b87a9}{read$<$ uint16\+\_\+t $>$}} (std\+::ifstream \&ifs, uint16\+\_\+t $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um uint16\+\_\+t informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_ab67fb792eef8a39d7978184468858464}{read$<$ uint32\+\_\+t $>$}} (std\+::ifstream \&ifs, uint32\+\_\+t $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um uint32\+\_\+t informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a78e725d6aa1a4bb1b3d26e4dafe5e059}{print$<$ uint8\+\_\+t $>$}} (uint8\+\_\+t \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o uint8\+\_\+t informando um class\+File e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_acf40d8a5ff2ee0e5bb42b2be35e1dcd1}{print$<$ uint16\+\_\+t $>$}} (uint16\+\_\+t \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o uint16\+\_\+t informando um class\+File e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_aafcb849961fabf365066d89b5f061a5c}{print$<$ uint32\+\_\+t $>$}} (uint32\+\_\+t \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o uint32\+\_\+t informando um class\+File e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_abb74f187f1f98c672acfe24d16ab86e1}{read$<$ Class\+File $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structClassFile}{Class\+File}} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um \mbox{\hyperlink{structClassFile}{Class\+File}} informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a1ef736b1597d038edb321ae281afac76}{print$<$ Class\+File $>$}} (\mbox{\hyperlink{structClassFile}{Class\+File}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structClassFile}{Class\+File}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a0d11f03c1a484a81df50ffb904327b2d}{read$<$ Constant\+Pool\+Info $\ast$ $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um Constant\+Pool\+Info$\ast$ informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a894499df7cc940f3b4d6bbc1b727f043}{read$<$ C\+P\+Class $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structCPClass}{C\+P\+Class}} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um C\+P\+Class$\ast$ informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_aacff615cadaf3b7eb1d8a57bd3f0e07d}{read$<$ C\+P\+Fieldref $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structCPFieldref}{C\+P\+Fieldref}} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um C\+P\+Fieldref$\ast$ informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a606cf237b938cea3bfef5be958e12f72}{read$<$ C\+P\+Methodref $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structCPMethodref}{C\+P\+Methodref}} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um C\+P\+Methodref$\ast$ informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a2a16158434135070eb26957637b48baa}{read$<$ C\+P\+Interface\+Methodref $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structCPInterfaceMethodref}{C\+P\+Interface\+Methodref}} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um C\+P\+Interface\+Methodref$\ast$ informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a705e0e1fbd1153df7aaf96c65b90ed32}{read$<$ C\+P\+String $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structCPString}{C\+P\+String}} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um C\+P\+String$\ast$ informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_ac69aa78f8c49bd654be9e898a748eaab}{read$<$ C\+P\+Integer $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structCPInteger}{C\+P\+Integer}} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um C\+P\+Integer$\ast$ informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_abc3774e2dcf024dac73355c4f0c9519d}{read$<$ C\+P\+Float $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structCPFloat}{C\+P\+Float}} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um C\+P\+Float$\ast$ informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a08919c9101c2a6d4116e52662a8c3094}{read$<$ C\+P\+Long $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structCPLong}{C\+P\+Long}} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um C\+P\+Long$\ast$ informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a76eb736a0e337a75e6db5b4ac9b12f20}{read$<$ C\+P\+Double $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structCPDouble}{C\+P\+Double}} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um C\+P\+Double$\ast$ informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a2d8c2bb663df696204834c6b7b98edd5}{read$<$ C\+P\+Name\+And\+Type $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structCPNameAndType}{C\+P\+Name\+And\+Type}} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um C\+P\+Name\+And\+Type$\ast$ informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a5ec22caf1feca08be5d198edc72618e7}{read$<$ C\+P\+Utf8 $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um C\+P\+Utf8$\ast$ informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a86d8aed4f5292fc0d64b016466d4034c}{read$<$ C\+P\+Method\+Handle $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structCPMethodHandle}{C\+P\+Method\+Handle}} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um C\+P\+Method\+Handle$\ast$ informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a45991bdfbd70eb9dbad1da90bcf6b184}{read$<$ C\+P\+Method\+Type $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structCPMethodType}{C\+P\+Method\+Type}} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um C\+P\+Method\+Type$\ast$ informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a32183838ed3a43e61f8d01dc41940890}{read$<$ C\+P\+Invoke\+Dynamic $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structCPInvokeDynamic}{C\+P\+Invoke\+Dynamic}} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um C\+P\+Invoke\+Dynamic$\ast$ informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a4ac9d210093723ee27453c4e50e86285}{print$<$ Constant\+Pool\+Info $>$}} (\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a009bcba709f4973483ecae3f44de7cbb}{print$<$ C\+P\+Class $>$}} (\mbox{\hyperlink{structCPClass}{C\+P\+Class}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structCPClass}{C\+P\+Class}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_ab815c721151f49a902fb631e0eea85e7}{print$<$ C\+P\+Fieldref $>$}} (\mbox{\hyperlink{structCPFieldref}{C\+P\+Fieldref}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structCPFieldref}{C\+P\+Fieldref}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_acb7d766753f1ac63413910b8a12867c2}{print$<$ C\+P\+Methodref $>$}} (\mbox{\hyperlink{structCPMethodref}{C\+P\+Methodref}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structCPMethodref}{C\+P\+Methodref}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a5fcd3309d14e6d6c5e4f2c5303d9bd1d}{print$<$ C\+P\+Interface\+Methodref $>$}} (\mbox{\hyperlink{structCPInterfaceMethodref}{C\+P\+Interface\+Methodref}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structCPInterfaceMethodref}{C\+P\+Interface\+Methodref}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_ab0ce84a45f78f81cdbea09e4dee0c7b8}{print$<$ C\+P\+String $>$}} (\mbox{\hyperlink{structCPString}{C\+P\+String}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structCPString}{C\+P\+String}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a9c1894967331fe1590c62f849c7bb13c}{print$<$ C\+P\+Integer $>$}} (\mbox{\hyperlink{structCPInteger}{C\+P\+Integer}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structCPInteger}{C\+P\+Integer}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_aeaf75c63adfbb6acd6adddc28441686a}{print$<$ C\+P\+Float $>$}} (\mbox{\hyperlink{structCPFloat}{C\+P\+Float}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structCPFloat}{C\+P\+Float}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a4f4b312ef48ebb4c7e11c0d9fe81b73c}{print$<$ C\+P\+Long $>$}} (\mbox{\hyperlink{structCPLong}{C\+P\+Long}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structCPLong}{C\+P\+Long}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a4f69000f70bb0384b0768e3eeea805d5}{print$<$ C\+P\+Double $>$}} (\mbox{\hyperlink{structCPDouble}{C\+P\+Double}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structCPDouble}{C\+P\+Double}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a32827064e5f7585762e4c1bcd17ff85a}{print$<$ C\+P\+Name\+And\+Type $>$}} (\mbox{\hyperlink{structCPNameAndType}{C\+P\+Name\+And\+Type}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structCPNameAndType}{C\+P\+Name\+And\+Type}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_ac48e9460578aa36573039def13a4244d}{print$<$ C\+P\+Utf8 $>$}} (\mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a2afa686e490cd2da23fd6bfaf6acff7f}{print$<$ C\+P\+Method\+Handle $>$}} (\mbox{\hyperlink{structCPMethodHandle}{C\+P\+Method\+Handle}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structCPMethodHandle}{C\+P\+Method\+Handle}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a1b56c6777cd8a2aef6ebbd2700b6d1bc}{print$<$ C\+P\+Method\+Type $>$}} (\mbox{\hyperlink{structCPMethodType}{C\+P\+Method\+Type}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structCPMethodType}{C\+P\+Method\+Type}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a2e8fa404162fe4cd0cbaed199e2a85d7}{print$<$ C\+P\+Invoke\+Dynamic $>$}} (\mbox{\hyperlink{structCPInvokeDynamic}{C\+P\+Invoke\+Dynamic}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structCPInvokeDynamic}{C\+P\+Invoke\+Dynamic}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a45a09c5c6bf135bd1d99921f59745253}{read$<$ Field\+Info $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structFieldInfo}{Field\+Info}} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um \mbox{\hyperlink{structFieldInfo}{Field\+Info}} informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a841aeb31705ac7ef74ee84156aed274d}{print$<$ Field\+Info $>$}} (\mbox{\hyperlink{structFieldInfo}{Field\+Info}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structFieldInfo}{Field\+Info}} informando um \mbox{\hyperlink{structFieldInfo}{Field\+Info}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a4c0ab33518c20b6a1aecb160562e8edb}{read$<$ Method\+Info $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um \mbox{\hyperlink{structMethodInfo}{Method\+Info}} informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_aeb0f91f479f59201535a9a437cad2798}{print$<$ Method\+Info $>$}} (\mbox{\hyperlink{structMethodInfo}{Method\+Info}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structMethodInfo}{Method\+Info}} informando um \mbox{\hyperlink{structMethodInfo}{Method\+Info}} e um ostream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_a4881b63e9f17ad6fb4e34aa40bf5f547}{read$<$ Attribute\+Info\+Basic $\ast$ $>$}} (std\+::ifstream \&ifs, \mbox{\hyperlink{structAttributeInfoBasic}{Attribute\+Info\+Basic}} $\ast$$\ast$u)
+\begin{DoxyCompactList}\small\item\em Função para leitura de um \mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}} informando um ifstream. \end{DoxyCompactList}\item 
+template$<$$>$ void \mbox{\hyperlink{Tipos_8cpp_af4c48d05ffe92d2f0fdec36317e6cdab}{print$<$ Attribute\+Info\+Basic $>$}} (\mbox{\hyperlink{structAttributeInfoBasic}{Attribute\+Info\+Basic}} \&u, std\+::ostream \&os)
+\begin{DoxyCompactList}\small\item\em Função que printa o \mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}} informando um \mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}} e um ostream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Tipos_8cpp_af4c48d05ffe92d2f0fdec36317e6cdab}\label{Tipos_8cpp_af4c48d05ffe92d2f0fdec36317e6cdab}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ AttributeInfoBasic $>$@{print$<$ AttributeInfoBasic $>$}}
+\index{print$<$ AttributeInfoBasic $>$@{print$<$ AttributeInfoBasic $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ AttributeInfoBasic $>$()}{print< AttributeInfoBasic >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structAttributeInfoBasic}{Attribute\+Info\+Basic}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAttributeInfoBasic}{Attribute\+Info\+Basic}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}} informando um \mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_af4c48d05ffe92d2f0fdec36317e6cdab_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a1ef736b1597d038edb321ae281afac76}\label{Tipos_8cpp_a1ef736b1597d038edb321ae281afac76}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ ClassFile $>$@{print$<$ ClassFile $>$}}
+\index{print$<$ ClassFile $>$@{print$<$ ClassFile $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ ClassFile $>$()}{print< ClassFile >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structClassFile}{Class\+File}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structClassFile}{Class\+File}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a1ef736b1597d038edb321ae281afac76_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a4ac9d210093723ee27453c4e50e86285}\label{Tipos_8cpp_a4ac9d210093723ee27453c4e50e86285}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ ConstantPoolInfo $>$@{print$<$ ConstantPoolInfo $>$}}
+\index{print$<$ ConstantPoolInfo $>$@{print$<$ ConstantPoolInfo $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ ConstantPoolInfo $>$()}{print< ConstantPoolInfo >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a4ac9d210093723ee27453c4e50e86285_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a009bcba709f4973483ecae3f44de7cbb}\label{Tipos_8cpp_a009bcba709f4973483ecae3f44de7cbb}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPClass $>$@{print$<$ CPClass $>$}}
+\index{print$<$ CPClass $>$@{print$<$ CPClass $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPClass $>$()}{print< CPClass >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structCPClass}{C\+P\+Class}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCPClass}{C\+P\+Class}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structCPClass}{C\+P\+Class}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{Tipos_8cpp_a009bcba709f4973483ecae3f44de7cbb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a4f69000f70bb0384b0768e3eeea805d5}\label{Tipos_8cpp_a4f69000f70bb0384b0768e3eeea805d5}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPDouble $>$@{print$<$ CPDouble $>$}}
+\index{print$<$ CPDouble $>$@{print$<$ CPDouble $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPDouble $>$()}{print< CPDouble >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structCPDouble}{C\+P\+Double}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCPDouble}{C\+P\+Double}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structCPDouble}{C\+P\+Double}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{Tipos_8cpp_a4f69000f70bb0384b0768e3eeea805d5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_ab815c721151f49a902fb631e0eea85e7}\label{Tipos_8cpp_ab815c721151f49a902fb631e0eea85e7}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPFieldref $>$@{print$<$ CPFieldref $>$}}
+\index{print$<$ CPFieldref $>$@{print$<$ CPFieldref $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPFieldref $>$()}{print< CPFieldref >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structCPFieldref}{C\+P\+Fieldref}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCPFieldref}{C\+P\+Fieldref}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structCPFieldref}{C\+P\+Fieldref}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{Tipos_8cpp_ab815c721151f49a902fb631e0eea85e7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_aeaf75c63adfbb6acd6adddc28441686a}\label{Tipos_8cpp_aeaf75c63adfbb6acd6adddc28441686a}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPFloat $>$@{print$<$ CPFloat $>$}}
+\index{print$<$ CPFloat $>$@{print$<$ CPFloat $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPFloat $>$()}{print< CPFloat >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structCPFloat}{C\+P\+Float}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCPFloat}{C\+P\+Float}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structCPFloat}{C\+P\+Float}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{Tipos_8cpp_aeaf75c63adfbb6acd6adddc28441686a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a9c1894967331fe1590c62f849c7bb13c}\label{Tipos_8cpp_a9c1894967331fe1590c62f849c7bb13c}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPInteger $>$@{print$<$ CPInteger $>$}}
+\index{print$<$ CPInteger $>$@{print$<$ CPInteger $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPInteger $>$()}{print< CPInteger >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structCPInteger}{C\+P\+Integer}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCPInteger}{C\+P\+Integer}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structCPInteger}{C\+P\+Integer}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{Tipos_8cpp_a9c1894967331fe1590c62f849c7bb13c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a5fcd3309d14e6d6c5e4f2c5303d9bd1d}\label{Tipos_8cpp_a5fcd3309d14e6d6c5e4f2c5303d9bd1d}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPInterfaceMethodref $>$@{print$<$ CPInterfaceMethodref $>$}}
+\index{print$<$ CPInterfaceMethodref $>$@{print$<$ CPInterfaceMethodref $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPInterfaceMethodref $>$()}{print< CPInterfaceMethodref >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structCPInterfaceMethodref}{C\+P\+Interface\+Methodref}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCPInterfaceMethodref}{C\+P\+Interface\+Methodref}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structCPInterfaceMethodref}{C\+P\+Interface\+Methodref}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a5fcd3309d14e6d6c5e4f2c5303d9bd1d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a2e8fa404162fe4cd0cbaed199e2a85d7}\label{Tipos_8cpp_a2e8fa404162fe4cd0cbaed199e2a85d7}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPInvokeDynamic $>$@{print$<$ CPInvokeDynamic $>$}}
+\index{print$<$ CPInvokeDynamic $>$@{print$<$ CPInvokeDynamic $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPInvokeDynamic $>$()}{print< CPInvokeDynamic >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structCPInvokeDynamic}{C\+P\+Invoke\+Dynamic}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCPInvokeDynamic}{C\+P\+Invoke\+Dynamic}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structCPInvokeDynamic}{C\+P\+Invoke\+Dynamic}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a2e8fa404162fe4cd0cbaed199e2a85d7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a4f4b312ef48ebb4c7e11c0d9fe81b73c}\label{Tipos_8cpp_a4f4b312ef48ebb4c7e11c0d9fe81b73c}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPLong $>$@{print$<$ CPLong $>$}}
+\index{print$<$ CPLong $>$@{print$<$ CPLong $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPLong $>$()}{print< CPLong >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structCPLong}{C\+P\+Long}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCPLong}{C\+P\+Long}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structCPLong}{C\+P\+Long}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{Tipos_8cpp_a4f4b312ef48ebb4c7e11c0d9fe81b73c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a2afa686e490cd2da23fd6bfaf6acff7f}\label{Tipos_8cpp_a2afa686e490cd2da23fd6bfaf6acff7f}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPMethodHandle $>$@{print$<$ CPMethodHandle $>$}}
+\index{print$<$ CPMethodHandle $>$@{print$<$ CPMethodHandle $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPMethodHandle $>$()}{print< CPMethodHandle >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structCPMethodHandle}{C\+P\+Method\+Handle}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCPMethodHandle}{C\+P\+Method\+Handle}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structCPMethodHandle}{C\+P\+Method\+Handle}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a2afa686e490cd2da23fd6bfaf6acff7f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_acb7d766753f1ac63413910b8a12867c2}\label{Tipos_8cpp_acb7d766753f1ac63413910b8a12867c2}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPMethodref $>$@{print$<$ CPMethodref $>$}}
+\index{print$<$ CPMethodref $>$@{print$<$ CPMethodref $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPMethodref $>$()}{print< CPMethodref >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structCPMethodref}{C\+P\+Methodref}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCPMethodref}{C\+P\+Methodref}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structCPMethodref}{C\+P\+Methodref}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{Tipos_8cpp_acb7d766753f1ac63413910b8a12867c2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a1b56c6777cd8a2aef6ebbd2700b6d1bc}\label{Tipos_8cpp_a1b56c6777cd8a2aef6ebbd2700b6d1bc}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPMethodType $>$@{print$<$ CPMethodType $>$}}
+\index{print$<$ CPMethodType $>$@{print$<$ CPMethodType $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPMethodType $>$()}{print< CPMethodType >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structCPMethodType}{C\+P\+Method\+Type}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCPMethodType}{C\+P\+Method\+Type}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structCPMethodType}{C\+P\+Method\+Type}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a1b56c6777cd8a2aef6ebbd2700b6d1bc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a32827064e5f7585762e4c1bcd17ff85a}\label{Tipos_8cpp_a32827064e5f7585762e4c1bcd17ff85a}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPNameAndType $>$@{print$<$ CPNameAndType $>$}}
+\index{print$<$ CPNameAndType $>$@{print$<$ CPNameAndType $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPNameAndType $>$()}{print< CPNameAndType >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structCPNameAndType}{C\+P\+Name\+And\+Type}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCPNameAndType}{C\+P\+Name\+And\+Type}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structCPNameAndType}{C\+P\+Name\+And\+Type}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a32827064e5f7585762e4c1bcd17ff85a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_ab0ce84a45f78f81cdbea09e4dee0c7b8}\label{Tipos_8cpp_ab0ce84a45f78f81cdbea09e4dee0c7b8}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPString $>$@{print$<$ CPString $>$}}
+\index{print$<$ CPString $>$@{print$<$ CPString $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPString $>$()}{print< CPString >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structCPString}{C\+P\+String}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCPString}{C\+P\+String}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structCPString}{C\+P\+String}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{Tipos_8cpp_ab0ce84a45f78f81cdbea09e4dee0c7b8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_ac48e9460578aa36573039def13a4244d}\label{Tipos_8cpp_ac48e9460578aa36573039def13a4244d}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ CPUtf8 $>$@{print$<$ CPUtf8 $>$}}
+\index{print$<$ CPUtf8 $>$@{print$<$ CPUtf8 $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ CPUtf8 $>$()}{print< CPUtf8 >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}} informando um \mbox{\hyperlink{structClassFile}{Class\+File}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{Tipos_8cpp_ac48e9460578aa36573039def13a4244d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a841aeb31705ac7ef74ee84156aed274d}\label{Tipos_8cpp_a841aeb31705ac7ef74ee84156aed274d}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ FieldInfo $>$@{print$<$ FieldInfo $>$}}
+\index{print$<$ FieldInfo $>$@{print$<$ FieldInfo $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ FieldInfo $>$()}{print< FieldInfo >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structFieldInfo}{Field\+Info}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structFieldInfo}{Field\+Info}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structFieldInfo}{Field\+Info}} informando um \mbox{\hyperlink{structFieldInfo}{Field\+Info}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a841aeb31705ac7ef74ee84156aed274d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_aeb0f91f479f59201535a9a437cad2798}\label{Tipos_8cpp_aeb0f91f479f59201535a9a437cad2798}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ MethodInfo $>$@{print$<$ MethodInfo $>$}}
+\index{print$<$ MethodInfo $>$@{print$<$ MethodInfo $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ MethodInfo $>$()}{print< MethodInfo >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ \mbox{\hyperlink{structMethodInfo}{Method\+Info}} $>$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMethodInfo}{Method\+Info}} \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o \mbox{\hyperlink{structMethodInfo}{Method\+Info}} informando um \mbox{\hyperlink{structMethodInfo}{Method\+Info}} e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{Tipos_8cpp_aeb0f91f479f59201535a9a437cad2798_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_acf40d8a5ff2ee0e5bb42b2be35e1dcd1}\label{Tipos_8cpp_acf40d8a5ff2ee0e5bb42b2be35e1dcd1}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ uint16\_t $>$@{print$<$ uint16\_t $>$}}
+\index{print$<$ uint16\_t $>$@{print$<$ uint16\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ uint16\_t $>$()}{print< uint16\_t >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ uint16\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{uint16\+\_\+t \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o uint16\+\_\+t informando um class\+File e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Tipos_8cpp_aafcb849961fabf365066d89b5f061a5c}\label{Tipos_8cpp_aafcb849961fabf365066d89b5f061a5c}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ uint32\_t $>$@{print$<$ uint32\_t $>$}}
+\index{print$<$ uint32\_t $>$@{print$<$ uint32\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ uint32\_t $>$()}{print< uint32\_t >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ uint32\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{uint32\+\_\+t \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o uint32\+\_\+t informando um class\+File e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Tipos_8cpp_a78e725d6aa1a4bb1b3d26e4dafe5e059}\label{Tipos_8cpp_a78e725d6aa1a4bb1b3d26e4dafe5e059}} 
+\index{Tipos.cpp@{Tipos.cpp}!print$<$ uint8\_t $>$@{print$<$ uint8\_t $>$}}
+\index{print$<$ uint8\_t $>$@{print$<$ uint8\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{print$<$ uint8\_t $>$()}{print< uint8\_t >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_ae0e41759896a00fd3b6d440a07978626}{print}}$<$ uint8\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \&}]{u,  }\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption})}
+
+
+
+Função que printa o uint8\+\_\+t informando um class\+File e um ostream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em u} & \\
+\hline
+{\em os} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{Tipos_8cpp_a4881b63e9f17ad6fb4e34aa40bf5f547}\label{Tipos_8cpp_a4881b63e9f17ad6fb4e34aa40bf5f547}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ AttributeInfoBasic $\ast$ $>$@{read$<$ AttributeInfoBasic $\ast$ $>$}}
+\index{read$<$ AttributeInfoBasic $\ast$ $>$@{read$<$ AttributeInfoBasic $\ast$ $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ AttributeInfoBasic $\ast$ $>$()}{read< AttributeInfoBasic * >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structAttributeInfoBasic}{Attribute\+Info\+Basic}} $\ast$ $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structAttributeInfoBasic}{Attribute\+Info\+Basic}} $\ast$$\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um \mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}} informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a4881b63e9f17ad6fb4e34aa40bf5f547_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_abb74f187f1f98c672acfe24d16ab86e1}\label{Tipos_8cpp_abb74f187f1f98c672acfe24d16ab86e1}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ ClassFile $>$@{read$<$ ClassFile $>$}}
+\index{read$<$ ClassFile $>$@{read$<$ ClassFile $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ ClassFile $>$()}{read< ClassFile >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structClassFile}{Class\+File}} $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structClassFile}{Class\+File}} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um \mbox{\hyperlink{structClassFile}{Class\+File}} informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_abb74f187f1f98c672acfe24d16ab86e1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a0d11f03c1a484a81df50ffb904327b2d}\label{Tipos_8cpp_a0d11f03c1a484a81df50ffb904327b2d}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ ConstantPoolInfo $\ast$ $>$@{read$<$ ConstantPoolInfo $\ast$ $>$}}
+\index{read$<$ ConstantPoolInfo $\ast$ $>$@{read$<$ ConstantPoolInfo $\ast$ $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ ConstantPoolInfo $\ast$ $>$()}{read< ConstantPoolInfo * >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$ $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structConstantPoolInfo}{Constant\+Pool\+Info}} $\ast$$\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um Constant\+Pool\+Info$\ast$ informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a0d11f03c1a484a81df50ffb904327b2d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a894499df7cc940f3b4d6bbc1b727f043}\label{Tipos_8cpp_a894499df7cc940f3b4d6bbc1b727f043}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPClass $>$@{read$<$ CPClass $>$}}
+\index{read$<$ CPClass $>$@{read$<$ CPClass $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPClass $>$()}{read< CPClass >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structCPClass}{C\+P\+Class}} $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structCPClass}{C\+P\+Class}} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um C\+P\+Class$\ast$ informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & ~\newline
+ \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a894499df7cc940f3b4d6bbc1b727f043_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a76eb736a0e337a75e6db5b4ac9b12f20}\label{Tipos_8cpp_a76eb736a0e337a75e6db5b4ac9b12f20}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPDouble $>$@{read$<$ CPDouble $>$}}
+\index{read$<$ CPDouble $>$@{read$<$ CPDouble $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPDouble $>$()}{read< CPDouble >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structCPDouble}{C\+P\+Double}} $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structCPDouble}{C\+P\+Double}} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um C\+P\+Double$\ast$ informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a76eb736a0e337a75e6db5b4ac9b12f20_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_aacff615cadaf3b7eb1d8a57bd3f0e07d}\label{Tipos_8cpp_aacff615cadaf3b7eb1d8a57bd3f0e07d}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPFieldref $>$@{read$<$ CPFieldref $>$}}
+\index{read$<$ CPFieldref $>$@{read$<$ CPFieldref $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPFieldref $>$()}{read< CPFieldref >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structCPFieldref}{C\+P\+Fieldref}} $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structCPFieldref}{C\+P\+Fieldref}} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um C\+P\+Fieldref$\ast$ informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_aacff615cadaf3b7eb1d8a57bd3f0e07d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_abc3774e2dcf024dac73355c4f0c9519d}\label{Tipos_8cpp_abc3774e2dcf024dac73355c4f0c9519d}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPFloat $>$@{read$<$ CPFloat $>$}}
+\index{read$<$ CPFloat $>$@{read$<$ CPFloat $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPFloat $>$()}{read< CPFloat >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structCPFloat}{C\+P\+Float}} $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structCPFloat}{C\+P\+Float}} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um C\+P\+Float$\ast$ informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_abc3774e2dcf024dac73355c4f0c9519d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_ac69aa78f8c49bd654be9e898a748eaab}\label{Tipos_8cpp_ac69aa78f8c49bd654be9e898a748eaab}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPInteger $>$@{read$<$ CPInteger $>$}}
+\index{read$<$ CPInteger $>$@{read$<$ CPInteger $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPInteger $>$()}{read< CPInteger >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structCPInteger}{C\+P\+Integer}} $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structCPInteger}{C\+P\+Integer}} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um C\+P\+Integer$\ast$ informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_ac69aa78f8c49bd654be9e898a748eaab_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a2a16158434135070eb26957637b48baa}\label{Tipos_8cpp_a2a16158434135070eb26957637b48baa}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPInterfaceMethodref $>$@{read$<$ CPInterfaceMethodref $>$}}
+\index{read$<$ CPInterfaceMethodref $>$@{read$<$ CPInterfaceMethodref $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPInterfaceMethodref $>$()}{read< CPInterfaceMethodref >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structCPInterfaceMethodref}{C\+P\+Interface\+Methodref}} $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structCPInterfaceMethodref}{C\+P\+Interface\+Methodref}} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um C\+P\+Interface\+Methodref$\ast$ informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a2a16158434135070eb26957637b48baa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a32183838ed3a43e61f8d01dc41940890}\label{Tipos_8cpp_a32183838ed3a43e61f8d01dc41940890}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPInvokeDynamic $>$@{read$<$ CPInvokeDynamic $>$}}
+\index{read$<$ CPInvokeDynamic $>$@{read$<$ CPInvokeDynamic $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPInvokeDynamic $>$()}{read< CPInvokeDynamic >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structCPInvokeDynamic}{C\+P\+Invoke\+Dynamic}} $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structCPInvokeDynamic}{C\+P\+Invoke\+Dynamic}} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um C\+P\+Invoke\+Dynamic$\ast$ informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a32183838ed3a43e61f8d01dc41940890_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a08919c9101c2a6d4116e52662a8c3094}\label{Tipos_8cpp_a08919c9101c2a6d4116e52662a8c3094}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPLong $>$@{read$<$ CPLong $>$}}
+\index{read$<$ CPLong $>$@{read$<$ CPLong $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPLong $>$()}{read< CPLong >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structCPLong}{C\+P\+Long}} $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structCPLong}{C\+P\+Long}} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um C\+P\+Long$\ast$ informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a08919c9101c2a6d4116e52662a8c3094_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a86d8aed4f5292fc0d64b016466d4034c}\label{Tipos_8cpp_a86d8aed4f5292fc0d64b016466d4034c}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPMethodHandle $>$@{read$<$ CPMethodHandle $>$}}
+\index{read$<$ CPMethodHandle $>$@{read$<$ CPMethodHandle $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPMethodHandle $>$()}{read< CPMethodHandle >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structCPMethodHandle}{C\+P\+Method\+Handle}} $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structCPMethodHandle}{C\+P\+Method\+Handle}} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um C\+P\+Method\+Handle$\ast$ informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a86d8aed4f5292fc0d64b016466d4034c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a606cf237b938cea3bfef5be958e12f72}\label{Tipos_8cpp_a606cf237b938cea3bfef5be958e12f72}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPMethodref $>$@{read$<$ CPMethodref $>$}}
+\index{read$<$ CPMethodref $>$@{read$<$ CPMethodref $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPMethodref $>$()}{read< CPMethodref >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structCPMethodref}{C\+P\+Methodref}} $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structCPMethodref}{C\+P\+Methodref}} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um C\+P\+Methodref$\ast$ informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a606cf237b938cea3bfef5be958e12f72_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a45991bdfbd70eb9dbad1da90bcf6b184}\label{Tipos_8cpp_a45991bdfbd70eb9dbad1da90bcf6b184}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPMethodType $>$@{read$<$ CPMethodType $>$}}
+\index{read$<$ CPMethodType $>$@{read$<$ CPMethodType $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPMethodType $>$()}{read< CPMethodType >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structCPMethodType}{C\+P\+Method\+Type}} $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structCPMethodType}{C\+P\+Method\+Type}} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um C\+P\+Method\+Type$\ast$ informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a45991bdfbd70eb9dbad1da90bcf6b184_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a2d8c2bb663df696204834c6b7b98edd5}\label{Tipos_8cpp_a2d8c2bb663df696204834c6b7b98edd5}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPNameAndType $>$@{read$<$ CPNameAndType $>$}}
+\index{read$<$ CPNameAndType $>$@{read$<$ CPNameAndType $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPNameAndType $>$()}{read< CPNameAndType >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structCPNameAndType}{C\+P\+Name\+And\+Type}} $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structCPNameAndType}{C\+P\+Name\+And\+Type}} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um C\+P\+Name\+And\+Type$\ast$ informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a2d8c2bb663df696204834c6b7b98edd5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a705e0e1fbd1153df7aaf96c65b90ed32}\label{Tipos_8cpp_a705e0e1fbd1153df7aaf96c65b90ed32}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPString $>$@{read$<$ CPString $>$}}
+\index{read$<$ CPString $>$@{read$<$ CPString $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPString $>$()}{read< CPString >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structCPString}{C\+P\+String}} $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structCPString}{C\+P\+String}} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um C\+P\+String$\ast$ informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a705e0e1fbd1153df7aaf96c65b90ed32_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a5ec22caf1feca08be5d198edc72618e7}\label{Tipos_8cpp_a5ec22caf1feca08be5d198edc72618e7}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ CPUtf8 $>$@{read$<$ CPUtf8 $>$}}
+\index{read$<$ CPUtf8 $>$@{read$<$ CPUtf8 $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ CPUtf8 $>$()}{read< CPUtf8 >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}} $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um C\+P\+Utf8$\ast$ informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a5ec22caf1feca08be5d198edc72618e7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a45a09c5c6bf135bd1d99921f59745253}\label{Tipos_8cpp_a45a09c5c6bf135bd1d99921f59745253}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ FieldInfo $>$@{read$<$ FieldInfo $>$}}
+\index{read$<$ FieldInfo $>$@{read$<$ FieldInfo $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ FieldInfo $>$()}{read< FieldInfo >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structFieldInfo}{Field\+Info}} $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structFieldInfo}{Field\+Info}} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um \mbox{\hyperlink{structFieldInfo}{Field\+Info}} informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & ~\newline
+ \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a45a09c5c6bf135bd1d99921f59745253_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a4c0ab33518c20b6a1aecb160562e8edb}\label{Tipos_8cpp_a4c0ab33518c20b6a1aecb160562e8edb}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ MethodInfo $>$@{read$<$ MethodInfo $>$}}
+\index{read$<$ MethodInfo $>$@{read$<$ MethodInfo $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ MethodInfo $>$()}{read< MethodInfo >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ \mbox{\hyperlink{structMethodInfo}{Method\+Info}} $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um \mbox{\hyperlink{structMethodInfo}{Method\+Info}} informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & ~\newline
+ \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Tipos_8cpp_a4c0ab33518c20b6a1aecb160562e8edb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_acb337e0b996b7eb4f83d197c9b1a12f9}\label{Tipos_8cpp_acb337e0b996b7eb4f83d197c9b1a12f9}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ uint16\_t $>$@{read$<$ uint16\_t $>$}}
+\index{read$<$ uint16\_t $>$@{read$<$ uint16\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ uint16\_t $>$()}{read< uint16\_t >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+uint16\+\_\+t \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ uint16\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{in }\end{DoxyParamCaption})}
+
+
+
+Função que lê um uinnt16\+\_\+t de um vetor de uint8\+\_\+t. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em in} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint16\+\_\+t 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{Tipos_8cpp_acb337e0b996b7eb4f83d197c9b1a12f9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_adb0549fcd746d5ec60522466702b87a9}\label{Tipos_8cpp_adb0549fcd746d5ec60522466702b87a9}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ uint16\_t $>$@{read$<$ uint16\_t $>$}}
+\index{read$<$ uint16\_t $>$@{read$<$ uint16\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ uint16\_t $>$()}{read< uint16\_t >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ uint16\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{uint16\+\_\+t $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um uint16\+\_\+t informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{Tipos_8cpp_adb0549fcd746d5ec60522466702b87a9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_ae516ebe405aedf431427028480752c0b}\label{Tipos_8cpp_ae516ebe405aedf431427028480752c0b}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ uint32\_t $>$@{read$<$ uint32\_t $>$}}
+\index{read$<$ uint32\_t $>$@{read$<$ uint32\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ uint32\_t $>$()}{read< uint32\_t >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+uint32\+\_\+t \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ uint32\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{in }\end{DoxyParamCaption})}
+
+
+
+Função que lê um uinnt32\+\_\+t de um vetor de uint8\+\_\+t. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em in} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{Tipos_8cpp_ae516ebe405aedf431427028480752c0b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_ab67fb792eef8a39d7978184468858464}\label{Tipos_8cpp_ab67fb792eef8a39d7978184468858464}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ uint32\_t $>$@{read$<$ uint32\_t $>$}}
+\index{read$<$ uint32\_t $>$@{read$<$ uint32\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ uint32\_t $>$()}{read< uint32\_t >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ uint32\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{uint32\+\_\+t $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um uint32\+\_\+t informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{Tipos_8cpp_ab67fb792eef8a39d7978184468858464_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{Tipos_8cpp_a84a58ce8de91bb008e62bd8d7576bcf9}\label{Tipos_8cpp_a84a58ce8de91bb008e62bd8d7576bcf9}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ uint8\_t $>$@{read$<$ uint8\_t $>$}}
+\index{read$<$ uint8\_t $>$@{read$<$ uint8\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ uint8\_t $>$()}{read< uint8\_t >()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+uint8\+\_\+t \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ uint8\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{in }\end{DoxyParamCaption})}
+
+
+
+Função que lê uma um uint8\+\_\+t de um vetor de uint8\+\_\+t. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em in} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{Tipos_8cpp_a3f350beee6fc659a669437e75744580e}\label{Tipos_8cpp_a3f350beee6fc659a669437e75744580e}} 
+\index{Tipos.cpp@{Tipos.cpp}!read$<$ uint8\_t $>$@{read$<$ uint8\_t $>$}}
+\index{read$<$ uint8\_t $>$@{read$<$ uint8\_t $>$}!Tipos.cpp@{Tipos.cpp}}
+\doxysubsubsection{\texorpdfstring{read$<$ uint8\_t $>$()}{read< uint8\_t >()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$$>$ \\
+void \mbox{\hyperlink{Tipos_8h_afcbdd551592b65fefe49467460cfc2d1}{read}}$<$ uint8\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{ifs,  }\item[{uint8\+\_\+t $\ast$}]{u }\end{DoxyParamCaption})}
+
+
+
+Função para leitura de um uint8\+\_\+t informando um ifstream. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em $<$br$>$} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & \\
+\hline
+{\em u} & \\
+\hline
+\end{DoxyParams}

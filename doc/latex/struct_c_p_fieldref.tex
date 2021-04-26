@@ -1,0 +1,97 @@
+\hypertarget{struct_c_p_fieldref}{}\doxysection{Referência à estrutura CPFieldref}
+\label{struct_c_p_fieldref}\index{CPFieldref@{CPFieldref}}
+
+
+Estrutura usada para representar um campo.  
+
+
+
+
+{\ttfamily \#include $<$Constant\+Pool\+Info.\+h$>$}
+
+Diagrama de heranças da classe CPFieldref\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_c_p_fieldref}
+\end{center}
+\end{figure}
+\doxysubsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_c_p_fieldref_a7b69d0f0134d96a91b28f367daaf448d}{CPFieldref}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{struct_c_p_fieldref}{CPFieldref}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Atributos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_c_p_fieldref_aaa81adb8bb983fd2e2494f34a5fa3cfe}{class\+Index}}
+\begin{DoxyCompactList}\small\item\em Ídice para a tabela do Constant\+Pool que contém um \mbox{\hyperlink{struct_c_p_class}{CPClass}}. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{struct_c_p_fieldref_a63cb0cd8ced1b2b56008772bd903a734}{name\+And\+Type\+Index}}
+\begin{DoxyCompactList}\small\item\em Ídice para a tabela do Constant\+Pool que contém um \mbox{\hyperlink{struct_c_p_name_and_type}{CPName\+And\+Type}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_c_p_fieldref_a4c5e80aa28ada415615e1234c97eab64}{was\+Loaded}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct_c_p_fieldref_aecef87551ea0ab7cd07473a8941a0d5a}{class\+Field\+Value}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{struct_c_p_fieldref_a23a1a1b1cccdaea4bae36c12de1181ef}{instance\+Field\+Desloc}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Estrutura usada para representar um campo. 
+
+\doxysubsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{struct_c_p_fieldref_a7b69d0f0134d96a91b28f367daaf448d}\label{struct_c_p_fieldref_a7b69d0f0134d96a91b28f367daaf448d}} 
+\index{CPFieldref@{CPFieldref}!CPFieldref@{CPFieldref}}
+\index{CPFieldref@{CPFieldref}!CPFieldref@{CPFieldref}}
+\doxysubsubsection{\texorpdfstring{CPFieldref()}{CPFieldref()}}
+{\footnotesize\ttfamily CPFieldref\+::\+CPFieldref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{struct_c_p_fieldref}{CPFieldref}} object. 
+
+
+
+\doxysubsection{Documentação dos dados membro}
+\mbox{\Hypertarget{struct_c_p_fieldref_aecef87551ea0ab7cd07473a8941a0d5a}\label{struct_c_p_fieldref_aecef87551ea0ab7cd07473a8941a0d5a}} 
+\index{CPFieldref@{CPFieldref}!classFieldValue@{classFieldValue}}
+\index{classFieldValue@{classFieldValue}!CPFieldref@{CPFieldref}}
+\doxysubsubsection{\texorpdfstring{classFieldValue}{classFieldValue}}
+{\footnotesize\ttfamily void$\ast$ CPFieldref\+::class\+Field\+Value}
+
+\mbox{\Hypertarget{struct_c_p_fieldref_aaa81adb8bb983fd2e2494f34a5fa3cfe}\label{struct_c_p_fieldref_aaa81adb8bb983fd2e2494f34a5fa3cfe}} 
+\index{CPFieldref@{CPFieldref}!classIndex@{classIndex}}
+\index{classIndex@{classIndex}!CPFieldref@{CPFieldref}}
+\doxysubsubsection{\texorpdfstring{classIndex}{classIndex}}
+{\footnotesize\ttfamily uint16\+\_\+t CPFieldref\+::class\+Index}
+
+
+
+Ídice para a tabela do Constant\+Pool que contém um \mbox{\hyperlink{struct_c_p_class}{CPClass}}. 
+
+\mbox{\Hypertarget{struct_c_p_fieldref_a23a1a1b1cccdaea4bae36c12de1181ef}\label{struct_c_p_fieldref_a23a1a1b1cccdaea4bae36c12de1181ef}} 
+\index{CPFieldref@{CPFieldref}!instanceFieldDesloc@{instanceFieldDesloc}}
+\index{instanceFieldDesloc@{instanceFieldDesloc}!CPFieldref@{CPFieldref}}
+\doxysubsubsection{\texorpdfstring{instanceFieldDesloc}{instanceFieldDesloc}}
+{\footnotesize\ttfamily int32\+\_\+t CPFieldref\+::instance\+Field\+Desloc}
+
+\mbox{\Hypertarget{struct_c_p_fieldref_a63cb0cd8ced1b2b56008772bd903a734}\label{struct_c_p_fieldref_a63cb0cd8ced1b2b56008772bd903a734}} 
+\index{CPFieldref@{CPFieldref}!nameAndTypeIndex@{nameAndTypeIndex}}
+\index{nameAndTypeIndex@{nameAndTypeIndex}!CPFieldref@{CPFieldref}}
+\doxysubsubsection{\texorpdfstring{nameAndTypeIndex}{nameAndTypeIndex}}
+{\footnotesize\ttfamily uint16\+\_\+t CPFieldref\+::name\+And\+Type\+Index}
+
+
+
+Ídice para a tabela do Constant\+Pool que contém um \mbox{\hyperlink{struct_c_p_name_and_type}{CPName\+And\+Type}}. 
+
+\mbox{\Hypertarget{struct_c_p_fieldref_a4c5e80aa28ada415615e1234c97eab64}\label{struct_c_p_fieldref_a4c5e80aa28ada415615e1234c97eab64}} 
+\index{CPFieldref@{CPFieldref}!wasLoaded@{wasLoaded}}
+\index{wasLoaded@{wasLoaded}!CPFieldref@{CPFieldref}}
+\doxysubsubsection{\texorpdfstring{wasLoaded}{wasLoaded}}
+{\footnotesize\ttfamily bool CPFieldref\+::was\+Loaded}
+
+
+
+A documentação para esta estrutura foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_constant_pool_info_8h}{Constant\+Pool\+Info.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Código-Fonte de include/ClassLoader.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ClassLoader.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_class_loader_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __CLASS_LOADER_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __CLASS_LOADER_H__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../include/Trie.h&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../include/MethodInfo.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../include/ClassFile.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;../include/tipos.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;../include/RuntimeDataArea.h&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;../include/Deleter.h&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;../include/FileSystem.h&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;../include/ExecutionEngine.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="_class_loader_8h.html#a048d346871d555752cc714b7eab20bad">   22</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="_class_loader_8h.html#a048d346871d555752cc714b7eab20bad">isSameClass</a>(std::string s1, std::string s2);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_class_loader.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_class_loader.html">ClassLoader</a>{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">struct </span>NodeContent{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            uint32_t classNum;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="struct_class_file.html">ClassFile</a> *classFile;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordtype">bool</span> wasResolved;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            uint32_t qtdMethodsInstancePriv;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            uint32_t qtdMethodsInstanceNoPriv;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            uint32_t qtdMethodsClassPriv;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            uint32_t qtdMethodsClassNoPriv;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            uint32_t sizeInstance;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            uint32_t qtdFieldsInstancePriv;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            uint32_t qtdFieldsInstanceNoPriv;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            uint32_t qtdFieldsClassPriv;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            uint32_t qtdFieldsClassNoPriv;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            std::map&lt;uint32_t, uint32_t*&gt; iterfaceMethodLocalization;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="struct_method_info.html">MethodInfo</a> **acessMehodsTable;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="class_trie.html">Trie&lt;MethodInfo*&gt;</a> constructor;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="struct_method_info.html">MethodInfo</a>* constantConstructor;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="class_trie.html">Trie&lt;MethodInfo*&gt;</a> methodsInstancePriv;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="class_trie.html">Trie&lt;std::pair&lt;uint32_t, MethodInfo*&gt;</a>&gt; methodsInstanceNoPriv;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="class_trie.html">Trie&lt;MethodInfo*&gt;</a> methodsClassPriv;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="class_trie.html">Trie&lt;MethodInfo*&gt;</a> methodsClassNoPriv;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="class_trie.html">Trie&lt;uint32_t&gt;</a> fieldsInstancePriv;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="class_trie.html">Trie&lt;uint32_t&gt;</a> fieldsInstanceNoPriv;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="class_trie.html">Trie&lt;void*&gt;</a> fieldsClassPriv;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <a class="code" href="class_trie.html">Trie&lt;void*&gt;</a> fieldsClassNoPriv;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            NodeContent();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        };</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="class_trie.html">Trie&lt;NodeContent*&gt;</a> tree;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="class_file_system.html">FileSystem</a> fs;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        std::queue&lt;std::string&gt; classToLoad;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        std::queue&lt;NodeContent*&gt; classPrepare;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        std::stack&lt;NodeContent*&gt; classResolve;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="class_runtime_data_area.html">RuntimeDataArea</a> *runtimeDataArea;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="class_execution_engine.html">ExecutionEngine</a> *executionEngine;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        std::vector&lt;std::vector&lt;uint32_t&gt;&gt; inheranceGraph;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">bool</span> interfacesAreLoaded(NodeContent *nodeContent);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">void</span> addInterfacesToLoad(NodeContent *nodeContent);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">void</span> readClass(std::string &amp;s);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordtype">void</span> prepare(NodeContent *nodeContent);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordtype">void</span> resolve(NodeContent *nodeContent, std::queue&lt;NodeContent*&gt;&amp; classInitialize);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordtype">void</span> inicialize(NodeContent *nodeContent, std::queue&lt;NodeContent*&gt;&amp; classInitialize);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        NodeContent* objectNodeContent;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_class_loader.html#af396f2eae432348c812c6cae6627f4eb">   80</a></span>&#160;        <a class="code" href="class_class_loader.html#af396f2eae432348c812c6cae6627f4eb">ClassLoader</a>(std::string &amp;&amp;s);</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="class_class_loader.html#a0f09f8c18253b103014c5f3c87759da5">   81</a></span>&#160;        <a class="code" href="class_class_loader.html#a0f09f8c18253b103014c5f3c87759da5">ClassLoader</a>(std::string &amp;s);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_class_loader.html#aa4c21d92e0f63b930734707f0bf8b619">   83</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_class_loader.html#aa4c21d92e0f63b930734707f0bf8b619">addClassToLoad</a>(std::string s);</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="class_class_loader.html#a3a6ff437ae838e214a8be17cd413e918">   84</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_class_loader.html#a3a6ff437ae838e214a8be17cd413e918">saveObejectInfo</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="class_class_loader.html#a87b4d22d49bfec054e7cca1146befb3c">   85</a></span>&#160;        std::pair&lt;MethodInfo**, uint32_t&gt; <a class="code" href="class_class_loader.html#a87b4d22d49bfec054e7cca1146befb3c">getObejectInfo</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_class_loader.html#a3a4e32bf702b533d250529970bd88d0f">   87</a></span>&#160;        uint32_t <a class="code" href="class_class_loader.html#a3a4e32bf702b533d250529970bd88d0f">getClassNum</a>(std::string &amp;className);</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_class_loader.html#aedddeef82ba9ae0ffee62e2c56b14e0a">   88</a></span>&#160;        <a class="code" href="struct_method_info.html">MethodInfo</a>* <a class="code" href="class_class_loader.html#aedddeef82ba9ae0ffee62e2c56b14e0a">getContructor</a>(uint32_t classNum, std::string &amp;methodName);</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="class_class_loader.html#a3bb18b1c8e2f62067390c9a5d5ed0b26">   89</a></span>&#160;        uint32_t <a class="code" href="class_class_loader.html#a3bb18b1c8e2f62067390c9a5d5ed0b26">getInstanceSize</a>(uint32_t classNum);</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="class_class_loader.html#ae99e3d5133344c14f6ddf96e17aa1baa">   90</a></span>&#160;        std::map&lt;uint32_t, uint32_t*&gt;* <a class="code" href="class_class_loader.html#ae99e3d5133344c14f6ddf96e17aa1baa">getIterfaceMethodLocalization</a>(uint32_t classNum);</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_class_loader.html#ab435c6beee140d26de17492d6da07316">   91</a></span>&#160;        <a class="code" href="struct_method_info.html">MethodInfo</a>** <a class="code" href="class_class_loader.html#ab435c6beee140d26de17492d6da07316">getMethodTable</a>(uint32_t classNum);</div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="class_class_loader.html#af59db14e907867b397f4aa6e52c1c6c0">   92</a></span>&#160;        <a class="code" href="struct_class_file.html">ClassFile</a>* <a class="code" href="class_class_loader.html#af59db14e907867b397f4aa6e52c1c6c0">getClassFile</a>(uint32_t classNum);</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_class_loader.html#a6285f98f448417ff4c2ff8f183df4ce7">   93</a></span>&#160;        std::string <a class="code" href="class_class_loader.html#a6285f98f448417ff4c2ff8f183df4ce7">getClassName</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_class_loader.html#ae5a50b6253e237015f2641b06e80c9ae">   95</a></span>&#160;        uint32_t <a class="code" href="class_class_loader.html#ae5a50b6253e237015f2641b06e80c9ae">getDatafromObject</a>(uint32_t <span class="keywordtype">object</span>, std::string&amp; name);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_class_loader.html#a8b16a507b33981b4b55c7bea7a1bf444">   97</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_class_loader.html#a8b16a507b33981b4b55c7bea7a1bf444">setRuntimeDataArea</a>(<a class="code" href="class_runtime_data_area.html">RuntimeDataArea</a>* new_runtimeDataArea);</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="class_class_loader.html#ace3807f8e19eb290cad0c2b472876cfe">   98</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_class_loader.html#ace3807f8e19eb290cad0c2b472876cfe">setExecutionEngine</a>(<a class="code" href="class_execution_engine.html">ExecutionEngine</a>* new_executionEngine);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="class_class_loader.html#a8ce606eb72c0f99cf498d7951ed2c8ed">  100</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_class_loader.html#a8ce606eb72c0f99cf498d7951ed2c8ed">exec</a>();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="class_class_loader.html#ab640102d9f4aef44b48de7b0075b98b8">  102</a></span>&#160;        <a class="code" href="struct_method_info.html">MethodInfo</a>* <a class="code" href="class_class_loader.html#ab640102d9f4aef44b48de7b0075b98b8">getMethod</a>(std::string className, std::string methodName);</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="class_class_loader.html#a21a3409cee5dd50af757e80b76a4b3f8">  103</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_class_loader.html#a21a3409cee5dd50af757e80b76a4b3f8">parentOf</a>(uint32_t parent, uint32_t child);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="class_class_loader.html#aabdb498a55a43794160fe19f197df45c">  105</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="struct_class_file.html">ClassFile</a>* <a class="code" href="class_class_loader.html#aabdb498a55a43794160fe19f197df45c">readClass2</a>(<a class="code" href="class_file_system.html">FileSystem</a> &amp;fs, std::string &amp;s);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="class_class_loader.html#ad0b5c4fff295d13b587481c6ade4cf7e">  107</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_class_loader.html#ad0b5c4fff295d13b587481c6ade4cf7e">resolveConstantPoolAt</a>(<a class="code" href="struct_constant_pool_info.html">ConstantPoolInfo</a>** cp, uint32_t ind);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;       </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;};</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_class_loader_8h_html_a048d346871d555752cc714b7eab20bad"><div class="ttname"><a href="_class_loader_8h.html#a048d346871d555752cc714b7eab20bad">isSameClass</a></div><div class="ttdeci">bool isSameClass(std::string s1, std::string s2)</div></div>
+<div class="ttc" id="aclass_class_loader_html"><div class="ttname"><a href="class_class_loader.html">ClassLoader</a></div><div class="ttdef"><b>Definition:</b> ClassLoader.h:24</div></div>
+<div class="ttc" id="aclass_class_loader_html_a0f09f8c18253b103014c5f3c87759da5"><div class="ttname"><a href="class_class_loader.html#a0f09f8c18253b103014c5f3c87759da5">ClassLoader::ClassLoader</a></div><div class="ttdeci">ClassLoader(std::string &amp;s)</div></div>
+<div class="ttc" id="aclass_class_loader_html_a21a3409cee5dd50af757e80b76a4b3f8"><div class="ttname"><a href="class_class_loader.html#a21a3409cee5dd50af757e80b76a4b3f8">ClassLoader::parentOf</a></div><div class="ttdeci">bool parentOf(uint32_t parent, uint32_t child)</div></div>
+<div class="ttc" id="aclass_class_loader_html_a3a4e32bf702b533d250529970bd88d0f"><div class="ttname"><a href="class_class_loader.html#a3a4e32bf702b533d250529970bd88d0f">ClassLoader::getClassNum</a></div><div class="ttdeci">uint32_t getClassNum(std::string &amp;className)</div></div>
+<div class="ttc" id="aclass_class_loader_html_a3a6ff437ae838e214a8be17cd413e918"><div class="ttname"><a href="class_class_loader.html#a3a6ff437ae838e214a8be17cd413e918">ClassLoader::saveObejectInfo</a></div><div class="ttdeci">void saveObejectInfo()</div></div>
+<div class="ttc" id="aclass_class_loader_html_a3bb18b1c8e2f62067390c9a5d5ed0b26"><div class="ttname"><a href="class_class_loader.html#a3bb18b1c8e2f62067390c9a5d5ed0b26">ClassLoader::getInstanceSize</a></div><div class="ttdeci">uint32_t getInstanceSize(uint32_t classNum)</div></div>
+<div class="ttc" id="aclass_class_loader_html_a6285f98f448417ff4c2ff8f183df4ce7"><div class="ttname"><a href="class_class_loader.html#a6285f98f448417ff4c2ff8f183df4ce7">ClassLoader::getClassName</a></div><div class="ttdeci">std::string getClassName()</div></div>
+<div class="ttc" id="aclass_class_loader_html_a87b4d22d49bfec054e7cca1146befb3c"><div class="ttname"><a href="class_class_loader.html#a87b4d22d49bfec054e7cca1146befb3c">ClassLoader::getObejectInfo</a></div><div class="ttdeci">std::pair&lt; MethodInfo **, uint32_t &gt; getObejectInfo()</div></div>
+<div class="ttc" id="aclass_class_loader_html_a8b16a507b33981b4b55c7bea7a1bf444"><div class="ttname"><a href="class_class_loader.html#a8b16a507b33981b4b55c7bea7a1bf444">ClassLoader::setRuntimeDataArea</a></div><div class="ttdeci">void setRuntimeDataArea(RuntimeDataArea *new_runtimeDataArea)</div></div>
+<div class="ttc" id="aclass_class_loader_html_a8ce606eb72c0f99cf498d7951ed2c8ed"><div class="ttname"><a href="class_class_loader.html#a8ce606eb72c0f99cf498d7951ed2c8ed">ClassLoader::exec</a></div><div class="ttdeci">void exec()</div></div>
+<div class="ttc" id="aclass_class_loader_html_aa4c21d92e0f63b930734707f0bf8b619"><div class="ttname"><a href="class_class_loader.html#aa4c21d92e0f63b930734707f0bf8b619">ClassLoader::addClassToLoad</a></div><div class="ttdeci">void addClassToLoad(std::string s)</div></div>
+<div class="ttc" id="aclass_class_loader_html_aabdb498a55a43794160fe19f197df45c"><div class="ttname"><a href="class_class_loader.html#aabdb498a55a43794160fe19f197df45c">ClassLoader::readClass2</a></div><div class="ttdeci">static ClassFile * readClass2(FileSystem &amp;fs, std::string &amp;s)</div></div>
+<div class="ttc" id="aclass_class_loader_html_ab435c6beee140d26de17492d6da07316"><div class="ttname"><a href="class_class_loader.html#ab435c6beee140d26de17492d6da07316">ClassLoader::getMethodTable</a></div><div class="ttdeci">MethodInfo ** getMethodTable(uint32_t classNum)</div></div>
+<div class="ttc" id="aclass_class_loader_html_ab640102d9f4aef44b48de7b0075b98b8"><div class="ttname"><a href="class_class_loader.html#ab640102d9f4aef44b48de7b0075b98b8">ClassLoader::getMethod</a></div><div class="ttdeci">MethodInfo * getMethod(std::string className, std::string methodName)</div></div>
+<div class="ttc" id="aclass_class_loader_html_ace3807f8e19eb290cad0c2b472876cfe"><div class="ttname"><a href="class_class_loader.html#ace3807f8e19eb290cad0c2b472876cfe">ClassLoader::setExecutionEngine</a></div><div class="ttdeci">void setExecutionEngine(ExecutionEngine *new_executionEngine)</div></div>
+<div class="ttc" id="aclass_class_loader_html_ad0b5c4fff295d13b587481c6ade4cf7e"><div class="ttname"><a href="class_class_loader.html#ad0b5c4fff295d13b587481c6ade4cf7e">ClassLoader::resolveConstantPoolAt</a></div><div class="ttdeci">void resolveConstantPoolAt(ConstantPoolInfo **cp, uint32_t ind)</div></div>
+<div class="ttc" id="aclass_class_loader_html_ae5a50b6253e237015f2641b06e80c9ae"><div class="ttname"><a href="class_class_loader.html#ae5a50b6253e237015f2641b06e80c9ae">ClassLoader::getDatafromObject</a></div><div class="ttdeci">uint32_t getDatafromObject(uint32_t object, std::string &amp;name)</div></div>
+<div class="ttc" id="aclass_class_loader_html_ae99e3d5133344c14f6ddf96e17aa1baa"><div class="ttname"><a href="class_class_loader.html#ae99e3d5133344c14f6ddf96e17aa1baa">ClassLoader::getIterfaceMethodLocalization</a></div><div class="ttdeci">std::map&lt; uint32_t, uint32_t * &gt; * getIterfaceMethodLocalization(uint32_t classNum)</div></div>
+<div class="ttc" id="aclass_class_loader_html_aedddeef82ba9ae0ffee62e2c56b14e0a"><div class="ttname"><a href="class_class_loader.html#aedddeef82ba9ae0ffee62e2c56b14e0a">ClassLoader::getContructor</a></div><div class="ttdeci">MethodInfo * getContructor(uint32_t classNum, std::string &amp;methodName)</div></div>
+<div class="ttc" id="aclass_class_loader_html_af396f2eae432348c812c6cae6627f4eb"><div class="ttname"><a href="class_class_loader.html#af396f2eae432348c812c6cae6627f4eb">ClassLoader::ClassLoader</a></div><div class="ttdeci">ClassLoader(std::string &amp;&amp;s)</div></div>
+<div class="ttc" id="aclass_class_loader_html_af59db14e907867b397f4aa6e52c1c6c0"><div class="ttname"><a href="class_class_loader.html#af59db14e907867b397f4aa6e52c1c6c0">ClassLoader::getClassFile</a></div><div class="ttdeci">ClassFile * getClassFile(uint32_t classNum)</div></div>
+<div class="ttc" id="aclass_execution_engine_html"><div class="ttname"><a href="class_execution_engine.html">ExecutionEngine</a></div><div class="ttdef"><b>Definition:</b> ExecutionEngine.h:23</div></div>
+<div class="ttc" id="aclass_file_system_html"><div class="ttname"><a href="class_file_system.html">FileSystem</a></div><div class="ttdef"><b>Definition:</b> FileSystem.h:7</div></div>
+<div class="ttc" id="aclass_runtime_data_area_html"><div class="ttname"><a href="class_runtime_data_area.html">RuntimeDataArea</a></div><div class="ttdef"><b>Definition:</b> RuntimeDataArea.h:9</div></div>
+<div class="ttc" id="aclass_trie_html"><div class="ttname"><a href="class_trie.html">Trie&lt; MethodInfo * &gt;</a></div></div>
+<div class="ttc" id="astruct_class_file_html"><div class="ttname"><a href="struct_class_file.html">ClassFile</a></div><div class="ttdoc">Strutura pra representar o .class.</div><div class="ttdef"><b>Definition:</b> ClassFile.h:25</div></div>
+<div class="ttc" id="astruct_constant_pool_info_html"><div class="ttname"><a href="struct_constant_pool_info.html">ConstantPoolInfo</a></div><div class="ttdoc">Estrutura base de todos os constant Pool.</div><div class="ttdef"><b>Definition:</b> ConstantPoolInfo.h:38</div></div>
+<div class="ttc" id="astruct_method_info_html"><div class="ttname"><a href="struct_method_info.html">MethodInfo</a></div><div class="ttdoc">Estrutura que armazena os dados de um método.</div><div class="ttdef"><b>Definition:</b> MethodInfo.h:12</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

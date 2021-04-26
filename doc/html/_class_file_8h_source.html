@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Código-Fonte de include/ClassFile.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ClassFile.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_class_file_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __CLASS_FILE_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __CLASS_FILE_H__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../include/ConstantPoolInfo.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;../include/FieldInfo.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../include/MethodInfo.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;../include/AttributeInfo.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_class_format_error.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_class_format_error.html">ClassFormatError</a> : <span class="keyword">public</span> std::runtime_error{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_class_format_error.html#a2ce1c1d1b061b2213f80870b85eb2b8a">   14</a></span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_class_format_error.html#a2ce1c1d1b061b2213f80870b85eb2b8a">ClassFormatError</a> (<span class="keyword">const</span> std::string&amp; what_arg);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_unsupported_class_version_error.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_unsupported_class_version_error.html">UnsupportedClassVersionError</a> : <span class="keyword">public</span> std::runtime_error{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_unsupported_class_version_error.html#aa8994594107c981ce681dcf26819118d">   18</a></span>&#160;        <span class="keyword">explicit</span> <a class="code" href="class_unsupported_class_version_error.html#aa8994594107c981ce681dcf26819118d">UnsupportedClassVersionError</a> (<span class="keyword">const</span> std::string&amp; what_arg);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="struct_class_file.html">   25</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_class_file.html">ClassFile</a>{</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="struct_class_file.html#a9d4d72751ff9250dd3305d5d853f7921">   30</a></span>&#160;    uint32_t <a class="code" href="struct_class_file.html#a9d4d72751ff9250dd3305d5d853f7921">magic</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="struct_class_file.html#afb41e706bd0e19ed5a24cd0e99ecc4c1">   35</a></span>&#160;    uint16_t <a class="code" href="struct_class_file.html#afb41e706bd0e19ed5a24cd0e99ecc4c1">minorVersion</a>; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="struct_class_file.html#a3424e098e9ef6dbfbdbb9c708afaffe7">   40</a></span>&#160;    uint16_t <a class="code" href="struct_class_file.html#a3424e098e9ef6dbfbdbb9c708afaffe7">majorVersion</a>; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="struct_class_file.html#af185527e4689b1672655f608df4a3c62">   45</a></span>&#160;    uint16_t <a class="code" href="struct_class_file.html#af185527e4689b1672655f608df4a3c62">constantPoolCount</a>; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="struct_class_file.html#a7f74890dd83bbb818f52d937f72ac5e8">   50</a></span>&#160;    <a class="code" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **<a class="code" href="struct_class_file.html#a7f74890dd83bbb818f52d937f72ac5e8">constantPool</a>; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="struct_class_file.html#afbb2cd57bb6eb5baa34e83127e928c18">   55</a></span>&#160;    uint16_t <a class="code" href="struct_class_file.html#afbb2cd57bb6eb5baa34e83127e928c18">accessFlags</a>; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="struct_class_file.html#abc02e661935c638b2f231cef576859f1">   60</a></span>&#160;    uint16_t <a class="code" href="struct_class_file.html#abc02e661935c638b2f231cef576859f1">thisClass</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="struct_class_file.html#a306c9da73620fa5ad94bbaa64a19afdd">   65</a></span>&#160;    uint16_t <a class="code" href="struct_class_file.html#a306c9da73620fa5ad94bbaa64a19afdd">superClass</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="struct_class_file.html#adcd02751a38d5b17559fd3c5201b2c42">   70</a></span>&#160;    uint16_t <a class="code" href="struct_class_file.html#adcd02751a38d5b17559fd3c5201b2c42">interfacesCount</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="struct_class_file.html#a86680de028c6df386edafa8e8436b92c">   75</a></span>&#160;    uint16_t *<a class="code" href="struct_class_file.html#a86680de028c6df386edafa8e8436b92c">interfaces</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="struct_class_file.html#a87f4d2ede2eb9df54d69952df84226ca">   80</a></span>&#160;    uint16_t <a class="code" href="struct_class_file.html#a87f4d2ede2eb9df54d69952df84226ca">fieldsCount</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="struct_class_file.html#add171dc12613ad29ef94f4f18a50f06a">   85</a></span>&#160;    <a class="code" href="struct_field_info.html">FieldInfo</a> *<a class="code" href="struct_class_file.html#add171dc12613ad29ef94f4f18a50f06a">fields</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="struct_class_file.html#a24d224be2ab473bac3506890c6ff6a4d">   90</a></span>&#160;    uint16_t <a class="code" href="struct_class_file.html#a24d224be2ab473bac3506890c6ff6a4d">methodsCount</a>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="struct_class_file.html#a67e02d50e6807bb97d7d8f265deef9a0">   95</a></span>&#160;    <a class="code" href="struct_method_info.html">MethodInfo</a> *<a class="code" href="struct_class_file.html#a67e02d50e6807bb97d7d8f265deef9a0">methods</a>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="struct_class_file.html#ad88c9b8262fbd79d49ad2c163ad45716">  100</a></span>&#160;    uint16_t <a class="code" href="struct_class_file.html#ad88c9b8262fbd79d49ad2c163ad45716">attributesCount</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="struct_class_file.html#addeb2f51bcb7e2536e7d6fef1947ce73">  105</a></span>&#160;    <a class="code" href="struct_attribute_info.html">AttributeInfo</a> **<a class="code" href="struct_class_file.html#addeb2f51bcb7e2536e7d6fef1947ce73">attributes</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="struct_class_file.html#a02cbab76d516d3a26509a4678f1bbb18">  110</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="struct_class_file.html#a02cbab76d516d3a26509a4678f1bbb18">addCPinfoInMethods</a>();</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="struct_class_file.html#a47669d90346c9fa0db30ae582c74a199">  115</a></span>&#160;    <a class="code" href="struct_class_file.html#a47669d90346c9fa0db30ae582c74a199">ClassFile</a>();</div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="struct_class_file.html#a8ba282fcf2e55ac5a4dc03f3fcc247b3">  120</a></span>&#160;    <a class="code" href="struct_class_file.html#a8ba282fcf2e55ac5a4dc03f3fcc247b3">~ClassFile</a>();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;};</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="_class_file_8h.html#a7f2d3e8af2169e325d8a4961ee587e91">  130</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_class_file_8h.html#a7f2d3e8af2169e325d8a4961ee587e91">conveterAttributeInfoInClassFile</a>(<a class="code" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **cpi, <a class="code" href="struct_class_file.html">ClassFile</a> *cf);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_class_file_8h_html_a7f2d3e8af2169e325d8a4961ee587e91"><div class="ttname"><a href="_class_file_8h.html#a7f2d3e8af2169e325d8a4961ee587e91">conveterAttributeInfoInClassFile</a></div><div class="ttdeci">void conveterAttributeInfoInClassFile(ConstantPoolInfo **cpi, ClassFile *cf)</div><div class="ttdoc">Função que converte os atributos de um ClassFile para a estruturas mais elaboradas.</div></div>
+<div class="ttc" id="aclass_class_format_error_html"><div class="ttname"><a href="class_class_format_error.html">ClassFormatError</a></div><div class="ttdef"><b>Definition:</b> ClassFile.h:12</div></div>
+<div class="ttc" id="aclass_class_format_error_html_a2ce1c1d1b061b2213f80870b85eb2b8a"><div class="ttname"><a href="class_class_format_error.html#a2ce1c1d1b061b2213f80870b85eb2b8a">ClassFormatError::ClassFormatError</a></div><div class="ttdeci">ClassFormatError(const std::string &amp;what_arg)</div></div>
+<div class="ttc" id="aclass_unsupported_class_version_error_html"><div class="ttname"><a href="class_unsupported_class_version_error.html">UnsupportedClassVersionError</a></div><div class="ttdef"><b>Definition:</b> ClassFile.h:16</div></div>
+<div class="ttc" id="aclass_unsupported_class_version_error_html_aa8994594107c981ce681dcf26819118d"><div class="ttname"><a href="class_unsupported_class_version_error.html#aa8994594107c981ce681dcf26819118d">UnsupportedClassVersionError::UnsupportedClassVersionError</a></div><div class="ttdeci">UnsupportedClassVersionError(const std::string &amp;what_arg)</div></div>
+<div class="ttc" id="astruct_attribute_info_html"><div class="ttname"><a href="struct_attribute_info.html">AttributeInfo</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:7</div></div>
+<div class="ttc" id="astruct_class_file_html"><div class="ttname"><a href="struct_class_file.html">ClassFile</a></div><div class="ttdoc">Strutura pra representar o .class.</div><div class="ttdef"><b>Definition:</b> ClassFile.h:25</div></div>
+<div class="ttc" id="astruct_class_file_html_a02cbab76d516d3a26509a4678f1bbb18"><div class="ttname"><a href="struct_class_file.html#a02cbab76d516d3a26509a4678f1bbb18">ClassFile::addCPinfoInMethods</a></div><div class="ttdeci">void addCPinfoInMethods()</div><div class="ttdoc">Construct a new Class File object.</div></div>
+<div class="ttc" id="astruct_class_file_html_a24d224be2ab473bac3506890c6ff6a4d"><div class="ttname"><a href="struct_class_file.html#a24d224be2ab473bac3506890c6ff6a4d">ClassFile::methodsCount</a></div><div class="ttdeci">uint16_t methodsCount</div><div class="ttdef"><b>Definition:</b> ClassFile.h:90</div></div>
+<div class="ttc" id="astruct_class_file_html_a306c9da73620fa5ad94bbaa64a19afdd"><div class="ttname"><a href="struct_class_file.html#a306c9da73620fa5ad94bbaa64a19afdd">ClassFile::superClass</a></div><div class="ttdeci">uint16_t superClass</div><div class="ttdef"><b>Definition:</b> ClassFile.h:65</div></div>
+<div class="ttc" id="astruct_class_file_html_a3424e098e9ef6dbfbdbb9c708afaffe7"><div class="ttname"><a href="struct_class_file.html#a3424e098e9ef6dbfbdbb9c708afaffe7">ClassFile::majorVersion</a></div><div class="ttdeci">uint16_t majorVersion</div><div class="ttdef"><b>Definition:</b> ClassFile.h:40</div></div>
+<div class="ttc" id="astruct_class_file_html_a47669d90346c9fa0db30ae582c74a199"><div class="ttname"><a href="struct_class_file.html#a47669d90346c9fa0db30ae582c74a199">ClassFile::ClassFile</a></div><div class="ttdeci">ClassFile()</div><div class="ttdoc">Construct a new Class File object.</div></div>
+<div class="ttc" id="astruct_class_file_html_a67e02d50e6807bb97d7d8f265deef9a0"><div class="ttname"><a href="struct_class_file.html#a67e02d50e6807bb97d7d8f265deef9a0">ClassFile::methods</a></div><div class="ttdeci">MethodInfo * methods</div><div class="ttdef"><b>Definition:</b> ClassFile.h:95</div></div>
+<div class="ttc" id="astruct_class_file_html_a7f74890dd83bbb818f52d937f72ac5e8"><div class="ttname"><a href="struct_class_file.html#a7f74890dd83bbb818f52d937f72ac5e8">ClassFile::constantPool</a></div><div class="ttdeci">ConstantPoolInfo ** constantPool</div><div class="ttdef"><b>Definition:</b> ClassFile.h:50</div></div>
+<div class="ttc" id="astruct_class_file_html_a86680de028c6df386edafa8e8436b92c"><div class="ttname"><a href="struct_class_file.html#a86680de028c6df386edafa8e8436b92c">ClassFile::interfaces</a></div><div class="ttdeci">uint16_t * interfaces</div><div class="ttdef"><b>Definition:</b> ClassFile.h:75</div></div>
+<div class="ttc" id="astruct_class_file_html_a87f4d2ede2eb9df54d69952df84226ca"><div class="ttname"><a href="struct_class_file.html#a87f4d2ede2eb9df54d69952df84226ca">ClassFile::fieldsCount</a></div><div class="ttdeci">uint16_t fieldsCount</div><div class="ttdef"><b>Definition:</b> ClassFile.h:80</div></div>
+<div class="ttc" id="astruct_class_file_html_a8ba282fcf2e55ac5a4dc03f3fcc247b3"><div class="ttname"><a href="struct_class_file.html#a8ba282fcf2e55ac5a4dc03f3fcc247b3">ClassFile::~ClassFile</a></div><div class="ttdeci">~ClassFile()</div><div class="ttdoc">Destroy the Class File object.</div></div>
+<div class="ttc" id="astruct_class_file_html_a9d4d72751ff9250dd3305d5d853f7921"><div class="ttname"><a href="struct_class_file.html#a9d4d72751ff9250dd3305d5d853f7921">ClassFile::magic</a></div><div class="ttdeci">uint32_t magic</div><div class="ttdoc">Número magico que define que o arquivo é um .class.</div><div class="ttdef"><b>Definition:</b> ClassFile.h:30</div></div>
+<div class="ttc" id="astruct_class_file_html_abc02e661935c638b2f231cef576859f1"><div class="ttname"><a href="struct_class_file.html#abc02e661935c638b2f231cef576859f1">ClassFile::thisClass</a></div><div class="ttdeci">uint16_t thisClass</div><div class="ttdef"><b>Definition:</b> ClassFile.h:60</div></div>
+<div class="ttc" id="astruct_class_file_html_ad88c9b8262fbd79d49ad2c163ad45716"><div class="ttname"><a href="struct_class_file.html#ad88c9b8262fbd79d49ad2c163ad45716">ClassFile::attributesCount</a></div><div class="ttdeci">uint16_t attributesCount</div><div class="ttdef"><b>Definition:</b> ClassFile.h:100</div></div>
+<div class="ttc" id="astruct_class_file_html_adcd02751a38d5b17559fd3c5201b2c42"><div class="ttname"><a href="struct_class_file.html#adcd02751a38d5b17559fd3c5201b2c42">ClassFile::interfacesCount</a></div><div class="ttdeci">uint16_t interfacesCount</div><div class="ttdef"><b>Definition:</b> ClassFile.h:70</div></div>
+<div class="ttc" id="astruct_class_file_html_add171dc12613ad29ef94f4f18a50f06a"><div class="ttname"><a href="struct_class_file.html#add171dc12613ad29ef94f4f18a50f06a">ClassFile::fields</a></div><div class="ttdeci">FieldInfo * fields</div><div class="ttdef"><b>Definition:</b> ClassFile.h:85</div></div>
+<div class="ttc" id="astruct_class_file_html_addeb2f51bcb7e2536e7d6fef1947ce73"><div class="ttname"><a href="struct_class_file.html#addeb2f51bcb7e2536e7d6fef1947ce73">ClassFile::attributes</a></div><div class="ttdeci">AttributeInfo ** attributes</div><div class="ttdef"><b>Definition:</b> ClassFile.h:105</div></div>
+<div class="ttc" id="astruct_class_file_html_af185527e4689b1672655f608df4a3c62"><div class="ttname"><a href="struct_class_file.html#af185527e4689b1672655f608df4a3c62">ClassFile::constantPoolCount</a></div><div class="ttdeci">uint16_t constantPoolCount</div><div class="ttdoc">Número de elementos no constant pool do .class.</div><div class="ttdef"><b>Definition:</b> ClassFile.h:45</div></div>
+<div class="ttc" id="astruct_class_file_html_afb41e706bd0e19ed5a24cd0e99ecc4c1"><div class="ttname"><a href="struct_class_file.html#afb41e706bd0e19ed5a24cd0e99ecc4c1">ClassFile::minorVersion</a></div><div class="ttdeci">uint16_t minorVersion</div><div class="ttdef"><b>Definition:</b> ClassFile.h:35</div></div>
+<div class="ttc" id="astruct_class_file_html_afbb2cd57bb6eb5baa34e83127e928c18"><div class="ttname"><a href="struct_class_file.html#afbb2cd57bb6eb5baa34e83127e928c18">ClassFile::accessFlags</a></div><div class="ttdeci">uint16_t accessFlags</div><div class="ttdef"><b>Definition:</b> ClassFile.h:55</div></div>
+<div class="ttc" id="astruct_constant_pool_info_html"><div class="ttname"><a href="struct_constant_pool_info.html">ConstantPoolInfo</a></div><div class="ttdoc">Estrutura base de todos os constant Pool.</div><div class="ttdef"><b>Definition:</b> ConstantPoolInfo.h:38</div></div>
+<div class="ttc" id="astruct_field_info_html"><div class="ttname"><a href="struct_field_info.html">FieldInfo</a></div><div class="ttdoc">Estrutura que armazena os dados de um campo.</div><div class="ttdef"><b>Definition:</b> FieldInfo.h:11</div></div>
+<div class="ttc" id="astruct_method_info_html"><div class="ttname"><a href="struct_method_info.html">MethodInfo</a></div><div class="ttdoc">Estrutura que armazena os dados de um método.</div><div class="ttdef"><b>Definition:</b> MethodInfo.h:12</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

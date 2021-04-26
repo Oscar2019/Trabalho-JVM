@@ -1,0 +1,4 @@
+<map id="getString" name="getString">
+<area shape="rect" id="node1" title="Gera a string." alt="" coords="5,5,87,32"/>
+<area shape="rect" id="node2" href="$ConstantPoolInfo_8cpp.html#a5e9d056ada05e799dca7e544a7878f94" title="Gera uma string que está sendo armazenada por CPUtf8." alt="" coords="135,5,223,32"/>
+</map>

@@ -1,0 +1,903 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Referência ao ficheiro src/PrintMenu.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro PrintMenu.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;../include/PrintMenu.h&quot;</code><br />
+<code>#include &quot;../include/PrintTudo.h&quot;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:aacb71dbc63837c5e60f70180643354b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#aacb71dbc63837c5e60f70180643354b2">CLEAR</a>()&#160;&#160;&#160;system(&quot;clear&quot;)</td></tr>
+<tr class="separator:aacb71dbc63837c5e60f70180643354b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a4a449ec161fa1015070b7773e8e74142"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#a4a449ec161fa1015070b7773e8e74142">printGeneralInformation</a> (ClassFile const &amp;cf)</td></tr>
+<tr class="separator:a4a449ec161fa1015070b7773e8e74142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eaa40eedf206281ad44cf7e90df8935"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#a0eaa40eedf206281ad44cf7e90df8935">printConstantPool</a> (ClassFile const &amp;cf)</td></tr>
+<tr class="separator:a0eaa40eedf206281ad44cf7e90df8935"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7997cd4741c35d27bc4faa77c3685d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#aa7997cd4741c35d27bc4faa77c3685d6">printInterfaces</a> (ClassFile const &amp;cf)</td></tr>
+<tr class="separator:aa7997cd4741c35d27bc4faa77c3685d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac2dae3e961030500080e5003236897b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#aac2dae3e961030500080e5003236897b">printFields</a> (ClassFile const &amp;cf)</td></tr>
+<tr class="separator:aac2dae3e961030500080e5003236897b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dcf0141e3a4412830dde2a8f9abf837"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#a0dcf0141e3a4412830dde2a8f9abf837">printField</a> (ClassFile const &amp;cf, FieldInfo *field)</td></tr>
+<tr class="separator:a0dcf0141e3a4412830dde2a8f9abf837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a248294d9c0a26ee24db5af6a3998ef79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#a248294d9c0a26ee24db5af6a3998ef79">printMethods</a> (ClassFile const &amp;cf)</td></tr>
+<tr class="separator:a248294d9c0a26ee24db5af6a3998ef79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4196a88e551ca218a5ce58f7e8463827"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#a4196a88e551ca218a5ce58f7e8463827">printMethod</a> (ClassFile const &amp;cf, MethodInfo *field)</td></tr>
+<tr class="separator:a4196a88e551ca218a5ce58f7e8463827"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab78e91e3db45547f7aaecafaadd7d341"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#ab78e91e3db45547f7aaecafaadd7d341">printAttributes</a> (ClassFile const &amp;cf)</td></tr>
+<tr class="separator:ab78e91e3db45547f7aaecafaadd7d341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e1043ade1570fc3be53e4c4d306ce98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#a4e1043ade1570fc3be53e4c4d306ce98">printAttribute</a> (ClassFile const &amp;cf, AttributeInfo *attribute)</td></tr>
+<tr class="separator:a4e1043ade1570fc3be53e4c4d306ce98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c303e3df50150a2db3d7bbaf4303bdb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#a2c303e3df50150a2db3d7bbaf4303bdb">printAttributeConstantValue</a> (ClassFile const &amp;cf, AttributeInfoConstantValue *attribute)</td></tr>
+<tr class="separator:a2c303e3df50150a2db3d7bbaf4303bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea00814bf40f6faa988136b79baeb076"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#aea00814bf40f6faa988136b79baeb076">printAttributeCode</a> (ClassFile const &amp;cf, AttributeInfoCode *attribute)</td></tr>
+<tr class="separator:aea00814bf40f6faa988136b79baeb076"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af536315b6b246e82865d002e95c0b619"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#af536315b6b246e82865d002e95c0b619">printAssemplyCode</a> (ClassFile const &amp;cf, uint32_t codeSize, uint8_t *code)</td></tr>
+<tr class="separator:af536315b6b246e82865d002e95c0b619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfff5444ed831eb425ecd64655dadfc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#adfff5444ed831eb425ecd64655dadfc2">printAttributeExceptions</a> (ClassFile const &amp;cf, AttributeInfoExceptions *attribute)</td></tr>
+<tr class="separator:adfff5444ed831eb425ecd64655dadfc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45bcc6b562ab617af5cc44be75ced0fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#a45bcc6b562ab617af5cc44be75ced0fc">printAttributeInnerClasses</a> (ClassFile const &amp;cf, AttributeInfoInnerClasses *attribute)</td></tr>
+<tr class="separator:a45bcc6b562ab617af5cc44be75ced0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaa4b6c433637bffc9bb7fdfaf8b5c70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#acaa4b6c433637bffc9bb7fdfaf8b5c70">printAttributeSynthetic</a> (ClassFile const &amp;cf, AttributeInfoSynthetic *attribute)</td></tr>
+<tr class="separator:acaa4b6c433637bffc9bb7fdfaf8b5c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaafa46f1e91a67dc990bd0c063a9c6cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#aaafa46f1e91a67dc990bd0c063a9c6cd">printAttributeSourceFile</a> (ClassFile const &amp;cf, AttributeInfoSourceFile *attribute)</td></tr>
+<tr class="separator:aaafa46f1e91a67dc990bd0c063a9c6cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eb85519340307d44fff1adf4a165ce1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#a0eb85519340307d44fff1adf4a165ce1">printAttributeLineNumberTable</a> (ClassFile const &amp;cf, AttributeInfoLineNumberTable *attribute)</td></tr>
+<tr class="separator:a0eb85519340307d44fff1adf4a165ce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24a92f7faa503bd9981e17824744f49c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#a24a92f7faa503bd9981e17824744f49c">printAttributeLocalVariableTable</a> (ClassFile const &amp;cf, AttributeInfoLocalVariableTable *attribute)</td></tr>
+<tr class="separator:a24a92f7faa503bd9981e17824744f49c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8deca425250652430f4f56088a1cbfa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#ad8deca425250652430f4f56088a1cbfa">printAttributeDeprecated</a> (ClassFile const &amp;cf, AttributeInfoDeprecated *attribute)</td></tr>
+<tr class="separator:ad8deca425250652430f4f56088a1cbfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bbd379e108af5493cac070704d732cc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#a6bbd379e108af5493cac070704d732cc">translateFlagMethod</a> (uint16_t flag)</td></tr>
+<tr class="separator:a6bbd379e108af5493cac070704d732cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac78f7aed8a15dc0da7ed6b4b3cd9b0c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#ac78f7aed8a15dc0da7ed6b4b3cd9b0c7">printMenu</a> (ClassFile const &amp;cf)</td></tr>
+<tr class="separator:ac78f7aed8a15dc0da7ed6b4b3cd9b0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af019dc445ce639622916594b94271dc7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#af019dc445ce639622916594b94271dc7">convertAccessFlag</a> (std::string hex)</td></tr>
+<tr class="separator:af019dc445ce639622916594b94271dc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec5bbd89b1c74c41279a30d0dc1afb5f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_print_menu_8cpp.html#aec5bbd89b1c74c41279a30d0dc1afb5f">translateFlagField</a> (std::string flag)</td></tr>
+<tr class="separator:aec5bbd89b1c74c41279a30d0dc1afb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das macros</h2>
+<a id="aacb71dbc63837c5e60f70180643354b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacb71dbc63837c5e60f70180643354b2">&#9670;&nbsp;</a></span>CLEAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLEAR</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;system(&quot;clear&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="af019dc445ce639622916594b94271dc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af019dc445ce639622916594b94271dc7">&#9670;&nbsp;</a></span>convertAccessFlag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string convertAccessFlag </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>hex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_af019dc445ce639622916594b94271dc7_icgraph.png" border="0" usemap="#a_print_menu_8cpp_af019dc445ce639622916594b94271dc7_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="af536315b6b246e82865d002e95c0b619"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af536315b6b246e82865d002e95c0b619">&#9670;&nbsp;</a></span>printAssemplyCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printAssemplyCode </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>codeSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>code</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_af536315b6b246e82865d002e95c0b619_icgraph.png" border="0" usemap="#a_print_menu_8cpp_af536315b6b246e82865d002e95c0b619_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a4e1043ade1570fc3be53e4c4d306ce98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e1043ade1570fc3be53e4c4d306ce98">&#9670;&nbsp;</a></span>printAttribute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printAttribute </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AttributeInfo *&#160;</td>
+          <td class="paramname"><em>attribute</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a4e1043ade1570fc3be53e4c4d306ce98_cgraph.png" border="0" usemap="#a_print_menu_8cpp_a4e1043ade1570fc3be53e4c4d306ce98_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a4e1043ade1570fc3be53e4c4d306ce98_icgraph.png" border="0" usemap="#a_print_menu_8cpp_a4e1043ade1570fc3be53e4c4d306ce98_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aea00814bf40f6faa988136b79baeb076"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea00814bf40f6faa988136b79baeb076">&#9670;&nbsp;</a></span>printAttributeCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printAttributeCode </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AttributeInfoCode *&#160;</td>
+          <td class="paramname"><em>attribute</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_aea00814bf40f6faa988136b79baeb076_cgraph.png" border="0" usemap="#a_print_menu_8cpp_aea00814bf40f6faa988136b79baeb076_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_aea00814bf40f6faa988136b79baeb076_icgraph.png" border="0" usemap="#a_print_menu_8cpp_aea00814bf40f6faa988136b79baeb076_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a2c303e3df50150a2db3d7bbaf4303bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c303e3df50150a2db3d7bbaf4303bdb">&#9670;&nbsp;</a></span>printAttributeConstantValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printAttributeConstantValue </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AttributeInfoConstantValue *&#160;</td>
+          <td class="paramname"><em>attribute</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a2c303e3df50150a2db3d7bbaf4303bdb_cgraph.png" border="0" usemap="#a_print_menu_8cpp_a2c303e3df50150a2db3d7bbaf4303bdb_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a2c303e3df50150a2db3d7bbaf4303bdb_icgraph.png" border="0" usemap="#a_print_menu_8cpp_a2c303e3df50150a2db3d7bbaf4303bdb_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ad8deca425250652430f4f56088a1cbfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8deca425250652430f4f56088a1cbfa">&#9670;&nbsp;</a></span>printAttributeDeprecated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printAttributeDeprecated </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AttributeInfoDeprecated *&#160;</td>
+          <td class="paramname"><em>attribute</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_ad8deca425250652430f4f56088a1cbfa_icgraph.png" border="0" usemap="#a_print_menu_8cpp_ad8deca425250652430f4f56088a1cbfa_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="adfff5444ed831eb425ecd64655dadfc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfff5444ed831eb425ecd64655dadfc2">&#9670;&nbsp;</a></span>printAttributeExceptions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printAttributeExceptions </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AttributeInfoExceptions *&#160;</td>
+          <td class="paramname"><em>attribute</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_adfff5444ed831eb425ecd64655dadfc2_cgraph.png" border="0" usemap="#a_print_menu_8cpp_adfff5444ed831eb425ecd64655dadfc2_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_adfff5444ed831eb425ecd64655dadfc2_icgraph.png" border="0" usemap="#a_print_menu_8cpp_adfff5444ed831eb425ecd64655dadfc2_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a45bcc6b562ab617af5cc44be75ced0fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45bcc6b562ab617af5cc44be75ced0fc">&#9670;&nbsp;</a></span>printAttributeInnerClasses()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printAttributeInnerClasses </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AttributeInfoInnerClasses *&#160;</td>
+          <td class="paramname"><em>attribute</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a45bcc6b562ab617af5cc44be75ced0fc_cgraph.png" border="0" usemap="#a_print_menu_8cpp_a45bcc6b562ab617af5cc44be75ced0fc_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a45bcc6b562ab617af5cc44be75ced0fc_icgraph.png" border="0" usemap="#a_print_menu_8cpp_a45bcc6b562ab617af5cc44be75ced0fc_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a0eb85519340307d44fff1adf4a165ce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eb85519340307d44fff1adf4a165ce1">&#9670;&nbsp;</a></span>printAttributeLineNumberTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printAttributeLineNumberTable </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AttributeInfoLineNumberTable *&#160;</td>
+          <td class="paramname"><em>attribute</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a0eb85519340307d44fff1adf4a165ce1_icgraph.png" border="0" usemap="#a_print_menu_8cpp_a0eb85519340307d44fff1adf4a165ce1_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a24a92f7faa503bd9981e17824744f49c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24a92f7faa503bd9981e17824744f49c">&#9670;&nbsp;</a></span>printAttributeLocalVariableTable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printAttributeLocalVariableTable </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AttributeInfoLocalVariableTable *&#160;</td>
+          <td class="paramname"><em>attribute</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a24a92f7faa503bd9981e17824744f49c_cgraph.png" border="0" usemap="#a_print_menu_8cpp_a24a92f7faa503bd9981e17824744f49c_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a24a92f7faa503bd9981e17824744f49c_icgraph.png" border="0" usemap="#a_print_menu_8cpp_a24a92f7faa503bd9981e17824744f49c_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ab78e91e3db45547f7aaecafaadd7d341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab78e91e3db45547f7aaecafaadd7d341">&#9670;&nbsp;</a></span>printAttributes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printAttributes </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_ab78e91e3db45547f7aaecafaadd7d341_cgraph.png" border="0" usemap="#a_print_menu_8cpp_ab78e91e3db45547f7aaecafaadd7d341_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_ab78e91e3db45547f7aaecafaadd7d341_icgraph.png" border="0" usemap="#a_print_menu_8cpp_ab78e91e3db45547f7aaecafaadd7d341_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aaafa46f1e91a67dc990bd0c063a9c6cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaafa46f1e91a67dc990bd0c063a9c6cd">&#9670;&nbsp;</a></span>printAttributeSourceFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printAttributeSourceFile </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AttributeInfoSourceFile *&#160;</td>
+          <td class="paramname"><em>attribute</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_aaafa46f1e91a67dc990bd0c063a9c6cd_cgraph.png" border="0" usemap="#a_print_menu_8cpp_aaafa46f1e91a67dc990bd0c063a9c6cd_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_aaafa46f1e91a67dc990bd0c063a9c6cd_icgraph.png" border="0" usemap="#a_print_menu_8cpp_aaafa46f1e91a67dc990bd0c063a9c6cd_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="acaa4b6c433637bffc9bb7fdfaf8b5c70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaa4b6c433637bffc9bb7fdfaf8b5c70">&#9670;&nbsp;</a></span>printAttributeSynthetic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printAttributeSynthetic </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AttributeInfoSynthetic *&#160;</td>
+          <td class="paramname"><em>attribute</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_acaa4b6c433637bffc9bb7fdfaf8b5c70_icgraph.png" border="0" usemap="#a_print_menu_8cpp_acaa4b6c433637bffc9bb7fdfaf8b5c70_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a0eaa40eedf206281ad44cf7e90df8935"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eaa40eedf206281ad44cf7e90df8935">&#9670;&nbsp;</a></span>printConstantPool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printConstantPool </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a0eaa40eedf206281ad44cf7e90df8935_cgraph.png" border="0" usemap="#a_print_menu_8cpp_a0eaa40eedf206281ad44cf7e90df8935_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a0eaa40eedf206281ad44cf7e90df8935_icgraph.png" border="0" usemap="#a_print_menu_8cpp_a0eaa40eedf206281ad44cf7e90df8935_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a0dcf0141e3a4412830dde2a8f9abf837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dcf0141e3a4412830dde2a8f9abf837">&#9670;&nbsp;</a></span>printField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printField </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FieldInfo *&#160;</td>
+          <td class="paramname"><em>field</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a0dcf0141e3a4412830dde2a8f9abf837_cgraph.png" border="0" usemap="#a_print_menu_8cpp_a0dcf0141e3a4412830dde2a8f9abf837_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a0dcf0141e3a4412830dde2a8f9abf837_icgraph.png" border="0" usemap="#a_print_menu_8cpp_a0dcf0141e3a4412830dde2a8f9abf837_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aac2dae3e961030500080e5003236897b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac2dae3e961030500080e5003236897b">&#9670;&nbsp;</a></span>printFields()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printFields </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_aac2dae3e961030500080e5003236897b_cgraph.png" border="0" usemap="#a_print_menu_8cpp_aac2dae3e961030500080e5003236897b_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_aac2dae3e961030500080e5003236897b_icgraph.png" border="0" usemap="#a_print_menu_8cpp_aac2dae3e961030500080e5003236897b_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a4a449ec161fa1015070b7773e8e74142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a449ec161fa1015070b7773e8e74142">&#9670;&nbsp;</a></span>printGeneralInformation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printGeneralInformation </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a4a449ec161fa1015070b7773e8e74142_cgraph.png" border="0" usemap="#a_print_menu_8cpp_a4a449ec161fa1015070b7773e8e74142_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a4a449ec161fa1015070b7773e8e74142_icgraph.png" border="0" usemap="#a_print_menu_8cpp_a4a449ec161fa1015070b7773e8e74142_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aa7997cd4741c35d27bc4faa77c3685d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7997cd4741c35d27bc4faa77c3685d6">&#9670;&nbsp;</a></span>printInterfaces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printInterfaces </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_aa7997cd4741c35d27bc4faa77c3685d6_cgraph.png" border="0" usemap="#a_print_menu_8cpp_aa7997cd4741c35d27bc4faa77c3685d6_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_aa7997cd4741c35d27bc4faa77c3685d6_icgraph.png" border="0" usemap="#a_print_menu_8cpp_aa7997cd4741c35d27bc4faa77c3685d6_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ac78f7aed8a15dc0da7ed6b4b3cd9b0c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac78f7aed8a15dc0da7ed6b4b3cd9b0c7">&#9670;&nbsp;</a></span>printMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printMenu </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_ac78f7aed8a15dc0da7ed6b4b3cd9b0c7_cgraph.png" border="0" usemap="#a_print_menu_8cpp_ac78f7aed8a15dc0da7ed6b4b3cd9b0c7_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_ac78f7aed8a15dc0da7ed6b4b3cd9b0c7_icgraph.png" border="0" usemap="#a_print_menu_8cpp_ac78f7aed8a15dc0da7ed6b4b3cd9b0c7_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a4196a88e551ca218a5ce58f7e8463827"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4196a88e551ca218a5ce58f7e8463827">&#9670;&nbsp;</a></span>printMethod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printMethod </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MethodInfo *&#160;</td>
+          <td class="paramname"><em>field</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a4196a88e551ca218a5ce58f7e8463827_cgraph.png" border="0" usemap="#a_print_menu_8cpp_a4196a88e551ca218a5ce58f7e8463827_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a4196a88e551ca218a5ce58f7e8463827_icgraph.png" border="0" usemap="#a_print_menu_8cpp_a4196a88e551ca218a5ce58f7e8463827_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a248294d9c0a26ee24db5af6a3998ef79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a248294d9c0a26ee24db5af6a3998ef79">&#9670;&nbsp;</a></span>printMethods()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printMethods </td>
+          <td>(</td>
+          <td class="paramtype">ClassFile const &amp;&#160;</td>
+          <td class="paramname"><em>cf</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Grafo de chamadas desta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a248294d9c0a26ee24db5af6a3998ef79_cgraph.png" border="0" usemap="#a_print_menu_8cpp_a248294d9c0a26ee24db5af6a3998ef79_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a248294d9c0a26ee24db5af6a3998ef79_icgraph.png" border="0" usemap="#a_print_menu_8cpp_a248294d9c0a26ee24db5af6a3998ef79_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="aec5bbd89b1c74c41279a30d0dc1afb5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec5bbd89b1c74c41279a30d0dc1afb5f">&#9670;&nbsp;</a></span>translateFlagField()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string translateFlagField </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_aec5bbd89b1c74c41279a30d0dc1afb5f_icgraph.png" border="0" usemap="#a_print_menu_8cpp_aec5bbd89b1c74c41279a30d0dc1afb5f_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a6bbd379e108af5493cac070704d732cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bbd379e108af5493cac070704d732cc">&#9670;&nbsp;</a></span>translateFlagMethod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string translateFlagMethod </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>flag</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Este é o diagrama das funções que utilizam esta função:</div>
+<div class="dyncontent">
+<div class="center"><img src="_print_menu_8cpp_a6bbd379e108af5493cac070704d732cc_icgraph.png" border="0" usemap="#a_print_menu_8cpp_a6bbd379e108af5493cac070704d732cc_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

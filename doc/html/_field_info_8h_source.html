@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Código-Fonte de include/FieldInfo.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">FieldInfo.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_field_info_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __CLASS_FIELD_INFO_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __CLASS_FIELD_INFO_H__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../include/AttributeInfo.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="struct_field_info.html">   11</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_field_info.html">FieldInfo</a>{</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="struct_field_info.html#a5fd94bd00a430098ff830c231d3f7a53">   12</a></span>&#160;    uint16_t <a class="code" href="struct_field_info.html#a5fd94bd00a430098ff830c231d3f7a53">accessFlags</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="struct_field_info.html#a88ea5c29063df8933d5277e846924b1e">   17</a></span>&#160;    uint16_t <a class="code" href="struct_field_info.html#a88ea5c29063df8933d5277e846924b1e">nameIndex</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="struct_field_info.html#ab6cc30d06db3569171dd6fdcba7add29">   22</a></span>&#160;    uint16_t <a class="code" href="struct_field_info.html#ab6cc30d06db3569171dd6fdcba7add29">descriptorIndex</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="struct_field_info.html#ad8eae2b3a0fccae8700ca53263983c6e">   27</a></span>&#160;    uint16_t <a class="code" href="struct_field_info.html#ad8eae2b3a0fccae8700ca53263983c6e">attributesCount</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="struct_field_info.html#a71b3f6ade53c10c8e3236bdaac337c14">   32</a></span>&#160;    <a class="code" href="struct_attribute_info.html">AttributeInfo</a> **<a class="code" href="struct_field_info.html#a71b3f6ade53c10c8e3236bdaac337c14">attributes</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="struct_field_info.html#a2e6d93185e0b51521da514e1fa00c0ea">   37</a></span>&#160;    <a class="code" href="struct_field_info.html#a2e6d93185e0b51521da514e1fa00c0ea">FieldInfo</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="struct_field_info.html#ae59d956e2a4ad2dc210d75f161d5eb31">   42</a></span>&#160;    <a class="code" href="struct_field_info.html#ae59d956e2a4ad2dc210d75f161d5eb31">~FieldInfo</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="_field_info_8h.html#a520ce2c6886078771102986ad83fecc8">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="_field_info_8h.html#a520ce2c6886078771102986ad83fecc8">conveterAttributeInfoInFieldInfo</a>(<a class="code" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **cf, <a class="code" href="struct_field_info.html">FieldInfo</a> *fi);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_field_info_8h_html_a520ce2c6886078771102986ad83fecc8"><div class="ttname"><a href="_field_info_8h.html#a520ce2c6886078771102986ad83fecc8">conveterAttributeInfoInFieldInfo</a></div><div class="ttdeci">void conveterAttributeInfoInFieldInfo(ConstantPoolInfo **cf, FieldInfo *fi)</div><div class="ttdoc">Função que converte os atributos de um campo para a estruturas mais elaboradas.</div></div>
+<div class="ttc" id="astruct_attribute_info_html"><div class="ttname"><a href="struct_attribute_info.html">AttributeInfo</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:7</div></div>
+<div class="ttc" id="astruct_constant_pool_info_html"><div class="ttname"><a href="struct_constant_pool_info.html">ConstantPoolInfo</a></div><div class="ttdoc">Estrutura base de todos os constant Pool.</div><div class="ttdef"><b>Definition:</b> ConstantPoolInfo.h:38</div></div>
+<div class="ttc" id="astruct_field_info_html"><div class="ttname"><a href="struct_field_info.html">FieldInfo</a></div><div class="ttdoc">Estrutura que armazena os dados de um campo.</div><div class="ttdef"><b>Definition:</b> FieldInfo.h:11</div></div>
+<div class="ttc" id="astruct_field_info_html_a2e6d93185e0b51521da514e1fa00c0ea"><div class="ttname"><a href="struct_field_info.html#a2e6d93185e0b51521da514e1fa00c0ea">FieldInfo::FieldInfo</a></div><div class="ttdeci">FieldInfo()</div><div class="ttdoc">Construct a new Field Info object.</div></div>
+<div class="ttc" id="astruct_field_info_html_a5fd94bd00a430098ff830c231d3f7a53"><div class="ttname"><a href="struct_field_info.html#a5fd94bd00a430098ff830c231d3f7a53">FieldInfo::accessFlags</a></div><div class="ttdeci">uint16_t accessFlags</div><div class="ttdef"><b>Definition:</b> FieldInfo.h:12</div></div>
+<div class="ttc" id="astruct_field_info_html_a71b3f6ade53c10c8e3236bdaac337c14"><div class="ttname"><a href="struct_field_info.html#a71b3f6ade53c10c8e3236bdaac337c14">FieldInfo::attributes</a></div><div class="ttdeci">AttributeInfo ** attributes</div><div class="ttdoc">Ponteiro para um vetor de ponteiro de atributos.</div><div class="ttdef"><b>Definition:</b> FieldInfo.h:32</div></div>
+<div class="ttc" id="astruct_field_info_html_a88ea5c29063df8933d5277e846924b1e"><div class="ttname"><a href="struct_field_info.html#a88ea5c29063df8933d5277e846924b1e">FieldInfo::nameIndex</a></div><div class="ttdeci">uint16_t nameIndex</div><div class="ttdoc">Índice que aponta para o vetor de ConstantPoolInfo* que aponta para um ponteiro de CPUtf8,...</div><div class="ttdef"><b>Definition:</b> FieldInfo.h:17</div></div>
+<div class="ttc" id="astruct_field_info_html_ab6cc30d06db3569171dd6fdcba7add29"><div class="ttname"><a href="struct_field_info.html#ab6cc30d06db3569171dd6fdcba7add29">FieldInfo::descriptorIndex</a></div><div class="ttdeci">uint16_t descriptorIndex</div><div class="ttdoc">Índice que aponta para o vetor de ConstantPoolInfo* que aponta para um ponteiro de CPUtf8,...</div><div class="ttdef"><b>Definition:</b> FieldInfo.h:22</div></div>
+<div class="ttc" id="astruct_field_info_html_ad8eae2b3a0fccae8700ca53263983c6e"><div class="ttname"><a href="struct_field_info.html#ad8eae2b3a0fccae8700ca53263983c6e">FieldInfo::attributesCount</a></div><div class="ttdeci">uint16_t attributesCount</div><div class="ttdoc">Número de atribudos no campo.</div><div class="ttdef"><b>Definition:</b> FieldInfo.h:27</div></div>
+<div class="ttc" id="astruct_field_info_html_ae59d956e2a4ad2dc210d75f161d5eb31"><div class="ttname"><a href="struct_field_info.html#ae59d956e2a4ad2dc210d75f161d5eb31">FieldInfo::~FieldInfo</a></div><div class="ttdeci">~FieldInfo()</div><div class="ttdoc">destrói os dados armazenados pelo FieldInfo</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

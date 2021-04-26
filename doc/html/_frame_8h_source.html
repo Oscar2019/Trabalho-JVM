@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Código-Fonte de include/Frame.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Frame.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_frame_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef __FRAME_H__</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define __FRAME_H__</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../include/Array.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../include/Stack.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;../include/ConstantPoolInfo.h&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;../include/MethodInfo.h&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_frame.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_frame.html">Frame</a>{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="class_array.html">Array&lt;uint32_t&gt;</a> varLocalTable;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="class_linear_stack.html">LinearStack&lt;uint32_t&gt;</a> operandStack;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="struct_constant_pool_info.html">ConstantPoolInfo</a>** constantPool;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_frame.html#a783e5f801c60d09674e9556de8f1b319">   15</a></span>&#160;        <span class="keyword">static</span> <a class="code" href="class_frame.html">Frame</a>* <a class="code" href="class_frame.html#a783e5f801c60d09674e9556de8f1b319">CreateFrame</a>(<a class="code" href="struct_method_info.html">MethodInfo</a>* methodInfo){</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="struct_constant_pool_info.html">ConstantPoolInfo</a>** cp = methodInfo-&gt;<a class="code" href="struct_method_info.html#af213e4dc9f78d59daf546455fc2b27c4">cp</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <span class="keywordflow">for</span>(uint32_t i = 0; i &lt; methodInfo-&gt;<a class="code" href="struct_method_info.html#a0980de52cac7b97181222b39b28e0fe0">attributesCount</a>; i++){</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <a class="code" href="struct_attribute_info.html">AttributeInfo</a>* attributeInfo = methodInfo-&gt;<a class="code" href="struct_method_info.html#a2fe5271897a188c488b68e030ae90403">attributes</a>[i];</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                std::string str = <a class="code" href="_constant_pool_info_8h.html#afe1697068c0f2f8b2c45ae37899e874c">getStringFromCPInfo</a>(cp, attributeInfo-&gt;<a class="code" href="struct_attribute_info.html#ac0d9d9ffa3214f362c4e06df78036d6e">attributeNameIndex</a>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="keywordflow">if</span>(str == <span class="stringliteral">&quot;Code&quot;</span>){</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                    <a class="code" href="struct_attribute_info_code.html">AttributeInfoCode</a> *code = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="struct_attribute_info_code.html">AttributeInfoCode</a>*<span class="keyword">&gt;</span>(attributeInfo);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_frame.html#a179f17d9f2c053cd8d7a46f5f4f98b97">Frame</a>(code-&gt;<a class="code" href="struct_attribute_info_code.html#aa301b3561738681bd2cc802f618c0950">maxLocals</a>, code-&gt;<a class="code" href="struct_attribute_info_code.html#a6070c333f036faa757c8010a40da776d">maxStack</a>, cp);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            }</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_frame.html#a7a343cc8ade5fe6a399e9d5d5d1a061e">   27</a></span>&#160;        <a class="code" href="struct_constant_pool_info.html">ConstantPoolInfo</a>** <a class="code" href="class_frame.html#a7a343cc8ade5fe6a399e9d5d5d1a061e">getConstantPool</a>(){</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <span class="keywordflow">return</span> constantPool;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_frame.html#a179f17d9f2c053cd8d7a46f5f4f98b97">   30</a></span>&#160;        <a class="code" href="class_frame.html#a179f17d9f2c053cd8d7a46f5f4f98b97">Frame</a>(uint32_t varTableSize, uint32_t operandStackSize, <a class="code" href="struct_constant_pool_info.html">ConstantPoolInfo</a>** currentConstantPool) : varLocalTable(varTableSize), operandStack(operandStackSize + 1), constantPool(currentConstantPool){</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            operandStack.<a class="code" href="class_linear_stack.html#a21f220f3c54293f3cc931781b0511c95">push</a>(0);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_frame.html#aa23c1c8673ca67cf67ad3a647f9f1b56">   33</a></span>&#160;        uint32_t&amp; <a class="code" href="class_frame.html#aa23c1c8673ca67cf67ad3a647f9f1b56">varAt</a>(uint32_t ind){</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keywordflow">return</span> varLocalTable[ind];</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_frame.html#afc6f418a53e2160c86a46fc6d38d10bf">   36</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_frame.html#afc6f418a53e2160c86a46fc6d38d10bf">pushOperandStack</a>(uint32_t value){</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            operandStack.<a class="code" href="class_linear_stack.html#a21f220f3c54293f3cc931781b0511c95">push</a>(value);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_frame.html#a1d3b7f2931d969346e01987ec72f2a8a">   39</a></span>&#160;        uint32_t <a class="code" href="class_frame.html#a1d3b7f2931d969346e01987ec72f2a8a">topOperandStack</a>(){</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">return</span> operandStack.<a class="code" href="class_linear_stack.html#ad68476dbea1871261e4f4e678d72550e">top</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_frame.html#aa6cd62c1dfe95de30f86fbfa444171d7">   42</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_frame.html#aa6cd62c1dfe95de30f86fbfa444171d7">popOperandStack</a>(){</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            operandStack.<a class="code" href="class_linear_stack.html#aa18d8e72f505a2de25318f3c3ee4a870">pop</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_constant_pool_info_8h_html_afe1697068c0f2f8b2c45ae37899e874c"><div class="ttname"><a href="_constant_pool_info_8h.html#afe1697068c0f2f8b2c45ae37899e874c">getStringFromCPInfo</a></div><div class="ttdeci">std::string getStringFromCPInfo(ConstantPoolInfo **cp, uint32_t ind)</div><div class="ttdoc">Gera uma string do ConstantPoolInfo no índice ind.</div></div>
+<div class="ttc" id="aclass_array_html"><div class="ttname"><a href="class_array.html">Array&lt; uint32_t &gt;</a></div></div>
+<div class="ttc" id="aclass_frame_html"><div class="ttname"><a href="class_frame.html">Frame</a></div><div class="ttdef"><b>Definition:</b> Frame.h:9</div></div>
+<div class="ttc" id="aclass_frame_html_a179f17d9f2c053cd8d7a46f5f4f98b97"><div class="ttname"><a href="class_frame.html#a179f17d9f2c053cd8d7a46f5f4f98b97">Frame::Frame</a></div><div class="ttdeci">Frame(uint32_t varTableSize, uint32_t operandStackSize, ConstantPoolInfo **currentConstantPool)</div><div class="ttdef"><b>Definition:</b> Frame.h:30</div></div>
+<div class="ttc" id="aclass_frame_html_a1d3b7f2931d969346e01987ec72f2a8a"><div class="ttname"><a href="class_frame.html#a1d3b7f2931d969346e01987ec72f2a8a">Frame::topOperandStack</a></div><div class="ttdeci">uint32_t topOperandStack()</div><div class="ttdef"><b>Definition:</b> Frame.h:39</div></div>
+<div class="ttc" id="aclass_frame_html_a783e5f801c60d09674e9556de8f1b319"><div class="ttname"><a href="class_frame.html#a783e5f801c60d09674e9556de8f1b319">Frame::CreateFrame</a></div><div class="ttdeci">static Frame * CreateFrame(MethodInfo *methodInfo)</div><div class="ttdef"><b>Definition:</b> Frame.h:15</div></div>
+<div class="ttc" id="aclass_frame_html_a7a343cc8ade5fe6a399e9d5d5d1a061e"><div class="ttname"><a href="class_frame.html#a7a343cc8ade5fe6a399e9d5d5d1a061e">Frame::getConstantPool</a></div><div class="ttdeci">ConstantPoolInfo ** getConstantPool()</div><div class="ttdef"><b>Definition:</b> Frame.h:27</div></div>
+<div class="ttc" id="aclass_frame_html_aa23c1c8673ca67cf67ad3a647f9f1b56"><div class="ttname"><a href="class_frame.html#aa23c1c8673ca67cf67ad3a647f9f1b56">Frame::varAt</a></div><div class="ttdeci">uint32_t &amp; varAt(uint32_t ind)</div><div class="ttdef"><b>Definition:</b> Frame.h:33</div></div>
+<div class="ttc" id="aclass_frame_html_aa6cd62c1dfe95de30f86fbfa444171d7"><div class="ttname"><a href="class_frame.html#aa6cd62c1dfe95de30f86fbfa444171d7">Frame::popOperandStack</a></div><div class="ttdeci">void popOperandStack()</div><div class="ttdef"><b>Definition:</b> Frame.h:42</div></div>
+<div class="ttc" id="aclass_frame_html_afc6f418a53e2160c86a46fc6d38d10bf"><div class="ttname"><a href="class_frame.html#afc6f418a53e2160c86a46fc6d38d10bf">Frame::pushOperandStack</a></div><div class="ttdeci">void pushOperandStack(uint32_t value)</div><div class="ttdef"><b>Definition:</b> Frame.h:36</div></div>
+<div class="ttc" id="aclass_linear_stack_html"><div class="ttname"><a href="class_linear_stack.html">LinearStack&lt; uint32_t &gt;</a></div></div>
+<div class="ttc" id="aclass_linear_stack_html_a21f220f3c54293f3cc931781b0511c95"><div class="ttname"><a href="class_linear_stack.html#a21f220f3c54293f3cc931781b0511c95">LinearStack::push</a></div><div class="ttdeci">void push(T &amp;value)</div><div class="ttdef"><b>Definition:</b> Stack.h:28</div></div>
+<div class="ttc" id="aclass_linear_stack_html_aa18d8e72f505a2de25318f3c3ee4a870"><div class="ttname"><a href="class_linear_stack.html#aa18d8e72f505a2de25318f3c3ee4a870">LinearStack::pop</a></div><div class="ttdeci">void pop()</div><div class="ttdef"><b>Definition:</b> Stack.h:39</div></div>
+<div class="ttc" id="aclass_linear_stack_html_ad68476dbea1871261e4f4e678d72550e"><div class="ttname"><a href="class_linear_stack.html#ad68476dbea1871261e4f4e678d72550e">LinearStack::top</a></div><div class="ttdeci">T &amp; top()</div><div class="ttdef"><b>Definition:</b> Stack.h:36</div></div>
+<div class="ttc" id="astruct_attribute_info_code_html"><div class="ttname"><a href="struct_attribute_info_code.html">AttributeInfoCode</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:25</div></div>
+<div class="ttc" id="astruct_attribute_info_code_html_a6070c333f036faa757c8010a40da776d"><div class="ttname"><a href="struct_attribute_info_code.html#a6070c333f036faa757c8010a40da776d">AttributeInfoCode::maxStack</a></div><div class="ttdeci">uint16_t maxStack</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:26</div></div>
+<div class="ttc" id="astruct_attribute_info_code_html_aa301b3561738681bd2cc802f618c0950"><div class="ttname"><a href="struct_attribute_info_code.html#aa301b3561738681bd2cc802f618c0950">AttributeInfoCode::maxLocals</a></div><div class="ttdeci">uint16_t maxLocals</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:27</div></div>
+<div class="ttc" id="astruct_attribute_info_html"><div class="ttname"><a href="struct_attribute_info.html">AttributeInfo</a></div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:7</div></div>
+<div class="ttc" id="astruct_attribute_info_html_ac0d9d9ffa3214f362c4e06df78036d6e"><div class="ttname"><a href="struct_attribute_info.html#ac0d9d9ffa3214f362c4e06df78036d6e">AttributeInfo::attributeNameIndex</a></div><div class="ttdeci">uint16_t attributeNameIndex</div><div class="ttdef"><b>Definition:</b> AttributeInfo.h:8</div></div>
+<div class="ttc" id="astruct_constant_pool_info_html"><div class="ttname"><a href="struct_constant_pool_info.html">ConstantPoolInfo</a></div><div class="ttdoc">Estrutura base de todos os constant Pool.</div><div class="ttdef"><b>Definition:</b> ConstantPoolInfo.h:38</div></div>
+<div class="ttc" id="astruct_method_info_html"><div class="ttname"><a href="struct_method_info.html">MethodInfo</a></div><div class="ttdoc">Estrutura que armazena os dados de um método.</div><div class="ttdef"><b>Definition:</b> MethodInfo.h:12</div></div>
+<div class="ttc" id="astruct_method_info_html_a0980de52cac7b97181222b39b28e0fe0"><div class="ttname"><a href="struct_method_info.html#a0980de52cac7b97181222b39b28e0fe0">MethodInfo::attributesCount</a></div><div class="ttdeci">uint16_t attributesCount</div><div class="ttdoc">Número de atribudos no método.</div><div class="ttdef"><b>Definition:</b> MethodInfo.h:33</div></div>
+<div class="ttc" id="astruct_method_info_html_a2fe5271897a188c488b68e030ae90403"><div class="ttname"><a href="struct_method_info.html#a2fe5271897a188c488b68e030ae90403">MethodInfo::attributes</a></div><div class="ttdeci">AttributeInfo ** attributes</div><div class="ttdoc">Ponteiro para um vetor de ponteiro de atributos.</div><div class="ttdef"><b>Definition:</b> MethodInfo.h:38</div></div>
+<div class="ttc" id="astruct_method_info_html_af213e4dc9f78d59daf546455fc2b27c4"><div class="ttname"><a href="struct_method_info.html#af213e4dc9f78d59daf546455fc2b27c4">MethodInfo::cp</a></div><div class="ttdeci">ConstantPoolInfo ** cp</div><div class="ttdef"><b>Definition:</b> MethodInfo.h:13</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

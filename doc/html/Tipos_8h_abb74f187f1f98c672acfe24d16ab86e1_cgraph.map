@@ -1,0 +1,24 @@
+<map id="read&lt; ClassFile &gt;" name="read&lt; ClassFile &gt;">
+<area shape="rect" id="node1" title="Função para leitura de um ClassFile informando um ifstream." alt="" coords="5,132,144,159"/>
+<area shape="rect" id="node2" href="$Tipos_8cpp.html#a4881b63e9f17ad6fb4e34aa40bf5f547" title="Função para leitura de um AttributeInfo informando um ifstream." alt="" coords="449,5,659,32"/>
+<area shape="rect" id="node3" href="$Tipos_8cpp.html#acb337e0b996b7eb4f83d197c9b1a12f9" title="Função que lê um uinnt16_t de um vetor de uint8_t." alt="" coords="713,360,848,387"/>
+<area shape="rect" id="node5" href="$Tipos_8cpp.html#ae516ebe405aedf431427028480752c0b" title="Função que lê um uinnt32_t de um vetor de uint8_t." alt="" coords="713,765,848,792"/>
+<area shape="rect" id="node6" href="$Tipos_8cpp.html#a0d11f03c1a484a81df50ffb904327b2d" title="Função para leitura de um ConstantPoolInfo* informando um ifstream." alt="" coords="192,537,395,564"/>
+<area shape="rect" id="node21" href="$Tipos_8cpp.html#a45a09c5c6bf135bd1d99921f59745253" title="Função para leitura de um FieldInfo informando um ifstream." alt="" coords="225,56,362,83"/>
+<area shape="rect" id="node22" href="$Tipos_8cpp.html#a4c0ab33518c20b6a1aecb160562e8edb" title="Função para leitura de um MethodInfo informando um ifstream." alt="" coords="216,107,371,133"/>
+<area shape="rect" id="node4" href="$Tipos_8cpp.html#a84a58ce8de91bb008e62bd8d7576bcf9" title="Função que lê uma um uint8_t de um vetor de uint8_t." alt="" coords="896,639,1023,665"/>
+<area shape="rect" id="node7" href="$Tipos_8cpp.html#a894499df7cc940f3b4d6bbc1b727f043" title="Função para leitura de um CPClass* informando um ifstream." alt="" coords="487,208,621,235"/>
+<area shape="rect" id="node8" href="$Tipos_8cpp.html#a76eb736a0e337a75e6db5b4ac9b12f20" title="Função para leitura de um CPDouble* informando um ifstream." alt="" coords="482,715,626,741"/>
+<area shape="rect" id="node9" href="$Tipos_8cpp.html#aacff615cadaf3b7eb1d8a57bd3f0e07d" title="Função para leitura de um CPFieldref* informando um ifstream." alt="" coords="481,259,627,285"/>
+<area shape="rect" id="node10" href="$Tipos_8cpp.html#abc3774e2dcf024dac73355c4f0c9519d" title="Função para leitura de um CPFloat* informando um ifstream." alt="" coords="489,765,619,792"/>
+<area shape="rect" id="node11" href="$Tipos_8cpp.html#ac69aa78f8c49bd654be9e898a748eaab" title="Função para leitura de um CPInteger* informando um ifstream." alt="" coords="482,816,626,843"/>
+<area shape="rect" id="node12" href="$Tipos_8cpp.html#a2a16158434135070eb26957637b48baa" title="Função para leitura de um CPInterfaceMethodref* informando um ifstream." alt="" coords="443,309,665,336"/>
+<area shape="rect" id="node13" href="$Tipos_8cpp.html#a32183838ed3a43e61f8d01dc41940890" title="Função para leitura de um CPInvokeDynamic* informando um ifstream." alt="" coords="455,360,653,387"/>
+<area shape="rect" id="node14" href="$Tipos_8cpp.html#a08919c9101c2a6d4116e52662a8c3094" title="Função para leitura de um CPLong* informando um ifstream." alt="" coords="489,867,619,893"/>
+<area shape="rect" id="node15" href="$Tipos_8cpp.html#a86d8aed4f5292fc0d64b016466d4034c" title="Função para leitura de um CPMethodHandle* informando um ifstream." alt="" coords="457,613,651,640"/>
+<area shape="rect" id="node16" href="$Tipos_8cpp.html#a606cf237b938cea3bfef5be958e12f72" title="Função para leitura de um CPMethodref* informando um ifstream." alt="" coords="471,411,637,437"/>
+<area shape="rect" id="node17" href="$Tipos_8cpp.html#a45991bdfbd70eb9dbad1da90bcf6b184" title="Função para leitura de um CPMethodType* informando um ifstream." alt="" coords="465,461,643,488"/>
+<area shape="rect" id="node18" href="$Tipos_8cpp.html#a2d8c2bb663df696204834c6b7b98edd5" title="Função para leitura de um CPNameAndType* informando um ifstream." alt="" coords="458,512,650,539"/>
+<area shape="rect" id="node19" href="$Tipos_8cpp.html#a705e0e1fbd1153df7aaf96c65b90ed32" title="Função para leitura de um CPString* informando um ifstream." alt="" coords="486,563,622,589"/>
+<area shape="rect" id="node20" href="$Tipos_8cpp.html#a5ec22caf1feca08be5d198edc72618e7" title="Função para leitura de um CPUtf8* informando um ifstream." alt="" coords="491,664,617,691"/>
+</map>

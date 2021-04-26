@@ -1,0 +1,10 @@
+<map id="ClassFile" name="ClassFile">
+<area shape="rect" id="node1" title="Strutura pra representar o .class." alt="" coords="301,631,482,737"/>
+<area shape="rect" id="node2" href="$structConstantPoolInfo.html" title="Estrutura base de todos os constant Pool." alt="" coords="5,145,175,237"/>
+<area shape="rect" id="node8" href="$structMethodInfo.html" title="Estrutura que armazena os dados de um método." alt="" coords="257,447,389,568"/>
+<area shape="rect" id="node3" title=" " alt="" coords="57,5,123,83"/>
+<area shape="rect" id="node4" href="$structAttributeInfo.html" title=" " alt="" coords="437,145,577,237"/>
+<area shape="rect" id="node7" href="$structFieldInfo.html" title="Estrutura que armazena os dados de um campo." alt="" coords="541,461,655,553"/>
+<area shape="rect" id="node5" title=" " alt="" coords="505,5,579,83"/>
+<area shape="rect" id="node6" title=" " alt="" coords="205,5,279,83"/>
+</map>

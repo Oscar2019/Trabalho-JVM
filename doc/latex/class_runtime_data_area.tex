@@ -1,0 +1,57 @@
+\hypertarget{class_runtime_data_area}{}\doxysection{Referência à classe Runtime\+Data\+Area}
+\label{class_runtime_data_area}\index{RuntimeDataArea@{RuntimeDataArea}}
+
+
+{\ttfamily \#include $<$Runtime\+Data\+Area.\+h$>$}
+
+\doxysubsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_runtime_data_area_a960aa4ff6f0af353789ee443054afe16}{push\+Heap}} (\mbox{\hyperlink{struct_object_reference}{Object\+Reference}} $\ast$pointer)
+\item 
+void \mbox{\hyperlink{class_runtime_data_area_a88b1e47c4a2429064143ffee5174fe28}{push\+Method\+Area}} (\mbox{\hyperlink{class_destruct_base}{Destruct\+Base}} $\ast$pointer)
+\item 
+\mbox{\hyperlink{struct_object_reference}{Object\+Reference}} $\ast$ \mbox{\hyperlink{class_runtime_data_area_a692f2aabdbe0f94ca40409b641aa501c}{object\+At}} (uint32\+\_\+t i)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_runtime_data_area_a5ca76208eb67091200b7692393f12a30}{heap\+Size}} ()
+\item 
+\mbox{\hyperlink{class_thread}{Thread}} \& \mbox{\hyperlink{class_runtime_data_area_a002ab30c48a83e3320a0036770e94ac7}{get\+Thread}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação dos métodos}
+\mbox{\Hypertarget{class_runtime_data_area_a002ab30c48a83e3320a0036770e94ac7}\label{class_runtime_data_area_a002ab30c48a83e3320a0036770e94ac7}} 
+\index{RuntimeDataArea@{RuntimeDataArea}!getThread@{getThread}}
+\index{getThread@{getThread}!RuntimeDataArea@{RuntimeDataArea}}
+\doxysubsubsection{\texorpdfstring{getThread()}{getThread()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_thread}{Thread}}\& Runtime\+Data\+Area\+::get\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_runtime_data_area_a5ca76208eb67091200b7692393f12a30}\label{class_runtime_data_area_a5ca76208eb67091200b7692393f12a30}} 
+\index{RuntimeDataArea@{RuntimeDataArea}!heapSize@{heapSize}}
+\index{heapSize@{heapSize}!RuntimeDataArea@{RuntimeDataArea}}
+\doxysubsubsection{\texorpdfstring{heapSize()}{heapSize()}}
+{\footnotesize\ttfamily uint32\+\_\+t Runtime\+Data\+Area\+::heap\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_runtime_data_area_a692f2aabdbe0f94ca40409b641aa501c}\label{class_runtime_data_area_a692f2aabdbe0f94ca40409b641aa501c}} 
+\index{RuntimeDataArea@{RuntimeDataArea}!objectAt@{objectAt}}
+\index{objectAt@{objectAt}!RuntimeDataArea@{RuntimeDataArea}}
+\doxysubsubsection{\texorpdfstring{objectAt()}{objectAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_object_reference}{Object\+Reference}}$\ast$ Runtime\+Data\+Area\+::object\+At (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_runtime_data_area_a960aa4ff6f0af353789ee443054afe16}\label{class_runtime_data_area_a960aa4ff6f0af353789ee443054afe16}} 
+\index{RuntimeDataArea@{RuntimeDataArea}!pushHeap@{pushHeap}}
+\index{pushHeap@{pushHeap}!RuntimeDataArea@{RuntimeDataArea}}
+\doxysubsubsection{\texorpdfstring{pushHeap()}{pushHeap()}}
+{\footnotesize\ttfamily void Runtime\+Data\+Area\+::push\+Heap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_object_reference}{Object\+Reference}} $\ast$}]{pointer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_runtime_data_area_a88b1e47c4a2429064143ffee5174fe28}\label{class_runtime_data_area_a88b1e47c4a2429064143ffee5174fe28}} 
+\index{RuntimeDataArea@{RuntimeDataArea}!pushMethodArea@{pushMethodArea}}
+\index{pushMethodArea@{pushMethodArea}!RuntimeDataArea@{RuntimeDataArea}}
+\doxysubsubsection{\texorpdfstring{pushMethodArea()}{pushMethodArea()}}
+{\footnotesize\ttfamily void Runtime\+Data\+Area\+::push\+Method\+Area (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_destruct_base}{Destruct\+Base}} $\ast$}]{pointer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_runtime_data_area_8h}{Runtime\+Data\+Area.\+h}}\end{DoxyCompactItemize}

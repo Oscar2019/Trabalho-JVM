@@ -1,0 +1,4 @@
+<map id="RuntimeDataArea::pushHeap" name="RuntimeDataArea::pushHeap">
+<area shape="rect" id="node1" title="Adiciona um elemento na heap do RuntimeDataArea." alt="" coords="5,5,216,32"/>
+<area shape="rect" id="node2" href="$classHeap.html#ac873a59e332fed213d347929aeb78f9a" title="Insere um novo Java objeto para a heap." alt="" coords="264,5,359,32"/>
+</map>

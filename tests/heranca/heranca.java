@@ -33,8 +33,8 @@ class cao extends animal{
 }
 class heranca {
     public static void main(String[] args){
-        animal g = new gato("Mimi");
-        animal c = new cao("Toto");
+        gato g = new gato("Mimi");
+        cao c = new cao("Toto");
         g.emiteSom();
         c.emiteSom();
     }

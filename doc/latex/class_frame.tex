@@ -1,0 +1,79 @@
+\hypertarget{class_frame}{}\doxysection{Referência à classe Frame}
+\label{class_frame}\index{Frame@{Frame}}
+
+
+{\ttfamily \#include $<$Frame.\+h$>$}
+
+\doxysubsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$ \mbox{\hyperlink{class_frame_a7a343cc8ade5fe6a399e9d5d5d1a061e}{get\+Constant\+Pool}} ()
+\item 
+\mbox{\hyperlink{class_frame_a179f17d9f2c053cd8d7a46f5f4f98b97}{Frame}} (uint32\+\_\+t var\+Table\+Size, uint32\+\_\+t operand\+Stack\+Size, \mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$current\+Constant\+Pool)
+\item 
+uint32\+\_\+t \& \mbox{\hyperlink{class_frame_aa23c1c8673ca67cf67ad3a647f9f1b56}{var\+At}} (uint32\+\_\+t ind)
+\item 
+void \mbox{\hyperlink{class_frame_afc6f418a53e2160c86a46fc6d38d10bf}{push\+Operand\+Stack}} (uint32\+\_\+t value)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_frame_a1d3b7f2931d969346e01987ec72f2a8a}{top\+Operand\+Stack}} ()
+\item 
+void \mbox{\hyperlink{class_frame_aa6cd62c1dfe95de30f86fbfa444171d7}{pop\+Operand\+Stack}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Membros públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_frame}{Frame}} $\ast$ \mbox{\hyperlink{class_frame_a783e5f801c60d09674e9556de8f1b319}{Create\+Frame}} (\mbox{\hyperlink{struct_method_info}{Method\+Info}} $\ast$method\+Info)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{class_frame_a179f17d9f2c053cd8d7a46f5f4f98b97}\label{class_frame_a179f17d9f2c053cd8d7a46f5f4f98b97}} 
+\index{Frame@{Frame}!Frame@{Frame}}
+\index{Frame@{Frame}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{Frame()}{Frame()}}
+{\footnotesize\ttfamily Frame\+::\+Frame (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{var\+Table\+Size,  }\item[{uint32\+\_\+t}]{operand\+Stack\+Size,  }\item[{\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$}]{current\+Constant\+Pool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Documentação dos métodos}
+\mbox{\Hypertarget{class_frame_a783e5f801c60d09674e9556de8f1b319}\label{class_frame_a783e5f801c60d09674e9556de8f1b319}} 
+\index{Frame@{Frame}!CreateFrame@{CreateFrame}}
+\index{CreateFrame@{CreateFrame}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{CreateFrame()}{CreateFrame()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_frame}{Frame}}$\ast$ Frame\+::\+Create\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_method_info}{Method\+Info}} $\ast$}]{method\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_frame_a7a343cc8ade5fe6a399e9d5d5d1a061e}\label{class_frame_a7a343cc8ade5fe6a399e9d5d5d1a061e}} 
+\index{Frame@{Frame}!getConstantPool@{getConstantPool}}
+\index{getConstantPool@{getConstantPool}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{getConstantPool()}{getConstantPool()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}}$\ast$$\ast$ Frame\+::get\+Constant\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_frame_aa6cd62c1dfe95de30f86fbfa444171d7}\label{class_frame_aa6cd62c1dfe95de30f86fbfa444171d7}} 
+\index{Frame@{Frame}!popOperandStack@{popOperandStack}}
+\index{popOperandStack@{popOperandStack}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{popOperandStack()}{popOperandStack()}}
+{\footnotesize\ttfamily void Frame\+::pop\+Operand\+Stack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_frame_afc6f418a53e2160c86a46fc6d38d10bf}\label{class_frame_afc6f418a53e2160c86a46fc6d38d10bf}} 
+\index{Frame@{Frame}!pushOperandStack@{pushOperandStack}}
+\index{pushOperandStack@{pushOperandStack}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{pushOperandStack()}{pushOperandStack()}}
+{\footnotesize\ttfamily void Frame\+::push\+Operand\+Stack (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_frame_a1d3b7f2931d969346e01987ec72f2a8a}\label{class_frame_a1d3b7f2931d969346e01987ec72f2a8a}} 
+\index{Frame@{Frame}!topOperandStack@{topOperandStack}}
+\index{topOperandStack@{topOperandStack}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{topOperandStack()}{topOperandStack()}}
+{\footnotesize\ttfamily uint32\+\_\+t Frame\+::top\+Operand\+Stack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_frame_aa23c1c8673ca67cf67ad3a647f9f1b56}\label{class_frame_aa23c1c8673ca67cf67ad3a647f9f1b56}} 
+\index{Frame@{Frame}!varAt@{varAt}}
+\index{varAt@{varAt}!Frame@{Frame}}
+\doxysubsubsection{\texorpdfstring{varAt()}{varAt()}}
+{\footnotesize\ttfamily uint32\+\_\+t\& Frame\+::var\+At (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_frame_8h}{Frame.\+h}}\end{DoxyCompactItemize}

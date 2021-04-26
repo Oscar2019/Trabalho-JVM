@@ -4,70 +4,73 @@
 #include <string>
 #include <algorithm>
 
+/**
+ * @brief Classe dedicada para o sistemas de arquivo do SO
+ * 
+ */
 class FileSystem{
     private:
+        /**
+         * @brief Induca se é uma parra ou uma contrabarra
+         * 
+         */
         char bar;
+        /**
+         * @brief Path para a biblioteca padrão do java
+         * 
+         */
         std::string javaClassPath;
+        /**
+         * @brief Path para o usuário java
+         * 
+         */
         std::string userClassPath;
         uint32_t count;
     public:
-        FileSystem(std::string &s){
-            if(s.find('\\') != std::string::npos){
-                bar = '\\';
-            } else{
-                bar = '/';
-            }
-            while(s.back() != '\\' && s.back() != '/'){
-                s.pop_back();
-            }
-            javaClassPath = s + ".." + bar + "data" + bar + "JavaLib" + bar;
-            userClassPath = "";
-            count = 0;
-        }
-        FileSystem(std::string &&s){
-            if(s.find('\\') != std::string::npos){
-                bar = '\\';
-            } else{
-                bar = '/';
-            }
-            while(s.back() != '\\' && s.back() != '/'){
-                s.pop_back();
-            }
-            javaClassPath = s + ".." + bar + "data" + bar + "JavaLib" + bar;
-            userClassPath = "";
-            count = 0;
-        }
-        const std::string& getJavaClassPath(){
-            return javaClassPath;
-        }
-        const std::string& getUserClassPath(){
-            return userClassPath;
-        }
-        void setUserClassPath(std::string& s){
-            if(count == 0){
-                userClassPath = environmentToJavaPathNotation(s);
-                count = 1;
-            }
-        }
-        std::string javaToEnvironmentPathNotation(std::string s){
-            char myBar = bar;
-            std::transform(s.begin(), s.end(), s.begin(), [myBar](char c){
-                if(c == '\\' || c == '/'){
-                    return myBar;
-                }
-                return c;
-            });
-            return s;
-        }
-        std::string environmentToJavaPathNotation(std::string s){
-            std::transform(s.begin(), s.end(), s.begin(), [](char c){
-                if(c == '\\' || c == '/'){
-                    return '/';
-                }
-                return c;
-            });
-            return s;
-        }
+        /**
+         * @brief Construct a new File System object
+         * 
+         * @param s 
+         */
+        FileSystem(std::string &s);
+        /**
+         * @brief Construct a new File System object
+         * 
+         * @param s 
+         */
+        FileSystem(std::string &&s);
+        /**
+         * @brief Get the Java Class Path object
+         * 
+         * @return const std::string& 
+         */
+        const std::string& getJavaClassPath();
+        /**
+         * @brief Get the User Class Path object
+         * 
+         * @return const std::string& 
+         */
+        const std::string& getUserClassPath();
+        /**
+         * @brief Set the User Class Path object
+         * 
+         * @param s 
+         */
+        void setUserClassPath(std::string& s);
+        /**
+         * @brief  converte o padrão de barra para a notaçãço da máquina.
+         * 
+         * @param s 
+         * @return std::string 
+         */
+        std::string javaToEnvironmentPathNotation(std::string s);
+        /**
+         * @brief converte o padrão de barra para a notaçãço do Java.
+         * 
+         * @param s 
+         * @return std::string 
+         */
+        std::string environmentToJavaPathNotation(std::string s);
 };
 
 #endif

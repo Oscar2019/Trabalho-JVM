@@ -1,0 +1,403 @@
+\hypertarget{_constant_pool_info_8h}{}\doxysection{Referência ao ficheiro include/\+Constant\+Pool\+Info.h}
+\label{_constant_pool_info_8h}\index{include/ConstantPoolInfo.h@{include/ConstantPoolInfo.h}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}}
+\begin{DoxyCompactList}\small\item\em Estrutura base de todos os constant Pool. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_c_p_class}{CPClass}}
+\begin{DoxyCompactList}\small\item\em Estrutura usada para representar uma classe ou interface. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_c_p_fieldref}{CPFieldref}}
+\begin{DoxyCompactList}\small\item\em Estrutura usada para representar um campo. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_c_p_methodref}{CPMethodref}}
+\begin{DoxyCompactList}\small\item\em Estrutura usada para representar um método. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_c_p_interface_methodref}{CPInterface\+Methodref}}
+\begin{DoxyCompactList}\small\item\em Estrutura usada para representar um método de interface. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_c_p_string}{CPString}}
+\begin{DoxyCompactList}\small\item\em Estrutura usada para representar uma objeto de uma strnig. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_c_p_integer}{CPInteger}}
+\begin{DoxyCompactList}\small\item\em Estrutura usada para representar um inteiro. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_c_p_float}{CPFloat}}
+\begin{DoxyCompactList}\small\item\em Estrutura usada para representar um float. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_c_p_long}{CPLong}}
+\begin{DoxyCompactList}\small\item\em Estrutura usada para representar um long. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_c_p_double}{CPDouble}}
+\begin{DoxyCompactList}\small\item\em Estrutura usada para representar um double. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_c_p_name_and_type}{CPName\+And\+Type}}
+\begin{DoxyCompactList}\small\item\em Estrutura usada para representa um campo ou método sem informar a que classe ou interface ele pertence. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_c_p_utf8}{CPUtf8}}
+\begin{DoxyCompactList}\small\item\em Estrutura que armazena uma string. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_c_p_method_handle}{CPMethod\+Handle}}
+\item 
+struct \mbox{\hyperlink{struct_c_p_method_type}{CPMethod\+Type}}
+\item 
+struct \mbox{\hyperlink{struct_c_p_invoke_dynamic}{CPInvoke\+Dynamic}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerações}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1c}{Constant\+Pool\+Info\+Tag}} \{ \newline
+\mbox{\hyperlink{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca8dabc58c34c5df57f2151d6f233d6c15}{CLASS}} = 7
+, \mbox{\hyperlink{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca34c7705d2f9543708bc212d13d24b034}{FIELDREF}} = 9
+, \mbox{\hyperlink{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca1f797ad4fa5038984cce03485ae7863f}{METHODREF}} = 10
+, \mbox{\hyperlink{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1cae6d184282efa3742f99a3f15b9b82ed4}{INTERFACE\+\_\+\+METHODREF}} = 11
+, \newline
+\mbox{\hyperlink{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1caee847e634a4297b274316de8a8ca9921}{STRING}} = 8
+, \mbox{\hyperlink{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca5a063e265d2ac903b6808e9f6e73ec46}{INTEGER}} = 3
+, \mbox{\hyperlink{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca9cf4a0866224b0bb4a7a895da27c9c4c}{FLOAT}} = 4
+, \mbox{\hyperlink{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1caaee055c4a5aba7d55774e4f1c01dacea}{LONG}} = 5
+, \newline
+\mbox{\hyperlink{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca33465d1d419b1074fb259ef444609e92}{DOUBLE}} = 6
+, \mbox{\hyperlink{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca74859c1791d323b606f16bd29d2414e3}{NAME\+\_\+\+AND\+\_\+\+TYPE}} = 12
+, \mbox{\hyperlink{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1cac4aa8bf4aaf220c87545078d3c43baaa}{UTF8}} = 1
+, \mbox{\hyperlink{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1cac459425984ccc6491fb6d959cba24c1f}{METHOD\+\_\+\+HANDLE}} = 15
+, \newline
+\mbox{\hyperlink{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca5dbaf6b6b5c28667e660673e48d3f3d9}{METHOD\+\_\+\+TYPE}} = 16
+, \mbox{\hyperlink{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca144388f479d9f354b08273b373a14229}{INVOKE\+\_\+\+DYNAMIC}} = 18
+ \}
+\begin{DoxyCompactList}\small\item\em Enum que contém o número das tags. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{_constant_pool_info_8h_afe1697068c0f2f8b2c45ae37899e874c}{get\+String\+From\+CPInfo}} (\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera uma string do \mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} no índice ind. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{_constant_pool_info_8h_abf3ac3c335453aeeaef5215f929ca198}{get\+Class}} (\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera a string que é apontada pelo name\+Index. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{_constant_pool_info_8h_aa11fd5cae250b13659b5bc7896666470}{get\+Fieldref}} (\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera a string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{_constant_pool_info_8h_ab1000528a22b627ac08ba4f02a28307a}{get\+Methodref}} (\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera a string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{_constant_pool_info_8h_ac1af9208eec2a80387bfc0df984658c4}{get\+Interface\+Methodref}} (\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera a string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{_constant_pool_info_8h_a225c1b5cec4bb5cf3f07f9864b9d0431}{get\+String}} (\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera a string. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{_constant_pool_info_8h_ad170cd1f7d25904c16944ac727b0a3df}{get\+Integer}} (\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera um inteiro que está sendo armazenado no \mbox{\hyperlink{struct_c_p_integer}{CPInteger}}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{_constant_pool_info_8h_a4c191de500bacf8bcbf78fecaaff5c9c}{get\+Float}} (\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera um float que está sendo armazenado no \mbox{\hyperlink{struct_c_p_float}{CPFloat}}. \end{DoxyCompactList}\item 
+int64\+\_\+t \mbox{\hyperlink{_constant_pool_info_8h_ae9e5dbc5679d30d4ed4627e5f97f5580}{get\+Long}} (\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera um long que está sendo armazenado no \mbox{\hyperlink{struct_c_p_long}{CPLong}}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{_constant_pool_info_8h_a7c2c013a83861a4863262f5662805cde}{get\+Double}} (\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera um double que está sendo armazenado no \mbox{\hyperlink{struct_c_p_double}{CPDouble}}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{_constant_pool_info_8h_a17eba7eed349812217e563f49ea1ce31}{get\+Name\+And\+Type}} (\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera a string. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{_constant_pool_info_8h_a5e9d056ada05e799dca7e544a7878f94}{get\+CPUtf8}} (\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$cp, uint32\+\_\+t ind)
+\begin{DoxyCompactList}\small\item\em Gera uma string que está sendo armazenada por \mbox{\hyperlink{struct_c_p_utf8}{CPUtf8}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentação dos valores da enumeração}
+\mbox{\Hypertarget{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1c}\label{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1c}} 
+\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!ConstantPoolInfoTag@{ConstantPoolInfoTag}}
+\index{ConstantPoolInfoTag@{ConstantPoolInfoTag}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}
+\doxysubsubsection{\texorpdfstring{ConstantPoolInfoTag}{ConstantPoolInfoTag}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1c}{Constant\+Pool\+Info\+Tag}}}
+
+
+
+Enum que contém o número das tags. 
+
+\begin{DoxyEnumFields}{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLASS@{CLASS}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!CLASS@{CLASS}}}\mbox{\Hypertarget{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca8dabc58c34c5df57f2151d6f233d6c15}\label{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca8dabc58c34c5df57f2151d6f233d6c15}} 
+CLASS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FIELDREF@{FIELDREF}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!FIELDREF@{FIELDREF}}}\mbox{\Hypertarget{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca34c7705d2f9543708bc212d13d24b034}\label{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca34c7705d2f9543708bc212d13d24b034}} 
+FIELDREF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{METHODREF@{METHODREF}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!METHODREF@{METHODREF}}}\mbox{\Hypertarget{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca1f797ad4fa5038984cce03485ae7863f}\label{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca1f797ad4fa5038984cce03485ae7863f}} 
+METHODREF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTERFACE\_METHODREF@{INTERFACE\_METHODREF}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!INTERFACE\_METHODREF@{INTERFACE\_METHODREF}}}\mbox{\Hypertarget{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1cae6d184282efa3742f99a3f15b9b82ed4}\label{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1cae6d184282efa3742f99a3f15b9b82ed4}} 
+INTERFACE\+\_\+\+METHODREF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STRING@{STRING}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!STRING@{STRING}}}\mbox{\Hypertarget{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1caee847e634a4297b274316de8a8ca9921}\label{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1caee847e634a4297b274316de8a8ca9921}} 
+STRING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INTEGER@{INTEGER}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!INTEGER@{INTEGER}}}\mbox{\Hypertarget{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca5a063e265d2ac903b6808e9f6e73ec46}\label{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca5a063e265d2ac903b6808e9f6e73ec46}} 
+INTEGER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FLOAT@{FLOAT}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!FLOAT@{FLOAT}}}\mbox{\Hypertarget{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca9cf4a0866224b0bb4a7a895da27c9c4c}\label{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca9cf4a0866224b0bb4a7a895da27c9c4c}} 
+FLOAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LONG@{LONG}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!LONG@{LONG}}}\mbox{\Hypertarget{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1caaee055c4a5aba7d55774e4f1c01dacea}\label{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1caaee055c4a5aba7d55774e4f1c01dacea}} 
+LONG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOUBLE@{DOUBLE}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!DOUBLE@{DOUBLE}}}\mbox{\Hypertarget{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca33465d1d419b1074fb259ef444609e92}\label{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca33465d1d419b1074fb259ef444609e92}} 
+DOUBLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NAME\_AND\_TYPE@{NAME\_AND\_TYPE}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!NAME\_AND\_TYPE@{NAME\_AND\_TYPE}}}\mbox{\Hypertarget{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca74859c1791d323b606f16bd29d2414e3}\label{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca74859c1791d323b606f16bd29d2414e3}} 
+NAME\+\_\+\+AND\+\_\+\+TYPE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UTF8@{UTF8}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!UTF8@{UTF8}}}\mbox{\Hypertarget{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1cac4aa8bf4aaf220c87545078d3c43baaa}\label{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1cac4aa8bf4aaf220c87545078d3c43baaa}} 
+UTF8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{METHOD\_HANDLE@{METHOD\_HANDLE}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!METHOD\_HANDLE@{METHOD\_HANDLE}}}\mbox{\Hypertarget{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1cac459425984ccc6491fb6d959cba24c1f}\label{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1cac459425984ccc6491fb6d959cba24c1f}} 
+METHOD\+\_\+\+HANDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{METHOD\_TYPE@{METHOD\_TYPE}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!METHOD\_TYPE@{METHOD\_TYPE}}}\mbox{\Hypertarget{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca5dbaf6b6b5c28667e660673e48d3f3d9}\label{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca5dbaf6b6b5c28667e660673e48d3f3d9}} 
+METHOD\+\_\+\+TYPE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVOKE\_DYNAMIC@{INVOKE\_DYNAMIC}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!INVOKE\_DYNAMIC@{INVOKE\_DYNAMIC}}}\mbox{\Hypertarget{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca144388f479d9f354b08273b373a14229}\label{_constant_pool_info_8h_a3460af322b5308c3bb1071aef349bc1ca144388f479d9f354b08273b373a14229}} 
+INVOKE\+\_\+\+DYNAMIC&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{_constant_pool_info_8h_abf3ac3c335453aeeaef5215f929ca198}\label{_constant_pool_info_8h_abf3ac3c335453aeeaef5215f929ca198}} 
+\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!getClass@{getClass}}
+\index{getClass@{getClass}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}
+\doxysubsubsection{\texorpdfstring{getClass()}{getClass()}}
+{\footnotesize\ttfamily std\+::string get\+Class (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera a string que é apontada pelo name\+Index. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_constant_pool_info_8h_a5e9d056ada05e799dca7e544a7878f94}\label{_constant_pool_info_8h_a5e9d056ada05e799dca7e544a7878f94}} 
+\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!getCPUtf8@{getCPUtf8}}
+\index{getCPUtf8@{getCPUtf8}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}
+\doxysubsubsection{\texorpdfstring{getCPUtf8()}{getCPUtf8()}}
+{\footnotesize\ttfamily std\+::string get\+CPUtf8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera uma string que está sendo armazenada por \mbox{\hyperlink{struct_c_p_utf8}{CPUtf8}}. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_constant_pool_info_8h_a7c2c013a83861a4863262f5662805cde}\label{_constant_pool_info_8h_a7c2c013a83861a4863262f5662805cde}} 
+\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!getDouble@{getDouble}}
+\index{getDouble@{getDouble}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}
+\doxysubsubsection{\texorpdfstring{getDouble()}{getDouble()}}
+{\footnotesize\ttfamily double get\+Double (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera um double que está sendo armazenado no \mbox{\hyperlink{struct_c_p_double}{CPDouble}}. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_constant_pool_info_8h_aa11fd5cae250b13659b5bc7896666470}\label{_constant_pool_info_8h_aa11fd5cae250b13659b5bc7896666470}} 
+\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!getFieldref@{getFieldref}}
+\index{getFieldref@{getFieldref}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}
+\doxysubsubsection{\texorpdfstring{getFieldref()}{getFieldref()}}
+{\footnotesize\ttfamily std\+::string get\+Fieldref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera a string. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_constant_pool_info_8h_a4c191de500bacf8bcbf78fecaaff5c9c}\label{_constant_pool_info_8h_a4c191de500bacf8bcbf78fecaaff5c9c}} 
+\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!getFloat@{getFloat}}
+\index{getFloat@{getFloat}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}
+\doxysubsubsection{\texorpdfstring{getFloat()}{getFloat()}}
+{\footnotesize\ttfamily float get\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera um float que está sendo armazenado no \mbox{\hyperlink{struct_c_p_float}{CPFloat}}. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_constant_pool_info_8h_ad170cd1f7d25904c16944ac727b0a3df}\label{_constant_pool_info_8h_ad170cd1f7d25904c16944ac727b0a3df}} 
+\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!getInteger@{getInteger}}
+\index{getInteger@{getInteger}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}
+\doxysubsubsection{\texorpdfstring{getInteger()}{getInteger()}}
+{\footnotesize\ttfamily int32\+\_\+t get\+Integer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera um inteiro que está sendo armazenado no \mbox{\hyperlink{struct_c_p_integer}{CPInteger}}. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+int32\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_constant_pool_info_8h_ac1af9208eec2a80387bfc0df984658c4}\label{_constant_pool_info_8h_ac1af9208eec2a80387bfc0df984658c4}} 
+\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!getInterfaceMethodref@{getInterfaceMethodref}}
+\index{getInterfaceMethodref@{getInterfaceMethodref}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}
+\doxysubsubsection{\texorpdfstring{getInterfaceMethodref()}{getInterfaceMethodref()}}
+{\footnotesize\ttfamily std\+::string get\+Interface\+Methodref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera a string. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_constant_pool_info_8h_ae9e5dbc5679d30d4ed4627e5f97f5580}\label{_constant_pool_info_8h_ae9e5dbc5679d30d4ed4627e5f97f5580}} 
+\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!getLong@{getLong}}
+\index{getLong@{getLong}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}
+\doxysubsubsection{\texorpdfstring{getLong()}{getLong()}}
+{\footnotesize\ttfamily int64\+\_\+t get\+Long (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera um long que está sendo armazenado no \mbox{\hyperlink{struct_c_p_long}{CPLong}}. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+int64\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_constant_pool_info_8h_ab1000528a22b627ac08ba4f02a28307a}\label{_constant_pool_info_8h_ab1000528a22b627ac08ba4f02a28307a}} 
+\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!getMethodref@{getMethodref}}
+\index{getMethodref@{getMethodref}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}
+\doxysubsubsection{\texorpdfstring{getMethodref()}{getMethodref()}}
+{\footnotesize\ttfamily std\+::string get\+Methodref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera a string. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_constant_pool_info_8h_a17eba7eed349812217e563f49ea1ce31}\label{_constant_pool_info_8h_a17eba7eed349812217e563f49ea1ce31}} 
+\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!getNameAndType@{getNameAndType}}
+\index{getNameAndType@{getNameAndType}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}
+\doxysubsubsection{\texorpdfstring{getNameAndType()}{getNameAndType()}}
+{\footnotesize\ttfamily std\+::string get\+Name\+And\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera a string. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_constant_pool_info_8h_a225c1b5cec4bb5cf3f07f9864b9d0431}\label{_constant_pool_info_8h_a225c1b5cec4bb5cf3f07f9864b9d0431}} 
+\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!getString@{getString}}
+\index{getString@{getString}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}
+\doxysubsubsection{\texorpdfstring{getString()}{getString()}}
+{\footnotesize\ttfamily std\+::string get\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera a string. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_constant_pool_info_8h_afe1697068c0f2f8b2c45ae37899e874c}\label{_constant_pool_info_8h_afe1697068c0f2f8b2c45ae37899e874c}} 
+\index{ConstantPoolInfo.h@{ConstantPoolInfo.h}!getStringFromCPInfo@{getStringFromCPInfo}}
+\index{getStringFromCPInfo@{getStringFromCPInfo}!ConstantPoolInfo.h@{ConstantPoolInfo.h}}
+\doxysubsubsection{\texorpdfstring{getStringFromCPInfo()}{getStringFromCPInfo()}}
+{\footnotesize\ttfamily std\+::string get\+String\+From\+CPInfo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} $\ast$$\ast$}]{cp,  }\item[{uint32\+\_\+t}]{ind }\end{DoxyParamCaption})}
+
+
+
+Gera uma string do \mbox{\hyperlink{struct_constant_pool_info}{Constant\+Pool\+Info}} no índice ind. 
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em cp} & \\
+\hline
+{\em ind} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Retorna}
+std\+::string 
+\end{DoxyReturn}
+Este é o diagrama das funções que utilizam esta função\+:
+% FIG 0

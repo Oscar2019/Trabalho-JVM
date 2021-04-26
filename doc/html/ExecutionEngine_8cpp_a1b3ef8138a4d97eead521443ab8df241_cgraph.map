@@ -1,0 +1,7 @@
+<map id="execOp_sipush" name="execOp_sipush">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,124,57"/>
+<area shape="rect" id="node2" href="$classFrame.html#afc6f418a53e2160c86a46fc6d38d10bf" title="Insere um elemento na pilha de operando." alt="" coords="172,5,365,32"/>
+<area shape="rect" id="node4" href="$Tipos_8h.html#acb337e0b996b7eb4f83d197c9b1a12f9" title="Função que lê um uinnt16_t de um vetor de uint8_t." alt="" coords="201,56,336,83"/>
+<area shape="rect" id="node3" href="$classLinearStack.html#a21f220f3c54293f3cc931781b0511c95" title="Insre um novo elemento para a pilha." alt="" coords="413,5,551,32"/>
+<area shape="rect" id="node5" href="$Tipos_8cpp.html#a84a58ce8de91bb008e62bd8d7576bcf9" title="Função que lê uma um uint8_t de um vetor de uint8_t." alt="" coords="419,56,545,83"/>
+</map>

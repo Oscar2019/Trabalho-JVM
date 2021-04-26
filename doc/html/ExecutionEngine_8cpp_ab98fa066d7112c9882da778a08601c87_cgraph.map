@@ -1,0 +1,9 @@
+<map id="execOp_dup_x2" name="execOp_dup_x2">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,129,83"/>
+<area shape="rect" id="node2" href="$classFrame.html#aa6cd62c1dfe95de30f86fbfa444171d7" title="Remove o elemento que está no topo da pilha." alt="" coords="181,5,367,32"/>
+<area shape="rect" id="node4" href="$classFrame.html#afc6f418a53e2160c86a46fc6d38d10bf" title="Insere um elemento na pilha de operando." alt="" coords="177,56,371,83"/>
+<area shape="rect" id="node6" href="$classFrame.html#a1d3b7f2931d969346e01987ec72f2a8a" title="Obtém o elemento que está no topo da pilha." alt="" coords="183,107,365,133"/>
+<area shape="rect" id="node3" href="$classLinearStack.html#aa18d8e72f505a2de25318f3c3ee4a870" title="Remove o elemento que está no topo da pilha." alt="" coords="422,5,553,32"/>
+<area shape="rect" id="node5" href="$classLinearStack.html#a21f220f3c54293f3cc931781b0511c95" title="Insre um novo elemento para a pilha." alt="" coords="419,56,556,83"/>
+<area shape="rect" id="node7" href="$classLinearStack.html#ad68476dbea1871261e4f4e678d72550e" title="Retorna uma referencia para o elemento que está no topo da pilha." alt="" coords="424,107,551,133"/>
+</map>

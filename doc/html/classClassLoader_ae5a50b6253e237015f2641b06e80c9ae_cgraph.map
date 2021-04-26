@@ -1,0 +1,7 @@
+<map id="ClassLoader::getDatafromObject" name="ClassLoader::getDatafromObject">
+<area shape="rect" id="node1" title=" " alt="" coords="5,49,197,90"/>
+<area shape="rect" id="node2" href="$classTrie.html#a8fed33e2a8777e406f006c1ed7c47da3" title="Obtém os dados de um prefixo." alt="" coords="290,5,401,32"/>
+<area shape="rect" id="node3" href="$classTrie.html#aabeeb088fe82e4de76aae2d43bba8b5c" title="Determina se existe um elemento sobre um prefixo." alt="" coords="295,56,395,83"/>
+<area shape="rect" id="node4" href="$classRuntimeDataArea.html#a692f2aabdbe0f94ca40409b641aa501c" title="Retorna o i&#45;ésimo valor no var locals no elemento no topo da heap." alt="" coords="245,107,445,133"/>
+<area shape="rect" id="node5" href="$classHeap.html#ae3962ba3eee949e7fa6c903692213ea0" title="Retorna um objeto no indice i&#45;1." alt="" coords="493,107,571,133"/>
+</map>

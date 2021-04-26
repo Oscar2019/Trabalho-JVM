@@ -1,0 +1,195 @@
+\hypertarget{classRuntimeDataArea}{}\doxysection{Runtime\+Data\+Area Class Reference}
+\label{classRuntimeDataArea}\index{RuntimeDataArea@{RuntimeDataArea}}
+
+
+Class que representa o \mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}}.  
+
+
+
+
+{\ttfamily \#include $<$Runtime\+Data\+Area.\+h$>$}
+
+
+
+Collaboration diagram for Runtime\+Data\+Area\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRuntimeDataArea__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRuntimeDataArea_a960aa4ff6f0af353789ee443054afe16}{push\+Heap}} (\mbox{\hyperlink{structObjectReference}{Object\+Reference}} $\ast$pointer)
+\begin{DoxyCompactList}\small\item\em Adiciona um elemento na heap do \mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRuntimeDataArea_a88b1e47c4a2429064143ffee5174fe28}{push\+Method\+Area}} (\mbox{\hyperlink{classDestructBase}{Destruct\+Base}} $\ast$pointer)
+\begin{DoxyCompactList}\small\item\em Adiciona um elemento na method\+Area do \mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structObjectReference}{Object\+Reference}} $\ast$ \mbox{\hyperlink{classRuntimeDataArea_a692f2aabdbe0f94ca40409b641aa501c}{object\+At}} (uint32\+\_\+t i)
+\begin{DoxyCompactList}\small\item\em Retorna o i-\/ésimo valor no var locals no elemento no topo da heap. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classRuntimeDataArea_a5ca76208eb67091200b7692393f12a30}{heap\+Size}} ()
+\begin{DoxyCompactList}\small\item\em retorna o númeor de elementos na heap \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classThread}{Thread}} \& \mbox{\hyperlink{classRuntimeDataArea_a002ab30c48a83e3320a0036770e94ac7}{get\+Thread}} ()
+\begin{DoxyCompactList}\small\item\em Obtém a thread do \mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classThread}{Thread}} \mbox{\hyperlink{classRuntimeDataArea_aa743d464f0e4edb8a12ed9b8b94cb20a}{tread}}
+\begin{DoxyCompactList}\small\item\em Thead do runtime data área. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMethodArea}{Method\+Area}} \mbox{\hyperlink{classRuntimeDataArea_aac85970759d340dbd7e071c4ec7955d3}{method\+Area}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMethodArea}{Method\+Area}} do runtime data área. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHeap}{Heap}} \mbox{\hyperlink{classRuntimeDataArea_af33fb2943a3f0dd9d3d7f65154b6cd6c}{heap}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classHeap}{Heap}} do runtime data área. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class que representa o \mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRuntimeDataArea_a002ab30c48a83e3320a0036770e94ac7}\label{classRuntimeDataArea_a002ab30c48a83e3320a0036770e94ac7}} 
+\index{RuntimeDataArea@{RuntimeDataArea}!getThread@{getThread}}
+\index{getThread@{getThread}!RuntimeDataArea@{RuntimeDataArea}}
+\doxysubsubsection{\texorpdfstring{getThread()}{getThread()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classThread}{Thread}}\& Runtime\+Data\+Area\+::get\+Thread (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtém a thread do \mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}}. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classThread}{Thread}}\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRuntimeDataArea_a5ca76208eb67091200b7692393f12a30}\label{classRuntimeDataArea_a5ca76208eb67091200b7692393f12a30}} 
+\index{RuntimeDataArea@{RuntimeDataArea}!heapSize@{heapSize}}
+\index{heapSize@{heapSize}!RuntimeDataArea@{RuntimeDataArea}}
+\doxysubsubsection{\texorpdfstring{heapSize()}{heapSize()}}
+{\footnotesize\ttfamily uint32\+\_\+t Runtime\+Data\+Area\+::heap\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+retorna o númeor de elementos na heap 
+
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{classRuntimeDataArea_a5ca76208eb67091200b7692393f12a30_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRuntimeDataArea_a692f2aabdbe0f94ca40409b641aa501c}\label{classRuntimeDataArea_a692f2aabdbe0f94ca40409b641aa501c}} 
+\index{RuntimeDataArea@{RuntimeDataArea}!objectAt@{objectAt}}
+\index{objectAt@{objectAt}!RuntimeDataArea@{RuntimeDataArea}}
+\doxysubsubsection{\texorpdfstring{objectAt()}{objectAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structObjectReference}{Object\+Reference}}$\ast$ Runtime\+Data\+Area\+::object\+At (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna o i-\/ésimo valor no var locals no elemento no topo da heap. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Object\+Reference$\ast$ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classRuntimeDataArea_a692f2aabdbe0f94ca40409b641aa501c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRuntimeDataArea_a960aa4ff6f0af353789ee443054afe16}\label{classRuntimeDataArea_a960aa4ff6f0af353789ee443054afe16}} 
+\index{RuntimeDataArea@{RuntimeDataArea}!pushHeap@{pushHeap}}
+\index{pushHeap@{pushHeap}!RuntimeDataArea@{RuntimeDataArea}}
+\doxysubsubsection{\texorpdfstring{pushHeap()}{pushHeap()}}
+{\footnotesize\ttfamily void Runtime\+Data\+Area\+::push\+Heap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structObjectReference}{Object\+Reference}} $\ast$}]{pointer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adiciona um elemento na heap do \mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{classRuntimeDataArea_a960aa4ff6f0af353789ee443054afe16_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classRuntimeDataArea_a88b1e47c4a2429064143ffee5174fe28}\label{classRuntimeDataArea_a88b1e47c4a2429064143ffee5174fe28}} 
+\index{RuntimeDataArea@{RuntimeDataArea}!pushMethodArea@{pushMethodArea}}
+\index{pushMethodArea@{pushMethodArea}!RuntimeDataArea@{RuntimeDataArea}}
+\doxysubsubsection{\texorpdfstring{pushMethodArea()}{pushMethodArea()}}
+{\footnotesize\ttfamily void Runtime\+Data\+Area\+::push\+Method\+Area (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDestructBase}{Destruct\+Base}} $\ast$}]{pointer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adiciona um elemento na method\+Area do \mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pointer} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRuntimeDataArea_a88b1e47c4a2429064143ffee5174fe28_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classRuntimeDataArea_af33fb2943a3f0dd9d3d7f65154b6cd6c}\label{classRuntimeDataArea_af33fb2943a3f0dd9d3d7f65154b6cd6c}} 
+\index{RuntimeDataArea@{RuntimeDataArea}!heap@{heap}}
+\index{heap@{heap}!RuntimeDataArea@{RuntimeDataArea}}
+\doxysubsubsection{\texorpdfstring{heap}{heap}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHeap}{Heap}} Runtime\+Data\+Area\+::heap\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classHeap}{Heap}} do runtime data área. 
+
+\mbox{\Hypertarget{classRuntimeDataArea_aac85970759d340dbd7e071c4ec7955d3}\label{classRuntimeDataArea_aac85970759d340dbd7e071c4ec7955d3}} 
+\index{RuntimeDataArea@{RuntimeDataArea}!methodArea@{methodArea}}
+\index{methodArea@{methodArea}!RuntimeDataArea@{RuntimeDataArea}}
+\doxysubsubsection{\texorpdfstring{methodArea}{methodArea}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMethodArea}{Method\+Area}} Runtime\+Data\+Area\+::method\+Area\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classMethodArea}{Method\+Area}} do runtime data área. 
+
+\mbox{\Hypertarget{classRuntimeDataArea_aa743d464f0e4edb8a12ed9b8b94cb20a}\label{classRuntimeDataArea_aa743d464f0e4edb8a12ed9b8b94cb20a}} 
+\index{RuntimeDataArea@{RuntimeDataArea}!tread@{tread}}
+\index{tread@{tread}!RuntimeDataArea@{RuntimeDataArea}}
+\doxysubsubsection{\texorpdfstring{tread}{tread}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classThread}{Thread}} Runtime\+Data\+Area\+::tread\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Thead do runtime data área. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{RuntimeDataArea_8h}{Runtime\+Data\+Area.\+h}}\end{DoxyCompactItemize}

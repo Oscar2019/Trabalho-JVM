@@ -1,0 +1,686 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>JVM: Referência ao ficheiro include/ConstantPoolInfo.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">JVM
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Componentes</a> &#124;
+<a href="#enum-members">Enumerações</a> &#124;
+<a href="#func-members">Funções</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência ao ficheiro ConstantPoolInfo.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+</div>
+<p><a href="_constant_pool_info_8h_source.html">Ir para o código fonte deste ficheiro.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Componentes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura base de todos os constant Pool.  <a href="struct_constant_pool_info.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_p_class.html">CPClass</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura usada para representar uma classe ou interface.  <a href="struct_c_p_class.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_p_fieldref.html">CPFieldref</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura usada para representar um campo.  <a href="struct_c_p_fieldref.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_p_methodref.html">CPMethodref</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura usada para representar um método.  <a href="struct_c_p_methodref.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_p_interface_methodref.html">CPInterfaceMethodref</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura usada para representar um método de interface.  <a href="struct_c_p_interface_methodref.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_p_string.html">CPString</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura usada para representar uma objeto de uma strnig.  <a href="struct_c_p_string.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_p_integer.html">CPInteger</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura usada para representar um inteiro.  <a href="struct_c_p_integer.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_p_float.html">CPFloat</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura usada para representar um float.  <a href="struct_c_p_float.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_p_long.html">CPLong</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura usada para representar um long.  <a href="struct_c_p_long.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_p_double.html">CPDouble</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura usada para representar um double.  <a href="struct_c_p_double.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_p_name_and_type.html">CPNameAndType</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura usada para representa um campo ou método sem informar a que classe ou interface ele pertence.  <a href="struct_c_p_name_and_type.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_p_utf8.html">CPUtf8</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura que armazena uma string.  <a href="struct_c_p_utf8.html#details">Mais...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_p_method_handle.html">CPMethodHandle</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_p_method_type.html">CPMethodType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_p_invoke_dynamic.html">CPInvokeDynamic</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerações</h2></td></tr>
+<tr class="memitem:a3460af322b5308c3bb1071aef349bc1c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_constant_pool_info_8h.html#a3460af322b5308c3bb1071aef349bc1c">ConstantPoolInfoTag</a> { <br />
+&#160;&#160;<a class="el" href="_constant_pool_info_8h.html#a3460af322b5308c3bb1071aef349bc1ca8dabc58c34c5df57f2151d6f233d6c15">CLASS</a> = 7
+, <a class="el" href="_constant_pool_info_8h.html#a3460af322b5308c3bb1071aef349bc1ca34c7705d2f9543708bc212d13d24b034">FIELDREF</a> = 9
+, <a class="el" href="_constant_pool_info_8h.html#a3460af322b5308c3bb1071aef349bc1ca1f797ad4fa5038984cce03485ae7863f">METHODREF</a> = 10
+, <a class="el" href="_constant_pool_info_8h.html#a3460af322b5308c3bb1071aef349bc1cae6d184282efa3742f99a3f15b9b82ed4">INTERFACE_METHODREF</a> = 11
+, <br />
+&#160;&#160;<a class="el" href="_constant_pool_info_8h.html#a3460af322b5308c3bb1071aef349bc1caee847e634a4297b274316de8a8ca9921">STRING</a> = 8
+, <a class="el" href="_constant_pool_info_8h.html#a3460af322b5308c3bb1071aef349bc1ca5a063e265d2ac903b6808e9f6e73ec46">INTEGER</a> = 3
+, <a class="el" href="_constant_pool_info_8h.html#a3460af322b5308c3bb1071aef349bc1ca9cf4a0866224b0bb4a7a895da27c9c4c">FLOAT</a> = 4
+, <a class="el" href="_constant_pool_info_8h.html#a3460af322b5308c3bb1071aef349bc1caaee055c4a5aba7d55774e4f1c01dacea">LONG</a> = 5
+, <br />
+&#160;&#160;<a class="el" href="_constant_pool_info_8h.html#a3460af322b5308c3bb1071aef349bc1ca33465d1d419b1074fb259ef444609e92">DOUBLE</a> = 6
+, <a class="el" href="_constant_pool_info_8h.html#a3460af322b5308c3bb1071aef349bc1ca74859c1791d323b606f16bd29d2414e3">NAME_AND_TYPE</a> = 12
+, <a class="el" href="_constant_pool_info_8h.html#a3460af322b5308c3bb1071aef349bc1cac4aa8bf4aaf220c87545078d3c43baaa">UTF8</a> = 1
+, <a class="el" href="_constant_pool_info_8h.html#a3460af322b5308c3bb1071aef349bc1cac459425984ccc6491fb6d959cba24c1f">METHOD_HANDLE</a> = 15
+, <br />
+&#160;&#160;<a class="el" href="_constant_pool_info_8h.html#a3460af322b5308c3bb1071aef349bc1ca5dbaf6b6b5c28667e660673e48d3f3d9">METHOD_TYPE</a> = 16
+, <a class="el" href="_constant_pool_info_8h.html#a3460af322b5308c3bb1071aef349bc1ca144388f479d9f354b08273b373a14229">INVOKE_DYNAMIC</a> = 18
+<br />
+ }</td></tr>
+<tr class="memdesc:a3460af322b5308c3bb1071aef349bc1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum que contém o número das tags.  <a href="_constant_pool_info_8h.html#a3460af322b5308c3bb1071aef349bc1c">Mais...</a><br /></td></tr>
+<tr class="separator:a3460af322b5308c3bb1071aef349bc1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:afe1697068c0f2f8b2c45ae37899e874c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_constant_pool_info_8h.html#afe1697068c0f2f8b2c45ae37899e874c">getStringFromCPInfo</a> (<a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **cp, uint32_t ind)</td></tr>
+<tr class="memdesc:afe1697068c0f2f8b2c45ae37899e874c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera uma string do <a class="el" href="struct_constant_pool_info.html" title="Estrutura base de todos os constant Pool.">ConstantPoolInfo</a> no índice ind.  <a href="_constant_pool_info_8h.html#afe1697068c0f2f8b2c45ae37899e874c">Mais...</a><br /></td></tr>
+<tr class="separator:afe1697068c0f2f8b2c45ae37899e874c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf3ac3c335453aeeaef5215f929ca198"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_constant_pool_info_8h.html#abf3ac3c335453aeeaef5215f929ca198">getClass</a> (<a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **cp, uint32_t ind)</td></tr>
+<tr class="memdesc:abf3ac3c335453aeeaef5215f929ca198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera a string que é apontada pelo nameIndex.  <a href="_constant_pool_info_8h.html#abf3ac3c335453aeeaef5215f929ca198">Mais...</a><br /></td></tr>
+<tr class="separator:abf3ac3c335453aeeaef5215f929ca198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa11fd5cae250b13659b5bc7896666470"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_constant_pool_info_8h.html#aa11fd5cae250b13659b5bc7896666470">getFieldref</a> (<a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **cp, uint32_t ind)</td></tr>
+<tr class="memdesc:aa11fd5cae250b13659b5bc7896666470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera a string.  <a href="_constant_pool_info_8h.html#aa11fd5cae250b13659b5bc7896666470">Mais...</a><br /></td></tr>
+<tr class="separator:aa11fd5cae250b13659b5bc7896666470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1000528a22b627ac08ba4f02a28307a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_constant_pool_info_8h.html#ab1000528a22b627ac08ba4f02a28307a">getMethodref</a> (<a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **cp, uint32_t ind)</td></tr>
+<tr class="memdesc:ab1000528a22b627ac08ba4f02a28307a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera a string.  <a href="_constant_pool_info_8h.html#ab1000528a22b627ac08ba4f02a28307a">Mais...</a><br /></td></tr>
+<tr class="separator:ab1000528a22b627ac08ba4f02a28307a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1af9208eec2a80387bfc0df984658c4"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_constant_pool_info_8h.html#ac1af9208eec2a80387bfc0df984658c4">getInterfaceMethodref</a> (<a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **cp, uint32_t ind)</td></tr>
+<tr class="memdesc:ac1af9208eec2a80387bfc0df984658c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera a string.  <a href="_constant_pool_info_8h.html#ac1af9208eec2a80387bfc0df984658c4">Mais...</a><br /></td></tr>
+<tr class="separator:ac1af9208eec2a80387bfc0df984658c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a225c1b5cec4bb5cf3f07f9864b9d0431"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_constant_pool_info_8h.html#a225c1b5cec4bb5cf3f07f9864b9d0431">getString</a> (<a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **cp, uint32_t ind)</td></tr>
+<tr class="memdesc:a225c1b5cec4bb5cf3f07f9864b9d0431"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera a string.  <a href="_constant_pool_info_8h.html#a225c1b5cec4bb5cf3f07f9864b9d0431">Mais...</a><br /></td></tr>
+<tr class="separator:a225c1b5cec4bb5cf3f07f9864b9d0431"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad170cd1f7d25904c16944ac727b0a3df"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_constant_pool_info_8h.html#ad170cd1f7d25904c16944ac727b0a3df">getInteger</a> (<a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **cp, uint32_t ind)</td></tr>
+<tr class="memdesc:ad170cd1f7d25904c16944ac727b0a3df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera um inteiro que está sendo armazenado no <a class="el" href="struct_c_p_integer.html" title="Estrutura usada para representar um inteiro.">CPInteger</a>.  <a href="_constant_pool_info_8h.html#ad170cd1f7d25904c16944ac727b0a3df">Mais...</a><br /></td></tr>
+<tr class="separator:ad170cd1f7d25904c16944ac727b0a3df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c191de500bacf8bcbf78fecaaff5c9c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_constant_pool_info_8h.html#a4c191de500bacf8bcbf78fecaaff5c9c">getFloat</a> (<a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **cp, uint32_t ind)</td></tr>
+<tr class="memdesc:a4c191de500bacf8bcbf78fecaaff5c9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera um float que está sendo armazenado no <a class="el" href="struct_c_p_float.html" title="Estrutura usada para representar um float.">CPFloat</a>.  <a href="_constant_pool_info_8h.html#a4c191de500bacf8bcbf78fecaaff5c9c">Mais...</a><br /></td></tr>
+<tr class="separator:a4c191de500bacf8bcbf78fecaaff5c9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9e5dbc5679d30d4ed4627e5f97f5580"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_constant_pool_info_8h.html#ae9e5dbc5679d30d4ed4627e5f97f5580">getLong</a> (<a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **cp, uint32_t ind)</td></tr>
+<tr class="memdesc:ae9e5dbc5679d30d4ed4627e5f97f5580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera um long que está sendo armazenado no <a class="el" href="struct_c_p_long.html" title="Estrutura usada para representar um long.">CPLong</a>.  <a href="_constant_pool_info_8h.html#ae9e5dbc5679d30d4ed4627e5f97f5580">Mais...</a><br /></td></tr>
+<tr class="separator:ae9e5dbc5679d30d4ed4627e5f97f5580"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c2c013a83861a4863262f5662805cde"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_constant_pool_info_8h.html#a7c2c013a83861a4863262f5662805cde">getDouble</a> (<a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **cp, uint32_t ind)</td></tr>
+<tr class="memdesc:a7c2c013a83861a4863262f5662805cde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera um double que está sendo armazenado no <a class="el" href="struct_c_p_double.html" title="Estrutura usada para representar um double.">CPDouble</a>.  <a href="_constant_pool_info_8h.html#a7c2c013a83861a4863262f5662805cde">Mais...</a><br /></td></tr>
+<tr class="separator:a7c2c013a83861a4863262f5662805cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17eba7eed349812217e563f49ea1ce31"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_constant_pool_info_8h.html#a17eba7eed349812217e563f49ea1ce31">getNameAndType</a> (<a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **cp, uint32_t ind)</td></tr>
+<tr class="memdesc:a17eba7eed349812217e563f49ea1ce31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera a string.  <a href="_constant_pool_info_8h.html#a17eba7eed349812217e563f49ea1ce31">Mais...</a><br /></td></tr>
+<tr class="separator:a17eba7eed349812217e563f49ea1ce31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e9d056ada05e799dca7e544a7878f94"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_constant_pool_info_8h.html#a5e9d056ada05e799dca7e544a7878f94">getCPUtf8</a> (<a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **cp, uint32_t ind)</td></tr>
+<tr class="memdesc:a5e9d056ada05e799dca7e544a7878f94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera uma string que está sendo armazenada por <a class="el" href="struct_c_p_utf8.html" title="Estrutura que armazena uma string.">CPUtf8</a>.  <a href="_constant_pool_info_8h.html#a5e9d056ada05e799dca7e544a7878f94">Mais...</a><br /></td></tr>
+<tr class="separator:a5e9d056ada05e799dca7e544a7878f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação dos valores da enumeração</h2>
+<a id="a3460af322b5308c3bb1071aef349bc1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3460af322b5308c3bb1071aef349bc1c">&#9670;&nbsp;</a></span>ConstantPoolInfoTag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="_constant_pool_info_8h.html#a3460af322b5308c3bb1071aef349bc1c">ConstantPoolInfoTag</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enum que contém o número das tags. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumerações</th></tr><tr><td class="fieldname"><a id="a3460af322b5308c3bb1071aef349bc1ca8dabc58c34c5df57f2151d6f233d6c15"></a>CLASS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3460af322b5308c3bb1071aef349bc1ca34c7705d2f9543708bc212d13d24b034"></a>FIELDREF&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3460af322b5308c3bb1071aef349bc1ca1f797ad4fa5038984cce03485ae7863f"></a>METHODREF&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3460af322b5308c3bb1071aef349bc1cae6d184282efa3742f99a3f15b9b82ed4"></a>INTERFACE_METHODREF&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3460af322b5308c3bb1071aef349bc1caee847e634a4297b274316de8a8ca9921"></a>STRING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3460af322b5308c3bb1071aef349bc1ca5a063e265d2ac903b6808e9f6e73ec46"></a>INTEGER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3460af322b5308c3bb1071aef349bc1ca9cf4a0866224b0bb4a7a895da27c9c4c"></a>FLOAT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3460af322b5308c3bb1071aef349bc1caaee055c4a5aba7d55774e4f1c01dacea"></a>LONG&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3460af322b5308c3bb1071aef349bc1ca33465d1d419b1074fb259ef444609e92"></a>DOUBLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3460af322b5308c3bb1071aef349bc1ca74859c1791d323b606f16bd29d2414e3"></a>NAME_AND_TYPE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3460af322b5308c3bb1071aef349bc1cac4aa8bf4aaf220c87545078d3c43baaa"></a>UTF8&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3460af322b5308c3bb1071aef349bc1cac459425984ccc6491fb6d959cba24c1f"></a>METHOD_HANDLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3460af322b5308c3bb1071aef349bc1ca5dbaf6b6b5c28667e660673e48d3f3d9"></a>METHOD_TYPE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3460af322b5308c3bb1071aef349bc1ca144388f479d9f354b08273b373a14229"></a>INVOKE_DYNAMIC&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação das funções</h2>
+<a id="abf3ac3c335453aeeaef5215f929ca198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf3ac3c335453aeeaef5215f929ca198">&#9670;&nbsp;</a></span>getClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string getClass </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gera a string que é apontada pelo nameIndex. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp</td><td></td></tr>
+    <tr><td class="paramname">ind</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>std::string </dd></dl>
+
+</div>
+</div>
+<a id="a5e9d056ada05e799dca7e544a7878f94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e9d056ada05e799dca7e544a7878f94">&#9670;&nbsp;</a></span>getCPUtf8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string getCPUtf8 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gera uma string que está sendo armazenada por <a class="el" href="struct_c_p_utf8.html" title="Estrutura que armazena uma string.">CPUtf8</a>. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp</td><td></td></tr>
+    <tr><td class="paramname">ind</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>std::string </dd></dl>
+
+</div>
+</div>
+<a id="a7c2c013a83861a4863262f5662805cde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c2c013a83861a4863262f5662805cde">&#9670;&nbsp;</a></span>getDouble()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double getDouble </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gera um double que está sendo armazenado no <a class="el" href="struct_c_p_double.html" title="Estrutura usada para representar um double.">CPDouble</a>. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp</td><td></td></tr>
+    <tr><td class="paramname">ind</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>double </dd></dl>
+
+</div>
+</div>
+<a id="aa11fd5cae250b13659b5bc7896666470"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa11fd5cae250b13659b5bc7896666470">&#9670;&nbsp;</a></span>getFieldref()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string getFieldref </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gera a string. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp</td><td></td></tr>
+    <tr><td class="paramname">ind</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>std::string </dd></dl>
+
+</div>
+</div>
+<a id="a4c191de500bacf8bcbf78fecaaff5c9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c191de500bacf8bcbf78fecaaff5c9c">&#9670;&nbsp;</a></span>getFloat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float getFloat </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gera um float que está sendo armazenado no <a class="el" href="struct_c_p_float.html" title="Estrutura usada para representar um float.">CPFloat</a>. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp</td><td></td></tr>
+    <tr><td class="paramname">ind</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>float </dd></dl>
+
+</div>
+</div>
+<a id="ad170cd1f7d25904c16944ac727b0a3df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad170cd1f7d25904c16944ac727b0a3df">&#9670;&nbsp;</a></span>getInteger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t getInteger </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gera um inteiro que está sendo armazenado no <a class="el" href="struct_c_p_integer.html" title="Estrutura usada para representar um inteiro.">CPInteger</a>. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp</td><td></td></tr>
+    <tr><td class="paramname">ind</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>int32_t </dd></dl>
+
+</div>
+</div>
+<a id="ac1af9208eec2a80387bfc0df984658c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1af9208eec2a80387bfc0df984658c4">&#9670;&nbsp;</a></span>getInterfaceMethodref()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string getInterfaceMethodref </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gera a string. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp</td><td></td></tr>
+    <tr><td class="paramname">ind</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>std::string </dd></dl>
+
+</div>
+</div>
+<a id="ae9e5dbc5679d30d4ed4627e5f97f5580"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9e5dbc5679d30d4ed4627e5f97f5580">&#9670;&nbsp;</a></span>getLong()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t getLong </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gera um long que está sendo armazenado no <a class="el" href="struct_c_p_long.html" title="Estrutura usada para representar um long.">CPLong</a>. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp</td><td></td></tr>
+    <tr><td class="paramname">ind</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>int64_t </dd></dl>
+
+</div>
+</div>
+<a id="ab1000528a22b627ac08ba4f02a28307a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1000528a22b627ac08ba4f02a28307a">&#9670;&nbsp;</a></span>getMethodref()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string getMethodref </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gera a string. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp</td><td></td></tr>
+    <tr><td class="paramname">ind</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>std::string </dd></dl>
+
+</div>
+</div>
+<a id="a17eba7eed349812217e563f49ea1ce31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17eba7eed349812217e563f49ea1ce31">&#9670;&nbsp;</a></span>getNameAndType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string getNameAndType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gera a string. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp</td><td></td></tr>
+    <tr><td class="paramname">ind</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>std::string </dd></dl>
+
+</div>
+</div>
+<a id="a225c1b5cec4bb5cf3f07f9864b9d0431"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a225c1b5cec4bb5cf3f07f9864b9d0431">&#9670;&nbsp;</a></span>getString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string getString </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gera a string. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp</td><td></td></tr>
+    <tr><td class="paramname">ind</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>std::string </dd></dl>
+
+</div>
+</div>
+<a id="afe1697068c0f2f8b2c45ae37899e874c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe1697068c0f2f8b2c45ae37899e874c">&#9670;&nbsp;</a></span>getStringFromCPInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string getStringFromCPInfo </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_constant_pool_info.html">ConstantPoolInfo</a> **&#160;</td>
+          <td class="paramname"><em>cp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>ind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gera uma string do <a class="el" href="struct_constant_pool_info.html" title="Estrutura base de todos os constant Pool.">ConstantPoolInfo</a> no índice ind. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cp</td><td></td></tr>
+    <tr><td class="paramname">ind</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>std::string </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

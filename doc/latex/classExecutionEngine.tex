@@ -1,0 +1,186 @@
+\hypertarget{classExecutionEngine}{}\doxysection{Execution\+Engine Class Reference}
+\label{classExecutionEngine}\index{ExecutionEngine@{ExecutionEngine}}
+
+
+Representação de uma \mbox{\hyperlink{classExecutionEngine}{Execution\+Engine}}.  
+
+
+
+
+{\ttfamily \#include $<$Execution\+Engine.\+h$>$}
+
+
+
+Collaboration diagram for Execution\+Engine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classExecutionEngine__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classExecutionEngine_a682da5b3ec16f062c9610e661d70ec50}{exec}} (\mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$next\+Method, \mbox{\hyperlink{classFrame}{Frame}} $\ast$next\+Frame)
+\begin{DoxyCompactList}\small\item\em Executa um metódo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classExecutionEngine_a3d06f6325271958b1abe0941ce2112a0}{set\+Runtime\+Data\+Area}} (\mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}} $\ast$new\+\_\+runtime\+Data\+Area)
+\begin{DoxyCompactList}\small\item\em Set the Runtime Data Area object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classExecutionEngine_a8e393804cf4e6de592af74ba16a32060}{set\+Class\+Loader}} (\mbox{\hyperlink{classClassLoader}{Class\+Loader}} $\ast$new\+\_\+class\+Loader)
+\begin{DoxyCompactList}\small\item\em Set the Class Loader object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::array$<$ std\+::function$<$ int32\+\_\+t(\mbox{\hyperlink{classClassLoader}{Class\+Loader}} $\ast$, \mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}} $\ast$, \mbox{\hyperlink{classExecutionEngine}{Execution\+Engine}} $\ast$, uint32\+\_\+t, \mbox{\hyperlink{classFrame}{Frame}} $\ast$, \mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$, \mbox{\hyperlink{structAttributeInfoCode}{Attribute\+Info\+Code}} $\ast$, \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$ uint32\+\_\+t $>$ \&, \mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$$\ast$, \mbox{\hyperlink{classFrame}{Frame}} $\ast$$\ast$, bool \&, bool \&, bool, uint32\+\_\+t \&)$>$, 0x\+C9+1 $>$ \mbox{\hyperlink{classExecutionEngine_af3a7967e9dae1d485de366aaa2b48d8b}{exec\+Intruction}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classArray}{Array}} de funções pra executar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classExecutionEngine_ada7b7d1f4910d72145dc9119c8f2ca22}{exec\+Frame}} (\mbox{\hyperlink{classFrame}{Frame}} $\ast$frame, \mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$method\+Info, uint32\+\_\+t \&pc, \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$ uint32\+\_\+t $>$ \&return\+Stack, \mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$$\ast$next\+Method, \mbox{\hyperlink{classFrame}{Frame}} $\ast$$\ast$next\+Frame, bool \&finished, uint32\+\_\+t \&was\+Exception)
+\begin{DoxyCompactList}\small\item\em Função que executa um frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}} $\ast$ \mbox{\hyperlink{classExecutionEngine_a6e9a444c87c5e5c3fde0cbe0d4bfe0ac}{runtime\+Data\+Area}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classClassLoader}{Class\+Loader}} $\ast$ \mbox{\hyperlink{classExecutionEngine_acfb48375ee47fba29ffb7f0f1bc60daf}{class\+Loader}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classClassLoader}{Class\+Loader}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representação de uma \mbox{\hyperlink{classExecutionEngine}{Execution\+Engine}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classExecutionEngine_a682da5b3ec16f062c9610e661d70ec50}\label{classExecutionEngine_a682da5b3ec16f062c9610e661d70ec50}} 
+\index{ExecutionEngine@{ExecutionEngine}!exec@{exec}}
+\index{exec@{exec}!ExecutionEngine@{ExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{exec()}{exec()}}
+{\footnotesize\ttfamily void Execution\+Engine\+::exec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$}]{next\+Method,  }\item[{\mbox{\hyperlink{classFrame}{Frame}} $\ast$}]{next\+Frame }\end{DoxyParamCaption})}
+
+
+
+Executa um metódo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em next\+Method} & \\
+\hline
+{\em next\+Frame} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classExecutionEngine_a682da5b3ec16f062c9610e661d70ec50_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classExecutionEngine_ada7b7d1f4910d72145dc9119c8f2ca22}\label{classExecutionEngine_ada7b7d1f4910d72145dc9119c8f2ca22}} 
+\index{ExecutionEngine@{ExecutionEngine}!execFrame@{execFrame}}
+\index{execFrame@{execFrame}!ExecutionEngine@{ExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{execFrame()}{execFrame()}}
+{\footnotesize\ttfamily void Execution\+Engine\+::exec\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFrame}{Frame}} $\ast$}]{frame,  }\item[{\mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$}]{method\+Info,  }\item[{uint32\+\_\+t \&}]{pc,  }\item[{\mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$ uint32\+\_\+t $>$ \&}]{return\+Stack,  }\item[{\mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$$\ast$}]{next\+Method,  }\item[{\mbox{\hyperlink{classFrame}{Frame}} $\ast$$\ast$}]{next\+Frame,  }\item[{bool \&}]{finished,  }\item[{uint32\+\_\+t \&}]{was\+Exception }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Função que executa um frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & \\
+\hline
+{\em method\+Info} & \\
+\hline
+{\em pc} & \\
+\hline
+{\em return\+Stack} & \\
+\hline
+{\em next\+Method} & \\
+\hline
+{\em next\+Frame} & \\
+\hline
+{\em finished} & \\
+\hline
+{\em was\+Exception} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classExecutionEngine_ada7b7d1f4910d72145dc9119c8f2ca22_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classExecutionEngine_a8e393804cf4e6de592af74ba16a32060}\label{classExecutionEngine_a8e393804cf4e6de592af74ba16a32060}} 
+\index{ExecutionEngine@{ExecutionEngine}!setClassLoader@{setClassLoader}}
+\index{setClassLoader@{setClassLoader}!ExecutionEngine@{ExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{setClassLoader()}{setClassLoader()}}
+{\footnotesize\ttfamily void Execution\+Engine\+::set\+Class\+Loader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classClassLoader}{Class\+Loader}} $\ast$}]{new\+\_\+class\+Loader }\end{DoxyParamCaption})}
+
+
+
+Set the Class Loader object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+class\+Loader} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classExecutionEngine_a3d06f6325271958b1abe0941ce2112a0}\label{classExecutionEngine_a3d06f6325271958b1abe0941ce2112a0}} 
+\index{ExecutionEngine@{ExecutionEngine}!setRuntimeDataArea@{setRuntimeDataArea}}
+\index{setRuntimeDataArea@{setRuntimeDataArea}!ExecutionEngine@{ExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{setRuntimeDataArea()}{setRuntimeDataArea()}}
+{\footnotesize\ttfamily void Execution\+Engine\+::set\+Runtime\+Data\+Area (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}} $\ast$}]{new\+\_\+runtime\+Data\+Area }\end{DoxyParamCaption})}
+
+
+
+Set the Runtime Data Area object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+runtime\+Data\+Area} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classExecutionEngine_acfb48375ee47fba29ffb7f0f1bc60daf}\label{classExecutionEngine_acfb48375ee47fba29ffb7f0f1bc60daf}} 
+\index{ExecutionEngine@{ExecutionEngine}!classLoader@{classLoader}}
+\index{classLoader@{classLoader}!ExecutionEngine@{ExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{classLoader}{classLoader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classClassLoader}{Class\+Loader}}$\ast$ Execution\+Engine\+::class\+Loader\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classClassLoader}{Class\+Loader}}. 
+
+\mbox{\Hypertarget{classExecutionEngine_af3a7967e9dae1d485de366aaa2b48d8b}\label{classExecutionEngine_af3a7967e9dae1d485de366aaa2b48d8b}} 
+\index{ExecutionEngine@{ExecutionEngine}!execIntruction@{execIntruction}}
+\index{execIntruction@{execIntruction}!ExecutionEngine@{ExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{execIntruction}{execIntruction}}
+{\footnotesize\ttfamily const std\+::array$<$ std\+::function$<$ int32\+\_\+t(\mbox{\hyperlink{classClassLoader}{Class\+Loader}} $\ast$, \mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}} $\ast$, \mbox{\hyperlink{classExecutionEngine}{Execution\+Engine}} $\ast$, uint32\+\_\+t, \mbox{\hyperlink{classFrame}{Frame}} $\ast$, \mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$, \mbox{\hyperlink{structAttributeInfoCode}{Attribute\+Info\+Code}} $\ast$, \mbox{\hyperlink{classLinearStack}{Linear\+Stack}}$<$ uint32\+\_\+t $>$ \&, \mbox{\hyperlink{structMethodInfo}{Method\+Info}} $\ast$$\ast$, \mbox{\hyperlink{classFrame}{Frame}} $\ast$$\ast$, bool \&, bool \&, bool, uint32\+\_\+t \&)$>$, 0x\+C9+1 $>$ Execution\+Engine\+::exec\+Intruction\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{classArray}{Array}} de funções pra executar. 
+
+\mbox{\Hypertarget{classExecutionEngine_a6e9a444c87c5e5c3fde0cbe0d4bfe0ac}\label{classExecutionEngine_a6e9a444c87c5e5c3fde0cbe0d4bfe0ac}} 
+\index{ExecutionEngine@{ExecutionEngine}!runtimeDataArea@{runtimeDataArea}}
+\index{runtimeDataArea@{runtimeDataArea}!ExecutionEngine@{ExecutionEngine}}
+\doxysubsubsection{\texorpdfstring{runtimeDataArea}{runtimeDataArea}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}}$\ast$ Execution\+Engine\+::runtime\+Data\+Area\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classRuntimeDataArea}{Runtime\+Data\+Area}}. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ExecutionEngine_8h}{Execution\+Engine.\+h}}\item 
+src/\mbox{\hyperlink{ExecutionEngine_8cpp}{Execution\+Engine.\+cpp}}\end{DoxyCompactItemize}

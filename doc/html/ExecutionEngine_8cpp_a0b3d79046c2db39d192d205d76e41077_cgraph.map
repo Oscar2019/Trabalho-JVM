@@ -1,0 +1,9 @@
+<map id="execOp_fload" name="execOp_fload">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,115,108"/>
+<area shape="rect" id="node2" href="$classFrame.html#afc6f418a53e2160c86a46fc6d38d10bf" title="Insere um elemento na pilha de operando." alt="" coords="163,5,356,32"/>
+<area shape="rect" id="node4" href="$Tipos_8h.html#acb337e0b996b7eb4f83d197c9b1a12f9" title="Função que lê um uinnt16_t de um vetor de uint8_t." alt="" coords="192,56,327,83"/>
+<area shape="rect" id="node6" href="$Tipos_8h.html#a84a58ce8de91bb008e62bd8d7576bcf9" title="Função que lê uma um uint8_t de um vetor de uint8_t." alt="" coords="196,107,323,133"/>
+<area shape="rect" id="node7" href="$classFrame.html#aa23c1c8673ca67cf67ad3a647f9f1b56" title="Obtém uma referência para um elemnto da varLocalTable." alt="" coords="206,157,313,184"/>
+<area shape="rect" id="node3" href="$classLinearStack.html#a21f220f3c54293f3cc931781b0511c95" title="Insre um novo elemento para a pilha." alt="" coords="404,5,541,32"/>
+<area shape="rect" id="node5" href="$Tipos_8cpp.html#a84a58ce8de91bb008e62bd8d7576bcf9" title="Função que lê uma um uint8_t de um vetor de uint8_t." alt="" coords="409,56,536,83"/>
+</map>

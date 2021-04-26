@@ -1,0 +1,4 @@
+<map id="RuntimeDataArea::objectAt" name="RuntimeDataArea::objectAt">
+<area shape="rect" id="node1" title="Retorna o i&#45;ésimo valor no var locals no elemento no topo da heap." alt="" coords="5,5,205,32"/>
+<area shape="rect" id="node2" href="$classHeap.html#ae3962ba3eee949e7fa6c903692213ea0" title="Retorna um objeto no indice i&#45;1." alt="" coords="253,5,331,32"/>
+</map>

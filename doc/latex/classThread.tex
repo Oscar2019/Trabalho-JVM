@@ -1,0 +1,173 @@
+\hypertarget{classThread}{}\doxysection{Thread Class Reference}
+\label{classThread}\index{Thread@{Thread}}
+
+
+Descreve um thread.  
+
+
+
+
+{\ttfamily \#include $<$Thread.\+h$>$}
+
+
+
+Collaboration diagram for Thread\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classThread__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \& \mbox{\hyperlink{classThread_a08a208b471cbfedce38e0adffcaf376c}{get\+PC}} ()
+\begin{DoxyCompactList}\small\item\em Reporna uma referência pro contador de programa. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classThread_af0006870a2147918aa211f10086d38f8}{push\+Frame\+Stack}} (\mbox{\hyperlink{classFrame}{Frame}} $\ast$frame)
+\begin{DoxyCompactList}\small\item\em Adiciona um \mbox{\hyperlink{classFrame}{Frame}} na pilha de frames. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFrame}{Frame}} $\ast$ \mbox{\hyperlink{classThread_ab3c054de8506a6f87061c491e2ace39c}{top\+Frame\+Stack}} ()
+\begin{DoxyCompactList}\small\item\em Retorna o frame que está no topo da pilha de frames. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classThread_a7c16d34b2fdd6304d9b4d285e99914c0}{pop\+Frame\+Stack}} ()
+\begin{DoxyCompactList}\small\item\em Remove o frame que está no topo da pilha de frames. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classThread_ab6cb224d728e553077e13062b9c9e317}{size\+Frame\+Stack}} ()
+\begin{DoxyCompactList}\small\item\em Determina o tamanho da pilha de frames. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDynamicStack}{Dynamic\+Stack}}$<$ \mbox{\hyperlink{classFrame}{Frame}} $\ast$ $>$ \mbox{\hyperlink{classThread_a638b57938c29c9f5fd11356c9bc90fae}{frame\+Stack}}
+\begin{DoxyCompactList}\small\item\em Pilha de frames;. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classThread_a6fd4e8006156bc04b542b8185ea63a12}{pc}}
+\begin{DoxyCompactList}\small\item\em Contador do programa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Descreve um thread. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classThread_a08a208b471cbfedce38e0adffcaf376c}\label{classThread_a08a208b471cbfedce38e0adffcaf376c}} 
+\index{Thread@{Thread}!getPC@{getPC}}
+\index{getPC@{getPC}!Thread@{Thread}}
+\doxysubsubsection{\texorpdfstring{getPC()}{getPC()}}
+{\footnotesize\ttfamily uint32\+\_\+t\& Thread\+::get\+PC (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reporna uma referência pro contador de programa. 
+
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t\& 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classThread_a7c16d34b2fdd6304d9b4d285e99914c0}\label{classThread_a7c16d34b2fdd6304d9b4d285e99914c0}} 
+\index{Thread@{Thread}!popFrameStack@{popFrameStack}}
+\index{popFrameStack@{popFrameStack}!Thread@{Thread}}
+\doxysubsubsection{\texorpdfstring{popFrameStack()}{popFrameStack()}}
+{\footnotesize\ttfamily void Thread\+::pop\+Frame\+Stack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove o frame que está no topo da pilha de frames. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classThread_a7c16d34b2fdd6304d9b4d285e99914c0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classThread_af0006870a2147918aa211f10086d38f8}\label{classThread_af0006870a2147918aa211f10086d38f8}} 
+\index{Thread@{Thread}!pushFrameStack@{pushFrameStack}}
+\index{pushFrameStack@{pushFrameStack}!Thread@{Thread}}
+\doxysubsubsection{\texorpdfstring{pushFrameStack()}{pushFrameStack()}}
+{\footnotesize\ttfamily void Thread\+::push\+Frame\+Stack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFrame}{Frame}} $\ast$}]{frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adiciona um \mbox{\hyperlink{classFrame}{Frame}} na pilha de frames. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classThread_af0006870a2147918aa211f10086d38f8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classThread_ab6cb224d728e553077e13062b9c9e317}\label{classThread_ab6cb224d728e553077e13062b9c9e317}} 
+\index{Thread@{Thread}!sizeFrameStack@{sizeFrameStack}}
+\index{sizeFrameStack@{sizeFrameStack}!Thread@{Thread}}
+\doxysubsubsection{\texorpdfstring{sizeFrameStack()}{sizeFrameStack()}}
+{\footnotesize\ttfamily uint32\+\_\+t Thread\+::size\+Frame\+Stack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determina o tamanho da pilha de frames. 
+
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classThread_ab6cb224d728e553077e13062b9c9e317_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classThread_ab3c054de8506a6f87061c491e2ace39c}\label{classThread_ab3c054de8506a6f87061c491e2ace39c}} 
+\index{Thread@{Thread}!topFrameStack@{topFrameStack}}
+\index{topFrameStack@{topFrameStack}!Thread@{Thread}}
+\doxysubsubsection{\texorpdfstring{topFrameStack()}{topFrameStack()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFrame}{Frame}}$\ast$ Thread\+::top\+Frame\+Stack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna o frame que está no topo da pilha de frames. 
+
+\begin{DoxyReturn}{Returns}
+Frame$\ast$ 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classThread_ab3c054de8506a6f87061c491e2ace39c_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classThread_a638b57938c29c9f5fd11356c9bc90fae}\label{classThread_a638b57938c29c9f5fd11356c9bc90fae}} 
+\index{Thread@{Thread}!frameStack@{frameStack}}
+\index{frameStack@{frameStack}!Thread@{Thread}}
+\doxysubsubsection{\texorpdfstring{frameStack}{frameStack}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDynamicStack}{Dynamic\+Stack}}$<$\mbox{\hyperlink{classFrame}{Frame}}$\ast$$>$ Thread\+::frame\+Stack\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pilha de frames;. 
+
+\mbox{\Hypertarget{classThread_a6fd4e8006156bc04b542b8185ea63a12}\label{classThread_a6fd4e8006156bc04b542b8185ea63a12}} 
+\index{Thread@{Thread}!pc@{pc}}
+\index{pc@{pc}!Thread@{Thread}}
+\doxysubsubsection{\texorpdfstring{pc}{pc}}
+{\footnotesize\ttfamily uint32\+\_\+t Thread\+::pc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Contador do programa. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Thread_8h}{Thread.\+h}}\end{DoxyCompactItemize}

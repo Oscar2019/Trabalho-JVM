@@ -1,0 +1,6 @@
+<map id="execOp_fload_0" name="execOp_fload_0">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,129,57"/>
+<area shape="rect" id="node2" href="$classFrame.html#afc6f418a53e2160c86a46fc6d38d10bf" title="Insere um elemento na pilha de operando." alt="" coords="177,5,371,32"/>
+<area shape="rect" id="node4" href="$classFrame.html#aa23c1c8673ca67cf67ad3a647f9f1b56" title="Obtém uma referência para um elemnto da varLocalTable." alt="" coords="221,56,327,83"/>
+<area shape="rect" id="node3" href="$classLinearStack.html#a21f220f3c54293f3cc931781b0511c95" title="Insre um novo elemento para a pilha." alt="" coords="419,5,556,32"/>
+</map>

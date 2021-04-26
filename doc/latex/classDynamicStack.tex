@@ -1,0 +1,132 @@
+\hypertarget{classDynamicStack}{}\doxysection{Dynamic\+Stack$<$ T $>$ Class Template Reference}
+\label{classDynamicStack}\index{DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}}
+
+
+{\ttfamily \#include $<$Stack.\+h$>$}
+
+
+
+Inheritance diagram for Dynamic\+Stack$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classDynamicStack__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dynamic\+Stack$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDynamicStack__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structDynamicStack_1_1Node}{Node}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDynamicStack_aa0405e57e5646b6dcdb3bbd496610be8}{push}} (T \&value)
+\item 
+void \mbox{\hyperlink{classDynamicStack_abf00ec9e8252aab7866971b1892cadad}{push}} (T \&\&value)
+\item 
+T \& \mbox{\hyperlink{classDynamicStack_a65db13d0d236d82eebf13583cc9eecc9}{top}} ()
+\item 
+void \mbox{\hyperlink{classDynamicStack_ab1f72a3ef97015e7acd2be9f0e013542}{pop}} ()
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classDynamicStack_a7ce12821e2f33ecf4a5e793a06bf2812}{size}} ()
+\item 
+\mbox{\hyperlink{classDynamicStack_aff1ba818b55cc15e6c42a72221e90778}{Dynamic\+Stack}} ()
+\item 
+\mbox{\hyperlink{classDynamicStack_a152049cfcf76654e65e729ea8920062a}{$\sim$\+Dynamic\+Stack}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classDynamicStack_a6fe9ca2fe87052a807509fe085a2671e}{cur\+Size}}
+\item 
+\mbox{\hyperlink{structDynamicStack_1_1Node}{Node}} $\ast$ \mbox{\hyperlink{classDynamicStack_a65c764b7eefcfccc416595350e6b293a}{node}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDynamicStack_aff1ba818b55cc15e6c42a72221e90778}\label{classDynamicStack_aff1ba818b55cc15e6c42a72221e90778}} 
+\index{DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}!DynamicStack@{DynamicStack}}
+\index{DynamicStack@{DynamicStack}!DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{DynamicStack()}{DynamicStack()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classDynamicStack}{Dynamic\+Stack}}$<$ T $>$\+::\mbox{\hyperlink{classDynamicStack}{Dynamic\+Stack}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDynamicStack_a152049cfcf76654e65e729ea8920062a}\label{classDynamicStack_a152049cfcf76654e65e729ea8920062a}} 
+\index{DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}!````~DynamicStack@{$\sim$DynamicStack}}
+\index{````~DynamicStack@{$\sim$DynamicStack}!DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$DynamicStack()}{~DynamicStack()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classDynamicStack}{Dynamic\+Stack}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classDynamicStack}{Dynamic\+Stack}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDynamicStack_ab1f72a3ef97015e7acd2be9f0e013542}\label{classDynamicStack_ab1f72a3ef97015e7acd2be9f0e013542}} 
+\index{DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}!pop@{pop}}
+\index{pop@{pop}!DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classDynamicStack}{Dynamic\+Stack}}$<$ T $>$\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDynamicStack_abf00ec9e8252aab7866971b1892cadad}\label{classDynamicStack_abf00ec9e8252aab7866971b1892cadad}} 
+\index{DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}!push@{push}}
+\index{push@{push}!DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classDynamicStack}{Dynamic\+Stack}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{T \&\&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDynamicStack_aa0405e57e5646b6dcdb3bbd496610be8}\label{classDynamicStack_aa0405e57e5646b6dcdb3bbd496610be8}} 
+\index{DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}!push@{push}}
+\index{push@{push}!DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classDynamicStack}{Dynamic\+Stack}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDynamicStack_a7ce12821e2f33ecf4a5e793a06bf2812}\label{classDynamicStack_a7ce12821e2f33ecf4a5e793a06bf2812}} 
+\index{DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}!size@{size}}
+\index{size@{size}!DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+uint32\+\_\+t \mbox{\hyperlink{classDynamicStack}{Dynamic\+Stack}}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classDynamicStack_a65db13d0d236d82eebf13583cc9eecc9}\label{classDynamicStack_a65db13d0d236d82eebf13583cc9eecc9}} 
+\index{DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}!top@{top}}
+\index{top@{top}!DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{top()}{top()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T\& \mbox{\hyperlink{classDynamicStack}{Dynamic\+Stack}}$<$ T $>$\+::top (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDynamicStack_a6fe9ca2fe87052a807509fe085a2671e}\label{classDynamicStack_a6fe9ca2fe87052a807509fe085a2671e}} 
+\index{DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}!curSize@{curSize}}
+\index{curSize@{curSize}!DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{curSize}{curSize}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+uint32\+\_\+t \mbox{\hyperlink{classDynamicStack}{Dynamic\+Stack}}$<$ T $>$\+::cur\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDynamicStack_a65c764b7eefcfccc416595350e6b293a}\label{classDynamicStack_a65c764b7eefcfccc416595350e6b293a}} 
+\index{DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}!node@{node}}
+\index{node@{node}!DynamicStack$<$ T $>$@{DynamicStack$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{structDynamicStack_1_1Node}{Node}}$\ast$ \mbox{\hyperlink{classDynamicStack}{Dynamic\+Stack}}$<$ T $>$\+::node\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Stack_8h}{Stack.\+h}}\end{DoxyCompactItemize}

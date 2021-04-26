@@ -1,0 +1,123 @@
+\hypertarget{structFieldInfo}{}\doxysection{Field\+Info Struct Reference}
+\label{structFieldInfo}\index{FieldInfo@{FieldInfo}}
+
+
+Estrutura que armazena os dados de um campo.  
+
+
+
+
+{\ttfamily \#include $<$Field\+Info.\+h$>$}
+
+
+
+Collaboration diagram for Field\+Info\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{structFieldInfo__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structFieldInfo_a2e6d93185e0b51521da514e1fa00c0ea}{Field\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new Field Info object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structFieldInfo_ae59d956e2a4ad2dc210d75f161d5eb31}{$\sim$\+Field\+Info}} ()
+\begin{DoxyCompactList}\small\item\em destrói os dados armazenados pelo \mbox{\hyperlink{structFieldInfo}{Field\+Info}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structFieldInfo_a5fd94bd00a430098ff830c231d3f7a53}{access\+Flags}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structFieldInfo_a88ea5c29063df8933d5277e846924b1e}{name\+Index}}
+\begin{DoxyCompactList}\small\item\em Índice que aponta para o vetor de Constant\+Pool\+Info$\ast$ que aponta para um ponteiro de \mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}}, onde fica armazenado o nome do campo. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{structFieldInfo_ab6cc30d06db3569171dd6fdcba7add29}{descriptor\+Index}}
+\begin{DoxyCompactList}\small\item\em Índice que aponta para o vetor de Constant\+Pool\+Info$\ast$ que aponta para um ponteiro de \mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}}, onde fica armazenado a descrição de tipo e argumentos do campo. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{structFieldInfo_ad8eae2b3a0fccae8700ca53263983c6e}{attributes\+Count}}
+\begin{DoxyCompactList}\small\item\em Número de atribudos no campo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}} $\ast$$\ast$ \mbox{\hyperlink{structFieldInfo_a71b3f6ade53c10c8e3236bdaac337c14}{attributes}}
+\begin{DoxyCompactList}\small\item\em Ponteiro para um vetor de ponteiro de atributos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Estrutura que armazena os dados de um campo. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structFieldInfo_a2e6d93185e0b51521da514e1fa00c0ea}\label{structFieldInfo_a2e6d93185e0b51521da514e1fa00c0ea}} 
+\index{FieldInfo@{FieldInfo}!FieldInfo@{FieldInfo}}
+\index{FieldInfo@{FieldInfo}!FieldInfo@{FieldInfo}}
+\doxysubsubsection{\texorpdfstring{FieldInfo()}{FieldInfo()}}
+{\footnotesize\ttfamily Field\+Info\+::\+Field\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new Field Info object. 
+
+\mbox{\Hypertarget{structFieldInfo_ae59d956e2a4ad2dc210d75f161d5eb31}\label{structFieldInfo_ae59d956e2a4ad2dc210d75f161d5eb31}} 
+\index{FieldInfo@{FieldInfo}!````~FieldInfo@{$\sim$FieldInfo}}
+\index{````~FieldInfo@{$\sim$FieldInfo}!FieldInfo@{FieldInfo}}
+\doxysubsubsection{\texorpdfstring{$\sim$FieldInfo()}{~FieldInfo()}}
+{\footnotesize\ttfamily Field\+Info\+::$\sim$\+Field\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+destrói os dados armazenados pelo \mbox{\hyperlink{structFieldInfo}{Field\+Info}} 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structFieldInfo_a5fd94bd00a430098ff830c231d3f7a53}\label{structFieldInfo_a5fd94bd00a430098ff830c231d3f7a53}} 
+\index{FieldInfo@{FieldInfo}!accessFlags@{accessFlags}}
+\index{accessFlags@{accessFlags}!FieldInfo@{FieldInfo}}
+\doxysubsubsection{\texorpdfstring{accessFlags}{accessFlags}}
+{\footnotesize\ttfamily uint16\+\_\+t Field\+Info\+::access\+Flags}
+
+\mbox{\Hypertarget{structFieldInfo_a71b3f6ade53c10c8e3236bdaac337c14}\label{structFieldInfo_a71b3f6ade53c10c8e3236bdaac337c14}} 
+\index{FieldInfo@{FieldInfo}!attributes@{attributes}}
+\index{attributes@{attributes}!FieldInfo@{FieldInfo}}
+\doxysubsubsection{\texorpdfstring{attributes}{attributes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structAttributeInfo}{Attribute\+Info}}$\ast$$\ast$ Field\+Info\+::attributes}
+
+
+
+Ponteiro para um vetor de ponteiro de atributos. 
+
+\mbox{\Hypertarget{structFieldInfo_ad8eae2b3a0fccae8700ca53263983c6e}\label{structFieldInfo_ad8eae2b3a0fccae8700ca53263983c6e}} 
+\index{FieldInfo@{FieldInfo}!attributesCount@{attributesCount}}
+\index{attributesCount@{attributesCount}!FieldInfo@{FieldInfo}}
+\doxysubsubsection{\texorpdfstring{attributesCount}{attributesCount}}
+{\footnotesize\ttfamily uint16\+\_\+t Field\+Info\+::attributes\+Count}
+
+
+
+Número de atribudos no campo. 
+
+\mbox{\Hypertarget{structFieldInfo_ab6cc30d06db3569171dd6fdcba7add29}\label{structFieldInfo_ab6cc30d06db3569171dd6fdcba7add29}} 
+\index{FieldInfo@{FieldInfo}!descriptorIndex@{descriptorIndex}}
+\index{descriptorIndex@{descriptorIndex}!FieldInfo@{FieldInfo}}
+\doxysubsubsection{\texorpdfstring{descriptorIndex}{descriptorIndex}}
+{\footnotesize\ttfamily uint16\+\_\+t Field\+Info\+::descriptor\+Index}
+
+
+
+Índice que aponta para o vetor de Constant\+Pool\+Info$\ast$ que aponta para um ponteiro de \mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}}, onde fica armazenado a descrição de tipo e argumentos do campo. 
+
+\mbox{\Hypertarget{structFieldInfo_a88ea5c29063df8933d5277e846924b1e}\label{structFieldInfo_a88ea5c29063df8933d5277e846924b1e}} 
+\index{FieldInfo@{FieldInfo}!nameIndex@{nameIndex}}
+\index{nameIndex@{nameIndex}!FieldInfo@{FieldInfo}}
+\doxysubsubsection{\texorpdfstring{nameIndex}{nameIndex}}
+{\footnotesize\ttfamily uint16\+\_\+t Field\+Info\+::name\+Index}
+
+
+
+Índice que aponta para o vetor de Constant\+Pool\+Info$\ast$ que aponta para um ponteiro de \mbox{\hyperlink{structCPUtf8}{C\+P\+Utf8}}, onde fica armazenado o nome do campo. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{FieldInfo_8h}{Field\+Info.\+h}}\item 
+src/\mbox{\hyperlink{FieldInfo_8cpp}{Field\+Info.\+cpp}}\end{DoxyCompactItemize}

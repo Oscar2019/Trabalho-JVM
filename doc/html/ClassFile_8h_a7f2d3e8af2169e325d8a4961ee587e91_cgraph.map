@@ -1,0 +1,11 @@
+<map id="conveterAttributeInfoInClassFile" name="conveterAttributeInfoInClassFile">
+<area shape="rect" id="node1" title="Função que converte os atributos de um ClassFile para a estruturas mais elaboradas." alt="" coords="5,81,236,108"/>
+<area shape="rect" id="node2" href="$AttributeInfo_8h.html#ac12b69bf57c6322cca4ae3eb6919af2b" title=" " alt="" coords="579,81,833,108"/>
+<area shape="rect" id="node8" href="$FieldInfo_8h.html#a520ce2c6886078771102986ad83fecc8" title="Função que converte os atributos de um campo para a estruturas mais elaboradas." alt="" coords="293,81,522,108"/>
+<area shape="rect" id="node9" href="$MethodInfo_8h.html#ae680b2b69d4a69f5a5bf31844b3cbc59" title="Função que converte os atributos de um métodos para a estruturas mais elaboradas." alt="" coords="284,132,531,159"/>
+<area shape="rect" id="node3" href="$ConstantPoolInfo_8h.html#a5e9d056ada05e799dca7e544a7878f94" title="Gera uma string que está sendo armazenada por CPUtf8." alt="" coords="905,5,993,32"/>
+<area shape="rect" id="node4" href="$Tipos_8h.html#acb337e0b996b7eb4f83d197c9b1a12f9" title="Função que lê um uinnt16_t de um vetor de uint8_t." alt="" coords="881,56,1016,83"/>
+<area shape="rect" id="node6" href="$Tipos_8h.html#ae516ebe405aedf431427028480752c0b" title="Função que lê um uinnt32_t de um vetor de uint8_t." alt="" coords="881,107,1016,133"/>
+<area shape="rect" id="node7" href="$Tipos_8h.html#a84a58ce8de91bb008e62bd8d7576bcf9" title="Função que lê uma um uint8_t de um vetor de uint8_t." alt="" coords="885,157,1012,184"/>
+<area shape="rect" id="node5" href="$Tipos_8cpp.html#a84a58ce8de91bb008e62bd8d7576bcf9" title="Função que lê uma um uint8_t de um vetor de uint8_t." alt="" coords="1064,81,1191,108"/>
+</map>
