@@ -23,30 +23,30 @@ Resumo: 100
 7.() longs
 8.() inteiros  
 9.() shorts
-10.(+-) strings
+10.(x) strings
 11.() desvios com cat 1 
 12.() operacoes logicas com cat 1  
 13.() operacoes de deslocamento com cat 1 
 14.() operacoes aritmeticas de cat 2 
 15.() operacoes de deslocamento de longs
 16.(x) system.out.println (int, float, string e booleano)
-17.() conversao de e para cat 2
-18.() iteracao
-19.() switches
+17.(x) conversao de e para cat 2
+18.(x) iteracao
+19.(x) switches
 20.(x) fields
-21.() interfaces
-22.() recursao
+21.(x) interfaces
+22.(x) recursao
 23.(x) metodos estaticos  
 24.(x) metodos nao estaticos
 25.(x) objetos 
-26.() operacoes de retorno
-27.() operacoes de manipulacao de pilha
-28.() consistencia
-29.() exceptions
-30.() invokes
-31.() polimorfismo
-32.() reescrita
-33.() herança
+26.(x) operacoes de retorno
+27.(x) operacoes de manipulacao de pilha
+28.(x) consistencia
+29.(x) exceptions
+30.(x) invokes
+31.(x) polimorfismo
+32.(x) reescrita
+33.(x) herança
 -------------------------
 
 Resumo: 100

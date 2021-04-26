@@ -8,7 +8,7 @@
 #include <map>
 #include <set>
 #include <stdexcept>
-#include <stack>
+#include <list>
 
 #include "../include/Trie.h"
 #include "../include/MethodInfo.h"
@@ -59,10 +59,9 @@ class ClassLoader{
         };
         Trie<NodeContent*> tree;
         FileSystem fs;
-        std::stack<std::string> classToLoad;
-        std::stack<NodeContent*> classPrepare;
+        std::queue<std::string> classToLoad;
+        std::queue<NodeContent*> classPrepare;
         std::stack<NodeContent*> classResolve;
-        std::queue<NodeContent*> classInitialize;
         RuntimeDataArea *runtimeDataArea;
         ExecutionEngine *executionEngine;
 
@@ -74,8 +73,8 @@ class ClassLoader{
         
         void readClass(std::string &s);
         void prepare(NodeContent *nodeContent);
-        void resolve(NodeContent *nodeContent);
-        void inicialize(NodeContent *nodeContent);
+        void resolve(NodeContent *nodeContent, std::queue<NodeContent*>& classInitialize);
+        void inicialize(NodeContent *nodeContent, std::queue<NodeContent*>& classInitialize);
         NodeContent* objectNodeContent;
     public:
         ClassLoader(std::string &&s);

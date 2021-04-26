@@ -28,12 +28,12 @@ ClassLoader::NodeContent::NodeContent(){
 
 bool ClassLoader::interfacesAreLoaded(NodeContent *nodeContent){
     ClassFile *cf = nodeContent->classFile;
-    for(uint i = 0; i < cf->interfacesCount; i++){
+    for(uint32_t i = 0; i < cf->interfacesCount; i++){
         std::string s = getStringFromCPInfo(cf->constantPool, cf->interfaces[i]);
         if(!tree.hasKey(s)){
             return false;
         } else if(!tree.getValue(s)->wasResolved){
-            throw std::string("Heranca Circular");
+            throw std::logic_error("Heranca Circular");
         }
     }
     return true;
@@ -41,9 +41,9 @@ bool ClassLoader::interfacesAreLoaded(NodeContent *nodeContent){
 
 void ClassLoader::addInterfacesToLoad(NodeContent *nodeContent){
     ClassFile *cf = nodeContent->classFile;
-    for(uint i = 0; i < cf->interfacesCount; i++){
+    for(uint32_t i = 0; i < cf->interfacesCount; i++){
         std::string s = getStringFromCPInfo(cf->constantPool, cf->interfaces[i]);
-        addClassToLoad(s);
+        this->classToLoad.push(s);
     }
 }
 
@@ -80,6 +80,7 @@ ClassFile* ClassLoader::readClass2(FileSystem &fs, std::string &s){
         std::cerr << "Um erro qualquer\n";
         // return -1;
     }
+    s = fs.environmentToJavaPathNotation(s);
     std::string strAux = getStringFromCPInfo(cf->constantPool, cf->thisClass);
     if(!isSameClass(strAux, s)){
         if(strAux.size() < s.size()){
@@ -241,9 +242,10 @@ void ClassLoader::prepare(NodeContent *nodeContent){
     classResolve.push(nodeContent);
 }
         
-void ClassLoader::resolve(NodeContent *nodeContent){
+void ClassLoader::resolve(NodeContent *nodeContent, std::queue<NodeContent*>& classInitialize){
     ClassFile * cf = nodeContent->classFile;
     if(cf->superClass == 0){
+        nodeContent->wasResolved = true;
         for(uint32_t i = 0; i < cf->methodsCount; i++){
             std::string methodName = getStringFromCPInfo(cf->constantPool, cf->methods[i].nameIndex);
             std::string methodDescriptor = getStringFromCPInfo(cf->constantPool, cf->methods[i].descriptorIndex);
@@ -357,7 +359,8 @@ void ClassLoader::resolve(NodeContent *nodeContent){
             if(!superNodeContent->wasResolved){
                 throw std::logic_error("Heranca Circular");
             }
-
+            nodeContent->wasResolved = true;
+            
             inheranceGraph[nodeContent->classNum].push_back(superNodeContent->classNum);
             for(uint32_t i = 0; i < nodeContent->classFile->interfacesCount; i++){
                 std::string str = getStringFromCPInfo(nodeContent->classFile->constantPool, nodeContent->classFile->interfaces[i]);
@@ -489,7 +492,7 @@ void ClassLoader::resolve(NodeContent *nodeContent){
                 // std::string method = methodName + ":" + methodDescriptor;
                 
                 // std::cout << method << "\n";
-                uint32_t val = vetData[i].first;
+                // uint32_t val = vetData[i].first;
                 nodeContent->acessMehodsTable[i] = vetData[i].second;
             }
             // std::cout << "\n";
@@ -506,7 +509,7 @@ void ClassLoader::resolve(NodeContent *nodeContent){
                         std::string methodDescriptor = getStringFromCPInfo(interfaceMethods[i].second->cp, interfaceMethods[i].second->descriptorIndex);
                         std::string method = methodName + ":" + methodDescriptor;
                         // table[nodeContent->methodsInstanceNoPriv.getValue(method).first] = interfaceMethods[i].first;
-                        uint32_t val = nodeContent->methodsInstanceNoPriv.getValue(method).first;
+                        // uint32_t val = nodeContent->methodsInstanceNoPriv.getValue(method).first;
                         table[interfaceMethods[i].first] = nodeContent->methodsInstanceNoPriv.getValue(method).first;
                     }
                 }
@@ -514,14 +517,14 @@ void ClassLoader::resolve(NodeContent *nodeContent){
             classResolve.pop();
             classInitialize.push(nodeContent);
         } else{
-            if(!tree.hasKey(superClassName)){
-                addClassToLoad(superClassName);
-            }
             addInterfacesToLoad(nodeContent);
+            if(!tree.hasKey(superClassName)){
+                classToLoad.push(superClassName);
+            }
         }
     }
 }
-void ClassLoader::inicialize(NodeContent *nodeContent){
+void ClassLoader::inicialize(NodeContent *nodeContent, std::queue<NodeContent*>& classInitialize){
     classInitialize.pop();
     if(nodeContent->constantConstructor != nullptr){
         MethodInfo* method = nodeContent->constantConstructor;
@@ -551,15 +554,16 @@ void ClassLoader::setExecutionEngine(ExecutionEngine* new_executionEngine){
 }
 
 void ClassLoader::exec(){
+    std::queue<NodeContent*> classInitialize;
     while(!classToLoad.empty() || !classPrepare .empty() || !classResolve .empty() || !classInitialize.empty()){
         if(!classToLoad.empty()){
-            readClass(classToLoad.top());
+            readClass(classToLoad.front());
         } else if(!classPrepare.empty()){
-            prepare(classPrepare.top());
+            prepare(classPrepare.front());
         } else if(!classResolve.empty()){
-            resolve(classResolve.top());
+            resolve(classResolve.top(), classInitialize);
         } else if(!classInitialize.empty()){
-            inicialize(classInitialize.front());
+            inicialize(classInitialize.front(), classInitialize);
         }
     }
 }
@@ -657,7 +661,9 @@ void ClassLoader::resolveConstantPoolAt(ConstantPoolInfo** cp, uint32_t ind){
         } else if(nc->methodsClassPriv.hasKey(methodName)){
             methodref->directMethod = nc->methodsClassPriv.getValue(methodName);
         } else if(nc->methodsInstanceNoPriv.hasKey(methodName)){
-            methodref->instanceMethodDesloc = nc->methodsInstanceNoPriv.getValue(methodName).first;
+            auto aux = nc->methodsInstanceNoPriv.getValue(methodName);
+            methodref->instanceMethodDesloc = aux.first;
+            methodref->directMethod = aux.second;
         } else if(nc->methodsInstancePriv.hasKey(methodName)){
             methodref->directMethod = nc->methodsInstancePriv.getValue(methodName);
         }

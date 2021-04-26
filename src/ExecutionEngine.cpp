@@ -381,19 +381,61 @@ int32_t execOp_ldc2_w(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Ex
 }
 
 int32_t execOp_iload(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t index;
+    int32_t ret = 0;
+    if(isWide){
+        index = read<uint16_t>(attrinbuteCode->code + pc + 1);
+        ret = 3;
+    } else{
+        index = read<uint8_t>(attrinbuteCode->code + pc + 1);
+        ret = 2;
+    }
+    frame->pushOperandStack(frame->varAt(index));
+    return pc + ret;
 }
 
 int32_t execOp_lload(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t index;
+    int32_t ret = 0;
+    if(isWide){
+        index = read<uint16_t>(attrinbuteCode->code + pc + 1);
+        ret = 3;
+    } else{
+        index = read<uint8_t>(attrinbuteCode->code + pc + 1);
+        ret = 2;
+    }
+    frame->pushOperandStack(frame->varAt(index));
+    frame->pushOperandStack(frame->varAt(index+1));
+    return pc + ret;
 }
 
 int32_t execOp_fload(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t index;
+    int32_t ret = 0;
+    if(isWide){
+        index = read<uint16_t>(attrinbuteCode->code + pc + 1);
+        ret = 3;
+    } else{
+        index = read<uint8_t>(attrinbuteCode->code + pc + 1);
+        ret = 2;
+    }
+    frame->pushOperandStack(frame->varAt(index));
+    return pc + ret;
 }
 
 int32_t execOp_dload(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t index;
+    int32_t ret = 0;
+    if(isWide){
+        index = read<uint16_t>(attrinbuteCode->code + pc + 1);
+        ret = 3;
+    } else{
+        index = read<uint8_t>(attrinbuteCode->code + pc + 1);
+        ret = 2;
+    }
+    frame->pushOperandStack(frame->varAt(index));
+    frame->pushOperandStack(frame->varAt(index+1));
+    return pc + ret;
 }
 
 int32_t execOp_aload(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
@@ -705,19 +747,67 @@ int32_t execOp_saload(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Ex
 }
 
 int32_t execOp_istore(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t index;
+    int32_t ret = 0;
+    if(isWide){
+        index = read<uint16_t>(attrinbuteCode->code + pc + 1);
+        ret = 3;
+    } else{
+        index = read<uint8_t>(attrinbuteCode->code + pc + 1);
+        ret = 2;
+    }
+    frame->varAt(index) = frame->topOperandStack();
+    frame->popOperandStack();
+    return pc + ret;
 }
 
 int32_t execOp_lstore(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t index;
+    int32_t ret = 0;
+    if(isWide){
+        index = read<uint16_t>(attrinbuteCode->code + pc + 1);
+        ret = 3;
+    } else{
+        index = read<uint8_t>(attrinbuteCode->code + pc + 1);
+        ret = 2;
+    }
+    frame->varAt(index+1) = frame->topOperandStack();
+    frame->popOperandStack();
+    frame->varAt(index) = frame->topOperandStack();
+    frame->popOperandStack();
+    return pc + ret;
 }
 
 int32_t execOp_fstore(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t index;
+    int32_t ret = 0;
+    if(isWide){
+        index = read<uint16_t>(attrinbuteCode->code + pc + 1);
+        ret = 3;
+    } else{
+        index = read<uint8_t>(attrinbuteCode->code + pc + 1);
+        ret = 2;
+    }
+    frame->varAt(index) = frame->topOperandStack();
+    frame->popOperandStack();
+    return pc + ret;
 }
 
 int32_t execOp_dstore(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t index;
+    int32_t ret = 0;
+    if(isWide){
+        index = read<uint16_t>(attrinbuteCode->code + pc + 1);
+        ret = 3;
+    } else{
+        index = read<uint8_t>(attrinbuteCode->code + pc + 1);
+        ret = 2;
+    }
+    frame->varAt(index+1) = frame->topOperandStack();
+    frame->popOperandStack();
+    frame->varAt(index) = frame->topOperandStack();
+    frame->popOperandStack();
+    return pc + ret;
 }
 
 int32_t execOp_astore(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
@@ -1083,11 +1173,14 @@ int32_t execOp_sastore(ClassLoader* classLoader, RuntimeDataArea* runTimeData, E
 }
 
 int32_t execOp_pop(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    frame->popOperandStack();
+    return pc + 1;
 }
 
 int32_t execOp_pop2(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    frame->popOperandStack();
+    frame->popOperandStack();
+    return pc + 1;
 }
 
 int32_t execOp_dup(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
@@ -1096,27 +1189,83 @@ int32_t execOp_dup(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Execu
 }
 
 int32_t execOp_dup_x1(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t value1 = frame->topOperandStack();
+    frame->popOperandStack();
+    uint32_t value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    frame->pushOperandStack(value1);
+    frame->pushOperandStack(value2);
+    frame->pushOperandStack(value1);
+    return pc + 1;
 }
 
 int32_t execOp_dup_x2(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t value1 = frame->topOperandStack();
+    frame->popOperandStack();
+    uint32_t value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    uint32_t value3 = frame->topOperandStack();
+    frame->popOperandStack();
+    frame->pushOperandStack(value1);
+    frame->pushOperandStack(value3);
+    frame->pushOperandStack(value2);
+    frame->pushOperandStack(value1);
+    return pc + 1;
 }
 
 int32_t execOp_dup2(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t value1 = frame->topOperandStack();
+    frame->popOperandStack();
+    uint32_t value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    frame->pushOperandStack(value2);
+    frame->pushOperandStack(value1);
+    frame->pushOperandStack(value2);
+    frame->pushOperandStack(value1);
+    return pc + 1;
 }
 
 int32_t execOp_dup2_x1(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t value1 = frame->topOperandStack();
+    frame->popOperandStack();
+    uint32_t value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    uint32_t value3 = frame->topOperandStack();
+    frame->popOperandStack();
+    frame->pushOperandStack(value2);
+    frame->pushOperandStack(value1);
+    frame->pushOperandStack(value3);
+    frame->pushOperandStack(value2);
+    frame->pushOperandStack(value1);
+    return pc + 1;
 }
 
 int32_t execOp_dup2_x2(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t value1 = frame->topOperandStack();
+    frame->popOperandStack();
+    uint32_t value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    uint32_t value3 = frame->topOperandStack();
+    frame->popOperandStack();
+    uint32_t value4 = frame->topOperandStack();
+    frame->popOperandStack();
+    frame->pushOperandStack(value2);
+    frame->pushOperandStack(value1);
+    frame->pushOperandStack(value4);
+    frame->pushOperandStack(value3);
+    frame->pushOperandStack(value2);
+    frame->pushOperandStack(value1);
+    return pc + 1;
 }
 
 int32_t execOp_swap(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t value1 = frame->topOperandStack();
+    frame->popOperandStack();
+    uint32_t value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    frame->pushOperandStack(value1);
+    frame->pushOperandStack(value2);
+    return pc + 1;
 }
 
 int32_t execOp_iadd(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
@@ -1131,6 +1280,9 @@ int32_t execOp_iadd(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
     value2.u = frame->topOperandStack(); // grava os bit da segunda parcela da soma
     frame->popOperandStack(); // apaga da pilha de operandos
 
+    value1.u = frame->topOperandStack(); // grava os bit da primeira parcela da soma
+    frame->popOperandStack(); // apaga da pilha de operandos
+
     result.i = value1.i + value2.i; // realiza a soma dos valores
     frame->pushOperandStack(result.u); // o armazena na pilha de operandos
     return pc + 1;
@@ -1141,13 +1293,13 @@ int32_t execOp_ladd(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
         uint64_t u;
         int64_t i;
     } value1, value2, result;
-    value1.u = frame->topOperandStack();
-    frame->popOperandStack();
-    value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
-    frame->popOperandStack();
     value2.u = frame->topOperandStack();
     frame->popOperandStack();
     value2.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
     frame->popOperandStack();
 
     result.i = value1.i + value2.i;
@@ -1161,9 +1313,9 @@ int32_t execOp_fadd(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
         uint32_t u;    
         float f;    
     } value1, value2, result;
-    value1.u = frame->topOperandStack();
-    frame->popOperandStack();
     value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
     frame->popOperandStack();
 
     result.f = value1.f + value2.f; 
@@ -1176,15 +1328,15 @@ int32_t execOp_dadd(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
         uint64_t u;    
         double d;    
     } value1, value2, result; // tiops do resutado
-
-    value1.u = frame->topOperandStack(); // grava os bit mais significativos da primeira parcela da soma
-    frame->popOperandStack(); // apaga da pilha de operandos
-    value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32; // grava os bit menos significativos da primeira parcela da soma
-    frame->popOperandStack(); // apaga da pilha de operandos
     
     value2.u = frame->topOperandStack(); // grava os bit mais significativos da segunda parcela da soma
     frame->popOperandStack(); // apaga da pilha de operandos
     value2.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32; // grava os bit menos significativos da segunda parcela da soma
+    frame->popOperandStack(); // apaga da pilha de operandos
+
+    value1.u = frame->topOperandStack(); // grava os bit mais significativos da primeira parcela da soma
+    frame->popOperandStack(); // apaga da pilha de operandos
+    value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32; // grava os bit menos significativos da primeira parcela da soma
     frame->popOperandStack(); // apaga da pilha de operandos
 
     result.d = value1.d + value2.d; // realiza a soma dos valores
@@ -1195,7 +1347,20 @@ int32_t execOp_dadd(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
 }
 
 int32_t execOp_isub(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value1, value2, result; // tiops do resutado
+    
+    value2.u = frame->topOperandStack(); // grava os bit da segunda parcela da soma
+    frame->popOperandStack(); // apaga da pilha de operandos
+
+    value1.u = frame->topOperandStack(); // grava os bit da primeira parcela da soma
+    frame->popOperandStack(); // apaga da pilha de operandos
+
+    result.i = value1.i - value2.i; // realiza a soma dos valores
+    frame->pushOperandStack(result.u); // o armazena a poilha de operandos
+    return pc + 1;
 }
 
 int32_t execOp_lsub(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
@@ -1211,11 +1376,40 @@ int32_t execOp_dsub(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
 }
 
 int32_t execOp_imul(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value1, value2, result; // tiops do resutado
+    
+    value2.u = frame->topOperandStack(); // grava os bit da segunda parcela da soma
+    frame->popOperandStack(); // apaga da pilha de operandos
+
+    value1.u = frame->topOperandStack(); // grava os bit da primeira parcela da soma
+    frame->popOperandStack(); // apaga da pilha de operandos
+
+    result.i = value1.i * value2.i; // realiza a soma dos valores
+    frame->pushOperandStack(result.u); // o armazena a poilha de operandos
+    return pc + 1;
 }
 
 int32_t execOp_lmul(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint64_t u;
+        int64_t i;
+    } value1, value2, result;
+    value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value2.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+
+    result.i = value1.i * value2.i;
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_fmul(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
@@ -1251,75 +1445,287 @@ int32_t execOp_lrem(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
 }
 
 int32_t execOp_frem(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        uint32_t u;    
+        float f;    
+    } value1, value2, result;
+    value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+
+    result.f = std::fmod(value1.f, value2.f);
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_drem(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        uint64_t u;    
+        double d;    
+    } value1, value2, result;
+    value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value2.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+
+    result.d = std::fmod(value1.d, value2.d);
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_ineg(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value, result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    
+    result.i = -value.i;
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_lneg(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint64_t u;
+        int64_t i;
+    } value, result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    
+    result.i = -value.i;
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_fneg(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        uint32_t u;    
+        float f;    
+    } value, result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    
+    result.f = -value.f;
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_dneg(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        uint64_t u;    
+        double d;    
+    } value, result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    
+    result.d = -value.d;
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_ishl(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value1, result;
+    uint32_t value2;
+    value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    value2 &= 0x1f;
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+
+    result.i = value1.i << value2;
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_lshl(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint64_t u;
+        int64_t i;
+    } value1, result;
+    uint32_t value2;
+    value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    value2 &= 0x3f;
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+
+    result.i = value1.i << value2;
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_ishr(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value1, result;
+    uint32_t value2;
+    value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    value2 &= 0x1f;
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+
+    result.i = value1.i >> value2;
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_lshr(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint64_t u;
+        int64_t i;
+    } value1, result;
+    uint32_t value2;
+    value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    value2 &= 0x3f;
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+
+    result.i = value1.i >> value2;
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_iushr(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t value1, value2, result;
+    value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    value2 &= 0x1f;
+    value1 = frame->topOperandStack();
+    frame->popOperandStack();
+
+    result = value1 >> value2;
+    frame->pushOperandStack(result);
+    return pc + 1;
 }
 
 int32_t execOp_lushr(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint64_t value1, result;
+    uint32_t value2;
+    value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    value2 &= 0x3f;
+    value1 = frame->topOperandStack();
+    frame->popOperandStack();
+    value1 |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+
+    result = value1 >> value2;
+    frame->pushOperandStack((result >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_iand(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t value1, value2, result;
+    value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    value1 = frame->topOperandStack();
+    frame->popOperandStack();
+
+    result = value1 & value2;
+    frame->pushOperandStack(result);
+    return pc + 1;
 }
 
 int32_t execOp_land(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint64_t value1, value2, result;
+    value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    value2 |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    value1 = frame->topOperandStack();
+    frame->popOperandStack();
+    value1 |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+
+    result = value1 & value2;
+    frame->pushOperandStack((result >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_ior(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t value1, value2, result;
+    value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    value1 = frame->topOperandStack();
+    frame->popOperandStack();
+
+    result = value1 | value2;
+    frame->pushOperandStack(result);
+    return pc + 1;
 }
 
 int32_t execOp_lor(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint64_t value1, value2, result;
+    value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    value2 |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    value1 = frame->topOperandStack();
+    frame->popOperandStack();
+    value1 |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+
+    result = value1 | value2;
+    frame->pushOperandStack((result >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_ixor(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint32_t value1, value2, result;
+    value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    value1 = frame->topOperandStack();
+    frame->popOperandStack();
+
+    result = value1 ^ value2;
+    frame->pushOperandStack(result);
+    return pc + 1;
 }
 
 int32_t execOp_lxor(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint64_t value1, value2, result;
+    value2 = frame->topOperandStack();
+    frame->popOperandStack();
+    value2 |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    value1 = frame->topOperandStack();
+    frame->popOperandStack();
+    value1 |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+
+    result = value1 ^ value2;
+    frame->pushOperandStack((result >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_iinc(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
@@ -1340,63 +1746,302 @@ int32_t execOp_iinc(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
 }
 
 int32_t execOp_i2l(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value;
+    union{
+        uint64_t u;
+        int64_t i;
+    } result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    
+    result.i = value.i;
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_i2f(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value;
+    union{
+        uint32_t u;
+        float f;
+    } result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    
+    result.f = value.i;
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_i2d(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value;
+    union{
+        uint64_t u;
+        double d;
+    } result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    
+    result.d = value.i;
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_l2i(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint64_t u;
+        int64_t i;
+    } value;
+    union{
+        uint32_t u;
+        int32_t i;
+    } result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    
+    result.i = value.i;
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_l2f(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint64_t u;
+        int64_t i;
+    } value;
+    union{
+        uint32_t u;
+        float f;
+    } result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    
+    result.f = value.i;
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_l2d(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint64_t u;
+        int64_t i;
+    } value;
+    union{
+        uint64_t u;
+        double d;
+    } result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    
+    result.d = value.i;
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_f2i(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        float f;
+    } value;
+    union{
+        uint32_t u;
+        int32_t i;
+    } result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    
+    if(std::isnan(value.f)){
+        result.i = 0;
+    } else if(value.f > std::numeric_limits<int32_t>::max()){
+        result.i = std::numeric_limits<int32_t>::max();
+    } else if(value.f < std::numeric_limits<int32_t>::min()){
+        result.i = std::numeric_limits<int32_t>::min();
+    } else{
+        result.i = value.f;
+    }
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_f2l(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        float f;
+    } value;
+    union{
+        uint64_t u;
+        int64_t i;
+    } result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    
+    if(std::isnan(value.f)){
+        result.i = 0;
+    } else if(value.f > std::numeric_limits<int64_t>::max()){
+        result.i = std::numeric_limits<int64_t>::max();
+    } else if(value.f < std::numeric_limits<int64_t>::min()){
+        result.i = std::numeric_limits<int64_t>::min();
+    } else{
+        result.i = value.f;
+    }
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_f2d(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        float f;
+    } value;
+    union{
+        uint64_t u;
+        double d;
+    } result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    
+    result.d = value.f;
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_d2i(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint64_t u;
+        double d;
+    } value;
+    union{
+        uint32_t u;
+        int32_t i;
+    } result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    
+    if(std::isnan(value.d)){
+        result.i = 0;
+    } else if(value.d > std::numeric_limits<int32_t>::max()){
+        result.i = std::numeric_limits<int32_t>::max();
+    } else if(value.d < std::numeric_limits<int32_t>::min()){
+        result.i = std::numeric_limits<int32_t>::min();
+    } else{
+        result.i = value.d;
+    }
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_d2l(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint64_t u;
+        double d;
+    } value;
+    union{
+        uint64_t u;
+        int64_t i;
+    } result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    
+    if(std::isnan(value.d)){
+        result.i = 0;
+    } else if(value.d > std::numeric_limits<int64_t>::max()){
+        result.i = std::numeric_limits<int64_t>::max();
+    } else if(value.d < std::numeric_limits<int64_t>::min()){
+        result.i = std::numeric_limits<int64_t>::min();
+    } else{
+        result.i = value.d;
+    }
+    frame->pushOperandStack((result.u >> 32) & 0xFFFFFFFF);
+    frame->pushOperandStack(result.u & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_d2f(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint64_t u;
+        double d;
+    } value;
+    union{
+        uint32_t u;
+        float f;
+    } result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32;
+    frame->popOperandStack();
+    
+    result.f = value.d;
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_i2b(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value, result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    
+    int8_t aux = value.u & 0xFF;
+    
+    result.i = aux;
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_i2c(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value, result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    
+    uint16_t aux = value.u & 0xFFFF;
+    
+    result.u = aux;
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_i2s(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value, result;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+    
+    int16_t aux = value.u & 0xFFFF;
+    
+    result.u = aux;
+    frame->pushOperandStack(result.u);
+    return pc + 1;
 }
 
 int32_t execOp_lcmp(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
@@ -1544,7 +2189,19 @@ int32_t execOp_ifeq(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
 }
 
 int32_t execOp_ifne(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value;
+    int16_t branchbyte = 3;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+
+    if(value.i != 0){
+        branchbyte = static_cast<int16_t>(read<uint16_t>(attrinbuteCode->code + pc + 1));
+    }    
+
+    return pc + branchbyte;
 }
 
 int32_t execOp_iflt(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
@@ -1552,7 +2209,19 @@ int32_t execOp_iflt(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
 }
 
 int32_t execOp_ifge(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value;
+    int16_t branchbyte = 3;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+
+    if(value.i >= 0){
+        branchbyte = static_cast<int16_t>(read<uint16_t>(attrinbuteCode->code + pc + 1));
+    }    
+
+    return pc + branchbyte;
 }
 
 int32_t execOp_ifgt(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
@@ -1564,11 +2233,39 @@ int32_t execOp_ifle(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
 }
 
 int32_t execOp_if_icmpeq(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value1, value2;
+    int16_t branchbyte = 3;
+    value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+
+    if(value1.i == value2.i){
+        branchbyte = static_cast<int16_t>(read<uint16_t>(attrinbuteCode->code + pc + 1));
+    }    
+
+    return pc + branchbyte;
 }
 
 int32_t execOp_if_icmpne(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value1, value2;
+    int16_t branchbyte = 3;
+    value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+
+    if(value1.i != value2.i){
+        branchbyte = static_cast<int16_t>(read<uint16_t>(attrinbuteCode->code + pc + 1));
+    }    
+
+    return pc + branchbyte;
 }
 
 int32_t execOp_if_icmplt(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
@@ -1576,7 +2273,21 @@ int32_t execOp_if_icmplt(ClassLoader* classLoader, RuntimeDataArea* runTimeData,
 }
 
 int32_t execOp_if_icmpge(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value1, value2;
+    int16_t branchbyte = 3;
+    value2.u = frame->topOperandStack();
+    frame->popOperandStack();
+    value1.u = frame->topOperandStack();
+    frame->popOperandStack();
+
+    if(value1.i >= value2.i){
+        branchbyte = static_cast<int16_t>(read<uint16_t>(attrinbuteCode->code + pc + 1));
+    }    
+
+    return pc + branchbyte;
 }
 
 int32_t execOp_if_icmpgt(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
@@ -1596,43 +2307,106 @@ int32_t execOp_if_acmpne(ClassLoader* classLoader, RuntimeDataArea* runTimeData,
 }
 
 int32_t execOp_goto(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    int16_t branchbyte = static_cast<int16_t>(read<uint16_t>(attrinbuteCode->code + pc + 1));
+
+    return pc + branchbyte;
 }
 
 int32_t execOp_jsr(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    int16_t branchbyte = static_cast<int16_t>(read<uint16_t>(attrinbuteCode->code + pc + 1));
+
+    frame->pushOperandStack(pc+3);
+
+    return pc + branchbyte;
 }
 
 int32_t execOp_ret(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    uint8_t index = read<uint8_t>(attrinbuteCode->code + pc + 1);
+
+    return frame->varAt(index);
 }
 
 int32_t execOp_tableswitch(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } index;
+    index.u = frame->topOperandStack();
+    frame->popOperandStack();
+
+    uint32_t ret = 1 + (4 - (pc + 1)%4)%4;
+    int32_t defaultS = static_cast<int32_t>(read<uint32_t>(attrinbuteCode->code + pc + ret)); ret += 4;
+    int32_t lowS = static_cast<int32_t>(read<uint32_t>(attrinbuteCode->code + pc + ret)); ret += 4;
+    int32_t highS = static_cast<int32_t>(read<uint32_t>(attrinbuteCode->code + pc + ret)); ret += 4;
+
+    if(lowS <= index.i && index.i <= highS){
+        int32_t branchbyte = static_cast<int32_t>(read<uint32_t>(attrinbuteCode->code + pc + ret + (index.i - lowS) * 4));
+        // int32_t branchbyte = attrinbuteCode->code[index.i - lowS];
+        return pc + branchbyte;
+    } else{
+        return pc + defaultS;
+    }
 }
 
 int32_t execOp_lookupswitch(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } key;
+    key.u = frame->topOperandStack();
+    frame->popOperandStack();
+
+    uint32_t ret = 1 + (4 - (pc + 1)%4)%4;
+    int32_t defaultS = static_cast<int32_t>(read<uint32_t>(attrinbuteCode->code + pc + ret)); ret += 4;
+    int32_t npairs = static_cast<int32_t>(read<uint32_t>(attrinbuteCode->code + pc + ret)); ret += 4;
+
+    for(int32_t i = 0; i < npairs; i++){
+        int32_t value = static_cast<int32_t>(read<uint32_t>(attrinbuteCode->code + pc + ret)); ret += 4;
+        int32_t branchbyte = static_cast<int32_t>(read<uint32_t>(attrinbuteCode->code + pc + ret)); ret += 4;
+        if(key.i == value){
+            return pc + branchbyte;
+        }
+    }
+    return pc + defaultS;
 }
 
 int32_t execOp_ireturn(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    returnStack.push(frame->topOperandStack());
+    frame->popOperandStack();
+    finished = true;
+    return pc + 1;
 }
 
 int32_t execOp_lreturn(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    returnStack.push(frame->topOperandStack());
+    frame->popOperandStack();
+    returnStack.push(frame->topOperandStack());
+    frame->popOperandStack();
+    finished = true;
+    return pc + 1;
 }
 
 int32_t execOp_freturn(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    returnStack.push(frame->topOperandStack());
+    frame->popOperandStack();
+    finished = true;
+    return pc + 1;
 }
 
 int32_t execOp_dreturn(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    returnStack.push(frame->topOperandStack());
+    frame->popOperandStack();
+    returnStack.push(frame->topOperandStack());
+    frame->popOperandStack();
+    finished = true;
+    return pc + 1;
 }
 
 int32_t execOp_areturn(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    returnStack.push(frame->topOperandStack());
+    frame->popOperandStack();
+    finished = true;
+    return pc + 1;
 }
 
 int32_t execOp_return(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
@@ -2189,7 +2963,7 @@ int32_t execOp_invokeinterface(ClassLoader* classLoader, RuntimeDataArea* runTim
     }
     
     ObjectReference* object = runTimeData ->objectAt(vetAux[0]);
-    uint32_t classNum = cpInterfaceMethodref->classNum;
+    // uint32_t classNum = cpInterfaceMethodref->classNum;
     std::map<uint32_t, uint32_t *> aux = *classLoader->getIterfaceMethodLocalization(object->classNum);
     uint32_t desloc = classLoader->getIterfaceMethodLocalization(object->classNum)->at(cpInterfaceMethodref->classNum)[cpInterfaceMethodref->instanceMethodDesloc];
     MethodInfo* newMethod = runTimeData->objectAt(vetAux[0])->methods[desloc];
@@ -2337,7 +3111,9 @@ int32_t execOp_arraylength(ClassLoader* classLoader, RuntimeDataArea* runTimeDat
 }
 
 int32_t execOp_athrow(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    wasException = frame->topOperandStack();
+    frame->popOperandStack();
+    return pc + 1;
 }
 
 int32_t execOp_checkcast(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
@@ -2350,19 +3126,20 @@ int32_t execOp_checkcast(ClassLoader* classLoader, RuntimeDataArea* runTimeData,
         classLoader->resolveConstantPoolAt(frame->getConstantPool(), index);
     }
     
+    if(objectref != 0){
+        ObjectReference* pointerSource =  runTimeData->objectAt(objectref);
+        uint32_t dimensionsSource = pointerSource->arrayReference == nullptr ? 0 : pointerSource->arrayReference->dimensions;
+        uint32_t classNumSource = pointerSource->classNum;
+        uint8_t primitiveTypeSource = pointerSource->arrayReference == nullptr ? 'L' : pointerSource->arrayReference->tipo;
+        uint32_t dimensionsTarget = cp->dimensions;
+        uint32_t classNumTarget = cp->classNum;
+        uint8_t primitiveTypeTarget = cp->primitiveType;
+        if(!objectsAreCompatibles(classLoader, dimensionsSource, classNumSource, primitiveTypeSource, dimensionsTarget, classNumTarget, primitiveTypeTarget)){
+            generateException(classLoader, runTimeData, execEngine, "java/lang/ClassCastException", wasException);
 
-    ObjectReference* pointerSource =  runTimeData->objectAt(objectref);
-    uint32_t dimensionsSource = pointerSource->arrayReference == nullptr ? 0 : pointerSource->arrayReference->dimensions;
-    uint32_t classNumSource = pointerSource->classNum;
-    uint8_t primitiveTypeSource = pointerSource->arrayReference == nullptr ? 'L' : pointerSource->arrayReference->tipo;
-    uint32_t dimensionsTarget = cp->dimensions;
-    uint32_t classNumTarget = cp->classNum;
-    uint8_t primitiveTypeTarget = cp->primitiveType;
-    if(!objectsAreCompatibles(classLoader, dimensionsSource, classNumSource, primitiveTypeSource, dimensionsTarget, classNumTarget, primitiveTypeTarget)){
-        generateException(classLoader, runTimeData, execEngine, "java/lang/ClassCastException", wasException);
-
-        return pc + 3;
-    } 
+            return pc + 3;
+        } 
+    }
 
     frame->pushOperandStack(objectref);
 
@@ -2379,16 +3156,19 @@ int32_t execOp_instanceof(ClassLoader* classLoader, RuntimeDataArea* runTimeData
         classLoader->resolveConstantPoolAt(frame->getConstantPool(), index);
     }
     
-
-    ObjectReference* pointerSource =  runTimeData->objectAt(objectref);
-    uint32_t dimensionsSource = pointerSource->arrayReference == nullptr ? 0 : pointerSource->arrayReference->dimensions;
-    uint32_t classNumSource = pointerSource->classNum;
-    uint8_t primitiveTypeSource = pointerSource->arrayReference == nullptr ? 'L' : pointerSource->arrayReference->tipo;
-    uint32_t dimensionsTarget = cp->dimensions;
-    uint32_t classNumTarget = cp->classNum;
-    uint8_t primitiveTypeTarget = cp->primitiveType;
-    if(objectsAreCompatibles(classLoader, dimensionsSource, classNumSource, primitiveTypeSource, dimensionsTarget, classNumTarget, primitiveTypeTarget)){     
-        frame->pushOperandStack(1);
+    if(objectref != 0){
+        ObjectReference* pointerSource =  runTimeData->objectAt(objectref);
+        uint32_t dimensionsSource = pointerSource->arrayReference == nullptr ? 0 : pointerSource->arrayReference->dimensions;
+        uint32_t classNumSource = pointerSource->classNum;
+        uint8_t primitiveTypeSource = pointerSource->arrayReference == nullptr ? 'L' : pointerSource->arrayReference->tipo;
+        uint32_t dimensionsTarget = cp->dimensions;
+        uint32_t classNumTarget = cp->classNum;
+        uint8_t primitiveTypeTarget = cp->primitiveType;
+        if(objectsAreCompatibles(classLoader, dimensionsSource, classNumSource, primitiveTypeSource, dimensionsTarget, classNumTarget, primitiveTypeTarget)){     
+            frame->pushOperandStack(1);
+        } else{
+            frame->pushOperandStack(0);
+        }
     } else{
         frame->pushOperandStack(0);
     }
