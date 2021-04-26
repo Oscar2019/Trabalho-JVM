@@ -3375,11 +3375,35 @@ int32_t execOp_multianewarray(ClassLoader* classLoader, RuntimeDataArea* runTime
 }
 
 int32_t execOp_ifnull(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value;
+    int16_t branchbyte = 3;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+
+    if(value.i == 0){
+        branchbyte = static_cast<int16_t>(read<uint16_t>(attrinbuteCode->code + pc + 1));
+    }    
+
+    return pc + branchbyte;
 }
 
 int32_t execOp_ifnonull(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union{
+        uint32_t u;
+        int32_t i;
+    } value;
+    int16_t branchbyte = 3;
+    value.u = frame->topOperandStack();
+    frame->popOperandStack();
+
+    if(value.i != 0){
+        branchbyte = static_cast<int16_t>(read<uint16_t>(attrinbuteCode->code + pc + 1));
+    }    
+
+    return pc + branchbyte;
 }
 
 int32_t execOp_goto_w(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
