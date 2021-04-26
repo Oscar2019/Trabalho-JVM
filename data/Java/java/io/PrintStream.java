@@ -75,6 +75,9 @@ public class PrintStream{
         print_string(value);
         print_char('\n');
     }
+    public void println(){
+        print_char('\n');
+    }
 }
 
 // javac -sourcepath data/Java/  data/Java/java/io/PrintStream.java -d data/JavaLib/
