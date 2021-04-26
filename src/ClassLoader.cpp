@@ -34,6 +34,7 @@ bool ClassLoader::interfacesAreLoaded(NodeContent *nodeContent){
             return false;
         } else if(!tree.getValue(s)->wasResolved){
             throw std::logic_error("Heranca Circular");
+            exit(1);
         }
     }
     return true;
@@ -62,23 +63,18 @@ ClassFile* ClassLoader::readClass2(FileSystem &fs, std::string &s){
     ClassFile *cf = new ClassFile();
     try{
         read<ClassFile>(is, cf);
-        // try{
-        //     is.peek();
-        // } catch(std::exception &e){
-        //     Terminou com sucesso
-        // }
     } catch(ClassFormatError &e){
         std::cerr << e.what() << "\n";
-        // return -1;
+        exit(1);
     } catch(UnsupportedClassVersionError &e){
         std::cerr << e.what() << "\n";
-        // return -1;
+        exit(1);
     } catch(std::exception &e){
         std::cerr << e.what() << "\n";
-        // return -1;
+        exit(1);
     } catch( ... ){
         std::cerr << "Um erro qualquer\n";
-        // return -1;
+        exit(1);
     }
     s = fs.environmentToJavaPathNotation(s);
     std::string strAux = getStringFromCPInfo(cf->constantPool, cf->thisClass);
@@ -90,9 +86,11 @@ ClassFile* ClassLoader::readClass2(FileSystem &fs, std::string &s){
                 s = strAux;
             } else{
                 std::cerr << "Nome do arquivo diferente do nome da classe\n";
+                exit(1);
             }
         } else{
             std::cerr << "Nome do arquivo diferente do nome da classe\n";
+            exit(1);
         }
     }
     conveterAttributeInfoInClassFile(cf->constantPool, cf);
@@ -358,6 +356,7 @@ void ClassLoader::resolve(NodeContent *nodeContent, std::queue<NodeContent*>& cl
             NodeContent *superNodeContent = tree.getValue(superClassName);
             if(!superNodeContent->wasResolved){
                 throw std::logic_error("Heranca Circular");
+                exit(1);
             }
             nodeContent->wasResolved = true;
             

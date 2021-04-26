@@ -28,7 +28,7 @@ Resumo: 100
 12.() operacoes logicas com cat 1  
 13.() operacoes de deslocamento com cat 1 
 14.() operacoes aritmeticas de cat 2 
-15.() operacoes de deslocamento de longs
+15.(x) operacoes de deslocamento de longs
 16.(x) system.out.println (int, float, string e booleano)
 17.(x) conversao de e para cat 2
 18.(x) iteracao
