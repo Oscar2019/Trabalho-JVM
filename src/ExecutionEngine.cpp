@@ -3407,11 +3407,17 @@ int32_t execOp_ifnonull(ClassLoader* classLoader, RuntimeDataArea* runTimeData, 
 }
 
 int32_t execOp_goto_w(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    int32_t branchbyte = static_cast<int32_t>(read<uint32_t>(attrinbuteCode->code + pc + 1));
+
+    return pc + branchbyte;
 }
 
 int32_t execOp_jsr_w(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    int32_t branchbyte = static_cast<int32_t>(read<uint32_t>(attrinbuteCode->code + pc + 1));
+
+    frame->pushOperandStack(pc+3);
+
+    return pc + branchbyte;
 }
 
 const std::array<std::function<int32_t(ClassLoader*, RuntimeDataArea*, ExecutionEngine*, uint32_t, Frame*, MethodInfo*, AttributeInfoCode*, LinearStack<uint32_t>&, MethodInfo**, Frame**, bool&, bool&, bool, uint32_t&)>, 0xC9 + 1> ExecutionEngine::execIntruction{{
