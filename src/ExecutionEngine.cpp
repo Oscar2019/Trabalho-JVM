@@ -2060,9 +2060,9 @@ int32_t execOp_lcmp(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
     value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32; // grava os bit menos significativos da primeira parcela da comparação
     frame->popOperandStack(); // apaga da pilha de operandos
 
-    if (value1.u > value2.u) {
+    if (value1.i > value2.i) {
         result.i = 1;
-    } else if (value1.u == value2.u) {
+    } else if (value1.i == value2.i) {
         result.i = 0;
     } else result.i = -1;
 
@@ -2076,10 +2076,10 @@ int32_t execOp_fcmpl(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exe
         int32_t i;    
     } value1, value2, result; // tipos do resutado
 
-    value2.f = frame->topOperandStack(); // grava o primeiro float para comparação
+    value2.i = frame->topOperandStack(); // grava o primeiro float para comparação
     frame->popOperandStack(); // apaga da pilha de operandos
 
-    value1.f = frame->topOperandStack(); // grava os bit mais significativos da primeira parcela da comparação
+    value1.i = frame->topOperandStack(); // grava os bit mais significativos da primeira parcela da comparação
     frame->popOperandStack(); // apaga da pilha de operandos
 
     if (value1.f > value2.f) {
@@ -2099,13 +2099,13 @@ int32_t execOp_fcmpl(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exe
 int32_t execOp_fcmpg(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
     union {
         float f;    
-        int32_t i;    
+        uint32_t i;    
     } value1, value2, result; // tipos do resutado
 
-    value2.f = frame->topOperandStack(); // grava o primeiro float para comparação
+    value2.i = frame->topOperandStack(); // grava o primeiro float para comparação
     frame->popOperandStack(); // apaga da pilha de operandos
 
-    value1.f = frame->topOperandStack(); // grava os bit mais significativos da primeira parcela da comparação
+    value1.i = frame->topOperandStack(); // grava os bit mais significativos da primeira parcela da comparação
     frame->popOperandStack(); // apaga da pilha de operandos
 
     if (value1.f > value2.f) {
