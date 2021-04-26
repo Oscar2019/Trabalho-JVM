@@ -14,6 +14,7 @@
 #include <string>
 #include <iostream>
 #include <queue>
+#include <math.h>
 
 static bool objectsAreCompatibles(ClassLoader* classLoader, uint32_t dimensionsSource,  uint32_t classNumSource, uint8_t primitiveTypeSource, uint32_t dimensionsTarget,  uint32_t classNumTarget,  uint8_t primitiveTypeTarget){
     if(dimensionsTarget == dimensionsSource){
@@ -1271,7 +1272,10 @@ int32_t execOp_iadd(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
     union{
         uint32_t u;
         int32_t i;
-    } value1, value2, result; // tiops do resutado
+    } value1, value2, result; // tipos do resutado
+
+    value1.u = frame->topOperandStack(); // grava os bit da primeira parcela da soma
+    frame->popOperandStack(); // apaga da pilha de operandos
     
     value2.u = frame->topOperandStack(); // grava os bit da segunda parcela da soma
     frame->popOperandStack(); // apaga da pilha de operandos
@@ -1280,7 +1284,7 @@ int32_t execOp_iadd(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Exec
     frame->popOperandStack(); // apaga da pilha de operandos
 
     result.i = value1.i + value2.i; // realiza a soma dos valores
-    frame->pushOperandStack(result.u); // o armazena a poilha de operandos
+    frame->pushOperandStack(result.u); // o armazena na pilha de operandos
     return pc + 1;
 }
 
@@ -2041,23 +2045,143 @@ int32_t execOp_i2s(ClassLoader* classLoader, RuntimeDataArea* runTimeData, Execu
 }
 
 int32_t execOp_lcmp(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        uint64_t u;    
+        int64_t i;    
+    } value1, value2, result; // tipos do resutado
+
+    value2.u = frame->topOperandStack(); // grava os bit mais significativos da primeira parcela da comparação
+    frame->popOperandStack(); // apaga da pilha de operandos
+    value2.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32; // grava os bit menos significativos da primeira parcela da comparação
+    frame->popOperandStack(); // apaga da pilha de operandos
+
+    value1.u = frame->topOperandStack(); // grava os bit mais significativos da primeira parcela da comparação
+    frame->popOperandStack(); // apaga da pilha de operandos
+    value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32; // grava os bit menos significativos da primeira parcela da comparação
+    frame->popOperandStack(); // apaga da pilha de operandos
+
+    if (value1.u > value2.u) {
+        result.i = 1;
+    } else if (value1.u == value2.u) {
+        result.i = 0;
+    } else result.i = -1;
+
+    frame->pushOperandStack(result.i & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_fcmpl(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        float f;    
+        int32_t i;    
+    } value1, value2, result; // tipos do resutado
+
+    value2.f = frame->topOperandStack(); // grava o primeiro float para comparação
+    frame->popOperandStack(); // apaga da pilha de operandos
+
+    value1.f = frame->topOperandStack(); // grava os bit mais significativos da primeira parcela da comparação
+    frame->popOperandStack(); // apaga da pilha de operandos
+
+    if (value1.f > value2.f) {
+        result.i = 1;
+    } else if (value1.f == value2.f) {
+        result.i = 0;
+    } else result.i = -1;
+
+    if (std::isnan(value1.f) == 1 || std::isnan(value2.f) == 1) { // checa se qualquer um dos valores é NaN
+        result.i = -1;
+    }
+    
+    frame->pushOperandStack(result.i & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_fcmpg(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-   return pc + 0;
+    union {
+        float f;    
+        int32_t i;    
+    } value1, value2, result; // tipos do resutado
+
+    value2.f = frame->topOperandStack(); // grava o primeiro float para comparação
+    frame->popOperandStack(); // apaga da pilha de operandos
+
+    value1.f = frame->topOperandStack(); // grava os bit mais significativos da primeira parcela da comparação
+    frame->popOperandStack(); // apaga da pilha de operandos
+
+    if (value1.f > value2.f) {
+        result.i = 1;
+    } else if (value1.f == value2.f) {
+        result.i = 0;
+    } else result.i = -1;
+
+    if (std::isnan(value1.f) == 1 || std::isnan(value2.f) == 1) { // checa se qualquer um dos valores é NaN
+        result.i = 1;
+    }
+    
+    frame->pushOperandStack(result.i & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_dcmpl(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        uint64_t u;
+        double d;    
+        int64_t i;    
+    } value1, value2, result; // tipos do resutado
+
+    value2.u = frame->topOperandStack(); // grava os bit mais significativos da primeira parcela da comparação
+    frame->popOperandStack(); // apaga da pilha de operandos
+    value2.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32; // grava os bit menos significativos da primeira parcela da comparação
+    frame->popOperandStack(); // apaga da pilha de operandos
+
+    value1.u = frame->topOperandStack(); // grava os bit mais significativos da primeira parcela da comparação
+    frame->popOperandStack(); // apaga da pilha de operandos
+    value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32; // grava os bit menos significativos da primeira parcela da comparação
+    frame->popOperandStack(); // apaga da pilha de operandos
+
+    if (value1.d > value2.d) {
+        result.i = 1;
+    } else if (value1.d == value2.d) {
+        result.i = 0;
+    } else result.i = -1;
+
+    if (std::isnan(value1.d) == 1 || std::isnan(value2.d) == 1) { // checa se qualquer um dos valores é NaN
+        result.i = -1;
+    }
+
+    frame->pushOperandStack(result.i & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_dcmpg(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
-    return pc + 0;
+    union {
+        uint64_t u;
+        double d;    
+        int64_t i;    
+    } value1, value2, result; // tipos do resutado
+
+    value2.u = frame->topOperandStack(); // grava os bit mais significativos da primeira parcela da comparação
+    frame->popOperandStack(); // apaga da pilha de operandos
+    value2.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32; // grava os bit menos significativos da primeira parcela da comparação
+    frame->popOperandStack(); // apaga da pilha de operandos
+
+    value1.u = frame->topOperandStack(); // grava os bit mais significativos da primeira parcela da comparação
+    frame->popOperandStack(); // apaga da pilha de operandos
+    value1.u |= static_cast<uint64_t>(frame->topOperandStack()) << 32; // grava os bit menos significativos da primeira parcela da comparação
+    frame->popOperandStack(); // apaga da pilha de operandos
+
+    if (value1.d > value2.d) {
+        result.i = 1;
+    } else if (value1.d == value2.d) {
+        result.i = 0;
+    } else result.i = -1;
+
+    if (std::isnan(value1.d) == 1 || std::isnan(value2.d) == 1) { // checa se qualquer um dos valores é NaN
+        result.i = 1;
+    }
+
+    frame->pushOperandStack(result.i & 0xFFFFFFFF);
+    return pc + 1;
 }
 
 int32_t execOp_ifeq(ClassLoader* classLoader, RuntimeDataArea* runTimeData, ExecutionEngine* execEngine, uint32_t pc, Frame* frame, MethodInfo* method, AttributeInfoCode* attrinbuteCode, LinearStack<uint32_t>& returnStack, MethodInfo** nextMethod, Frame** nextFrame, bool& finished, bool& isInvokeInstruction, bool isWide, uint32_t& wasException){
